@@ -1,0 +1,1855 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lernhilfen & Quiz - Ethik Lernzettel 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-title {
+            font-size: 2.5em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        
+        .nav-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Table of Contents */
+        .table-of-contents {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .toc-item {
+            background: #f8f9ff;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        
+        .toc-item:hover {
+            transform: translateX(5px);
+        }
+        
+        .toc-item a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        /* Main Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+	    margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-icon {
+            font-size: 1.2em;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 10px;
+        }
+        
+        .full-width {
+            grid-column: 1 / -1;
+	    margin-top: 50px;
+        }
+        
+        /* Summary Cards */
+        .summary-card {
+            background: #f8f9ff;
+            border: 2px solid #e1e8ff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .summary-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .key-point {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #f59e0b;
+        }
+        
+        .memorize-tip {
+            background: linear-gradient(135deg, #ddd6fe, #c4b5fd);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #8b5cf6;
+        }
+        
+        .ethics-comparison {
+            background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .current-example {
+            background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #22c55e;
+        }
+        
+        /* Case Studies */
+        .case-study {
+            background: #fff4e6;
+            border: 2px solid #fed7aa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        
+        .case-study h4 {
+            color: #ea580c;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .case-study-questions {
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+        }
+        
+        .case-study-questions ol {
+            margin-left: 20px;
+        }
+        
+        .case-study-questions li {
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        /* Argumentation Patterns */
+        .argument-pattern {
+            background: #f1f5f9;
+            border: 2px solid #cbd5e1;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        
+        .argument-step {
+            display: flex;
+            align-items: flex-start;
+            margin: 10px 0;
+            padding: 10px;
+            background: white;
+            border-radius: 6px;
+        }
+        
+        .step-number {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        /* Quiz Styles */
+        .quiz-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .quiz-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .quiz-tab {
+            padding: 10px 20px;
+            border: 2px solid #e1e8ff;
+            border-radius: 20px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .quiz-tab.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-color: #667eea;
+        }
+        
+        .quiz-section {
+            display: none;
+        }
+        
+        .quiz-section.active {
+            display: block;
+        }
+        
+        .quiz-question {
+            background: #f8f9ff;
+            border: 2px solid #e1e8ff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .question-number {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .question-text {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .answer-options {
+            display: grid;
+            gap: 10px;
+        }
+        
+        .answer-option {
+            padding: 12px 20px;
+            border: 2px solid #e1e8ff;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .answer-option:hover {
+            background: #f0f4ff;
+            border-color: #667eea;
+        }
+        
+        .answer-option.selected {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+        
+        .answer-option.correct {
+            background: #4ade80;
+            border-color: #22c55e;
+            color: white;
+        }
+        
+        .answer-option.incorrect {
+            background: #f87171;
+            border-color: #ef4444;
+            color: white;
+        }
+        
+        .quiz-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 25px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .quiz-btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-secondary {
+            background: #e5e7eb;
+            color: #374151;
+        }
+        
+        .btn-secondary:hover {
+            background: #d1d5db;
+        }
+        
+        .quiz-progress {
+            flex: 1;
+            max-width: 300px;
+            margin: 0 20px;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        
+        .quiz-result {
+            display: none;
+            text-align: center;
+            padding: 30px;
+            background: #f8f9ff;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .result-score {
+            font-size: 3em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        /* Flash Cards */
+        .flashcard-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .flashcard {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            min-height: 200px;
+            perspective: 1000px;
+        }
+        
+        .flashcard:hover {
+            transform: scale(1.02);
+        }
+        
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            min-height: 200px;
+        }
+        
+        .flashcard.flipped .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            border-radius: 10px;
+        }
+        
+        .flashcard-front {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+        
+        .flashcard-back {
+            background: white;
+            color: #333;
+            border: 2px solid #e1e8ff;
+            transform: rotateY(180deg);
+        }
+        
+        /* Accordion */
+        .accordion-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .accordion-content {
+            display: none;
+            padding: 0 15px 15px;
+        }
+        
+        .accordion-content.active {
+            display: block;
+        }
+        
+        .accordion-arrow {
+            transition: transform 0.3s ease;
+        }
+        
+        .accordion-arrow.rotated {
+            transform: rotate(180deg);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .header-title {
+                font-size: 2em;
+            }
+            
+            .quiz-controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .quiz-progress {
+                margin: 10px 0;
+                max-width: none;
+            }
+            
+            .quiz-btn {
+                width: 100%;
+            }
+            
+            .quiz-tabs {
+                justify-content: center;
+            }
+            
+            .quiz-tab {
+                flex: 1;
+                text-align: center;
+                min-width: 100px;
+            }
+            
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .flashcard-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .section {
+                padding: 20px;
+            }
+            
+            .quiz-container {
+                padding: 20px;
+            }
+            
+            .question-text {
+                font-size: 1.1em;
+            }
+            
+            .result-score {
+                font-size: 2.5em;
+            }
+            
+            .quiz-tabs {
+                flex-direction: column;
+            }
+            
+            .quiz-tab {
+                text-align: center;
+            }
+        }
+.footer-nav {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-top: 2px solid #e1e8ff;
+    margin-top: 60px;
+    padding: 30px 0;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.footer-link {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.footer-info {
+    color: #666;
+    font-size: 0.9em;
+    border-top: 1px solid #e1e8ff;
+    padding-top: 20px;
+}
+
+/* Mobile Anpassung */
+@media (max-width: 768px) {
+    .footer-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .footer-link {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="header-title">🎯 Lernhilfen & Quiz</h1>
+            <p>Umfassende Lernressourcen, interaktive Tests und praktische Übungen für die Ethik</p>
+            <a href="index.html" class="nav-link">← Zurück zur Übersicht</a>
+        </header>
+
+        <!-- Table of Contents -->
+        <div class="table-of-contents">
+            <h2><span class="section-icon">📋</span>Inhaltsverzeichnis</h2>
+            <p>Springe direkt zu den gewünschten Lernbereichen:</p>
+            <div class="toc-grid">
+                <div class="toc-item"><a href="#quick-summary">📖 Schnellübersicht & Grundlagen</a></div>
+                <div class="toc-item"><a href="#memory-techniques">🧩 Merkstechniken & Eselsbrücken</a></div>
+                <div class="toc-item"><a href="#case-studies">📚 Fallstudien & Beispiele</a></div>
+                <div class="toc-item"><a href="#argumentation">💭 Argumentationsmuster</a></div>
+                <div class="toc-item"><a href="#interactive-quiz">🎮 Interaktive Quiz-Tests</a></div>
+                <div class="toc-item"><a href="#flashcards">🃏 Digitale Karteikarten</a></div>
+                <div class="toc-item"><a href="#exam-prep">📝 Prüfungsvorbereitung</a></div>
+                <div class="toc-item"><a href="#study-tips">💡 Lerntipps & Strategien</a></div>
+            </div>
+        </div>
+
+        <div class="">
+            <!-- Enhanced Quick Summary Section -->
+            <div class="section" id="quick-summary">
+                <h2><span class="section-icon">📖</span>Erweiterte Schnellübersicht</h2>
+                
+                <div class="summary-card">
+                    <h3>🧠 Kants Deontologische Ethik</h3>
+                    <div class="key-point">
+                        <strong>Kategorischer Imperativ (3 Formeln):</strong><br>
+                        1. Universalisierungsformel: "Handle nur nach derjenigen Maxime..."<br>
+                        2. Selbstzweckformel: "Handle so, dass du Menschheit niemals bloß als Mittel brauchst"<br>
+                        3. Autonomieformel: "Handle so, als wärst du zugleich Gesetzgeber"
+                    </div>
+                    <div class="memorize-tip">
+                        <strong>Merksatz:</strong> Bei Kant = Pflicht vor Nutzen! Guter Wille ist das einzig unbedingt Gute.
+                    </div>
+                    <div class="ethics-comparison">
+                        <strong>Handlungsarten nach Kant:</strong><br>
+                        • Pflichtwidrig = unmoralisch<br>
+                        • Pflichtmäßig aus Neigung = legal, nicht moralisch<br>
+                        • Pflichtmäßig aus Eigennutz = legal, nicht moralisch<br>
+                        • Aus Pflicht = moralisch wertvoll
+                    </div>
+                    <div class="current-example">
+                        <strong>2026-Beispiel:</strong> KI-Systeme müssen nach universell gültigen ethischen Regeln programmiert werden, unabhängig von den wirtschaftlichen Folgen.
+                    </div>
+                </div>
+
+                <div class="summary-card">
+                    <h3>⚖️ Utilitarismus (Konsequentialistische Ethik)</h3>
+                    <div class="key-point">
+                        <strong>Bentham vs. Mill:</strong><br>
+                        • <em>Bentham:</em> Quantitativer Hedonismus - nur Menge des Glücks zählt<br>
+                        • <em>Mill:</em> Qualitativer Hedonismus - "besser ein unzufriedener Sokrates als ein zufriedenes Schwein"
+                    </div>
+                    <div class="memorize-tip">
+                        <strong>Merksatz:</strong> "Greatest Happiness Principle" - Das Ziel heiligt die Mittel!
+                    </div>
+                    <div class="ethics-comparison">
+                        <strong>Kernprinzipien:</strong><br>
+                        • Folgenorientierung (nicht Absichten)<br>
+                        • Nutzenkalkül<br>
+                        • Gleichheit aller Betroffenen<br>
+                        • Empirische Messbarkeit
+                    </div>
+                    <div class="current-example">
+                        <strong>2026-Beispiel:</strong> Triage-Entscheidungen bei Pandemien oder in der KI-gestützten Medizin - wer wird zuerst behandelt?
+                    </div>
+                </div>
+
+                <div class="summary-card">
+                    <h3>💎 Aristoteles' Tugendethik</h3>
+                    <div class="key-point">
+                        <strong>Eudaimonia:</strong> Glückseliges Leben durch Verwirklichung der menschlichen Natur (Vernunft + Tugenden)
+                    </div>
+                    <div class="memorize-tip">
+                        <strong>Mesotes-Lehre:</strong> Tugend = die rechte Mitte zwischen zwei Extremen (z.B. Mut zwischen Feigheit und Tollkühnheit)
+                    </div>
+                    <div class="ethics-comparison">
+                        <strong>Tugendarten:</strong><br>
+                        • Dianoetische Tugenden (Verstandestugenden)<br>
+                        • Ethische Tugenden (Charaktertugenden)<br>
+                        • Phronesis (praktische Klugheit) als Metatugend
+                    </div>
+                    <div class="current-example">
+                        <strong>2026-Beispiel:</strong> Digitale Tugenden - Wie entwickeln wir ethische KI-Charaktere und verantwortliche Tech-Leader?
+                    </div>
+                </div>
+
+                <div class="summary-card">
+                    <h3>🤖 Moderne Ethik-Ansätze 2026</h3>
+                    <div class="key-point">
+                        <strong>Care-Ethik (Gilligan):</strong> Beziehungen und Fürsorge statt abstrakte Prinzipien
+                    </div>
+                    <div class="key-point">
+                        <strong>Diskursethik (Habermas):</strong> Moral durch herrschaftsfreien Dialog
+                    </div>
+                    <div class="key-point">
+                        <strong>Verantwortungsethik (Jonas):</strong> "Handle so, dass es auch in Zukunft menschliches Leben gibt"
+                    </div>
+                    <div class="current-example">
+                        <strong>UNESCO KI-Ethik 2026:</strong> Transparenz, Fairness, Verantwortlichkeit, Menschenwürde als Leitprinzipien
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enhanced Memory Techniques -->
+            <div class="section" id="memory-techniques">
+                <h2><span class="section-icon">🧩</span>Erweiterte Merkstechniken</h2>
+                
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Philosophen-Memory-Palace</span>
+                    <span class="accordion-arrow">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="memorize-tip">
+                        <strong>Der Ethik-Campus (visuell merken):</strong><br>
+                        • <strong>Kant-Gebäude:</strong> Sehr strukturiert, quadratisch, mit festen Regeln - hier herrscht Ordnung!<br>
+                        • <strong>Utilitarismus-Krankenhaus:</strong> Hier wird nach Nutzen entschieden - wer kann gerettet werden?<br>
+                        • <strong>Aristoteles-Sportzentrum:</strong> Training für Tugenden, die goldene Mitte finden<br>
+                        • <strong>Care-Ethik-Kindergarten:</strong> Hier steht Fürsorge und Beziehung im Mittelpunkt
+                    </div>
+                </div>
+
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Moderne Themen-Eselsbrücken 2026</span>
+                    <span class="accordion-arrow">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="memorize-tip">
+                        <strong>TECHNO-Merkwort für aktuelle Ethik:</strong><br>
+                        • <strong>T</strong>ranshumanismus & Enhancement<br>
+                        • <strong>E</strong>nvironment & Klimaethik<br>
+                        • <strong>C</strong>RISPR & Genethik<br>
+                        • <strong>H</strong>uman-AI Interaction<br>
+                        • <strong>N</strong>euroethik & Brain-Computer Interfaces<br>
+                        • <strong>O</strong>rgan-on-Chip & Bioethik
+                    </div>
+                    <div class="memorize-tip">
+                        <strong>KI-Ethik Prinzipien - FATMA:</strong><br>
+                        • <strong>F</strong>airness (Gerechtigkeit)<br>
+                        • <strong>A</strong>ccountability (Verantwortlichkeit)<br>
+                        • <strong>T</strong>ransparency (Transparenz)<br>
+                        • <strong>M</strong>enschenwürde<br>
+                        • <strong>A</strong>utonomy (Autonomie)
+                    </div>
+                </div>
+
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Argumentations-Schemas</span>
+                    <span class="accordion-arrow">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="memorize-tip">
+                        <strong>PEEL-Methode für ethische Argumente:</strong><br>
+                        • <strong>P</strong>osition: Klare Stellungnahme<br>
+                        • <strong>E</strong>vidence: Belege und Beispiele<br>
+                        • <strong>E</strong>xplain: Erklärung der Verbindung<br>
+                        • <strong>L</strong>ink: Rückbezug zur These
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Case Studies Section -->
+        <div class="section full-width" id="case-studies">
+            <h2><span class="section-icon">📚</span>Fallstudien & Praxisbeispiele</h2>
+            
+            <div class="case-study">
+                <h4>🚗 Das autonome Fahrzeug-Dilemma</h4>
+                <p><strong>Situation:</strong> Ein selbstfahrendes Auto muss zwischen zwei Unfallszenarien wählen: entweder 1 Fußgänger oder 5 Passagiere retten.</p>
+                <div class="case-study-questions">
+                    <strong>Analysiere aus verschiedenen ethischen Perspektiven:</strong>
+                    <ol>
+                        <li>Wie würde Kant diese Situation bewerten? (Kategorischer Imperativ)</li>
+                        <li>Was sagt der Utilitarismus? (Zahlenverhältnis)</li>
+                        <li>Welche Rolle spielt die Tugendethik? (Charakter des Programmierers)</li>
+                        <li>Moderne KI-Ethik: Wer trägt die Verantwortung?</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <h4>🧬 CRISPR-Baby Kontroverse</h4>
+                <p><strong>Situation:</strong> 2026 können Eltern ihre Kinder genetisch "verbessern" - Intelligenz steigern, Krankheiten verhindern, Aussehen anpassen.</p>
+                <div class="case-study-questions">
+                    <strong>Ethische Fragestellungen:</strong>
+                    <ol>
+                        <li>Ist genetische Enhancement mit der Menschenwürde vereinbar?</li>
+                        <li>Utilitaristische Analyse: Gesamtnutzen vs. individuelle Rechte</li>
+                        <li>Gerechtigkeit: Entsteht eine "genetische Klassengesellschaft"?</li>
+                        <li>Verantwortungsethik: Welche Folgen für zukünftige Generationen?</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <h4>🤖 KI-Algorithmus diskriminiert Bewerber</h4>
+                <p><strong>Situation:</strong> Ein Bewerbungsalgorithmus benachteiligt systematisch Frauen und Menschen mit Migrationshintergrund.</p>
+                <div class="case-study-questions">
+                    <strong>Ethische Dimensionen:</strong>
+                    <ol>
+                        <li>Algorithmic Bias: Wie entstehen unfaire Verzerrungen?</li>
+                        <li>Transparenz vs. Geschäftsgeheimnisse</li>
+                        <li>Individuelle vs. gesellschaftliche Gerechtigkeit</li>
+                        <li>Lösungsansätze: Technisch, rechtlich, ethisch</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <h4>🌍 Klimaethik: Wer trägt die Verantwortung?</h4>
+                <p><strong>Situation:</strong> Industrieländer haben historisch mehr CO₂ produziert, Entwicklungsländer leiden stärker unter dem Klimawandel.</p>
+                <div class="case-study-questions">
+                    <strong>Ethische Konflikte:</strong>
+                    <ol>
+                        <li>Generationengerechtigkeit: Rechte zukünftiger Menschen</li>
+                        <li>Globale Gerechtigkeit: Historische vs. aktuelle Verantwortung</li>
+                        <li>Utilitarismus: Gesamtwohl vs. nationale Interessen</li>
+                        <li>Tugendethik: Welche Charaktereigenschaften sind gefragt?</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Argumentation Patterns -->
+        <div class="section full-width" id="argumentation">
+            <h2><span class="section-icon">💭</span>Argumentationsmuster & Strukturen</h2>
+            
+            <div class="argument-pattern">
+                <h3>🎯 Deontologische Argumentation (Kant)</h3>
+                <div class="argument-step">
+                    <div class="step-number">1</div>
+                    <div><strong>Universalisierungstest:</strong> "Kann ich wollen, dass alle so handeln?"</div>
+                </div>
+                <div class="argument-step">
+                    <div class="step-number">2</div>
+                    <div><strong>Widerspruchstest:</strong> "Führt das zu logischen Widersprüchen?"</div>
+                </div>
+                <div class="argument-step">
+                    <div class="step-number">3</div>
+                    <div><strong>Menschenwürdetest:</strong> "Wird jemand nur als Mittel benutzt?"</div>
+                </div>
+                <div class="argument-step">
+                    <div class="step-number">4</div>
+                    <div><strong>Pflichtbestimmung:</strong> "Was ist meine moralische Pflicht?"</div>
+                </div>
+            </div>
+
+            <div class="argument-pattern">
+                <h3>⚖️ Utilitaristische Argumentation</h3>
+                <div class="argument-step">
+                    <div class="step-number">1</div>
+                    <div><strong>Handlungsalternativen:</strong> Alle möglichen Optionen identifizieren</div>
+                </div>
+                <div class="argument-step">
+                    <div class="step-number">2</div>
+                    <div><strong>Folgenabschätzung:</strong> Konsequenzen für alle Betroffenen</div>
+                </div>
+                <div class="argument-step">
+                    <div class="step-number">3</div>
+                    <div><strong>Nutzenkalkül:</strong> Glück/Nutzen gegen Leid/Schaden abwägen</div>
+                </div>
+                <div class="argument-step">
+                    <div class="step-number">4</div>
+                    <div><strong>Optimierung:</strong> Handlung mit dem besten Gesamtergebnis wählen</div>
+                </div>
+            </div>
+
+            <div class="argument-pattern">
+                <h3>💎 Tugendethische Argumentation</h3>
+                <div class="argument-step">
+                    <div class="step-number">1</div>
+                    <div><strong>Charakteranalyse:</strong> "Welche Tugenden sind hier relevant?"</div>
+                </div>
+                <div class="argument-step">
+                    <div class="step-number">2</div>
+                    <div><strong>Extreme identifizieren:</strong> "Was wären Über- und Untertreibung?"</div>
+                </div>
+                <div class="argument-step">
+                    <div class="step-number">3</div>
+                    <div><strong>Goldene Mitte:</strong> "Was ist die angemessene Balance?"</div>
+                </div>
+                <div class="argument-step">
+                    <div class="step-number">4</div>
+                    <div><strong>Eudaimonia-Test:</strong> "Führt das zu einem gelingenden Leben?"</div>
+                </div>
+            </div>
+
+            <div class="argument-pattern">
+                <h3>🔄 Diskursethische Argumentation (Habermas)</h3>
+                <div class="argument-step">
+                    <div class="step-number">1</div>
+                    <div><strong>Ideale Sprechsituation:</strong> Herrschaftsfreier Dialog</div>
+                </div>
+                <div class="argument-step">
+                    <div class="step-number">2</div>
+                    <div><strong>Alle Betroffenen:</strong> Inklusion aller Stakeholder</div>
+                </div>
+                <div class="argument-step">
+                    <div class="step-number">3</div>
+                    <div><strong>Argumentqualität:</strong> Beste Gründe setzen sich durch</div>
+                </div>
+                <div class="argument-step">
+                    <div class="step-number">4</div>
+                    <div><strong>Konsens:</strong> Einvernehmliche Lösung finden</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Enhanced Interactive Quiz Section -->
+        <div class="quiz-container full-width" id="interactive-quiz">
+            <h2><span class="section-icon">🎮</span>Interaktive Quiz-Tests</h2>
+            <p style="margin-bottom: 25px;">Verschiedene Quiz-Formate für optimales Lernen und Prüfungsvorbereitung!</p>
+            
+            <div class="quiz-tabs">
+                <div class="quiz-tab active" onclick="switchQuizTab('basic')">Grundlagen</div>
+                <div class="quiz-tab" onclick="switchQuizTab('advanced')">Vertiefung</div>
+                <div class="quiz-tab" onclick="switchQuizTab('case')">Fallstudien</div>
+                <div class="quiz-tab" onclick="switchQuizTab('current')">Aktuelle Themen</div>
+            </div>
+
+            <!-- Basic Quiz -->
+            <div class="quiz-section active" id="basic-quiz">
+                <h3>🎯 Grundlagen-Quiz</h3>
+                <div id="basic-quiz-area">
+                    <!-- Quiz questions will be populated by JavaScript -->
+                </div>
+                <div class="quiz-controls">
+                    <button class="quiz-btn btn-secondary" id="basic-prev-btn" onclick="previousQuestion('basic')" style="display: none;">← Vorherige</button>
+                    <div class="quiz-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="basic-progress-fill"></div>
+                        </div>
+                        <small id="basic-progress-text">Frage 1 von 10</small>
+                    </div>
+                    <button class="quiz-btn btn-primary" id="basic-next-btn" onclick="nextQuestion('basic')">Nächste →</button>
+                </div>
+                <div class="quiz-result" id="basic-quiz-result">
+                    <div class="result-score" id="basic-result-score">8/10</div>
+                    <h3>Gratulation! 🎉</h3>
+                    <p id="basic-result-text">Du hast ein sehr gutes Verständnis der Ethik-Grundlagen!</p>
+                    <button class="quiz-btn btn-primary" onclick="restartQuiz('basic')" style="margin-top: 20px;">Quiz wiederholen</button>
+                </div>
+            </div>
+
+            <!-- Advanced Quiz -->
+            <div class="quiz-section" id="advanced-quiz">
+                <h3>🎓 Vertiefungs-Quiz</h3>
+                <div id="advanced-quiz-area">
+                    <!-- Advanced quiz questions -->
+                </div>
+                <div class="quiz-controls">
+                    <button class="quiz-btn btn-secondary" id="advanced-prev-btn" onclick="previousQuestion('advanced')" style="display: none;">← Vorherige</button>
+                    <div class="quiz-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="advanced-progress-fill"></div>
+                        </div>
+                        <small id="advanced-progress-text">Frage 1 von 8</small>
+                    </div>
+                    <button class="quiz-btn btn-primary" id="advanced-next-btn" onclick="nextQuestion('advanced')">Nächste →</button>
+                </div>
+                <div class="quiz-result" id="advanced-quiz-result">
+                    <div class="result-score" id="advanced-result-score">6/8</div>
+                    <h3>Exzellent! 🌟</h3>
+                    <p id="advanced-result-text">Du beherrschst auch komplexe ethische Konzepte!</p>
+                    <button class="quiz-btn btn-primary" onclick="restartQuiz('advanced')" style="margin-top: 20px;">Quiz wiederholen</button>
+                </div>
+            </div>
+
+            <!-- Case Studies Quiz -->
+            <div class="quiz-section" id="case-quiz">
+                <h3>📚 Fallstudien-Quiz</h3>
+                <div id="case-quiz-area">
+                    <!-- Case studies quiz questions -->
+                </div>
+                <div class="quiz-controls">
+                    <button class="quiz-btn btn-secondary" id="case-prev-btn" onclick="previousQuestion('case')" style="display: none;">← Vorherige</button>
+                    <div class="quiz-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="case-progress-fill"></div>
+                        </div>
+                        <small id="case-progress-text">Frage 1 von 6</small>
+                    </div>
+                    <button class="quiz-btn btn-primary" id="case-next-btn" onclick="nextQuestion('case')">Nächste →</button>
+                </div>
+                <div class="quiz-result" id="case-quiz-result">
+                    <div class="result-score" id="case-result-score">5/6</div>
+                    <h3>Sehr gut! 💪</h3>
+                    <p id="case-result-text">Du kannst ethische Theorien praktisch anwenden!</p>
+                    <button class="quiz-btn btn-primary" onclick="restartQuiz('case')" style="margin-top: 20px;">Quiz wiederholen</button>
+                </div>
+            </div>
+
+            <!-- Current Topics Quiz -->
+            <div class="quiz-section" id="current-quiz">
+                <h3>🚀 Aktuelle Themen 2026</h3>
+                <div id="current-quiz-area">
+                    <!-- Current topics quiz questions -->
+                </div>
+                <div class="quiz-controls">
+                    <button class="quiz-btn btn-secondary" id="current-prev-btn" onclick="previousQuestion('current')" style="display: none;">← Vorherige</button>
+                    <div class="quiz-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="current-progress-fill"></div>
+                        </div>
+                        <small id="current-progress-text">Frage 1 von 6</small>
+                    </div>
+                    <button class="quiz-btn btn-primary" id="current-next-btn" onclick="nextQuestion('current')">Nächste →</button>
+                </div>
+                <div class="quiz-result" id="current-quiz-result">
+                    <div class="result-score" id="current-result-score">5/6</div>
+                    <h3>Zeitgemäß! 🌐</h3>
+                    <p id="current-result-text">Du bist up-to-date bei aktuellen Ethik-Debatten!</p>
+                    <button class="quiz-btn btn-primary" onclick="restartQuiz('current')" style="margin-top: 20px;">Quiz wiederholen</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Digital Flashcards -->
+        <div class="section full-width" id="flashcards">
+            <h2><span class="section-icon">🃏</span>Digitale Karteikarten</h2>
+            <p>Klicke auf die Karten, um sie umzudrehen und dein Wissen zu testen!</p>
+            
+            <div class="flashcard-container">
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <h3>Kategorischer Imperativ</h3>
+                            <p>Was ist Kants berühmte Formel?</p>
+                        </div>
+                        <div class="flashcard-back">
+                            <h4>Universalisierungsformel</h4>
+                            <p>"Handle nur nach derjenigen Maxime, von der du wollen kannst, dass sie zum allgemeinen Gesetz wird."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <h3>Utilitarismus</h3>
+                            <p>Was ist das Grundprinzip?</p>
+                        </div>
+                        <div class="flashcard-back">
+                            <h4>Greatest Happiness Principle</h4>
+                            <p>"Das größte Glück für die größte Anzahl von Menschen"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <h3>Eudaimonia</h3>
+                            <p>Was bedeutet dieser Begriff bei Aristoteles?</p>
+                        </div>
+                        <div class="flashcard-back">
+                            <h4>Glückseligkeit</h4>
+                            <p>Ein gelingendes Leben durch die Verwirklichung der menschlichen Natur und Tugenden</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <h3>Speziesismus</h3>
+                            <p>Was versteht Peter Singer darunter?</p>
+                        </div>
+                        <div class="flashcard-back">
+                            <h4>Artdiskriminierung</h4>
+                            <p>Die Benachteiligung von Lebewesen aufgrund ihrer Artzugehörigkeit - vergleichbar mit Rassismus</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <h3>Algorithmic Bias</h3>
+                            <p>Was ist das Problem bei KI-Systemen?</p>
+                        </div>
+                        <div class="flashcard-back">
+                            <h4>Unfaire Verzerrung</h4>
+                            <p>Algorithmen diskriminieren bestimmte Gruppen durch voreingenommene Trainingsdaten oder Design</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flashcard" onclick="flipCard(this)">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <h3>Diskursethik</h3>
+                            <p>Wie entsteht Moral nach Habermas?</p>
+                        </div>
+                        <div class="flashcard-back">
+                            <h4>Herrschaftsfreier Dialog</h4>
+                            <p>Moral entsteht durch ideale Kommunikation, wo nur das bessere Argument zählt</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exam Preparation Section -->
+        <div class="section full-width" id="exam-prep">
+            <h2><span class="section-icon">📝</span>Prüfungsvorbereitung</h2>
+            
+            <div class="content-grid">
+                <div class="memorize-tip">
+                    <h4>📚 Klausur-Checkliste</h4>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>✅ Alle drei Haupttheorien (Kant, Utilitarismus, Tugendethik) verstanden</li>
+                        <li>✅ Argumentationsmuster beherrschen</li>
+                        <li>✅ Aktuelle Beispiele (KI, Bioethik, Klima) kennen</li>
+                        <li>✅ Kritikpunkte zu jeder Theorie</li>
+                        <li>✅ Fallstudien analysieren können</li>
+                        <li>✅ Fachbegriffe definieren können</li>
+                    </ul>
+                </div>
+
+                <div class="memorize-tip">
+                    <h4>⏰ Zeitmanagement Prüfung</h4>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li><strong>5 Min:</strong> Aufgabe genau lesen</li>
+                        <li><strong>10 Min:</strong> Gliederung erstellen</li>
+                        <li><strong>60 Min:</strong> Ausarbeitung schreiben</li>
+                        <li><strong>10 Min:</strong> Korrektur und Überarbeitung</li>
+                        <li><strong>5 Min:</strong> Finaler Check</li>
+                    </ul>
+                </div>
+
+                <div class="memorize-tip">
+                    <h4>🎯 Bewertungskriterien</h4>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li><strong>Sachkompetenz:</strong> Korrekte Darstellung der Theorien</li>
+                        <li><strong>Methodenkompetenz:</strong> Struktur und Argumentation</li>
+                        <li><strong>Urteilskompetenz:</strong> Kritische Bewertung</li>
+                        <li><strong>Handlungskompetenz:</strong> Anwendung auf neue Situationen</li>
+                    </ul>
+                </div>
+
+                <div class="memorize-tip">
+                    <h4>💡 Typische Fehler vermeiden</h4>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>❌ Theorien vermischen</li>
+                        <li>❌ Nur beschreiben, nicht bewerten</li>
+                        <li>❌ Aktuelle Bezüge vergessen</li>
+                        <li>❌ Einseitige Argumentation</li>
+                        <li>❌ Fachsprache vernachlässigen</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <h4>📋 Muster-Prüfungsaufgabe</h4>
+                <p><strong>Aufgabe:</strong> "Ein Pharmaunternehmen kann ein lebensrettendes Medikament entwickeln, muss aber an Tieren testen. Bewerten Sie dieses Dilemma aus verschiedenen ethischen Perspektiven und entwickeln Sie eine begründete Stellungnahme."</p>
+                <div class="case-study-questions">
+                    <strong>Lösungsansatz (Gliederung):</strong>
+                    <ol>
+                        <li><strong>Einleitung:</strong> Problem definieren, Relevanz aufzeigen</li>
+                        <li><strong>Kant:</strong> Kategorischer Imperativ anwenden</li>
+                        <li><strong>Utilitarismus:</strong> Nutzen-Schaden-Abwägung</li>
+                        <li><strong>Tierethik:</strong> Singer, Regan einbeziehen</li>
+                        <li><strong>Bewertung:</strong> Stärken/Schwächen der Ansätze</li>
+                        <li><strong>Fazit:</strong> Eigene begründete Position</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Enhanced Study Tips Section -->
+        <div class="section full-width" id="study-tips">
+            <h2><span class="section-icon">💡</span>Erweiterte Lerntipps & Strategien</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div class="memorize-tip">
+                    <h4>🔄 Spaced Repetition</h4>
+                    <p><strong>Tag 1:</strong> Neues Thema lernen<br>
+                    <strong>Tag 3:</strong> Wiederholung<br>
+                    <strong>Tag 7:</strong> Erneute Wiederholung<br>
+                    <strong>Tag 21:</strong> Letzte Vertiefung</p>
+                </div>
+                
+                <div class="memorize-tip">
+                    <h4>🎭 Perspektivenwechsel</h4>
+                    <p>Diskutiere ethische Dilemmata aus verschiedenen Rollen: Arzt, Patient, Politiker, Philosoph. Das vertieft das Verständnis für komplexe Situationen.</p>
+                </div>
+                
+                <div class="memorize-tip">
+                    <h4>📰 Tagesaktualität</h4>
+                    <p>Verknüpfe jeden Tag eine Nachricht mit einer ethischen Theorie. Frage dich: "Was würde Kant dazu sagen?"</p>
+                </div>
+                
+                <div class="memorize-tip">
+                    <h4>🗺️ Concept Maps</h4>
+                    <p>Erstelle visuelle Karten der Zusammenhänge zwischen Philosophen, Theorien und modernen Anwendungen.</p>
+                </div>
+
+                <div class="memorize-tip">
+                    <h4>👥 Lerngruppen</h4>
+                    <p>Ethische Diskussionen funktionieren am besten im Dialog. Bildet Lerngruppen und debattiert kontroverse Themen.</p>
+                </div>
+
+                <div class="memorize-tip">
+                    <h4>🎬 Multimedia-Lernen</h4>
+                    <p>Nutze Podcasts, Videos und interaktive Websites. Ethik wird lebendig durch verschiedene Medienformate.</p>
+                </div>
+
+                <div class="memorize-tip">
+                    <h4>📱 Mikro-Learning</h4>
+                    <p>5 Minuten täglich: Eine Karteikarte, ein Zitat, ein aktuelles Beispiel. Kleine Häppchen sind nachhaltiger.</p>
+                </div>
+
+                <div class="memorize-tip">
+                    <h4>🧠 Selbstreflexion</h4>
+                    <p>Führe ein Ethik-Tagebuch: Welche moralischen Entscheidungen triffst du täglich? Welche Theorie leitest sie?</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resources Section -->
+        <div class="section full-width">
+            <h2><span class="section-icon">🔗</span>Zusätzliche Ressourcen</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <div class="current-example">
+                    <h4>📚 Empfohlene Lektüre</h4>
+                    <ul style="margin-left: 15px;">
+                        <li>Michael Sandel: "Gerechtigkeit"</li>
+                        <li>Peter Singer: "Praktische Ethik"</li>
+                        <li>Christine Korsgaard: "Creating the Kingdom of Ends"</li>
+                        <li>UNESCO: "AI Ethics Recommendation"</li>
+                    </ul>
+                </div>
+
+                <div class="current-example">
+                    <h4>🎧 Podcasts & Videos</h4>
+                    <ul style="margin-left: 15px;">
+                        <li>Ethics Bites (Podcast)</li>
+                        <li>Harvard Justice Course</li>
+                        <li>TED Talks on Ethics</li>
+                        <li>Philosophy Tube (YouTube)</li>
+                    </ul>
+                </div>
+
+                <div class="current-example">
+                    <h4>🌐 Online-Tools</h4>
+                    <ul style="margin-left: 15px;">
+                        <li>Stanford Encyclopedia of Philosophy</li>
+                        <li>MIT Technology Review (AI Ethics)</li>
+                        <li>Bioethics.net</li>
+                        <li>Climate Ethics Forum</li>
+                    </ul>
+                </div>
+
+                <div class="current-example">
+                    <h4>🏛️ Institutionen</h4>
+                    <ul style="margin-left: 15px;">
+                        <li>Deutscher Ethikrat</li>
+                        <li>UNESCO Ethics Commission</li>
+                        <li>Institute for AI Ethics</li>
+                        <li>Bioethics Research Centers</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Quiz Data - Fixed and Simplified
+        const quizData = {
+            basic: [
+                {
+                    question: "Was ist der Kerngedanke von Kants kategorischem Imperativ?",
+                    options: [
+                        "Handle so, dass du das größte Glück für alle erreichst",
+                        "Handle nur nach Maximen, die du als allgemeines Gesetz wollen könntest",
+                        "Handle gemäß deiner Tugenden und deinem Charakter",
+                        "Handle nach den Folgen deiner Handlungen"
+                    ],
+                    correct: 1
+                },
+                {
+                    question: "Welches Prinzip steht im Zentrum des Utilitarismus?",
+                    options: [
+                        "Die Würde des Menschen ist unantastbar",
+                        "Das größte Glück für die größte Anzahl",
+                        "Tugend ist die Mitte zwischen Extremen",
+                        "Der gute Wille ist das einzig unbedingt Gute"
+                    ],
+                    correct: 1
+                },
+                {
+                    question: "Was ist Eudaimonia in der aristotelischen Ethik?",
+                    options: [
+                        "Die Vermeidung von Leid",
+                        "Die Maximierung von Vergnügen",
+                        "Ein glückseliges, gelingendes Leben",
+                        "Die Erfüllung moralischer Pflichten"
+                    ],
+                    correct: 2
+                },
+                {
+                    question: "Welche der folgenden Aussagen trifft auf die deontologische Ethik zu?",
+                    options: [
+                        "Die Folgen einer Handlung bestimmen ihre moralische Bewertung",
+                        "Der Charakter des Handelnden ist entscheidend",
+                        "Die Absicht und die Pflicht sind für die Moral entscheidend",
+                        "Das Glück der Gesellschaft ist das höchste Ziel"
+                    ],
+                    correct: 2
+                },
+                {
+                    question: "Was bedeutet 'Mesotes' in der aristotelischen Tugendlehre?",
+                    options: [
+                        "Die absolute Perfektion",
+                        "Die goldene Mitte zwischen Extremen",
+                        "Die höchste Tugend",
+                        "Die praktische Weisheit"
+                    ],
+                    correct: 1
+                },
+                {
+                    question: "Wer gilt als Begründer des modernen Utilitarismus?",
+                    options: [
+                        "Immanuel Kant",
+                        "Jeremy Bentham",
+                        "Aristoteles",
+                        "John Rawls"
+                    ],
+                    correct: 1
+                },
+                {
+                    question: "Was versteht Kant unter 'Autonomie'?",
+                    options: [
+                        "Unabhängigkeit von anderen Menschen",
+                        "Selbstgesetzgebung der Vernunft",
+                        "Politische Freiheit",
+                        "Emotionale Unabhängigkeit"
+                    ],
+                    correct: 1
+                },
+                {
+                    question: "Was ist der Unterschied zwischen Ethik und Moral?",
+                    options: [
+                        "Es gibt keinen Unterschied",
+                        "Ethik ist die Wissenschaft, Moral sind die gelebten Normen",
+                        "Moral ist theoretisch, Ethik praktisch",
+                        "Ethik ist älter als Moral"
+                    ],
+                    correct: 1
+                },
+                {
+                    question: "Was ist eine 'Handlung' im philosophischen Sinne?",
+                    options: [
+                        "Jede körperliche Bewegung",
+                        "Eine absichtlich verursachte Situationsveränderung",
+                        "Ein automatischer Reflex",
+                        "Eine emotionale Reaktion"
+                    ],
+                    correct: 1
+                },
+                {
+                    question: "Was unterscheidet qualitative von quantitativer Betrachtung des Glücks?",
+                    options: [
+                        "Qualitativ = mehr Glück, quantitativ = weniger Glück",
+                        "Quantitativ = Menge, qualitativ = Art des Glücks",
+                        "Es gibt keinen Unterschied",
+                        "Qualitativ = emotional, quantitativ = rational"
+                    ],
+                    correct: 1
+                }
+            ],
+            
+            advanced: [
+                {
+                    question: "Was ist das Problem der 'Tyrannei der Mehrheit' im Utilitarismus?",
+                    options: [
+                        "Die Mehrheit hat immer recht",
+                        "Minderheitenrechte können für das Gesamtwohl geopfert werden",
+                        "Demokratie ist unmöglich",
+                        "Entscheidungen dauern zu lange"
+                    ],
+                    correct: 1
+                },
+                {
+                    question: "Was bedeutet 'Phronesis' bei Aristoteles?",
+                    options: [
+                        "Theoretische Weisheit",
+                        "Praktische Klugheit",
+                        "Wissenschaftliches Wissen",
+                        "Intuitive Erkenntnis"
+                    ],
+                    correct: 1
+                },
+                {
+                    question: "Welches Problem sieht Kant in hypothetischen Imperativen?",
+                    options: [
+                        "Sie sind zu schwer verständlich",
+                        "Sie sind nur bedingt gültig und nicht universell",
+                        "Sie berücksichtigen keine Gefühle",
+                        "Sie sind zu praktisch orientiert"
+                    ],
+                    correct: 1
+                },
+                {
+                    question: "Was ist das 'Trolley-Problem' in der Ethik?",
+                    options: [
+                        "Ein Problem mit öffentlichen Verkehrsmitteln",
+                        "Ein Gedankenexperiment über Leben und Tod Entscheidungen",
+                        "Eine Kritik am Kapitalismus",
+                        "Ein historisches Ereignis"
+                    ],
+                    correct: 1
+                },
+                {
+                    question: "Was versteht Rawls unter dem 'Schleier des Nichtwissens'?",
+                    options: [
+                        "Ignoranz als Tugend",
+                        "Eine Methode zur gerechten Gesellschaftsgestaltung",
+                        "Ein erkenntnistheoretisches Problem",
+                        "Eine Kritik an der Demokratie"
+                    ],
+                    correct: 1
+                },
+                {
+                    question: "Was ist 'Care-Ethik' nach Gilligan?",
+                    options: [
+                        "Medizinische Ethik",
+                        "Eine beziehungsorientierte Ethik der Fürsorge",
+                        "Umweltethik",
+                        "Wirtschaftsethik"
+                    ],
+                    correct: 1
+                },
+                {
+                    question: "Was versteht Habermas unter 'idealer Sprechsituation'?",
+                    options: [
+                        "Perfekte Rhetorik",
+                        "Herrschaftsfreie Kommunikation mit gleichen Chancen",
+                        "Einsprachigkeit",
+                        "Wissenschaftliche Diskussion"
+                    ],
+                    correct: 1
+                },
+                {
+                    question: "Was ist der Unterschied zwischen Moral und Legalität bei Kant?",
+                    options: [
+                        "Legalität ist wichtiger",
+                        "Moral betrifft die innere Einstellung, Legalität nur äußere Übereinstimmung",
+                        "Es gibt keinen Unterschied",
+                        "Legalität ist universeller"
+                    ],
+                    correct: 1
+                }
+            ],
+            
+            case: [
+                {
+                    question: "Ein autonomes Fahrzeug muss zwischen einem Kind und fünf Erwachsenen wählen. Wie würde ein Utilitarist entscheiden?",
+                    options: [
+                        "Immer das Kind retten",
+                        "Die fünf Erwachsenen retten (Zahlenverhältnis)",
+                        "Den Zufall entscheiden lassen",
+                        "Das Fahrzeug anhalten"
+                    ],
+                    correct: 1
+                },
+                {
+                    question: "Bei CRISPR-Genbearbeitung von Embryonen: Was wäre Kants Position?",
+                    options: [
+                        "Erlaubt, wenn es dem Gemeinwohl dient",
+                        "Verboten, wenn der Embryo nur als Mittel behandelt wird",
+                        "Immer erlaubt",
+                        "Je nach Einzelfall entscheiden"
+                    ],
+                    correct: 1
+                },
+                {
+                    question: "Ein KI-Algorithmus diskriminiert Frauen bei Bewerbungen. Hauptethisches Problem?",
+                    options: [
+                        "Technisches Versagen",
+                        "Verletzung der Gleichberechtigung und Gerechtigkeit",
+                        "Wirtschaftlicher Schaden",
+                        "Datenschutzproblem"
+                    ],
+                    correct: 1
+                },
+                {
+                    question: "Triage in der Pandemie: Ältere erhalten weniger Intensivbetten. Ethische Bewertung?",
+                    options: [
+                        "Klar unethisch",
+                        "Utilitaristisch begründbar, aber problematisch für Gleichwertigkeit",
+                        "Völlig in Ordnung",
+                        "Nur medizinisch zu bewerten"
+                    ],
+                    correct: 1
+                },
+                {
+                    question: "Klimawandel: Reiche Länder sollen mehr zahlen. Welche Ethik unterstützt das?",
+                    options: [
+                        "Utilitarismus und Gerechtigkeitstheorie",
+                        "Tugendethik",
+                        "Egoismus",
+                        "Nihilismus"
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "Organspende-Widerspruchslösung: Alle sind Spender, außer sie widersprechen. Ethisch?",
+                    options: [
+                        "Klar unethisch",
+                        "Utilitaristisch gut, aber problematisch für Autonomie",
+                        "Perfekt ethisch",
+                        "Nur rechtlich zu bewerten"
+                    ],
+                    correct: 1
+                }
+            ],
+            
+            current: [
+                {
+                    question: "Was ist ein zentrales Problem der KI-Ethik 2026?",
+                    options: [
+                        "KI kann keine Entscheidungen treffen",
+                        "Algorithmic Bias und unfaire Diskriminierung",
+                        "KI ist zu langsam für praktische Anwendungen",
+                        "KI verbraucht zu wenig Energie"
+                    ],
+                    correct: 1
+                },
+                {
+                    question: "Welches ethische Prinzip steht hinter der UNESCO-Empfehlung zur KI-Ethik?",
+                    options: [
+                        "KI soll menschliche Arbeit vollständig ersetzen",
+                        "KI soll menschliche Entfaltung erweitern, nicht vermindern",
+                        "KI soll nur in der Forschung eingesetzt werden",
+                        "KI soll ohne ethische Beschränkungen entwickelt werden"
+                    ],
+                    correct: 1
+                },
+                {
+                    question: "Was versteht man unter Speziesismus in der modernen Tierethik?",
+                    options: [
+                        "Die Bevorzugung seltener Tierarten",
+                        "Die Diskriminierung aufgrund der Artzugehörigkeit",
+                        "Die wissenschaftliche Klassifizierung von Tieren",
+                        "Die Züchtung neuer Tierarten"
+                    ],
+                    correct: 1
+                },
+                {
+                    question: "Welche moderne Technologie wirft besonders viele bioethische Fragen auf?",
+                    options: [
+                        "Smartphones",
+                        "Elektrische Autos",
+                        "CRISPR-Cas9 Gentechnik",
+                        "Solarenergie"
+                    ],
+                    correct: 2
+                },
+                {
+                    question: "Welches Konzept steht im Zentrum der Klimaethik?",
+                    options: [
+                        "Technologische Innovation",
+                        "Generationengerechtigkeit",
+                        "Wirtschaftswachstum",
+                        "Nationale Souveränität"
+                    ],
+                    correct: 1
+                },
+                {
+                    question: "Was ist das Problem von 'Dark Patterns' in der digitalen Ethik?",
+                    options: [
+                        "Schlechtes Design",
+                        "Manipulation von Nutzerentscheidungen",
+                        "Langsame Ladezeiten",
+                        "Hohe Kosten"
+                    ],
+                    correct: 1
+                }
+            ]
+        };
+
+        // Quiz State Management
+        let currentQuestion = {};
+        let userAnswers = {};
+        let activeQuiz = 'basic';
+
+        // Initialize quiz states
+        Object.keys(quizData).forEach(category => {
+            currentQuestion[category] = 0;
+            userAnswers[category] = [];
+        });
+
+        function switchQuizTab(category) {
+            // Hide all quiz sections
+            document.querySelectorAll('.quiz-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.quiz-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected section and tab
+            document.getElementById(`${category}-quiz`).classList.add('active');
+            event.target.classList.add('active');
+            
+            activeQuiz = category;
+            showQuestion(category);
+            updateProgress(category);
+        }
+
+        function showQuestion(category) {
+            const quizArea = document.getElementById(`${category}-quiz-area`);
+            const questionData = quizData[category][currentQuestion[category]];
+            
+            quizArea.innerHTML = `
+                <div class="quiz-question">
+                    <div class="question-number">Frage ${currentQuestion[category] + 1} von ${quizData[category].length}</div>
+                    <div class="question-text">${questionData.question}</div>
+                    <div class="answer-options">
+                        ${questionData.options.map((option, index) => `
+                            <div class="answer-option" onclick="selectAnswer('${category}', ${index})" data-index="${index}">
+                                ${String.fromCharCode(65 + index)}) ${option}
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+            
+            // Show previous selected answer if exists
+            if (userAnswers[category][currentQuestion[category]] !== undefined) {
+                const selectedOption = quizArea.querySelector(`[data-index="${userAnswers[category][currentQuestion[category]]}"]`);
+                if (selectedOption) {
+                    selectedOption.classList.add('selected');
+                }
+            }
+            
+            updateControls(category);
+        }
+
+        function selectAnswer(category, answerIndex) {
+            userAnswers[category][currentQuestion[category]] = answerIndex;
+            
+            // Remove previous selection
+            document.querySelectorAll(`#${category}-quiz-area .answer-option`).forEach(option => {
+                option.classList.remove('selected');
+            });
+            
+            // Add selection to clicked option
+            document.querySelector(`#${category}-quiz-area [data-index="${answerIndex}"]`).classList.add('selected');
+        }
+
+        function nextQuestion(category) {
+            if (currentQuestion[category] < quizData[category].length - 1) {
+                currentQuestion[category]++;
+                showQuestion(category);
+                updateProgress(category);
+            } else {
+                showResults(category);
+            }
+        }
+
+        function previousQuestion(category) {
+            if (currentQuestion[category] > 0) {
+                currentQuestion[category]--;
+                showQuestion(category);
+                updateProgress(category);
+            }
+        }
+
+        function updateProgress(category) {
+            const progressFill = document.getElementById(`${category}-progress-fill`);
+            const progressText = document.getElementById(`${category}-progress-text`);
+            
+            const progress = ((currentQuestion[category] + 1) / quizData[category].length) * 100;
+            progressFill.style.width = progress + '%';
+            progressText.textContent = `Frage ${currentQuestion[category] + 1} von ${quizData[category].length}`;
+        }
+
+        function updateControls(category) {
+            const prevBtn = document.getElementById(`${category}-prev-btn`);
+            const nextBtn = document.getElementById(`${category}-next-btn`);
+            
+            if (prevBtn) {
+                prevBtn.style.display = currentQuestion[category] > 0 ? 'block' : 'none';
+            }
+            
+            if (nextBtn) {
+                if (currentQuestion[category] === quizData[category].length - 1) {
+                    nextBtn.textContent = 'Ergebnis anzeigen';
+                } else {
+                    nextBtn.textContent = 'Nächste →';
+                }
+            }
+        }
+
+        function showResults(category) {
+            let correctAnswers = 0;
+            
+            quizData[category].forEach((question, index) => {
+                if (userAnswers[category][index] === question.correct) {
+                    correctAnswers++;
+                }
+            });
+            
+            const percentage = Math.round((correctAnswers / quizData[category].length) * 100);
+            
+            document.getElementById(`${category}-quiz-area`).style.display = 'none';
+            document.querySelector(`#${category}-quiz .quiz-controls`).style.display = 'none';
+            document.getElementById(`${category}-quiz-result`).style.display = 'block';
+            
+            document.getElementById(`${category}-result-score`).textContent = `${correctAnswers}/${quizData[category].length}`;
+            
+            let resultText = '';
+            if (percentage >= 90) {
+                resultText = 'Ausgezeichnet! Du hast ein hervorragendes Verständnis! 🌟';
+            } else if (percentage >= 70) {
+                resultText = 'Sehr gut! Du kennst dich gut mit diesem Bereich aus! 👏';
+            } else if (percentage >= 50) {
+                resultText = 'Gut gemacht! Mit etwas mehr Übung wirst du noch besser! 📚';
+            } else {
+                resultText = 'Nicht schlecht für den Anfang! Wiederhole die Grundlagen! 💪';
+            }
+            
+            document.getElementById(`${category}-result-text`).textContent = resultText;
+        }
+
+        function restartQuiz(category) {
+            currentQuestion[category] = 0;
+            userAnswers[category] = [];
+            document.getElementById(`${category}-quiz-area`).style.display = 'block';
+            document.querySelector(`#${category}-quiz .quiz-controls`).style.display = 'flex';
+            document.getElementById(`${category}-quiz-result`).style.display = 'none';
+            showQuestion(category);
+            updateProgress(category);
+        }
+
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const arrow = header.querySelector('.accordion-arrow');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                arrow.classList.remove('rotated');
+            } else {
+                // Close all other accordions
+                document.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('active'));
+                document.querySelectorAll('.accordion-arrow').forEach(a => a.classList.remove('rotated'));
+                
+                content.classList.add('active');
+                arrow.classList.add('rotated');
+            }
+        }
+
+        function flipCard(card) {
+            card.classList.toggle('flipped');
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            showQuestion('basic');
+            updateProgress('basic');
+            
+            // Smooth scrolling for table of contents
+            document.querySelectorAll('.toc-item a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+<footer class="footer-nav">
+    <div class="footer-container">
+        <div class="footer-links">
+            <a href="index.html" class="footer-link">🏠 Startseite</a>
+            <a href="quellen.html" class="footer-link">📖Quellen & Vertiefung</a>
+        </div>
+        <div class="footer-info">
+            <p>&copy; 2026 Ethik Lernzettel | Für Bildungszwecke</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
+               

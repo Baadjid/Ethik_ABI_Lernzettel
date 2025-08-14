@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kants Pflichtethik - Kategorischer Imperativ | Ethik Lernzettel 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+        
+        /* Navigation */
+        .nav-bar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 15px 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .nav-links a:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        .home-link {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header h1 {
+            font-size: clamp(2em, 5vw, 3.5em);
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+        
+        .header-subtitle {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .philosopher-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            background: linear-gradient(135deg, #f093fb, #f5f7fa);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+        
+        .philosopher-avatar {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            color: white;
+            flex-shrink: 0;
+        }
+        
+        .philosopher-details h3 {
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .content-section h2 {
+            color: #667eea;
+            font-size: clamp(1.5em, 4vw, 2.2em);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .content-section h3 {
+            color: #764ba2;
+            font-size: clamp(1.2em, 3vw, 1.6em);
+            margin: 20px 0 15px 0;
+            padding-left: 15px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .icon {
+            font-size: 1.3em;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+        
+        /* Highlight Boxes */
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            font-weight: 500;
+        }
+        
+        .definition-box {
+            background: linear-gradient(135deg, #ff9a9e, #fecfef);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 5px solid #667eea;
+        }
+        
+        .example-box {
+            background: linear-gradient(135deg, #a8edea, #fed6e3);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 5px solid #764ba2;
+        }
+        
+        .warning-box {
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 5px solid #ff6b6b;
+        }
+        
+        /* Comparison Table */
+        .comparison-table {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        th {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        tr:hover {
+            background: #f8f9ff;
+        }
+        
+        /* Step Process */
+        .step-process {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .step {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .step:hover {
+            transform: translateY(-5px);
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 0 auto 15px;
+        }
+        
+        /* Modern Examples Grid */
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .example-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-top: 4px solid #667eea;
+        }
+        
+        .example-card h4 {
+            color: #667eea;
+            margin-bottom: 12px;
+            font-size: 1.3em;
+        }
+        
+        .example-card .scenario {
+            background: #f8f9ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-style: italic;
+        }
+        
+        .example-card .analysis {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .nav-bar {
+                padding: 12px 15px;
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .nav-links {
+                justify-content: center;
+                gap: 15px;
+            }
+            
+            .nav-links a {
+                padding: 6px 12px;
+                font-size: 0.9em;
+            }
+            
+            .header, .content-section {
+                padding: 20px;
+            }
+            
+            .philosopher-info {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .step-process {
+                grid-template-columns: 1fr;
+            }
+            
+            .examples-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .comparison-table {
+                font-size: 0.9em;
+            }
+            
+            th, td {
+                padding: 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .nav-links {
+                gap: 10px;
+                flex-direction: column;
+            }
+            
+            .nav-links a {
+                padding: 8px 15px;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .philosopher-avatar {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5em;
+            }
+        }
+        
+        /* Utility Classes */
+        .text-center { text-align: center; }
+        .mb-20 { margin-bottom: 20px; }
+        .mt-20 { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="nav-bar">
+            <div class="nav-links">
+		<a href="index.html">🏠 Startseite</a> &gt; <strong>Kants Pflichtethik</strong>
+            </div>
+        </nav>
+
+        <!-- Header -->
+        <header class="header">
+            <h1>Kants Pflichtethik</h1>
+            <p class="header-subtitle">Deontologische Ethik & der Kategorische Imperativ</p>
+            
+            <div class="philosopher-info">
+                <div class="philosopher-avatar">🎭</div>
+                <div class="philosopher-details">
+                    <h3>Immanuel Kant (1724-1804)</h3>
+                    <p><strong>Königsberg, Ostpreußen</strong> • Aufklärer • "Was soll ich tun?"</p>
+                    <p><em>"Habe Mut, dich deines eigenen Verstandes zu bedienen!"</em></p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Grundlagen -->
+        <section class="content-section">
+            <h2><span class="icon">🧠</span>Was ist Pflichtethik?</h2>
+            
+            <div class="definition-box">
+                <h3>📖 Definition</h3>
+                <p><strong>Deontologische Ethik (Pflichtethik)</strong> beurteilt Handlungen nach ihrer Übereinstimmung mit moralischen Pflichten und Regeln - <em>unabhängig von den Folgen</em>.</p>
+            </div>
+
+            <h3>🔑 Kernprinzipien der Pflichtethik</h3>
+            <ul style="margin-left: 20px; line-height: 1.8;">
+                <li><strong>Motivation zählt:</strong> Nur die Absicht, nicht das Ergebnis bestimmt den moralischen Wert</li>
+                <li><strong>Absolute Pflichten:</strong> Moralische Regeln gelten immer und für alle</li>
+                <li><strong>Vernunft als Grundlage:</strong> Moral entspringt der Vernunft, nicht Gefühlen</li>
+                <li><strong>Würde des Menschen:</strong> Jeder Mensch ist Zweck an sich selbst</li>
+            </ul>
+
+            <div class="highlight-box">
+                <strong>💡 Merksatz:</strong> "Handle nur nach derjenigen Maxime, durch die du zugleich wollen kannst, dass sie ein allgemeines Gesetz werde."
+            </div>
+        </section>
+
+        <!-- Der gute Wille -->
+        <section class="content-section">
+            <h2><span class="icon">💎</span>Der gute Wille</h2>
+            
+            <div class="definition-box">
+                <h3>Was ist der "gute Wille"?</h3>
+                <p><strong>Nur der gute Wille ist ohne Einschränkung gut.</strong> Der gute Wille ist ein Wille, der ausschließlich durch die praktische Vernunft bestimmt wird und sich nach dem moralischen Gesetz richtet.</p>
+            </div>
+
+            <h3>📊 Wichtige Unterscheidungen</h3>
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Begriff</th>
+                            <th>Definition</th>
+                            <th>Beispiel</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Wille</strong></td>
+                            <td>Fähigkeit, nach Vernunftprinzipien zu handeln</td>
+                            <td>Bewusste Entscheidung für eine Handlung</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Guter Wille</strong></td>
+                            <td>Wille, der nur der Vernunft und Pflicht folgt</td>
+                            <td>Helfen, weil es richtig ist</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pflicht</strong></td>
+                            <td>Was die Vernunft als moralisch richtig erkennt</td>
+                            <td>Wahrhaftigkeit, Nicht-Töten</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Neigung</strong></td>
+                            <td>Bedürfnisse, Wünsche, Gefühle</td>
+                            <td>Helfen aus Mitleid oder Eigennutz</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ Achtung: Pflicht vs. Neigung</h4>
+                <p>Eine Handlung ist nur dann moralisch wertvoll, wenn sie <strong>aus Pflicht</strong> geschieht, nicht aus Neigung oder Eigeninteresse. Selbst wenn das Ergebnis dasselbe ist!</p>
+            </div>
+        </section>
+
+        <!-- Kategorischer Imperativ -->
+        <section class="content-section">
+            <h2><span class="icon">⚖️</span>Der Kategorische Imperativ</h2>
+            
+            <div class="highlight-box">
+                <h3>🎯 Die Universalisierungsformel</h3>
+                <p style="font-size: 1.2em; text-align: center; margin: 0;">
+                    <em>"Handle nur nach derjenigen Maxime, von der du wollen kannst, dass sie ein allgemeines Gesetz werde."</em>
+                </p>
+            </div>
+
+            <h3>🔍 Universalisierungsprobe - So funktioniert's:</h3>
+            <div class="step-process">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Maxime formulieren</h4>
+                    <p>Welcher Grundsatz liegt meiner Handlung zugrunde?</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Universalisieren</h4>
+                    <p>Was wäre, wenn alle Menschen nach dieser Regel handeln würden?</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Widerspruchsprüfung</h4>
+                    <p>Führt die Verallgemeinerung zu logischen Widersprüchen?</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h4>Moralische Bewertung</h4>
+                    <p>Widerspruch = unmoralisch<br>Kein Widerspruch = moralisch zulässig</p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Klassisches Beispiel: Das falsche Versprechen</h4>
+                <div class="scenario">
+                    <strong>Situation:</strong> Ich brauche Geld und überlege, ein Versprechen zu geben, das ich nicht halten kann.
+                </div>
+                <div class="analysis">
+                    <p><strong>Maxime:</strong> "In Geldnot darf ich Versprechen geben, die ich nicht halten kann."</p>
+                    <p><strong>Universalisierung:</strong> Alle Menschen dürfen in Geldnot falsche Versprechen geben.</p>
+                    <p><strong>Widerspruch:</strong> Wenn alle so handeln würden, würde niemand mehr Versprechen glauben → Das Konzept "Versprechen" würde sich selbst aufheben.</p>
+                    <p><strong>Ergebnis:</strong> ❌ Die Handlung ist unmoralisch</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Weitere Formeln -->
+        <section class="content-section">
+            <h2><span class="icon">🏛️</span>Weitere Formeln des Kategorischen Imperativs</h2>
+
+            <h3>👥 Die Menschheitszweckformel</h3>
+            <div class="highlight-box">
+                <p style="text-align: center; font-size: 1.1em; margin: 0;">
+                    <em>"Handle so, dass du die Menschheit sowohl in deiner Person als auch in der Person eines jeden anderen jederzeit zugleich als Zweck, niemals bloß als Mittel brauchst."</em>
+                </p>
+            </div>
+
+            <div class="definition-box">
+                <h4>Was bedeutet das?</h4>
+                <ul>
+                    <li><strong>Menschen sind Zweck an sich:</strong> Jeder Mensch hat eine unantastbare Würde</li>
+                    <li><strong>Niemals nur Mittel:</strong> Menschen dürfen nicht nur als Werkzeug benutzt werden</li>
+                    <li><strong>Respekt vor Autonomie:</strong> Jeder hat das Recht auf Selbstbestimmung</li>
+                </ul>
+            </div>
+
+            <h3>🏛️ Die Autonomieformel</h3>
+            <div class="highlight-box">
+                <p style="text-align: center; font-size: 1.1em; margin: 0;">
+                    <em>"Handle so, dass dein Wille durch seine Maxime sich selbst als allgemein gesetzgebend betrachten kann."</em>
+                </p>
+            </div>
+
+            <p>Diese Formel betont, dass wir als <strong>autonome Vernunftwesen</strong> selbst die Urheber der moralischen Gesetze sind, denen wir folgen.</p>
+        </section>
+
+        <!-- Moderne Anwendungen -->
+        <section class="content-section">
+            <h2><span class="icon">🚀</span>Kant in der modernen Welt (2026)</h2>
+
+            <div class="examples-grid">
+                <div class="example-card">
+                    <h4>🤖 KI und Algorithmen</h4>
+                    <div class="scenario">
+                        Ein autonomes Fahrzeug muss entscheiden: 1 Passagier vs. 5 Fußgänger
+                    </div>
+                    <div class="analysis">
+                        <strong>Kantianische Analyse:</strong> Menschen dürfen niemals nur als Mittel behandelt werden. Eine reine Zahlenrechnung ("5 vs. 1") verletzt die Menschenwürde. Jeder hat gleiches Recht auf Leben.
+                    </div>
+                </div>
+
+                <div class="example-card">
+                    <h4>📱 Datenschutz</h4>
+                    <div class="scenario">
+                        Sollten Techkonzerne persönliche Daten für "bessere Services" nutzen dürfen?
+                    </div>
+                    <div class="analysis">
+                        <strong>Kantianische Analyse:</strong> Nutzer werden zum bloßen Mittel der Gewinnmaximierung. Universalisierung: "Alle dürfen heimlich Daten sammeln" → Ende der Privatsphäre.
+                    </div>
+                </div>
+
+                <div class="example-card">
+                    <h4>🧬 Gentechnik</h4>
+                    <div class="scenario">
+                        Dürfen Eltern die Gene ihrer Kinder "optimieren"?
+                    </div>
+                    <div class="analysis">
+                        <strong>Kantianische Analyse:</strong> Kinder werden zum Projekt der Eltern instrumentalisiert. Universalisierung könnte zu Designerbabys und sozialer Spaltung führen.
+                    </div>
+                </div>
+
+                <div class="example-card">
+                    <h4>🌍 Klimaschutz</h4>
+                    <div class="scenario">
+                        "Mein CO₂-Fußabdruck macht keinen Unterschied"
+                    </div>
+                    <div class="analysis">
+                        <strong>Kantianische Analyse:</strong> Maxime: "Ich darf umweltschädlich handeln, weil es einzeln nicht schadet." Universalisierung führt zur Klimakatastrophe → Widerspruch.
+                    </div>
+                </div>
+
+                <div class="example-card">
+                    <h4>💉 Impfpflicht</h4>
+                    <div class="scenario">
+                        Sollte es eine allgemeine Impfpflicht geben?
+                    </div>
+                    <div class="analysis">
+                        <strong>Kantianische Spannung:</strong> Autonomie vs. Schutz anderer. Lösung: Impfung als Pflicht zum Schutz der Menschheit, aber mit Aufklärung und freier Entscheidung.
+                    </div>
+                </div>
+
+                <div class="example-card">
+                    <h4>💰 Steuerhinterziehung</h4>
+                    <div class="scenario">
+                        "Alle machen es, also ist es okay"
+                    </div>
+                    <div class="analysis">
+                        <strong>Kantianische Analyse:</strong> Universalisierung: "Alle hinterziehen Steuern" → Kollaps des Staatswesens. Klarer Widerspruch, also unmoralisch.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pflicht vs. Pflichtgemäß -->
+        <section class="content-section">
+            <h2><span class="icon">🎭</span>Pflicht vs. Pflichtgemäß</h2>
+
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Handlung</th>
+                            <th>Motiv</th>
+                            <th>Kant'sche Bewertung</th>
+                            <th>Beispiel</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>✅ Richtig</td>
+                            <td>🎯 Aus Pflicht</td>
+                            <td>🟢 <strong>Moralisch wertvoll</strong></td>
+                            <td>Helfen, weil es richtig ist</td>
+                        </tr>
+                        <tr>
+                            <td>✅ Richtig</td>
+                            <td>❤️ Aus Neigung</td>
+                            <td>🟡 <strong>Pflichtgemäß</strong> (legal, aber nicht moralisch)</td>
+                            <td>Helfen aus Mitleid</td>
+                        </tr>
+                        <tr>
+                            <td>✅ Richtig</td>
+                            <td>💰 Aus Eigennutz</td>
+                            <td>🟡 <strong>Pflichtgemäß</strong> (legal, aber nicht moralisch)</td>
+                            <td>Helfen für Belohnung</td>
+                        </tr>
+                        <tr>
+                            <td>❌ Falsch</td>
+                            <td>🎯 Gegen Pflicht</td>
+                            <td>🔴 <strong>Pflichtwidrig</strong></td>
+                            <td>Lügen für eigenen Vorteil</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="warning-box">
+                <h4>🤔 Kontroverse Konsequenz</h4>
+                <p>Nach Kant ist jemand, der nur aus Mitleid hilft, <strong>moralisch nicht besser</strong> als jemand, der aus Eigennutz hilft - solange beide nicht aus Pflicht handeln. Das wirkt für viele Menschen kontraintuitiv!</p>
+            </div>
+        </section>
+
+        <!-- Kritik und Grenzen -->
+        <section class="content-section">
+            <h2><span class="icon">⚡</span>Kritik und Grenzen</h2>
+
+            <h3>📝 Hauptkritikpunkte</h3>
+            <ul style="margin-left: 20px; line-height: 1.8;">
+                <li><strong>Rigidität:</strong> Keine Ausnahmen, auch in extremen Situationen</li>
+                <li><strong>Pflichtenkonflikte:</strong> Was tun, wenn sich Pflichten widersprechen?</li>
+                <li><strong>Lebensferne:</strong> Ignoriert menschliche Emotionen und Bedürfnisse</li>
+                <li><strong>Kulturelle Blindheit:</strong> Universelle Vernunft kann kulturspezifisch sein</li>
+                <li><strong>Konsequenzen-Ignoranz:</strong> Folgen werden völlig ausgeblendet</li>
+            </ul>
+
+            <div class="example-box">
+                <h4>🔥 Klassisches Dilemma: Der Lügende Nazi</h4>
+                <div class="scenario">
+                    Nazis fragen dich: "Versteckst du Juden?" Du versteckst tatsächlich welche.
+                </div>
+                <div class="analysis">
+                    <p><strong>Kant's Position:</strong> Du darfst nicht lügen, auch nicht um Leben zu retten.</p>
+                    <p><strong>Kritik:</strong> Führt die Pflichtethik hier zu absurden, unmenschlichen Ergebnissen?</p>
+                    <p><strong>Moderne Antwort:</strong> Manche Kant-Interpreten argumentieren, dass man schweigen oder die Frage ablehnen kann, ohne zu lügen.</p>
+                </div>
+            </div>
+        </section>
+
+<!-- Autonomie und Freiheit -->
+        <section class="content-section">
+            <h2><span class="icon">🦅</span>Autonomie und Freiheit</h2>
+
+            <div class="definition-box">
+                <h3>Was bedeutet Autonomie bei Kant?</h3>
+                <p><strong>Autonomie</strong> = Selbstgesetzgebung. Der Mensch ist frei, weil er sich selbst durch die Vernunft moralische Gesetze geben kann. Er ist nicht heteronome Trieben oder äußeren Autoritäten unterworfen.</p>
+            </div>
+
+            <h3>🔗 Das Verhältnis von Freiheit und Pflicht</h3>
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Missverständnis</th>
+                            <th>Kants Position</th>
+                            <th>Erklärung</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>"Pflicht schränkt Freiheit ein"</td>
+                            <td>Pflicht IST Freiheit</td>
+                            <td>Nur durch Vernunft sind wir frei von Trieben und Manipulation</td>
+                        </tr>
+                        <tr>
+                            <td>"Moral wird uns aufgezwungen"</td>
+                            <td>Wir geben uns selbst das Gesetz</td>
+                            <td>Die Vernunft ist unser eigenes Vermögen</td>
+                        </tr>
+                        <tr>
+                            <td>"Gefühle sind unwichtig"</td>
+                            <td>Gefühle sind wichtig, aber nicht moralbestimmend</td>
+                            <td>Achtung vor dem Gesetz ist selbst ein Gefühl</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="highlight-box">
+                <h4>💫 Kants berühmter Ausspruch</h4>
+                <p style="text-align: center; font-size: 1.2em; font-style: italic;">
+                    "Zwei Dinge erfüllen das Gemüt mit immer neuer und zunehmender Bewunderung und Ehrfurcht: Der bestirnte Himmel über mir und das moralische Gesetz in mir."
+                </p>
+            </div>
+        </section>
+
+
+        <!-- Zusammenfassung -->
+        <section class="content-section">
+            <h2><span class="icon">📋</span>Zusammenfassung & Merkhilfen</h2>
+
+            <div class="highlight-box">
+                <h3>🎯 Die 5 Kernpunkte von Kants Ethik</h3>
+                <ol style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>Nur der gute Wille ist unbedingt gut</strong> - Motivation zählt mehr als Ergebnis</li>
+                    <li><strong>Handle nur aus Pflicht</strong> - nicht aus Neigung oder Eigeninteresse</li>
+                    <li><strong>Kategorischer Imperativ</strong> - universalisierbare Maximen</li>
+                    <li><strong>Menschen sind Zweck an sich</strong> - niemals nur Mittel</li>
+                    <li><strong>Autonomie durch Vernunft</strong> - wir geben uns selbst das moralische Gesetz</li>
+                </ol>
+            </div>
+
+            <h3>💡 Lernhilfen & Eselsbrücken</h3>
+            <div class="examples-grid">
+                <div class="example-card">
+                    <h4>🔤 KANT-Akronym</h4>
+                    <ul style="margin-left: 20px;">
+                        <li><strong>K</strong>ategorischer Imperativ</li>
+                        <li><strong>A</strong>utonomie der Vernunft</li>
+                        <li><strong>N</strong>iemals nur Mittel</li>
+                        <li><strong>T</strong>ugendhafte Pflichterfüllung</li>
+                    </ul>
+                </div>
+
+                <div class="example-card">
+                    <h4>🧪 Test-Fragen</h4>
+                    <ul style="margin-left: 20px;">
+                        <li>Kann ich wollen, dass alle so handeln?</li>
+                        <li>Behandle ich Menschen als Zweck?</li>
+                        <li>Handle ich aus Pflicht oder Neigung?</li>
+                        <li>Folge ich der Vernunft?</li>
+                    </ul>
+                </div>
+
+                <div class="example-card">
+                    <h4>⚖️ Versus Utilitarismus</h4>
+                    <p><strong>Kant:</strong> "Tue das Richtige, egal was passiert"</p>
+                    <p><strong>Utilitarismus:</strong> "Tue das, was die besten Folgen hat"</p>
+                    <p><em>Merksatz: Kant schaut auf die Absicht, Utilitaristen auf das Ergebnis</em></p>
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- Praktische Übungen -->
+        <section class="content-section">
+            <h2><span class="icon">💪</span>Praktische Übungen</h2>
+
+            <h3>🎯 Übung 1: Universalisierungsprobe</h3>
+            <div class="examples-grid">
+                <div class="example-card">
+                    <h4>📱 Handy-Betrug</h4>
+                    <div class="scenario">
+                        Du findest ein teures Handy und überlegst, es zu behalten statt abzugeben.
+                    </div>
+                    <div class="analysis">
+                        <strong>Deine Aufgabe:</strong> Führe die Universalisierungsprobe durch!
+                        <br><br>
+                        <details style="margin-top: 10px;">
+                            <summary style="cursor: pointer; font-weight: bold;">📝 Lösung anzeigen</summary>
+                            <p style="margin-top: 10px;"><strong>Maxime:</strong> "Ich darf gefundene Gegenstände behalten"</p>
+                            <p><strong>Universalisierung:</strong> Alle behalten gefundene Gegenstände</p>
+                            <p><strong>Widerspruch:</strong> Niemand würde mehr Gegenstände suchen/melden → Eigentum wird bedeutungslos</p>
+                            <p><strong>Ergebnis:</strong> ❌ Unmoralisch</p>
+                        </details>
+                    </div>
+                </div>
+
+                <div class="example-card">
+                    <h4>🚗 Schwarzfahren</h4>
+                    <div class="scenario">
+                        "Die Bahn ist eh überteuert, und kontrolliert wird selten..."
+                    </div>
+                    <div class="analysis">
+                        <strong>Deine Aufgabe:</strong> Analysiere mit Kants Ethik!
+                        <br><br>
+                        <details style="margin-top: 10px;">
+                            <summary style="cursor: pointer; font-weight: bold;">📝 Lösung anzeigen</summary>
+                            <p style="margin-top: 10px;"><strong>Maxime:</strong> "Bei seltenen Kontrollen darf ich ohne Ticket fahren"</p>
+                            <p><strong>Universalisierung:</strong> Alle fahren schwarz, wenn selten kontrolliert wird</p>
+                            <p><strong>Widerspruch:</strong> ÖPNV bricht zusammen → kein Verkehrssystem mehr</p>
+                            <p><strong>Ergebnis:</strong> ❌ Unmoralisch</p>
+                        </details>
+                    </div>
+                </div>
+            </div>
+
+            <h3>⚖️ Übung 2: Zweck-Mittel-Analyse</h3>
+            <div class="example-box">
+                <h4>🎓 Uni-Beispiel: Studium nur für Geld</h4>
+                <div class="scenario">
+                    Lisa studiert nur Medizin, weil ihre Eltern das erwarten und sie später viel Geld verdienen will. Sie hat kein echtes Interesse an Medizin oder Helfen.
+                </div>
+                <div class="analysis">
+                    <strong>Fragen zur Reflexion:</strong>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Behandelt Lisa sich selbst als Zweck oder Mittel?</li>
+                        <li>Wie steht es mit ihren zukünftigen Patienten?</li>
+                        <li>Was würde Kant raten?</li>
+                    </ul>
+                    
+                    <details style="margin-top: 15px;">
+                        <summary style="cursor: pointer; font-weight: bold;">💡 Diskussion</summary>
+                        <p style="margin-top: 10px;"><strong>Problem:</strong> Lisa macht sich zum Mittel für Elternwünsche und Geld. Patienten werden zu Geldquellen.</p>
+                        <p><strong>Kant'sche Lösung:</strong> Autonome Berufswahl nach eigenen vernünftigen Überlegungen, Respekt vor der Würde der Patienten.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prüfungsvorbereitung -->
+        <section class="content-section">
+            <h2><span class="icon">🎓</span>Prüfungsvorbereitung</h2>
+
+            <h3>📝 Typische Prüfungsaufgaben</h3>
+            <div class="examples-grid">
+                <div class="example-card">
+                    <h4>Aufgabentyp 1: Universalisierungsprobe</h4>
+                    <p><strong>Aufgabe:</strong> "Prüfen Sie mit Hilfe des kategorischen Imperativs, ob folgende Handlung moralisch ist: [Szenario]"</p>
+                    <p><strong>Vorgehen:</strong> Maxime formulieren → Universalisieren → Widerspruch prüfen → Bewerten</p>
+                </div>
+
+                <div class="example-card">
+                    <h4>Aufgabentyp 2: Ethik-Vergleich</h4>
+                    <p><strong>Aufgabe:</strong> "Vergleichen Sie Kants Pflichtethik mit dem Utilitarismus anhand eines konkreten Beispiels"</p>
+                    <p><strong>Struktur:</strong> Szenario → Kant'sche Analyse → Utilitaristische Analyse → Unterschiede herausarbeiten</p>
+                </div>
+
+                <div class="example-card">
+                    <h4>Aufgabentyp 3: Kritische Bewertung</h4>
+                    <p><strong>Aufgabe:</strong> "Erörtern Sie Stärken und Schwächen der Kant'schen Ethik"</p>
+                    <p><strong>Struktur:</strong> Grundlagen erklären → Stärken (Klarheit, Universalität) → Schwächen (Rigidität, Praxisferne) → Eigene Position</p>
+                </div>
+            </div>
+
+            <h3>🔥 Häufige Klausur-Themen 2026</h3>
+            <ul style="margin-left: 20px; line-height: 1.8;">
+                <li><strong>KI-Ethik:</strong> Autonome Systeme und Menschenwürde</li>
+                <li><strong>Medizinethik:</strong> Triage, Sterbehilfe, Organspende</li>
+                <li><strong>Umweltethik:</strong> Klimaschutz als kategorische Pflicht</li>
+                <li><strong>Digitalethik:</strong> Datenschutz und Überwachung</li>
+                <li><strong>Bioethik:</strong> Gentherapie und Enhancement</li>
+                <li><strong>Wirtschaftsethik:</strong> Steuermoral und faire Löhne</li>
+            </ul>
+
+            <div class="warning-box">
+                <h4>⚠️ Häufige Klausurfehler vermeiden</h4>
+                <ul style="margin-left: 20px;">
+                    <li><strong>Nicht:</strong> "Kant ist gegen alle Gefühle" ❌</li>
+                    <li><strong>Sondern:</strong> "Gefühle sollen Moral nicht bestimmen" ✅</li>
+                    <li><strong>Nicht:</strong> "Der kategorische Imperativ ist ein Gesetz" ❌</li>
+                    <li><strong>Sondern:</strong> "Er ist eine Formel zur Prüfung von Maximen" ✅</li>
+                </ul>
+            </div>
+        </section>
+
+        
+        <!-- Quick Reference -->
+        <section class="content-section">
+            <h2><span class="icon">⚡</span>Quick Reference</h2>
+
+            <div class="examples-grid">
+                <div class="example-card">
+                    <h4>🔍 Kategorischer Imperativ kurz</h4>
+                    <p><strong>Frage:</strong> "Kann ich wollen, dass alle so handeln?"</p>
+                    <p><strong>Test:</strong> Führt Universalisierung zu Widersprüchen?</p>
+                    <p><strong>Ergebnis:</strong> Ja = unmoralisch, Nein = moralisch zulässig</p>
+                </div>
+
+                <div class="example-card">
+                    <h4>👥 Menschheitsformel kurz</h4>
+                    <p><strong>Frage:</strong> "Behandle ich Menschen nur als Mittel?"</p>
+                    <p><strong>Test:</strong> Respektiere ich ihre Würde und Autonomie?</p>
+                    <p><strong>Ergebnis:</strong> Menschen müssen immer auch Zweck sein</p>
+                </div>
+
+                <div class="example-card">
+                    <h4>🎯 Handlungsbewertung</h4>
+                    <p><strong>Moralisch wertvoll:</strong> Handeln aus Pflicht</p>
+                    <p><strong>Pflichtgemäß:</strong> Richtiges Handeln aus falschen Motiven</p>
+                    <p><strong>Pflichtwidrig:</strong> Falsches Handeln</p>
+                </div>
+            </div>
+        </section>
+               
+        <!-- Weiterführende Informationen -->
+        <section class="content-section">
+            <h2><span class="icon">📚</span>Weiterführende Informationen</h2>
+
+            <h3>📖 Wichtige Werke von Kant</h3>
+            <ul style="margin-left: 20px; line-height: 1.8;">
+                <li><strong>"Grundlegung zur Metaphysik der Sitten" (1785)</strong> - Entwicklung des kategorischen Imperativs</li>
+                <li><strong>"Kritik der praktischen Vernunft" (1788)</strong> - Vertiefung der Moralphilosophie</li>
+                <li><strong>"Die Metaphysik der Sitten" (1797)</strong> - Anwendung auf Recht und Tugend</li>
+                <li><strong>"Was ist Aufklärung?" (1784)</strong> - Sapere aude! Habe Mut, dich deines Verstandes zu bedienen!</li>
+            </ul>
+
+            <h3>🌟 Einfluss auf die moderne Welt</h3>
+            <div class="examples-grid">
+                <div class="example-card">
+                    <h4>⚖️ Rechtssystem</h4>
+                    <p>Kants Ideen prägen die Menschenrechte: Würde des Menschen, Gleichheit vor dem Gesetz, universelle Gerechtigkeit</p>
+                </div>
+
+                <div class="example-card">
+                    <h4>🏥 Medizinethik</h4>
+                    <p>Informed Consent, Patientenautonomie, Verbot der Instrumentalisierung von Patienten für Forschung</p>
+                </div>
+
+                <div class="example-card">
+                    <h4>🌍 Internationale Politik</h4>
+                    <p>UN-Charta, Völkerrecht, Idea des "ewigen Friedens" durch internationale Kooperation</p>
+                </div>
+
+                <div class="example-card">
+                    <h4>🤖 KI-Entwicklung</h4>
+                    <p>Ethische KI-Guidelines basieren oft auf Kant'schen Prinzipien: Transparenz, Fairness, menschliche Kontrolle</p>
+                </div>
+            </div>
+
+            <div class="definition-box">
+                <h4>🎯 Warum Kant heute noch relevant ist</h4>
+                <p>In einer Zeit der Digitalisierung, Globalisierung und neuer Technologien bietet Kants Ethik einen <strong>stabilen moralischen Kompass</strong>. Seine Betonung der Menschenwürde und universeller Prinzipien hilft bei der Navigation durch komplexe moderne Dilemmata - von KI-Ethik bis Klimawandel.</p>
+            </div>
+        </section>
+
+
+        <!-- Navigation Footer -->
+        <section class="content-section text-center">
+            <h3>🧭 Nächste Schritte</h3>
+            <div class="nav-links" style="justify-content: center; margin-top: 20px; gap: 15px;">
+     <a href="index.html" style="background: linear-gradient(135deg, #ff9a9e, #fecfef); color: #333; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: 600; display: inline-block;">🏠 Zurück zur Übersicht</a>
+                <a href="utilitarismus.html" style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: 600; display: inline-block;">➡️ Weiter zum Utilitarismus</a>
+            </div>
+            
+            <div style="margin-top: 30px; padding: 20px; background: linear-gradient(135deg, #f093fb, #f5f7fa); border-radius: 12px;">
+                <p style="margin: 0; color: #666;">
+                    📚 <strong>Tipp:</strong> Vergleiche Kants Pflichtethik mit dem Utilitarismus - das ist ein beliebtes Prüfungsthema! 
+                    <br>💡 <strong>Merksatz:</strong> Kant fragt "Ist die Absicht richtig?", Utilitaristen fragen "Sind die Folgen gut?"
+                </p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

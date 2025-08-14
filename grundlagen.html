@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grundlagen der Ethik - Ethik Lernzettel 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Navigation */
+        .nav-header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+            color: #666;
+        }
+        
+        .breadcrumb a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        .page-title {
+            font-size: 2.5em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        
+        .page-subtitle {
+            font-size: 1.2em;
+            color: #666;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-title {
+            font-size: 1.8em;
+            color: #667eea;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-icon {
+            font-size: 1.2em;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Definition Boxes */
+        .definition-box {
+            background: linear-gradient(135deg, #ff9a9e, #fecfef);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            border-left: 5px solid #667eea;
+        }
+        
+        .definition-title {
+            font-weight: 700;
+            font-size: 1.3em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .definition-text {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        
+        /* Example Boxes */
+        .example-box {
+            background: linear-gradient(135deg, #a8edea, #fed6e3);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 5px solid #764ba2;
+        }
+        
+        .example-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* Comparison Tables */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        /* Info Boxes */
+        .info-box {
+            background: linear-gradient(135deg, #d299c2, #fef9d7);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 5px solid #ffa726;
+        }
+        
+        .info-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* Two Column Layout */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .column-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .column-card:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+        }
+        
+        .column-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Lists */
+        .styled-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .styled-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .styled-list li:before {
+            content: "✓";
+            color: #667eea;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Navigation Footer */
+        .navigation-footer {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .nav-button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .page-title {
+                font-size: 2em;
+            }
+            
+            .section-title {
+                font-size: 1.5em;
+            }
+            
+            .nav-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .nav-button {
+                justify-content: center;
+            }
+            
+            .content-section {
+                padding: 20px;
+            }
+            
+            .comparison-table {
+                font-size: 0.9em;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 10px 8px;
+            }
+            
+            .nav-header {
+                padding: 20px 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 1.8em;
+            }
+            
+            .section-title {
+                font-size: 1.3em;
+                flex-direction: column;
+                text-align: center;
+                gap: 8px;
+            }
+            
+            .section-icon {
+                align-self: center;
+            }
+            
+            .definition-box,
+            .example-box,
+            .info-box,
+            .highlight,
+            .warning-box {
+                padding: 15px;
+                margin: 15px 0;
+            }
+            
+            .breadcrumb {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+            
+            .comparison-table {
+                font-size: 0.8em;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 8px 5px;
+            }
+            
+            /* Stack table on very small screens */
+            .comparison-table thead {
+                display: none;
+            }
+            
+            .comparison-table,
+            .comparison-table tbody,
+            .comparison-table tr,
+            .comparison-table td {
+                display: block;
+                width: 100%;
+            }
+            
+            .comparison-table tr {
+                margin-bottom: 15px;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                padding: 10px;
+            }
+            
+            .comparison-table td {
+                border: none;
+                padding: 5px 0;
+                text-align: left;
+            }
+            
+            .comparison-table td:before {
+                content: attr(data-label) ": ";
+                font-weight: bold;
+                color: #667eea;
+            }
+        }
+        
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+            
+            .nav-header,
+            .navigation-footer {
+                background: white;
+                box-shadow: none;
+            }
+            
+            .content-section {
+                background: white;
+                box-shadow: none;
+                page-break-inside: avoid;
+            }
+            
+            .nav-button {
+                display: none;
+            }
+        }
+        
+        /* Highlight boxes */
+        .highlight {
+            background: linear-gradient(135deg, #667eea20, #764ba220);
+            border: 2px solid #667eea;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .warning-box {
+            background: linear-gradient(135deg, #ff9a9e20, #fecfef20);
+            border: 2px solid #ff6b6b;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation Header -->
+        <div class="nav-header">
+            <div class="breadcrumb">
+                <a href="index.html">🏠 Startseite</a> 
+                <span>→</span> 
+                <span>📚 Grundlagen der Ethik</span>
+            </div>
+            <h1 class="page-title">Grundlagen der Ethik</h1>
+            <p class="page-subtitle">Die fundamentalen Begriffe und Konzepte für ethisches Denken</p>
+        </div>
+
+        <!-- Was ist Ethik? -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="section-icon">🤔</span>
+                Was ist Ethik?
+            </h2>
+            
+            <div class="definition-box">
+                <div class="definition-title">📖 Definition Ethik</div>
+                <div class="definition-text">
+                    <strong>Ethik</strong> ist ein Teilgebiet der Philosophie, das sich mit der <em>Moral</em> beschäftigt. Sie untersucht die Grundlagen, Prinzipien und Kriterien für moralisch richtiges Handeln.
+                </div>
+            </div>
+
+            <div class="info-box">
+                <div class="info-title">🎯 Die Grundfragen der modernen Ethik</div>
+                <ul>
+                    <li><strong>"Was soll ich tun?"</strong> - Die Frage nach dem richtigen Handeln</li>
+                    <li><strong>"Wie führe ich ein gelungenes, glückliches Leben?"</strong> - Die Frage nach dem guten Leben</li>
+                </ul>
+            </div>
+
+            <p>Die Ethik als wissenschaftliche Disziplin entwickelt systematische Ansätze zur Beantwortung moralischer Fragen. Dabei unterscheidet sie sich von der spontanen moralischen Intuition durch ihre methodische, begründete Herangehensweise.</p>
+        </div>
+
+        <!-- Was ist Moral? -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="section-icon">⚖️</span>
+                Was ist Moral?
+            </h2>
+            
+            <div class="definition-box">
+                <div class="definition-title">📖 Definition Moral</div>
+                <div class="definition-text">
+                    <strong>Moral</strong> ist eine Ansammlung von ungeschriebenen <em>Normen</em> und <em>Werten</em>, die in einer gegebenen Gesellschaft zu einer gegebenen Zeit nach Gültigkeit strebt.
+                </div>
+            </div>
+
+            <div class="two-column">
+                <div class="column-card">
+                    <h3 class="column-title">🌟 Werte</h3>
+                    <p><strong>Werte</strong> sind allgemeine Zielvorstellungen und Ideale, die als erstrebenswert gelten.</p>
+                    <div class="example-box">
+                        <div class="example-title">💡 Beispiele für Werte:</div>
+                        <ul class="styled-list">
+                            <li>Hilfsbereitschaft</li>
+                            <li>Freundlichkeit</li>
+                            <li>Gerechtigkeit</li>
+                            <li>Toleranz</li>
+                            <li>Ehrlichkeit</li>
+                            <li>Respekt</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="column-card">
+                    <h3 class="column-title">📋 Normen</h3>
+                    <p><strong>Normen</strong> sind konkrete Verhaltensregeln, die aus Werten abgeleitet werden.</p>
+                    <div class="example-box">
+                        <div class="example-title">💡 Beispiele für Normen:</div>
+                        <ul class="styled-list">
+                            <li>"Es ist gut, Menschen zu helfen"</li>
+                            <li>"Du sollst nicht lügen"</li>
+                            <li>"Respektiere andere Meinungen"</li>
+                            <li>"Halte deine Versprechen"</li>
+                            <li>"Schütze die Schwächeren"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight">
+                <h4>⚡ Wichtige Eigenschaft der Moral</h4>
+                <p>Die Moral unterliegt einem <strong>ständigen Wandel</strong>. Entwickelt sie sich zu schnell, entsteht Orientierungslosigkeit. Entwickelt sie sich zu langsam, mangelt es an Anpassungsfähigkeit an neue gesellschaftliche Herausforderungen.</p>
+            </div>
+        </div>
+
+        <!-- Der Handlungsbegriff -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="section-icon">🎭</span>
+                Was ist eine Handlung?
+            </h2>
+            
+            <div class="definition-box">
+                <div class="definition-title">📖 Definition Handlung</div>
+                <div class="definition-text">
+                    Eine <strong>Handlung</strong> ist eine von einer Person <em>absichtlich</em> verursachte Situationsveränderung. Sie stellt immer eine bewusste Veränderung an einem bestimmten Ort zu einem bestimmten Zeitpunkt dar.
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ Wichtige Unterscheidung</h4>
+                <p>Nicht jedes von einer Person verursachte Ereignis ist automatisch eine Handlung!</p>
+            </div>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>❌ Keine Handlung</th>
+                        <th>✅ Handlung</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Hans stolpert und zerbricht dabei <strong>unabsichtlich</strong> eine Glasscheibe</td>
+                        <td>Hans zerbricht <strong>absichtlich</strong> eine Glasscheibe, um auf sich aufmerksam zu machen</td>
+                    </tr>
+                    <tr>
+                        <td>Lisa fällt beim Joggen hin und verletzt sich</td>
+                        <td>Lisa läuft Marathon, um ihre Fitness zu verbessern</td>
+                    </tr>
+                    <tr>
+                        <td>Das Auto springt nicht an (technisches Problem)</td>
+                        <td>Max startet das Auto, um zur Arbeit zu fahren</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <div class="info-title">🎭 Das Problem der Handlungsbeschreibung (Ödipus-Beispiel)</div>
+                <p>Ein und dasselbe Ereignis kann je nach Beschreibung absichtlich oder unabsichtlich sein:</p>
+                <ul>
+                    <li><strong>Beschreibung 1:</strong> "Ödipus tötet seinen Vater" → <em>unabsichtlich</em> (er wusste nicht, dass es sein Vater war)</li>
+                    <li><strong>Beschreibung 2:</strong> "Ödipus tötet den Mann an der Weggabelung" → <em>absichtlich</em> (er wollte den Fremden töten)</li>
+                </ul>
+                <p><strong>Fazit:</strong> Die ethische Bewertung hängt davon ab, unter welcher Beschreibung wir die Handlung betrachten.</p>
+            </div>
+        </div>
+
+        <!-- Teilbereiche der Ethik -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="section-icon">🏗️</span>
+                Die drei Teilbereiche der Ethik
+            </h2>
+
+            <div class="two-column" style="grid-template-columns: 1fr;">
+                <div class="column-card">
+                    <h3 class="column-title">📊 1. Deskriptive Ethik</h3>
+                    <div class="definition-box">
+                        <div class="definition-text">
+                            Die <strong>deskriptive (beschreibende) Ethik</strong> untersucht empirisch, welche moralischen Vorstellungen in verschiedenen Gesellschaften vorherrschen.
+                        </div>
+                    </div>
+                    <p><strong>Aufgabe:</strong> Beschreibung und Analyse bestehender Moral-Systeme</p>
+                    <p><strong>Methode:</strong> Beobachtung, Umfragen, kulturvergleichende Studien</p>
+                    <p><strong>Beispiel:</strong> Kohlbergs Stufenmodell der Moralentwicklung</p>
+                </div>
+            </div>
+
+            <div class="highlight">
+                <h4>📈 Kohlbergs Stufenmodell der Moralentwicklung</h4>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Ebene</th>
+                            <th>Stufe</th>
+                            <th>Charakteristika</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2"><strong>I. Präkonventionell</strong></td>
+                            <td>1. Strafe und Gehorsam</td>
+                            <td>Orientierung an Angst vor Bestrafung</td>
+                        </tr>
+                        <tr>
+                            <td>2. Instrumenteller Hedonismus</td>
+                            <td>Eigeninteresse steht im Vordergrund</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2"><strong>II. Konventionell</strong></td>
+                            <td>3. "Gutes Kind"</td>
+                            <td>Streben nach Anerkennung</td>
+                        </tr>
+                        <tr>
+                            <td>4. Autorität und Ordnung</td>
+                            <td>Aufrechterhaltung sozialer Ordnung</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2"><strong>III. Postkonventionell</strong></td>
+                            <td>5. Sozialer Vertrag</td>
+                            <td>Demokratisch anerkannte Gesetze</td>
+                        </tr>
+                        <tr>
+                            <td>6. Universelle Prinzipien</td>
+                            <td>Individuelle Gewissensprinzipien</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="two-column" style="grid-template-columns: 1fr;">
+                <div class="column-card">
+                    <h3 class="column-title">⚖️ 2. Normative Ethik</h3>
+                    <div class="definition-box">
+                        <div class="definition-text">
+                            Die <strong>normative (wertende) Ethik</strong> ist ein Versuch, die Moral zu begründen. Sie hat einen universalistischen Anspruch und sucht nach allgemeingültigen moralischen Prinzipien.
+                        </div>
+                    </div>
+                    <p><strong>Aufgabe:</strong> Entwicklung und Begründung moralischer Normen</p>
+                    <p><strong>Frage:</strong> "Wie sollten wir handeln?"</p>
+                    
+                    <div class="example-box">
+                        <div class="example-title">🏛️ Hauptströmungen der normativen Ethik:</div>
+                        <ul class="styled-list">
+                            <li><strong>Deontologische Ethik (Kant):</strong> Pflichtethik, kategorischer Imperativ</li>
+                            <li><strong>Konsequentialismus/Utilitarismus (Bentham, Mill):</strong> Folgenethik</li>
+                            <li><strong>Tugendethik (Aristoteles):</strong> Charakterethik</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="two-column" style="grid-template-columns: 1fr;">
+                <div class="column-card">
+                    <h3 class="column-title">🔍 3. Metaethik</h3>
+                    <div class="definition-box">
+                        <div class="definition-text">
+                            Die <strong>Metaethik</strong> analysiert die Grundbegriffe der Ethik und untersucht die philosophischen Grundlagen moralischer Urteile.
+                        </div>
+                    </div>
+                    <p><strong>Aufgabe:</strong> Analyse der Sprache und Logik der Ethik</p>
+                    
+                    <div class="example-box">
+                        <div class="example-title">🔬 Zentrale Fragen der Metaethik:</div>
+                        <ul class="styled-list">
+                            <li>Was bedeuten moralische Begriffe wie "gut" und "böse"?</li>
+                            <li>Wie funktionieren moralische Urteile?</li>
+                            <li>Gibt es objektive moralische Wahrheiten?</li>
+                            <li>Wie ist moralische Erkenntnis möglich?</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Erkenntnistheoretische Positionen -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="section-icon">🤷</span>
+                Erkenntnistheoretische Positionen
+            </h2>
+
+            <div class="two-column">
+                <div class="column-card">
+                    <h3 class="column-title">😊 Kognitivisten (Optimisten)</h3>
+                    <p><strong>Grundannahme:</strong> Es gibt objektive moralische Wahrheiten, die durch Vernunft erkennbar sind.</p>
+                    <div class="example-box">
+                        <div class="example-title">💡 Beispiele:</div>
+                        <ul class="styled-list">
+                            <li>Kant: Moralische Gesetze durch Vernunft</li>
+                            <li>Naturrechtstheorien</li>
+                            <li>Utilitaristen: Messbare Güter</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="column-card">
+                    <h3 class="column-title">😟 Non-Kognitivisten (Pessimisten)</h3>
+                    <p><strong>Grundannahme:</strong> Moralische Urteile sind subjektiv und nicht objektiv erkennbar.</p>
+                    <div class="example-box">
+                        <div class="example-title">💡 Beispiele:</div>
+                        <ul class="styled-list">
+                            <li>Emotivismus: Moral als Gefühlsausdruck</li>
+                            <li>Relativismus: Kulturabhängige Moral</li>
+                            <li>Nihilismus: Keine objektiven Werte</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Warum moralisch sein? -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="section-icon">🧬</span>
+                Warum überhaupt moralisch sein?
+            </h2>
+
+            <div class="info-box">
+                <div class="info-title">🔬 Evolutionäre Perspektive</div>
+                <p>Moralisches Verhalten kann als evolutionäre Anpassung interpretiert werden, die das Überleben und Gedeihen von Gruppen und Individuen fördert.</p>
+            </div>
+
+            <div class="highlight">
+                <h4>🎯 Schlüsselkonzept: Das Pareto-Prinzip</h4>
+                <p><strong>Kooperation und soziale Bindung steigern das Überleben</strong> - was moralisches Verhalten evolutionär begünstigt hat.</p>
+                <ul class="styled-list">
+                    <li>Gruppen mit starkem moralischem Zusammenhalt hatten evolutionäre Vorteile</li>
+                    <li>Moralische Normen stärken Vertrauen und Zusammenarbeit</li>
+                    <li>Empathie und Kooperation erleichterten das Überleben in sozialen Gruppen</li>
+                    <li>Das Gemeinwohl fördert indirekt auch das individuelle Wohlergehen</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">🌍 Moderne Beispiele für evolutionäre Moral:</div>
+                <ul class="styled-list">
+                    <li><strong>Altruismus:</strong> Hilfe ohne direkten Eigennutz stärkt Gruppenbindungen</li>
+                    <li><strong>Fairness:</strong> Gerechte Verteilung verhindert Gruppenkonflikte</li>
+                    <li><strong>Vertrauen:</strong> Ermöglicht komplexe Kooperationen</li>
+                    <li><strong>Empathie:</strong> Basis für prosoziales Verhalten</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Verhältnis von Moral und Recht -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="section-icon">⚖️</span>
+                Verhältnis von Moral und Recht
+            </h2>
+
+            <div class="two-column">
+                <div class="column-card">
+                    <h3 class="column-title">📜 Recht (Legalität)</h3>
+                    <ul class="styled-list">
+                        <li>Staatlich durchsetzbare Normen</li>
+                        <li>Äußere Übereinstimmung mit Gesetzen</li>
+                        <li>Sanktionen bei Verstößen</li>
+                        <li>Gesellschaftlich verbindlich</li>
+                        <li>Wandelbar durch Gesetzgebung</li>
+                    </ul>
+                </div>
+
+                <div class="column-card">
+                    <h3 class="column-title">💭 Moral (Moralität)</h3>
+                    <ul class="styled-list">
+                        <li>Innere Überzeugung und Motivation</li>
+                        <li>Gewissensentscheidungen</li>
+                        <li>Keine äußeren Sanktionen</li>
+                        <li>Persönlich verbindlich</li>
+                        <li>Kulturell und historisch wandelbar</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ Wichtige Unterscheidung nach Kant</h4>
+                <p><strong>Moralität:</strong> Handlung aus innerer Überzeugung und Pflicht</p>
+                <p><strong>Legalität:</strong> Äußere Gesetzmäßigkeit, unabhängig von der Motivation</p>
+                <p><em>Beispiel:</em> Jemand hilft einer älteren Person - aus Mitgefühl (moralisch) oder nur weil andere zuschauen (legal, aber nicht moralisch).</p>
+            </div>
+        </div>
+
+        <!-- Methoden der Ethik -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="section-icon">🔬</span>
+                Methoden der Ethik
+            </h2>
+
+            <div class="info-box">
+                <div class="info-title">🛠️ Wie arbeitet die Ethik wissenschaftlich?</div>
+                <p>Die Ethik verwendet verschiedene methodische Ansätze, um moralische Fragen systematisch zu untersuchen und zu beantworten.</p>
+            </div>
+
+            <div class="two-column" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+                <div class="column-card">
+                    <h3 class="column-title">🧠 1. Gedankenexperimente</h3>
+                    <p>Hypothetische Szenarien zur Prüfung moralischer Intuitionen</p>
+                    <div class="example-box">
+                        <div class="example-title">💡 Beispiel: Das Trolley-Problem</div>
+                        <p>Ein Zug rast auf fünf Menschen zu. Du kannst ihn umleiten, würdest aber eine andere Person töten. Was ist ethisch richtig?</p>
+                    </div>
+                </div>
+
+                <div class="column-card">
+                    <h3 class="column-title">📝 2. Begriffsanalyse</h3>
+                    <p>Präzise Klärung zentraler ethischer Begriffe</p>
+                    <div class="example-box">
+                        <div class="example-title">💡 Beispiele:</div>
+                        <ul class="styled-list">
+                            <li>Was bedeutet "Gerechtigkeit"?</li>
+                            <li>Wann ist eine Handlung "frei"?</li>
+                            <li>Was heißt "Verantwortung"?</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="column-card">
+                    <h3 class="column-title">🔗 3. Kohärenzprüfung</h3>
+                    <p>Überprüfung auf Widerspruchsfreiheit in der Argumentation</p>
+                    <div class="example-box">
+                        <div class="example-title">💡 Fragen:</div>
+                        <ul class="styled-list">
+                            <li>Sind die Prinzipien konsistent?</li>
+                            <li>Führen sie zu Widersprüchen?</li>
+                            <li>Sind sie universal anwendbar?</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="column-card">
+                    <h3 class="column-title">📊 4. Fallstudien</h3>
+                    <p>Anwendung ethischer Theorien auf konkrete Beispiele</p>
+                    <div class="example-box">
+                        <div class="example-title">💡 Bereiche:</div>
+                        <ul class="styled-list">
+                            <li>Medizinische Dilemmata</li>
+                            <li>Wirtschaftsethische Fälle</li>
+                            <li>Technologie-Probleme</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="column-card">
+                    <h3 class="column-title">💫 5. Intuitionale Methode</h3>
+                    <p>Berücksichtigung spontaner moralischer Urteile</p>
+                    <div class="example-box">
+                        <div class="example-title">💡 Vorgehen:</div>
+                        <ul class="styled-list">
+                            <li>Sammlung moralischer Intuitionen</li>
+                            <li>Systematisierung der Urteile</li>
+                            <li>Reflexion und Korrektur</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Aktuelle ethische Herausforderungen -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="section-icon">🌐</span>
+                Moderne ethische Herausforderungen
+            </h2>
+
+            <p>Die Grundlagen der Ethik helfen uns, auch völlig neue moralische Probleme zu durchdenken, die unsere Vorfahren nicht kannten:</p>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Bereich</th>
+                        <th>Zentrale Themen 2026</th>
+                        <th>Ethische Fragen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>🤖 KI-Ethik</strong></td>
+                        <td>Algorithmus-Fairness, autonome Systeme, KI-Rechte</td>
+                        <td>Welche Entscheidungen darf KI treffen? Wer ist verantwortlich?</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🧬 Bioethik</strong></td>
+                        <td>CRISPR, Stammzellforschung, Sterbehilfe</td>
+                        <td>Dürfen wir menschliche Gene verändern? Was ist ein würdiges Sterben?</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🌍 Klimaethik</strong></td>
+                        <td>Nachhaltigkeit, Generationengerechtigkeit</td>
+                        <td>Was schulden wir zukünftigen Generationen? Wer trägt Klimaverantwortung?</td>
+                    </tr>
+                    <tr>
+                        <td><strong>💰 Wirtschaftsethik</strong></td>
+                        <td>Globalisierung, soziale Gerechtigkeit, CSR</td>
+                        <td>Ist extreme Ungleichheit moralisch vertretbar? Was sind faire Löhne?</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🔒 Digitalethik</strong></td>
+                        <td>Datenschutz, Überwachung, digitale Rechte</td>
+                        <td>Wem gehören unsere Daten? Wie viel Privatsphäre brauchen wir?</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight">
+                <h4>🎯 Warum diese Grundlagen wichtig sind</h4>
+                <p>Die klassischen ethischen Theorien (Kant, Utilitarismus, Tugendethik) bieten uns bewährte Werkzeuge, um auch völlig neue Probleme systematisch anzugehen. Ohne solide Grundlagen verliert man sich leicht in der Komplexität moderner Dilemmata.</p>
+            </div>
+        </div>
+
+        <!-- Zusammenfassung -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="section-icon">📋</span>
+                Zusammenfassung: Die wichtigsten Punkte
+            </h2>
+
+            <div class="two-column" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                <div class="column-card">
+                    <h3 class="column-title">🎯 Zentrale Begriffe</h3>
+                    <ul class="styled-list">
+                        <li><strong>Ethik:</strong> Wissenschaft von der Moral</li>
+                        <li><strong>Moral:</strong> Normen und Werte einer Gesellschaft</li>
+                        <li><strong>Handlung:</strong> Absichtliche Situationsveränderung</li>
+                        <li><strong>Werte:</strong> Allgemeine Zielvorstellungen</li>
+                        <li><strong>Normen:</strong> Konkrete Verhaltensregeln</li>
+                    </ul>
+                </div>
+
+                <div class="column-card">
+                    <h3 class="column-title">🏗️ Teilbereiche</h3>
+                    <ul class="styled-list">
+                        <li><strong>Deskriptive Ethik:</strong> Beschreibt bestehende Moral</li>
+                        <li><strong>Normative Ethik:</strong> Begründet moralische Normen</li>
+                        <li><strong>Metaethik:</strong> Analysiert ethische Begriffe</li>
+                    </ul>
+                </div>
+
+                <div class="column-card">
+                    <h3 class="column-title">🔬 Methoden</h3>
+                    <ul class="styled-list">
+                        <li>Gedankenexperimente</li>
+                        <li>Begriffsanalyse</li>
+                        <li>Kohärenzprüfung</li>
+                        <li>Fallstudien</li>
+                        <li>Intuitionale Methode</li>
+                    </ul>
+                </div>
+
+                <div class="column-card">
+                    <h3 class="column-title">🌍 Relevanz heute</h3>
+                    <ul class="styled-list">
+                        <li>KI und Algorithmus-Ethik</li>
+                        <li>Bioethik und Gentechnik</li>
+                        <li>Klimawandel und Nachhaltigkeit</li>
+                        <li>Digitale Transformation</li>
+                        <li>Globale Gerechtigkeit</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Weiterführende Fragen -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="section-icon">🤔</span>
+                Fragen zum Nachdenken
+            </h2>
+
+            <div class="info-box">
+                <div class="info-title">💭 Teste dein Verständnis</div>
+                <p>Diese Fragen helfen dir, die Grundlagen zu vertiefen und auf konkrete Situationen anzuwenden:</p>
+            </div>
+
+            <div class="two-column">
+                <div class="column-card">
+                    <h3 class="column-title">🎯 Grundverständnis</h3>
+                    <ol style="padding-left: 20px; line-height: 1.8;">
+                        <li>Erkläre den Unterschied zwischen Ethik und Moral mit eigenen Worten.</li>
+                        <li>Warum ist die Intention wichtig für die Bewertung einer Handlung?</li>
+                        <li>Welche Rolle spielt die Evolution bei der Entstehung von Moral?</li>
+                        <li>Wie unterscheiden sich Moralität und Legalität?</li>
+                    </ol>
+                </div>
+
+                <div class="column-card">
+                    <h3 class="column-title">💡 Anwendung</h3>
+                    <ol style="padding-left: 20px; line-height: 1.8;">
+                        <li>Analysiere ein aktuelles ethisches Dilemma mit den erlernten Begriffen.</li>
+                        <li>Ordne verschiedene moralische Urteile in Kohlbergs Stufenmodell ein.</li>
+                        <li>Erstelle ein eigenes Gedankenexperiment zu einem modernen Problem.</li>
+                        <li>Diskutiere: Sind moralische Wahrheiten objektiv erkennbar?</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Footer -->
+        <div class="navigation-footer">
+            <h3>🎯 Das hast du gelernt</h3>
+            <p>Du kennst jetzt die Grundbegriffe der Ethik, verstehst den Unterschied zwischen Ethik und Moral, verschiedene Handlungstypen, die drei Teilbereiche der Ethik und ihre wissenschaftlichen Methoden. Du bist bereit für die großen ethischen Theorien!</p>
+            
+            <div class="nav-buttons">
+                <a href="index.html" class="nav-button">
+                    ← 🏠 Zurück zur Startseite
+                </a>
+                <a href="kant.html" class="nav-button">
+                    🧠 Kants Pflichtethik →
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

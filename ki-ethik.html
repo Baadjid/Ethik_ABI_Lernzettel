@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KI-Ethik 2026 - Künstliche Intelligenz und ethische Verantwortung</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .nav-back {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .nav-back a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+        
+        .nav-back a:hover {
+            text-decoration: underline;
+        }
+        
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-title {
+            font-size: 2.8em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+        }
+        
+        .header-subtitle {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 25px;
+        }
+        
+        .ai-icon {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 4em;
+            opacity: 0.1;
+        }
+        
+        .intro-section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .definition-box {
+            background: linear-gradient(135deg, #ff9a9e, #fecfef);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 5px solid #667eea;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .content-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card-title {
+            font-size: 1.4em;
+            color: #667eea;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .card-icon {
+            font-size: 1.5em;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 8px;
+        }
+        
+        .principle-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .principle-card {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .principle-card:hover {
+            border-color: #667eea;
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .principle-title {
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .example-box {
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .warning-box {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #e74c3c;
+        }
+        
+        .success-box {
+            background: linear-gradient(135deg, #a8edea, #fed6e3);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #27ae60;
+        }
+        
+        .case-study {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            margin: 30px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding: 20px 0;
+            margin-bottom: 20px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -25px;
+            top: 25px;
+            width: 15px;
+            height: 15px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .timeline-year {
+            font-weight: 700;
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+        
+        .ethics-framework {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .framework-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .step {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            position: relative;
+        }
+        
+        .step-number {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin: 0 auto 15px;
+        }
+        
+        .quiz-section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .quiz-question {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .quiz-options {
+            margin: 15px 0;
+        }
+        
+        .quiz-option {
+            display: block;
+            padding: 15px;
+            margin: 10px 0;
+            background: rgba(255, 255, 255, 0.8);
+            border: 2px solid transparent;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1em;
+            text-align: left;
+            width: 100%;
+        }
+        
+        .quiz-option:hover {
+            border-color: #667eea;
+            background: rgba(255, 255, 255, 0.95);
+            transform: translateY(-2px);
+        }
+        
+        .quiz-option.correct {
+            background: linear-gradient(135deg, #d4edda, #c3e6cb);
+            border-color: #27ae60;
+            color: #155724;
+        }
+        
+        .quiz-option.wrong {
+            background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+            border-color: #e74c3c;
+            color: #721c24;
+        }
+        
+        .quiz-option.disabled {
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+        
+        .quiz-feedback {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            display: none;
+            font-weight: 500;
+        }
+        
+        .quiz-feedback.show {
+            display: block;
+            animation: slideIn 0.3s ease-out;
+        }
+        
+        .quiz-feedback.correct {
+            background: linear-gradient(135deg, #d4edda, #c3e6cb);
+            border-left: 5px solid #27ae60;
+            color: #155724;
+        }
+        
+        .quiz-feedback.wrong {
+            background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+            border-left: 5px solid #e74c3c;
+            color: #721c24;
+        }
+        
+        .quiz-results {
+            margin-top: 30px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            text-align: center;
+            display: none;
+        }
+        
+        .quiz-results.show {
+            display: block;
+            animation: slideIn 0.5s ease-out;
+        }
+        
+        .result-display {
+            font-size: 2em;
+            font-weight: 700;
+            color: #667eea;
+            margin: 20px 0;
+        }
+        
+        .result-message {
+            font-size: 1.2em;
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .result-excellent {
+            background: linear-gradient(135deg, #d4edda, #c3e6cb);
+            color: #155724;
+        }
+        
+        .result-good {
+            background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+            color: #856404;
+        }
+        
+        .result-needs-improvement {
+            background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+            color: #721c24;
+        }
+        
+        .reset-quiz {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+        
+        .reset-quiz:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes correctPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes wrongShake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+        
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 80px;
+            margin-bottom: 20px;
+        }
+        
+        .nav-item {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .nav-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header-title {
+                font-size: 2.2em;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .principle-grid, .framework-steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .ai-icon {
+                display: none;
+            }
+            
+            header, .intro-section, .content-card, .case-study, .ethics-framework, .quiz-section {
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header-title {
+                font-size: 1.8em;
+            }
+            
+            .timeline {
+                padding-left: 20px;
+            }
+            
+            .timeline-item::before {
+                left: -20px;
+            }
+        }
+        
+        ul, ol {
+            padding-left: 25px;
+            margin: 15px 0;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        strong {
+            color: #667eea;
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-back">
+            <a href="index.html">← Zurück zur Hauptseite</a>
+        </div>
+
+        <header>
+            <div class="ai-icon">🤖</div>
+            <h1 class="header-title">KI-Ethik 2026</h1>
+            <p class="header-subtitle">Künstliche Intelligenz und ethische Verantwortung in der digitalen Gesellschaft</p>
+            <p>🚀 Aktuelle Entwicklungen • ⚖️ Ethische Prinzipien • 🔍 Konkrete Beispiele • 🌍 Globale Standards</p>
+        </header>
+
+        <div class="intro-section">
+            <h2>Was ist KI-Ethik?</h2>
+            <div class="definition-box">
+                <h3>🎯 Definition</h3>
+                <p><strong>KI-Ethik</strong> ist ein multidisziplinäres Framework, das Data Scientists und Forschern dabei hilft, KI-Systeme auf ethische Weise zu entwickeln, die der Gesellschaft als Ganzes zugutekommen. Sie untersucht, wie die positiven Auswirkungen von künstlicher Intelligenz optimiert und gleichzeitig Risiken und negative Folgen reduziert werden können.</p>
+            </div>
+            
+            <p>In unserer Gegenwart des Jahres 2026 ist Künstliche Intelligenz zu einem festen Bestandteil unternehmerischen und gesellschaftlichen Handelns geworden. KI-Systeme entscheiden heute über Jobs, Kredite, medizinische Diagnosen und sogar über Gerichtsurteile. Diese Macht bringt jedoch auch große Verantwortung mit sich.</p>
+            
+            <div class="warning-box">
+                <h4>⚠️ Die Herausforderung</h4>
+                <p>Während Algorithmen immer mächtiger werden, hinkt die ethische Verantwortung vieler Unternehmen hinterher. Wer sich heute nicht mit Fairness, Transparenz und Vertrauen auseinandersetzt, riskiert nicht nur seinen Ruf, sondern auch seine Wettbewerbsfähigkeit.</p>
+            </div>
+        </div>
+
+        <div class="content-grid">
+            <div class="content-card">
+                <h3 class="card-title"><span class="card-icon">📊</span>Zentrale ethische Prinzipien</h3>
+                <div class="principle-grid">
+                    <div class="principle-card">
+                        <div class="principle-title">🔍 Transparenz</div>
+                        <p>KI-Systeme müssen nachvollziehbar sein. Benutzer sollten verstehen können, wie Entscheidungen getroffen werden.</p>
+                    </div>
+                    <div class="principle-card">
+                        <div class="principle-title">⚖️ Fairness</div>
+                        <p>Gerechte Behandlung aller Individuen ohne Diskriminierung aufgrund von Geschlecht, Herkunft oder anderen Merkmalen.</p>
+                    </div>
+                    <div class="principle-card">
+                        <div class="principle-title">🔒 Datenschutz</div>
+                        <p>Schutz persönlicher Daten und Privatsphäre bei der Entwicklung und Nutzung von KI-Systemen.</p>
+                    </div>
+                    <div class="principle-card">
+                        <div class="principle-title">🛡️ Robustheit</div>
+                        <p>KI-Systeme müssen sicher und widerstandsfähig gegen Angriffe und Manipulation sein.</p>
+                    </div>
+                    <div class="principle-card">
+                        <div class="principle-title">👤 Menschliche Autonomie</div>
+                        <p>KI soll menschliche Entscheidungsfreiheit erweitern, nicht ersetzen oder einschränken.</p>
+                    </div>
+                    <div class="principle-card">
+                        <div class="principle-title">📋 Verantwortlichkeit</div>
+                        <p>Klare Zuordnung von Verantwortung für KI-Entscheidungen und deren Konsequenzen.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h3 class="card-title"><span class="card-icon">🌍</span>Internationale Standards 2026</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">2021</div>
+                        <p><strong>UNESCO-Empfehlung:</strong> Erster globaler Völkerrechtstext zur KI-Ethik von 193 Staaten verabschiedet</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2023</div>
+                        <p><strong>Deutscher Ethikrat:</strong> Stellungnahme "Mensch und Maschine" - KI darf menschliche Entfaltung nicht vermindern</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2024</div>
+                        <p><strong>EU AI Act:</strong> Verbindliche Vorgaben für Hochrisiko-KI-Anwendungen in Europa</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2026</div>
+                        <p><strong>Aktueller Stand:</strong> Verstärkte Implementierung ethischer Standards in Unternehmen und Institutionen weltweit</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="case-study">
+            <h2>🔍 Konkrete Probleme: Algorithmic Bias in der Praxis</h2>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h4>⚠️ COMPAS-Algorithmus (USA)</h4>
+                    <p>Ein System zur Bewertung der Rückfallwahrscheinlichkeit von Straftätern stufte schwarze Angeklagte systematisch als rückfallgefährdeter ein als weiße, obwohl dies faktisch nicht zutreffend war.</p>
+                    <div class="warning-box">
+                        <strong>Problem:</strong> Implizite Diskriminierung durch vermeintlich neutrale Fragen
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h4>💼 Amazon Recruiting Tool</h4>
+                    <p>Amazons KI-gestütztes Bewerbungssystem benachteiligte systematisch Frauen, weil es hauptsächlich mit Daten männlicher Bewerber trainiert wurde.</p>
+                    <div class="warning-box">
+                        <strong>Konsequenz:</strong> Das System wurde eingestellt, da die Bias-Probleme nicht gelöst werden konnten
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h4>🇳🇱 Niederländischer Kindergeld-Skandal</h4>
+                    <p>Ein Algorithmus zur Betrugsüberprüfung beschuldigte fälschlicherweise Menschen mit Migrationshintergrund des Betrugs, was zu erheblichen sozialen und finanziellen Problemen führte.</p>
+                    <div class="warning-box">
+                        <strong>Folgen:</strong> Tausende Familien wurden unschuldig zu Rückzahlungen aufgefordert
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h4>🇦🇹 Österreichisches Arbeitsamt</h4>
+                    <p>Ein Algorithmus zur Bewertung von Arbeitslosen benachteiligte systematisch Frauen und ältere Menschen bei der Jobvermittlung.</p>
+                    <div class="warning-box">
+                        <strong>Impact:</strong> Verstärkung bestehender Ungleichheiten am Arbeitsmarkt
+                    </div>
+                </div>
+            </div>
+            
+            <div class="success-box">
+                <h4>💡 Was lernen wir daraus?</h4>
+                <ul>
+                    <li><strong>Datenqualität ist entscheidend:</strong> Bias in Trainingsdaten führt zu bias in den Ergebnissen</li>
+                    <li><strong>Diverse Teams:</strong> Entwicklungsteams müssen die Vielfalt der Gesellschaft widerspiegeln</li>
+                    <li><strong>Kontinuierliche Überwachung:</strong> KI-Systeme müssen regelmäßig auf Fairness überprüft werden</li>
+                    <li><strong>Transparenz und Erklärbarkeit:</strong> Entscheidungsprozesse müssen nachvollziehbar sein</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="ethics-framework">
+            <h2>🛠️ Ethisches Framework für KI-Entwicklung</h2>
+            <p>Wie können Unternehmen und Entwickler ethische KI-Systeme schaffen? Hier ist ein praxisnaher Leitfaden:</p>
+            
+            <div class="framework-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Ethik-Team bilden</h4>
+                    <p>Interdisziplinäres Team aus Technik, Ethik, Recht und betroffenen Gruppen</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Risiko-Assessment</h4>
+                    <p>Identifikation möglicher ethischer Risiken und betroffener Gruppen</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Daten-Audit</h4>
+                    <p>Überprüfung der Trainingsdaten auf Bias und Repräsentativität</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h4>Algorithmus-Design</h4>
+                    <p>Integration von Fairness-Constraints direkt in den Algorithmus</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h4>Testing & Monitoring</h4>
+                    <p>Kontinuierliche Tests auf verschiedene Fairness-Metriken</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">6</div>
+                    <h4>Deployment & Feedback</h4>
+                    <p>Schrittweise Einführung mit Feedback-Schleifen und Anpassungen</p>
+                </div>
+            </div>
+            
+            <div class="example-box">
+                <h4>🔧 Konkrete Techniken</h4>
+                <ul>
+                    <li><strong>Explainable AI (XAI):</strong> Entwicklung erklärbarer KI-Modelle für Transparenz</li>
+                    <li><strong>Fairness-Algorithmen:</strong> Automatische Erkennung und Korrektur von Verzerrungen</li>
+                    <li><strong>Diverse Datensätze:</strong> Sicherstellung repräsentativer Trainungsdaten</li>
+                    <li><strong>Human-in-the-loop:</strong> Menschen behalten finale Entscheidungsgewalt</li>
+                    <li><strong>Regelmäßige Audits:</strong> Kontinuierliche Überprüfung der Systemleistung</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-grid">
+            <div class="content-card">
+                <h3 class="card-title"><span class="card-icon">🎯</span>Anwendungsbereiche der KI-Ethik</h3>
+                <ul>
+                    <li><strong>🏥 Medizin:</strong> Diagnose-Algorithmen, Behandlungsempfehlungen, Triage-Systeme</li>
+                    <li><strong>⚖️ Rechtswesen:</strong> Predictive Policing, Urteilsfindung, Bewährungsentscheidungen</li>
+                    <li><strong>💼 Personalwesen:</strong> Bewerbungsauswahl, Leistungsbewertung, Kündigungsentscheidungen</li>
+                    <li><strong>🏦 Finanzwesen:</strong> Kreditvergabe, Versicherungsprämien, Betrugserkennung</li>
+                    <li><strong>🎓 Bildung:</strong> Lernpfade, Bewertungen, Studienplatzvergabe</li>
+                    <li><strong>🏙️ Smart Cities:</strong> Verkehrsteuerung, Energieverteilung, Sicherheitssysteme</li>
+                </ul>
+            </div>
+
+            <div class="content-card">
+                <h3 class="card-title"><span class="card-icon">🤖</span>KI und menschliche Autonomie</h3>
+                <p>Nach <span class="highlight">Kant</span> sind wir zur Mündigkeit verpflichtet. Doch wie verhält sich das zu KI-Systemen, die uns Entscheidungen abnehmen?</p>
+                
+                <div class="example-box">
+                    <h4>💭 Kants Perspektive auf moderne KI</h4>
+                    <p><em>"Ich habe nicht nötig zu denken, wenn ich nur bezahlen kann; andere werden das verdrießliche Geschäft schon für mich übernehmen."</em></p>
+                    <p><strong>Modern übersetzt:</strong> "Ich habe nicht nötig zu denken, wenn ich nur meine Daten hergebe; Algorithmen werden das verdrießliche Geschäft schon für mich übernehmen."</p>
+                </div>
+                
+                <div class="warning-box">
+                    <h4>⚠️ Das Problem der "digitalen Unmündigkeit"</h4>
+                    <ul>
+                        <li>Algorithmen werden zu unseren neuen "Vormündern"</li>
+                        <li>Empfehlungssysteme standardisieren unser Verhalten</li>
+                        <li>Wir verlieren die Fähigkeit zu eigenständigen Entscheidungen</li>
+                        <li>Datenschutz wird gegen Komfort eingetauscht</li>
+                    </ul>
+                </div>
+                
+                <div class="success-box">
+                    <h4>✅ Ethische Leitlinien</h4>
+                    <ul>
+                        <li><strong>KI soll erweitern, nicht ersetzen:</strong> Menschliche Entscheidungsfähigkeit stärken</li>
+                        <li><strong>Transparenz schaffen:</strong> Algorithmus-Entscheidungen erklärbar machen</li>
+                        <li><strong>Wahlfreiheit bewahren:</strong> Opt-out-Möglichkeiten anbieten</li>
+                        <li><strong>Bildung fördern:</strong> Digitale Kompetenz stärken</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-section">
+            <h2>🧠 Interaktives Quiz: KI-Ethik verstehen</h2>
+            <p><em>Klicken Sie auf Ihre Antwort - Sie erhalten sofortiges Feedback!</em></p>
+            
+            <div class="quiz-question" data-question="1">
+                <h4>1. Was ist das Hauptziel der KI-Ethik?</h4>
+                <div class="quiz-options">
+                    <button class="quiz-option" data-answer="wrong" data-explanation="Das ist nicht das Hauptziel - Geschwindigkeit ohne ethische Überlegungen kann schädlich sein.">
+                        KI-Systeme so schnell wie möglich zu entwickeln
+                    </button>
+                    <button class="quiz-option" data-answer="correct" data-explanation="Richtig! KI-Ethik zielt darauf ab, die positiven Auswirkungen zu maximieren und gleichzeitig Risiken und Schäden zu minimieren.">
+                        Die positiven Auswirkungen von KI zu maximieren und Risiken zu minimieren
+                    </button>
+                    <button class="quiz-option" data-answer="wrong" data-explanation="Falsch - KI-Ethik will KI nicht stoppen, sondern verantwortungsvoll gestalten.">
+                        Alle KI-Entwicklung zu stoppen
+                    </button>
+                </div>
+                <div class="quiz-feedback"></div>
+            </div>
+
+            <div class="quiz-question" data-question="2">
+                <h4>2. Was war das Problem mit Amazons Recruiting-Tool?</h4>
+                <div class="quiz-options">
+                    <button class="quiz-option" data-answer="wrong" data-explanation="Nein, das Problem lag nicht bei den Kosten, sondern bei systematischer Diskriminierung.">
+                        Es war zu teuer
+                    </button>
+                    <button class="quiz-option" data-answer="correct" data-explanation="Korrekt! Das System benachteiligte Frauen, weil es hauptsächlich mit Daten männlicher Bewerber trainiert wurde.">
+                        Es benachteiligte systematisch Frauen
+                    </button>
+                    <button class="quiz-option" data-answer="wrong" data-explanation="Falsch - das Tool funktionierte technisch, aber diskriminierte unfair.">
+                        Es funktionierte gar nicht
+                    </button>
+                </div>
+                <div class="quiz-feedback"></div>
+            </div>
+
+            <div class="quiz-question" data-question="3">
+                <h4>3. Welches Prinzip besagt, dass KI-Entscheidungen nachvollziehbar sein müssen?</h4>
+                <div class="quiz-options">
+                    <button class="quiz-option" data-answer="correct" data-explanation="Richtig! Transparenz bedeutet, dass KI-Entscheidungen für Menschen nachvollziehbar und erklärbar sein müssen.">
+                        Transparenz
+                    </button>
+                    <button class="quiz-option" data-answer="wrong" data-explanation="Nein, Robustheit bezieht sich auf die Sicherheit und Widerstandsfähigkeit von KI-Systemen.">
+                        Robustheit
+                    </button>
+                    <button class="quiz-option" data-answer="wrong" data-explanation="Falsch - Effizienz ist kein ethisches Prinzip, sondern ein technisches Ziel.">
+                        Effizienz
+                    </button>
+                </div>
+                <div class="quiz-feedback"></div>
+            </div>
+
+            <div class="quiz-question" data-question="4">
+                <h4>4. Was würde Kant über algorithmic decision-making sagen?</h4>
+                <div class="quiz-options">
+                    <button class="quiz-option" data-answer="wrong" data-explanation="Falsch - Kant würde argumentieren, dass auch Algorithmen menschliche Vorurteile widerspiegeln können.">
+                        Algorithmen sind immer objektiver als Menschen
+                    </button>
+                    <button class="quiz-option" data-answer="correct" data-explanation="Richtig! Nach Kants Autonomie-Prinzip müssen Menschen ihre Entscheidungsverantwortung behalten und dürfen nicht unmündig werden.">
+                        Menschen dürfen ihre Entscheidungsverantwortung nicht vollständig an Maschinen abgeben
+                    </button>
+                    <button class="quiz-option" data-answer="wrong" data-explanation="Nein, Kant würde KI nicht grundsätzlich ablehnen, aber auf menschliche Autonomie bestehen.">
+                        KI ist grundsätzlich unethisch
+                    </button>
+                </div>
+                <div class="quiz-feedback"></div>
+            </div>
+
+            <div class="quiz-question" data-question="5">
+                <h4>5. Welches der folgenden ist KEIN Beispiel für Algorithmic Bias?</h4>
+                <div class="quiz-options">
+                    <button class="quiz-option" data-answer="wrong" data-explanation="Das ist ein Beispiel für Bias - das System diskriminierte Menschen mit Migrationshintergrund.">
+                        Niederländischer Kindergeld-Skandal
+                    </button>
+                    <button class="quiz-option" data-answer="correct" data-explanation="Richtig! Ein Serverausfall ist ein technisches Problem, kein ethisches Bias-Problem.">
+                        Ein KI-System fällt wegen Serverausfall aus
+                    </button>
+                    <button class="quiz-option" data-answer="wrong" data-explanation="Das ist ein klassisches Beispiel für Racial Bias in der Strafjustiz.">
+                        COMPAS benachteiligt schwarze Angeklagte
+                    </button>
+                </div>
+                <div class="quiz-feedback"></div>
+            </div>
+
+            <div class="quiz-results">
+                <h3>📊 Ihr Ergebnis</h3>
+                <div class="result-display">
+                    <span id="score">0</span> von <span id="total">5</span> richtig beantwortet
+                </div>
+                <div class="result-message"></div>
+                <button class="reset-quiz">Quiz wiederholen</button>
+            </div>
+
+            <div class="success-box">
+                <h4>💡 Reflexionsfragen</h4>
+                <ul>
+                    <li>Welche KI-Systeme nutzen Sie täglich? (Social Media, Navigation, Shopping...)</li>
+                    <li>Haben Sie schon einmal erlebt, dass ein Algorithmus eine unfaire Entscheidung getroffen hat?</li>
+                    <li>Wie können wir als Gesellschaft sicherstellen, dass KI uns dient und nicht beherrscht?</li>
+                    <li>Was bedeutet es für Sie persönlich, mündig im Umgang mit KI zu sein?</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-grid">
+            <div class="content-card">
+                <h3 class="card-title"><span class="card-icon">🔮</span>Zukunftsausblick: KI-Ethik 2030+</h3>
+                <h4>🚀 Erwartete Entwicklungen</h4>
+                <ul>
+                    <li><strong>Automatisierte Ethik-Checks:</strong> KI-Systeme, die sich selbst auf ethische Probleme überprüfen</li>
+                    <li><strong>Globale Standards:</strong> Vereinheitlichung ethischer KI-Prinzipien weltweit</li>
+                    <li><strong>Bürgerrechte für KI:</strong> Diskussion über Rechte für hochentwickelte KI-Systeme</li>
+                    <li><strong>Ethik-as-a-Service:</strong> Spezialisierte Unternehmen für ethische KI-Beratung</li>
+                </ul>
+
+                <div class="warning-box">
+                    <h4>⚠️ Neue Herausforderungen</h4>
+                    <ul>
+                        <li><strong>Superintelligenz:</strong> Was passiert, wenn KI menschliche Intelligenz übertrifft?</li>
+                        <li><strong>Autonome Waffen:</strong> Ethik des "Killer-Robot"-Verbots</li>
+                        <li><strong>Neuromorphic Computing:</strong> KI, die dem menschlichen Gehirn ähnelt</li>
+                        <li><strong>Quantum-KI:</strong> Völlig neue Möglichkeiten und Risiken</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h3 class="card-title"><span class="card-icon">📚</span>Philosophische Schulen zur KI</h3>
+                
+                <div class="principle-grid">
+                    <div class="principle-card">
+                        <div class="principle-title">🧠 Utilitarismus</div>
+                        <p><strong>Bentham/Mill:</strong> KI ist ethisch, wenn sie das größte Glück für die größte Anzahl schafft. Algorithmen können bei der Nutzenmaximierung helfen.</p>
+                    </div>
+                    
+                    <div class="principle-card">
+                        <div class="principle-title">📏 Deontologie (Kant)</div>
+                        <p><strong>Kategorischer Imperativ:</strong> KI-Entscheidungen müssen universalisierbar sein. Menschen dürfen nie nur als Mittel behandelt werden.</p>
+                    </div>
+                    
+                    <div class="principle-card">
+                        <div class="principle-title">💎 Tugendethik</div>
+                        <p><strong>Aristoteles:</strong> KI sollte menschliche Tugenden fördern und dabei helfen, ein gutes Leben zu führen.</p>
+                    </div>
+                    
+                    <div class="principle-card">
+                        <div class="principle-title">🤝 Care-Ethik</div>
+                        <p><strong>Gilligan:</strong> KI sollte Beziehungen und Fürsorge stärken, nicht schwächen. Betonung sozialer Verbindungen.</p>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h4>🤔 Fallstudie: Selbstfahrende Autos</h4>
+                    <p><strong>Trolley-Problem 2.0:</strong> Ein autonomes Fahrzeug muss entscheiden: 5 Fußgänger oder 1 Passagier retten?</p>
+                    <ul>
+                        <li><strong>Utilitaristisch:</strong> Rette die 5 Fußgänger (größere Anzahl)</li>
+                        <li><strong>Deontologisch:</strong> Kein aktives Töten erlaubt - rette den Passagier</li>
+                        <li><strong>Tugendethisch:</strong> Was würde ein tugendhafter Mensch tun?</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="ethics-framework">
+            <h2>🎯 Praktische Lernaufgaben</h2>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h4>🔍 Analyse-Aufgabe</h4>
+                    <p><strong>Szenario:</strong> Ein Krankenhaus möchte ein KI-System zur Triage-Entscheidung in der Notaufnahme einführen.</p>
+                    
+                    <div class="quiz-question">
+                        <h5>Zu analysierende Fragen:</h5>
+                        <ul>
+                            <li>Welche ethischen Prinzipien sind hier relevant?</li>
+                            <li>Welche Bias-Risiken bestehen bei medizinischen Daten?</li>
+                            <li>Wie kann Transparenz gewährleistet werden?</li>
+                            <li>Wer trägt die Verantwortung bei Fehlentscheidungen?</li>
+                            <li>Wie können betroffene Patienten einbezogen werden?</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h4>⚖️ Ethik-Dilemma</h4>
+                    <p><strong>Situation:</strong> Ein Algorithmus zur Kreditvergabe ist sehr genau, benachteiligt aber systematisch Menschen aus bestimmten Stadtteilen.</p>
+                    
+                    <div class="warning-box">
+                        <h5>Diskutiere:</h5>
+                        <ul>
+                            <li>Ist statistische Genauigkeit wichtiger als Fairness?</li>
+                            <li>Soll man den Algorithmus "weniger genau" machen, um fairer zu sein?</li>
+                            <li>Wie können strukturelle Ungleichheiten berücksichtigt werden?</li>
+                            <li>Welche Rolle spielt historische Diskriminierung?</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="success-box">
+                <h4>✅ Lösungsansätze entwickeln</h4>
+                <ol>
+                    <li><strong>Stakeholder identifizieren:</strong> Wer ist von der KI-Entscheidung betroffen?</li>
+                    <li><strong>Werte-Konflikt benennen:</strong> Welche ethischen Prinzipien stehen im Widerspruch?</li>
+                    <li><strong>Alternative Lösungen finden:</strong> Gibt es Kompromisse oder innovative Ansätze?</li>
+                    <li><strong>Langfristige Folgen bedenken:</strong> Welche gesellschaftlichen Auswirkungen entstehen?</li>
+                    <li><strong>Monitoring etablieren:</strong> Wie kann die Lösung kontinuierlich überprüft werden?</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="case-study">
+            <h2>🔗 Verknüpfung mit anderen ethischen Theorien</h2>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h4>🌍 Rawls' Schleier des Nichtwissens</h4>
+                    <p>Wie würden wir KI-Systeme gestalten, wenn wir nicht wüssten, welche gesellschaftliche Position wir einnehmen? Dieser Ansatz hilft bei der gerechten Gestaltung von Algorithmen.</p>
+                    
+                    <div class="example-box">
+                        <h5>💭 Gedankenexperiment</h5>
+                        <p>Stellen Sie sich vor, Sie wissen nicht, ob Sie arm oder reich sind, welches Geschlecht oder welche Herkunft Sie haben. Wie sollte ein KI-System zur Jobvermittlung funktionieren?</p>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h4>👥 Jonas' Verantwortungsethik</h4>
+                    <p>Angesichts der Macht moderner KI müssen wir Verantwortung für zukünftige Generationen übernehmen. Welche Welt hinterlassen wir unseren Kindern?</p>
+                    
+                    <div class="warning-box">
+                        <h5>🌱 Prinzip Verantwortung</h5>
+                        <p><em>"Handle so, dass die Wirkungen deiner Handlungen verträglich sind mit der Permanenz menschlichen Lebens."</em> - Gilt dies auch für KI-Entwicklung?</p>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h4>💬 Diskursethik (Habermas)</h4>
+                    <p>Ethische KI-Entscheidungen sollten in herrschaftsfreien Diskursen aller Betroffenen entwickelt werden, nicht nur von Tech-Unternehmen.</p>
+                    
+                    <div class="success-box">
+                        <h5>🗣️ Partizipation</h5>
+                        <p>Wie können wir sicherstellen, dass alle gesellschaftlichen Gruppen bei der KI-Entwicklung mitentscheiden können?</p>
+                    </div>
+                </div>
+                
+                <div class="content-card">
+                    <h4>🔄 Singer's Präferenz-Utilitarismus</h4>
+                    <p>KI sollte nicht nur Glück maximieren, sondern auch die individuellen Präferenzen respektieren - ein wichtiger Aspekt für personalisierte KI-Systeme.</p>
+                    
+                    <div class="example-box">
+                        <h5>🎯 Beispiel</h5>
+                        <p>Ein Empfehlungsalgorithmus sollte nicht nur "objektiv beste" Inhalte vorschlagen, sondern auch individuelle Werte und Präferenzen berücksichtigen.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ethics-framework">
+            <h2>📖 Zusammenfassung & Merksätze</h2>
+            
+            <div class="definition-box">
+                <h3>🎯 Die wichtigsten Punkte der KI-Ethik 2026</h3>
+                <ul>
+                    <li><strong>KI ist nicht neutral:</strong> Algorithmen spiegeln die Werte und Vorurteile ihrer Schöpfer wider</li>
+                    <li><strong>Fairness ist komplex:</strong> Verschiedene Fairness-Kriterien können sich widersprechen</li>
+                    <li><strong>Transparenz ist essentiell:</strong> Explainable AI wird zum Standard</li>
+                    <li><strong>Menschliche Autonomie bewahren:</strong> KI soll erweitern, nicht ersetzen</li>
+                    <li><strong>Kontinuierliche Überwachung:</strong> Ethik ist ein fortlaufender Prozess, keine einmalige Aufgabe</li>
+                    <li><strong>Stakeholder einbeziehen:</strong> Alle Betroffenen müssen an der Gestaltung beteiligt werden</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <h3>💭 Zentrale Frage für die Zukunft</h3>
+                <p><em>"Wie können wir sicherstellen, dass KI-Systeme nicht nur technisch funktionieren, sondern auch ethisch verantwortlich handeln und dabei menschliche Werte und Würde respektieren?"</em></p>
+            </div>
+
+            <div class="success-box">
+                <h3>🚀 Ihre nächsten Schritte</h3>
+                <ol>
+                    <li><strong>Bewusstsein entwickeln:</strong> Hinterfragen Sie KI-Entscheidungen in Ihrem Alltag</li>
+                    <li><strong>Weiterbildung:</strong> Lernen Sie mehr über Algorithmen und ihre Funktionsweise</li>
+                    <li><strong>Mitreden:</strong> Beteiligen Sie sich an gesellschaftlichen Diskussionen über KI</li>
+                    <li><strong>Handeln:</strong> Unterstützen Sie Organisationen, die sich für ethische KI einsetzen</li>
+                    <li><strong>Kritisch bleiben:</strong> Akzeptieren Sie nicht blind, was Algorithmen vorschlagen</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="case-study">
+            <h2>🎓 Prüfungsrelevante Aspekte</h2>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h4>📝 Typische Klausurfragen</h4>
+                    <ul>
+                        <li><strong>Analyse:</strong> "Bewerten Sie das COMPAS-System aus kantianischer Sicht"</li>
+                        <li><strong>Vergleich:</strong> "Wie würden Utilitaristen vs. Deontologen autonome Waffen beurteilen?"</li>
+                        <li><strong>Anwendung:</strong> "Entwickeln Sie ethische Richtlinien für KI im Bildungswesen"</li>
+                        <li><strong>Kritik:</strong> "Diskutieren Sie die Grenzen algorithmischer Fairness"</li>
+                    </ul>
+                </div>
+
+                <div class="content-card">
+                    <h4>🔑 Schlüsselbegriffe</h4>
+                    <ul>
+                        <li><strong>Algorithmic Bias:</strong> Systematische Verzerrung in KI-Systemen</li>
+                        <li><strong>Explainable AI (XAI):</strong> Nachvollziehbare KI-Entscheidungen</li>
+                        <li><strong>Human-in-the-loop:</strong> Mensch behält Entscheidungsgewalt</li>
+                        <li><strong>Fairness-Metriken:</strong> Messbare Kriterien für Gerechtigkeit</li>
+                        <li><strong>Digitale Mündigkeit:</strong> Selbstbestimmter Umgang mit KI</li>
+                        <li><strong>Stakeholder:</strong> Alle von KI-Entscheidungen Betroffenen</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ Häufige Fehler vermeiden</h4>
+                <ul>
+                    <li><strong>Technologie-Determinismus:</strong> KI ist nicht wertneutral</li>
+                    <li><strong>Einfache Lösungen:</strong> Ethische Probleme sind komplex</li>
+                    <li><strong>Ignorieren von Macht:</strong> Wer kontrolliert die Algorithmen?</li>
+                    <li><strong>Statischer Ansatz:</strong> Ethik braucht kontinuierliche Anpassung</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+        <div class="nav-grid">
+            <a href="index.html" class="nav-item">
+                <h4>🏠 Hauptseite</h4>
+            </a>
+            <a href="bioethik.html" class="nav-item">
+                <h4>🧬Bioethik & Medizin</h4>
+            </a>
+        </div>
+
+    <script>
+        // Quiz-Funktionalität
+        class KIEthikQuiz {
+            constructor() {
+                this.questions = document.querySelectorAll('.quiz-question');
+                this.totalQuestions = this.questions.length;
+                this.correctAnswers = 0;
+                this.answeredQuestions = 0;
+                this.init();
+            }
+
+            init() {
+                // Event Listener für alle Quiz-Optionen
+                document.querySelectorAll('.quiz-option').forEach(option => {
+                    option.addEventListener('click', (e) => this.handleAnswer(e));
+                });
+
+                // Reset-Button
+                document.querySelector('.reset-quiz').addEventListener('click', () => this.resetQuiz());
+            }
+
+            handleAnswer(event) {
+                const clickedOption = event.target;
+                const questionDiv = clickedOption.closest('.quiz-question');
+                const allOptions = questionDiv.querySelectorAll('.quiz-option');
+                const feedbackDiv = questionDiv.querySelector('.quiz-feedback');
+                const isCorrect = clickedOption.dataset.answer === 'correct';
+
+                // Verhindere mehrfache Antworten auf dieselbe Frage
+                if (clickedOption.classList.contains('disabled')) return;
+
+                // Alle Optionen dieser Frage deaktivieren
+                allOptions.forEach(opt => {
+                    opt.classList.add('disabled');
+                    if (opt.dataset.answer === 'correct') {
+                        opt.classList.add('correct');
+                    } else {
+                        opt.classList.add('wrong');
+                    }
+                });
+
+                // Animation für die gewählte Antwort
+                if (isCorrect) {
+                    clickedOption.style.animation = 'correctPulse 0.6s ease-out';
+                    this.correctAnswers++;
+                } else {
+                    clickedOption.style.animation = 'wrongShake 0.6s ease-out';
+                }
+
+                // Feedback anzeigen
+                feedbackDiv.className = `quiz-feedback show ${isCorrect ? 'correct' : 'wrong'}`;
+                feedbackDiv.innerHTML = `
+                    <strong>${isCorrect ? '✅ Richtig!' : '❌ Falsch!'}</strong><br>
+                    ${clickedOption.dataset.explanation}
+                `;
+
+                this.answeredQuestions++;
+
+                // Nach kurzer Verzögerung prüfen, ob alle Fragen beantwortet wurden
+                setTimeout(() => {
+                    if (this.answeredQuestions === this.totalQuestions) {
+                        this.showResults();
+                    }
+                }, 500);
+            }
+
+            showResults() {
+                const resultsDiv = document.querySelector('.quiz-results');
+                const scoreElement = document.getElementById('score');
+                const totalElement = document.getElementById('total');
+                const messageElement = resultsDiv.querySelector('.result-message');
+
+                scoreElement.textContent = this.correctAnswers;
+                totalElement.textContent = this.totalQuestions;
+
+                // Bewertung basierend auf der Punktzahl
+                const percentage = (this.correctAnswers / this.totalQuestions) * 100;
+                let message, messageClass;
+
+                if (percentage >= 80) {
+                    message = "🎉 Ausgezeichnet! Sie haben ein sehr gutes Verständnis von KI-Ethik entwickelt.";
+                    messageClass = "result-excellent";
+                } else if (percentage >= 60) {
+                    message = "👍 Gut gemacht! Sie kennen die wichtigsten Grundlagen der KI-Ethik.";
+                    messageClass = "result-good";
+                } else {
+                    message = "📚 Vertiefung empfohlen! Lesen Sie die Seite noch einmal durch - KI-Ethik ist wichtig für unsere Zukunft.";
+                    messageClass = "result-needs-improvement";
+                }
+
+                messageElement.textContent = message;
+                messageElement.className = `result-message ${messageClass}`;
+
+                resultsDiv.classList.add('show');
+                resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+
+            resetQuiz() {
+                // Reset aller Variablen
+                this.correctAnswers = 0;
+                this.answeredQuestions = 0;
+
+                // Reset aller Quiz-Optionen
+                document.querySelectorAll('.quiz-option').forEach(option => {
+                    option.classList.remove('disabled', 'correct', 'wrong');
+                    option.style.animation = '';
+                });
+
+                // Alle Feedback-Divs ausblenden
+                document.querySelectorAll('.quiz-feedback').forEach(feedback => {
+                    feedback.classList.remove('show', 'correct', 'wrong');
+                });
+
+                // Ergebnisse ausblenden
+                document.querySelector('.quiz-results').classList.remove('show');
+
+                // Zum ersten Quiz-Element scrollen
+                document.querySelector('.quiz-section').scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start' 
+                });
+            }
+        }
+
+        // Quiz initialisieren, wenn die Seite geladen ist
+        document.addEventListener('DOMContentLoaded', () => {
+            new KIEthikQuiz();
+        });
+
+        // Bestehende Funktionalität beibehalten
+        // Smooth scrolling für interne Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Hover-Effekte für bessere Interaktivität
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.content-card, .nav-item').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    if (!this.style.transform.includes('translateY')) {
+                        this.style.transform = 'translateY(-5px)';
+                    }
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

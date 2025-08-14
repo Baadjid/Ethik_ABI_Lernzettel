@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aktuelle Debatten - Ethik Lernzettel 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Navigation */
+        .nav-bar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            padding: 15px 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        .home-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white !important;
+            font-weight: 600;
+        }
+        
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-title {
+            font-size: 2.8em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+        
+        .header-subtitle {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .trend-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #ff9a9e, #fecfef);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-title {
+            font-size: 2em;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .section-icon {
+            font-size: 1.3em;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 12px;
+        }
+        
+        /* Debate Cards */
+        .debate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .debate-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .debate-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            border-color: #667eea;
+        }
+        
+        .debate-title {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .debate-emoji {
+            font-size: 1.5em;
+        }
+        
+        .debate-description {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .position-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .tag {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+        
+        .tag.pro {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+        }
+        
+        .tag.contra {
+            background: linear-gradient(135deg, #f44336, #d32f2f);
+        }
+        
+        .tag.neutral {
+            background: linear-gradient(135deg, #ff9800, #f57c00);
+        }
+        
+        /* Key Questions */
+        .key-questions {
+            background: linear-gradient(135deg, rgba(255, 154, 158, 0.2), rgba(254, 207, 239, 0.2));
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+            border-left: 5px solid #667eea;
+        }
+        
+        .key-questions h4 {
+            color: #667eea;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+        
+        .key-questions ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .key-questions li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .key-questions li:before {
+            content: "🤔";
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Timeline */
+        .timeline {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+        
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(102, 126, 234, 0.2);
+        }
+        
+        .timeline-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .timeline-year {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+            white-space: nowrap;
+            min-width: 80px;
+            text-align: center;
+        }
+        
+        .timeline-content {
+            flex: 1;
+        }
+        
+        .timeline-content h5 {
+            color: #667eea;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-content p {
+            color: #666;
+            font-size: 0.95em;
+        }
+        
+        /* Analysis Box */
+        .analysis-box {
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.1), rgba(255, 152, 0, 0.1));
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+            border: 2px solid rgba(255, 193, 7, 0.3);
+        }
+        
+        .analysis-box h4 {
+            color: #ff9800;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header {
+                padding: 25px 20px;
+            }
+            
+            .header-title {
+                font-size: 2.2em;
+            }
+            
+            .content-section {
+                padding: 20px;
+            }
+            
+            .section-title {
+                font-size: 1.6em;
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .debate-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .nav-links {
+                justify-content: center;
+                text-align: center;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .timeline-year {
+                align-self: flex-start;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header-title {
+                font-size: 1.8em;
+            }
+            
+            .debate-card {
+                padding: 20px;
+            }
+            
+            .content-section {
+                padding: 15px;
+            }
+            
+            .section-title {
+                font-size: 1.4em;
+            }
+        }
+        
+        /* Interactive Elements */
+        .interactive-poll {
+            background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(139, 195, 74, 0.1));
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+            text-align: center;
+        }
+        
+        .poll-question {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        
+        .poll-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .poll-option {
+            background: rgba(255, 255, 255, 0.8);
+            border: 2px solid #667eea;
+            border-radius: 10px;
+            padding: 12px 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .poll-option:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        .footnote {
+            font-size: 0.9em;
+            color: #666;
+            font-style: italic;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(102, 126, 234, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="nav-bar">
+            <div class="nav-links">
+                <a href="index.html" class="home-btn">🏠 Startseite</a>
+                <a href="moderne-debatten.html">💬 Aktuelle Debatten</a>
+            </div>
+        </nav>
+
+        <!-- Header -->
+        <header class="header">
+            <h1 class="header-title">💬 Aktuelle Debatten</h1>
+            <p class="header-subtitle">Die brennendsten ethischen Fragen unserer Zeit</p>
+            <div class="trend-indicator">
+                🔥 Hot Topics 2026 | 🌍 Global diskutiert | 🎓 Prüfungsrelevant
+            </div>
+        </header>
+
+        <!-- Einführung -->
+        <section class="content-section">
+            <h2 class="section-title">
+                <span class="section-icon">🌊</span>
+                Der ethische Wandel unserer Zeit
+            </h2>
+            <p><strong>Warum sind aktuelle Debatten so wichtig?</strong> Ethik ist keine verstaubte Theorie, sondern lebt von den konkreten Herausforderungen unserer Zeit. Die Digitalisierung, neue Biotechnologien und globale Krisen stellen uns vor ethische Fragen, die noch vor wenigen Jahren undenkbar waren.</p>
+            
+            <div class="key-questions">
+                <h4>🎯 Was macht eine Debatte "ethisch relevant"?</h4>
+                <ul>
+                    <li>Sie betrifft <strong>fundamentale Werte</strong> wie Menschenwürde, Gerechtigkeit oder Freiheit</li>
+                    <li>Sie hat <strong>gesellschaftliche Auswirkungen</strong> auf viele Menschen</li>
+                    <li>Sie erfordert <strong>moralische Urteile</strong> jenseits rein technischer Fragen</li>
+                    <li>Sie zeigt <strong>Wertkonflikte</strong> zwischen verschiedenen ethischen Positionen auf</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Cancel Culture & Wokeness -->
+        <section class="content-section">
+            <h2 class="section-title">
+                <span class="section-icon">🗣️</span>
+                Cancel Culture & Wokeness
+            </h2>
+            
+            <div class="debate-grid">
+                <div class="debate-card">
+                    <h3 class="debate-title">
+                        <span class="debate-emoji">📢</span>
+                        Was ist "Cancel Culture"?
+                    </h3>
+                    <p class="debate-description">
+                        <strong>Definition:</strong> Systematische Bestrebungen zum partiellen sozialen Ausschluss von Personen oder Organisationen wegen unliebsamer Aussagen oder Handlungen.
+                    </p>
+                    <div class="position-tags">
+                        <span class="tag pro">Accountability</span>
+                        <span class="tag contra">Meinungsfreiheit</span>
+                        <span class="tag neutral">Komplexe Realität</span>
+                    </div>
+                    <p><strong>Kernfrage:</strong> Wo liegt die Grenze zwischen legitimer Kritik und illiberaler Zensur?</p>
+                </div>
+                
+                <div class="debate-card">
+                    <h3 class="debate-title">
+                        <span class="debate-emoji">👁️</span>
+                        Wokeness & Bewusstsein
+                    </h3>
+                    <p class="debate-description">
+                        <strong>"Woke" sein</strong> bedeutet ursprünglich "wach sein" für Diskriminierung und Ungerechtigkeit. Kritiker sehen darin Ideologie, Befürworter notwendiges Bewusstsein.
+                    </p>
+                    <div class="position-tags">
+                        <span class="tag pro">Gerechtigkeit</span>
+                        <span class="tag contra">Ideologie-Verdacht</span>
+                        <span class="tag neutral">Differenzierung nötig</span>
+                    </div>
+                    <p><strong>Ethische Frage:</strong> Wann wird Sensibilität für Diskriminierung selbst diskriminierend?</p>
+                </div>
+            </div>
+            
+            <div class="analysis-box">
+                <h4>⚖️ Ethische Analyse nach Forst's Toleranzkonzept</h4>
+                <p><strong>Drei Komponenten der Toleranz:</strong></p>
+                <ol style="margin-left: 20px; margin-top: 10px;">
+                    <li><strong>Ablehnungskomponente:</strong> Manche Aussagen werden als falsch erkannt</li>
+                    <li><strong>Akzeptanzkomponente:</strong> Trotzdem werden sie toleriert (unter bestimmten Bedingungen)</li>
+                    <li><strong>Begründungskomponente:</strong> Die Gründe für Toleranz müssen nachvollziehbar sein</li>
+                </ol>
+                <p class="footnote">Nach Rainer Forst geht es nicht um grenzenlose Toleranz, sondern um begründete Grenzziehungen.</p>
+            </div>
+        </section>
+
+        <!-- Transhumanismus -->
+        <section class="content-section">
+            <h2 class="section-title">
+                <span class="section-icon">🧬</span>
+                Transhumanismus & Human Enhancement
+            </h2>
+            
+            <div class="debate-grid">
+                <div class="debate-card">
+                    <h3 class="debate-title">
+                        <span class="debate-emoji">🚀</span>
+                        Die Optimierung des Menschen
+                    </h3>
+                    <p class="debate-description">
+                        Transhumanisten wollen die <strong>biologischen Grenzen</strong> des Menschen durch Technologie überwinden: Superintelligenz, verlängerte Lebensdauer, körperliche Verbesserung.
+                    </p>
+                    <div class="position-tags">
+                        <span class="tag pro">Leidminderung</span>
+                        <span class="tag contra">Menschenwürde</span>
+                        <span class="tag neutral">Graduelle Verbesserung</span>
+                    </div>
+                    <p><strong>Zentrale Frage:</strong> Dürfen/sollen wir die menschliche Natur technologisch verändern?</p>
+                </div>
+                
+                <div class="debate-card">
+                    <h3 class="debate-title">
+                        <span class="debate-emoji">🤖</span>
+                        Mensch-Maschine-Verschmelzung
+                    </h3>
+                    <p class="debate-description">
+                        <strong>Brain-Computer-Interfaces</strong>, Cyborg-Technologien und KI-Integration versprechen neue Fähigkeiten - aber zu welchem Preis?
+                    </p>
+                    <div class="position-tags">
+                        <span class="tag pro">Behinderung überwinden</span>
+                        <span class="tag contra">Identitätsverlust</span>
+                        <span class="tag neutral">Regulierte Forschung</span>
+                    </div>
+                    <p><strong>Fukuyama's Warnung:</strong> Transhumanismus als "gefährlichste Idee der Welt"?</p>
+                </div>
+            </div>
+            
+            <div class="timeline">
+                <h4 style="color: #667eea; margin-bottom: 20px;">📅 Entwicklung der Debatte</h4>
+                <div class="timeline-item">
+                    <div class="timeline-year">1990s</div>
+                    <div class="timeline-content">
+                        <h5>Entstehung der Bewegung</h5>
+                        <p>Erste transhumanistische Manifeste und Organisationen</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2005</div>
+                    <div class="timeline-content">
+                        <h5>Fukuyama's Kritik</h5>
+                        <p>"Our Posthuman Future" - Warnung vor Folgen für Demokratie</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2023</div>
+                    <div class="timeline-content">
+                        <h5>KI-Durchbruch</h5>
+                        <p>ChatGPT macht KI-Enhancement real vorstellbar</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2026</div>
+                    <div class="timeline-content">
+                        <h5>Mainstream-Debatte</h5>
+                        <p>Transhumanismus wird politisch und gesellschaftlich relevant</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Digitale Demokratie -->
+        <section class="content-section">
+            <h2 class="section-title">
+                <span class="section-icon">🗳️</span>
+                Digitale Demokratie & Partizipation
+            </h2>
+            
+            <div class="debate-grid">
+                <div class="debate-card">
+                    <h3 class="debate-title">
+                        <span class="debate-emoji">📱</span>
+                        E-Democracy & Bürgerbeteiligung
+                    </h3>
+                    <p class="debate-description">
+                        Können <strong>digitale Plattformen</strong> die Demokratie stärken? Online-Abstimmungen, Bürgerdialoge und KI-unterstützte Meinungsbildung versprechen mehr Partizipation.
+                    </p>
+                    <div class="position-tags">
+                        <span class="tag pro">Mehr Teilhabe</span>
+                        <span class="tag contra">Manipulationsrisiko</span>
+                        <span class="tag neutral">Hybride Modelle</span>
+                    </div>
+                </div>
+                
+                <div class="debate-card">
+                    <h3 class="debate-title">
+                        <span class="debate-emoji">🔍</span>
+                        Filter Bubbles & Polarisierung
+                    </h3>
+                    <p class="debate-description">
+                        <strong>Algorithmen</strong> bestimmen, welche Informationen wir sehen. Entstehen dadurch gespaltene Öffentlichkeiten und weniger demokratischer Dialog?
+                    </p>
+                    <div class="position-tags">
+                        <span class="tag contra">Echo-Kammern</span>
+                        <span class="tag pro">Personalisierung</span>
+                        <span class="tag neutral">Regulierung</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="key-questions">
+                <h4>🤔 Zentrale Fragen zur digitalen Demokratie</h4>
+                <ul>
+                    <li>Können Algorithmen <strong>neutrale</strong> politische Information vermitteln?</li>
+                    <li>Wie viel <strong>Transparenz</strong> brauchen demokratische Entscheidungsprozesse?</li>
+                    <li>Welche Rolle spielen <strong>Social Media Plattformen</strong> in der Meinungsbildung?</li>
+                    <li>Kann KI dabei helfen, <strong>Kompromisse</strong> in politischen Konflikten zu finden?</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Diversität & Identitätspolitik -->
+        <section class="content-section">
+            <h2 class="section-title">
+                <span class="section-icon">🌈</span>
+                Diversität & Identitätspolitik
+            </h2>
+            
+            <div class="debate-grid">
+                <div class="debate-card">
+                    <h3 class="debate-title">
+                        <span class="debate-emoji">⚖️</span>
+                        Gleichberechtigung vs. Gleichstellung
+                    </h3>
+                    <p class="debate-description">
+                        <strong>Chancengleichheit</strong> (formale Gleichberechtigung) oder <strong>Ergebnisgleichheit</strong> (materielle Gleichstellung)? Quotenregelungen und positive Diskriminierung im ethischen Spannungsfeld.
+                    </p>
+                    <div class="position-tags">
+                        <span class="tag pro">Gerechtigkeit</span>
+                        <span class="tag contra">Meritokratie</span>
+                        <span class="tag neutral">Kontextabhängig</span>
+                    </div>
+                </div>
+                
+                <div class="debate-card">
+                    <h3 class="debate-title">
+                        <span class="debate-emoji">🗣️</span>
+                        Sprache & Repräsentation
+                    </h3>
+                    <p class="debate-description">
+                        <strong>Gendersprache</strong>, inklusive Begriffe und kulturelle Aneignung: Wie viel Macht hat Sprache über unser Denken und Handeln?
+                    </p>
+                    <div class="position-tags">
+                        <span class="tag pro">Inklusion</span>
+                        <span class="tag contra">Sprachpolizei</span>
+                        <span class="tag neutral">Freiwilligkeit</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="analysis-box">
+                <h4>📊 Das Tocqueville-Paradox der Integration</h4>
+                <p>Der Soziologe <strong>Aladin El-Mafaalani</strong> beschreibt das "Integrationsparadox": Je gleicher eine Gesellschaft wird, desto empfindlicher wird sie zunächst - weil mehr Gruppen am gesellschaftlichen Diskurs teilnehmen und ihre Stimmen hörbar werden.</p>
+                <p class="footnote">Dies erklärt, warum Diversitätsdebatten parallel zu wachsender Gleichberechtigung intensiver werden.</p>
+            </div>
+        </section>
+
+        <!-- Generationengerechtigkeit -->
+        <section class="content-section">
+            <h2 class="section-title">
+                <span class="section-icon">🌱</span>
+                Generationengerechtigkeit & Zukunftsethik
+            </h2>
+            
+            <div class="debate-grid">
+                <div class="debate-card">
+                    <h3 class="debate-title">
+                        <span class="debate-emoji">🌍</span>
+                        Klimaethik & Nachhaltigkeit
+                    </h3>
+                    <p class="debate-description">
+                        <strong>Welche Opfer</strong> darf die heutige Generation zukünftigen Generationen auferlegen? Klimawandel als ethische Herausforderung zwischen Gegenwart und Zukunft.
+                    </p>
+                    <div class="position-tags">
+                        <span class="tag pro">Verantwortungsethik</span>
+                        <span class="tag contra">Gegenwartspräferenz</span>
+                        <span class="tag neutral">Ausgleichsmodelle</span>
+                    </div>
+                </div>
+                
+                <div class="debate-card">
+                    <h3 class="debate-title">
+                        <span class="debate-emoji">💰</span>
+                        Staatsverschuldung & Rentensystem
+                    </h3>
+                    <p class="debate-description">
+                        <strong>Intergenerative Gerechtigkeit:</strong> Dürfen heutige Politiker Schulden und Lasten auf zukünftige Generationen übertragen?
+                    </p>
+                    <div class="position-tags">
+                        <span class="tag pro">Investition in Zukunft</span>
+                        <span class="tag contra">Generationenbetrug</span>
+                        <span class="tag neutral">Nachhaltige Finanzpolitik</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="interactive-poll">
+                <div class="poll-question">
+                    🤔 Denkfrage: Welches Prinzip sollte bei Generationenkonflikten entscheiden?
+                </div>
+                <div class="poll-options">
+                    <div class="poll-option">🏛️ Demokratie (Mehrheit entscheidet)</div>
+                    <div class="poll-option">⚖️ Gerechtigkeit (Ausgleich der Interessen)</div>
+                    <div class="poll-option">🔬 Wissenschaft (Fakten entscheiden)</div>
+                    <div class="poll-option">💡 Innovation (Zukunftschancen)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Neue Technologien & Ethik -->
+        <section class="content-section">
+            <h2 class="section-title">
+                <span class="section-icon">🔬</span>
+                Neue Technologien im ethischen Fokus
+            </h2>
+            
+            <div class="debate-grid">
+                <div class="debate-card">
+                    <h3 class="debate-title">
+                        <span class="debate-emoji">🧠</span>
+                        Neurotechnologie & Mind Reading
+                    </h3>
+                    <p class="debate-description">
+                        <strong>Brain-Computer-Interfaces</strong> können Gedanken lesen und beeinflussen. Wo sind die Grenzen zwischen Therapie und Enhancement, zwischen Heilung und Kontrolle?
+                    </p>
+                    <div class="position-tags">
+                        <span class="tag pro">Medizinischer Fortschritt</span>
+                        <span class="tag contra">Gedankenfreiheit</span>
+                        <span class="tag neutral">Strenge Regulierung</span>
+                    </div>
+                    <p><strong>UNESCO-Sorge:</strong> Schutz der mentalen Privatsphäre als Menschenrecht</p>
+                </div>
+                
+                <div class="debate-card">
+                    <h3 class="debate-title">
+                        <span class="debate-emoji">🔒</span>
+                        Überwachungskapitalismus
+                    </h3>
+                    <p class="debate-description">
+                        <strong>Datensammlung</strong> als Geschäftsmodell: Werden wir zu Produkten der Tech-Konzerne? Digitale Selbstbestimmung vs. kostenlose Services.
+                    </p>
+                    <div class="position-tags">
+                        <span class="tag pro">Innovation</span>
+                        <span class="tag contra">Privatsphäre</span>
+                        <span class="tag neutral">Regulierung</span>
+                    </div>
+                    <p><strong>Shoshana Zuboff:</strong> "Das Zeitalter des Überwachungskapitalismus"</p>
+                </div>
+                
+                <div class="debate-card">
+                    <h3 class="debate-title">
+                        <span class="debate-emoji">🌐</span>
+                        Metaverse & Virtual Reality
+                    </h3>
+                    <p class="debate-description">
+                        <strong>Virtuelle Welten</strong> versprechen neue Formen des Zusammenlebens. Aber entstehen dadurch parallele Gesellschaften und Realitätsflucht?
+                    </p>
+                    <div class="position-tags">
+                        <span class="tag pro">Neue Möglichkeiten</span>
+                        <span class="tag contra">Realitätsverlust</span>
+                        <span class="tag neutral">Hybride Ansätze</span>
+                    </div>
+                    <p><strong>Ethische Frage:</strong> Welche Rechte gelten in virtuellen Räumen?</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Globale Gerechtigkeit -->
+        <section class="content-section">
+            <h2 class="section-title">
+                <span class="section-icon">🌍</span>
+                Globale Gerechtigkeit & Weltethik
+            </h2>
+            
+            <div class="debate-grid">
+                <div class="debate-card">
+                    <h3 class="debate-title">
+                        <span class="debate-emoji">🏭</span>
+                        Klimagerechtigkeit
+                    </h3>
+                    <p class="debate-description">
+                        Wer trägt die <strong>Hauptverantwortung</strong> für den Klimawandel? Industrieländer als Verursacher vs. Entwicklungsländer als Hauptbetroffene.
+                    </p>
+                    <div class="position-tags">
+                        <span class="tag pro">Historische Verantwortung</span>
+                        <span class="tag contra">Aktuelle Emissionen</span>
+                        <span class="tag neutral">Gemeinsame Lösungen</span>
+                    </div>
+                </div>
+                
+                <div class="debate-card">
+                    <h3 class="debate-title">
+                        <span class="debate-emoji">💊</span>
+                        Impfgerechtigkeit & Pandemien
+                    </h3>
+                    <p class="debate-description">
+                        <strong>COVID-19</strong> zeigte: Sollen Patente bei globalen Gesundheitskrisen ausgesetzt werden? Profitmotiv vs. Menschenleben.
+                    </p>
+                    <div class="position-tags">
+                        <span class="tag pro">Globale Solidarität</span>
+                        <span class="tag contra">Innovationsanreize</span>
+                        <span class="tag neutral">Kompromisslösungen</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="key-questions">
+                <h4>🌐 Peter Singers "Expanding Circle"</h4>
+                <ul>
+                    <li>Erweitert sich unser <strong>Mitgefühlskreis</strong> von Familie über Nation zur ganzen Menschheit?</li>
+                    <li>Sind wir <strong>moralisch verpflichtet</strong>, Menschen in fernen Ländern zu helfen?</li>
+                    <li>Das <strong>"Kind im Teich"-Gedankenexperiment:</strong> Würden Sie Ihre Schuhe ruinieren, um ein ertrinkendes Kind zu retten? Warum spenden dann so wenige für Entwicklungshilfe?</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Methodischer Zugang -->
+        <section class="content-section">
+            <h2 class="section-title">
+                <span class="section-icon">🔍</span>
+                Wie analysiert man ethische Debatten?
+            </h2>
+            
+            <div class="analysis-box">
+                <h4>🛠️ Methodisches Vorgehen</h4>
+                <ol style="margin-left: 20px; margin-top: 15px; line-height: 1.8;">
+                    <li><strong>Sachebene klären:</strong> Was sind die Fakten? Welche Technologie/welches Problem steht im Zentrum?</li>
+                    <li><strong>Akteure identifizieren:</strong> Wer ist betroffen? Wer hat welche Interessen?</li>
+                    <li><strong>Wertekonflikte erkennen:</strong> Welche ethischen Prinzipien stehen in Spannung zueinander?</li>
+                    <li><strong>Ethische Theorien anwenden:</strong> Was würden Kant, Utilitaristen, Tugendethiker sagen?</li>
+                    <li><strong>Folgen abschätzen:</strong> Welche kurz- und langfristigen Konsequenzen sind zu erwarten?</li>
+                    <li><strong>Kompromisse suchen:</strong> Gibt es Lösungen, die verschiedene Werte berücksichtigen?</li>
+                </ol>
+            </div>
+            
+            <div class="timeline">
+                <h4 style="color: #667eea; margin-bottom: 20px;">🎯 Typische Argumentationsmuster erkennen</h4>
+                <div class="timeline-item">
+                    <div class="timeline-year" style="background: #f44336;">⚠️</div>
+                    <div class="timeline-content">
+                        <h5>Dammbruch-Argument</h5>
+                        <p>"Wenn wir das erlauben, dann führt das unweigerlich zu..." - Vorsicht vor zu steilen Folgerungen!</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year" style="background: #ff9800;">🎭</div>
+                    <div class="timeline-content">
+                        <h5>Strohmann-Argument</h5>
+                        <p>Die Gegenposition wird verzerrt dargestellt, um sie leichter widerlegen zu können</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year" style="background: #4CAF50;">✅</div>
+                    <div class="timeline-content">
+                        <h5>Prinzip der Wohltätigkeit</h5>
+                        <p>Die stärkste Version der Gegenposition suchen und fair darstellen</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prüfungsrelevanz -->
+        <section class="content-section">
+            <h2 class="section-title">
+                <span class="section-icon">🎓</span>
+                Relevanz für Prüfungen & Studium
+            </h2>
+            
+            <div class="debate-grid">
+                <div class="debate-card">
+                    <h3 class="debate-title">
+                        <span class="debate-emoji">📝</span>
+                        Typische Prüfungsaufgaben
+                    </h3>
+                    <p class="debate-description">
+                        <strong>Analyse aktueller Debatten</strong> mit klassischen ethischen Theorien, Bewertung von Argumenten, eigene Stellungnahme zu kontroversen Themen.
+                    </p>
+                    <div class="position-tags">
+                        <span class="tag">Kantsche Ethik anwenden</span>
+                        <span class="tag">Utilitaristische Analyse</span>
+                        <span class="tag">Wertkonflikte identifizieren</span>
+                    </div>
+                </div>
+                
+                <div class="debate-card">
+                    <h3 class="debate-title">
+                        <span class="debate-emoji">💡</span>
+                        Lerntipps
+                    </h3>
+                    <p class="debate-description">
+                        <strong>Aktuell bleiben:</strong> Nachrichten verfolgen, ethische Dimensionen in Tagespolitik erkennen, verschiedene Perspektiven durchdenken.
+                    </p>
+                    <div class="position-tags">
+                        <span class="tag pro">Tagesschau</span>
+                        <span class="tag neutral">Philosophie Magazine</span>
+                        <span class="tag contra">Social Media kritisch</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="interactive-poll">
+                <div class="poll-question">
+                    🧠 Reflexionsfrage: Welche aktuelle Debatte beschäftigt Sie am meisten?
+                </div>
+                <div class="poll-options">
+                    <div class="poll-option">🤖 KI & Algorithmen</div>
+                    <div class="poll-option">🌍 Klimawandel</div>
+                    <div class="poll-option">🗣️ Cancel Culture</div>
+                    <div class="poll-option">🧬 Gentechnik</div>
+                    <div class="poll-option">⚖️ Soziale Gerechtigkeit</div>
+                </div>
+                <p style="margin-top: 15px; font-size: 0.9em; color: #666;">
+                    💡 <strong>Tipp:</strong> Wählen Sie ein Thema und analysieren Sie es systematisch mit den erlernten ethischen Theorien!
+                </p>
+            </div>
+        </section>
+
+        <!-- Zusammenfassung -->
+        <section class="content-section">
+            <h2 class="section-title">
+                <span class="section-icon">📚</span>
+                Zusammenfassung & Ausblick
+            </h2>
+            
+            <div class="key-questions">
+                <h4>🎯 Kernerkenntnisse zu aktuellen Debatten</h4>
+                <ul>
+                    <li><strong>Komplexität akzeptieren:</strong> Ethische Debatten haben selten einfache Antworten</li>
+                    <li><strong>Multiperspektivität:</strong> Verschiedene Stakeholder haben legitime, aber unterschiedliche Interessen</li>
+                    <li><strong>Wertkonflikte:</strong> Oft stehen mehrere wichtige ethische Prinzipien in Spannung zueinander</li>
+                    <li><strong>Kontextabhängigkeit:</strong> Abstrakte Regeln müssen an konkrete Situationen angepasst werden</li>
+                    <li><strong>Demokratischer Diskurs:</strong> Ethische Fragen erfordern gesellschaftliche Aushandlungsprozesse</li>
+                </ul>
+            </div>
+            
+            <div class="analysis-box">
+                <h4>🔮 Ausblick: Kommende ethische Herausforderungen</h4>
+                <p>Die <strong>Geschwindigkeit technologischer Entwicklung</strong> überholt oft unsere ethischen Reflexionen. Umso wichtiger wird es, ethische Frameworks zu entwickeln, die robust genug sind, um auch auf unvorhergesehene Entwicklungen anwendbar zu bleiben.</p>
+                
+                <p style="margin-top: 15px;"><strong>Für die Zukunft zentral:</strong></p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>🤝 <strong>Interdisziplinäre Zusammenarbeit</strong> zwischen Ethik, Technik und Politik</li>
+                    <li>🌍 <strong>Globale Koordination</strong> ethischer Standards</li>
+                    <li>🎓 <strong>Ethische Bildung</strong> in technischen Studiengängen</li>
+                    <li>⚖️ <strong>Proaktive Regulierung</strong> statt nachträgliche Schadensbegrenzung</li>
+                </ul>
+                
+                <p class="footnote">
+                    Die Fähigkeit, aktuelle ethische Debatten zu verstehen und zu bewerten, wird in unserer schnelllebigen Welt immer wichtiger - sowohl für persönliche Entscheidungen als auch für gesellschaftliche Teilhabe.
+                </p>
+            </div>
+        </section>
+
+        <!-- Navigation Footer -->
+        <nav class="nav-bar">
+            <div class="nav-links">
+                <a href="index.html" class="home-btn">🏠 Startseite</a>
+                <a href="lernhilfen.html">🎯Lernhilfen & Quiz</a>
+            </div>
+        </nav>
+    </div>
+
+    <script>
+        // Interaktive Elemente für bessere Nutzererfahrung
+        document.addEventListener('DOMContentLoaded', function() {
+            // Poll Options interaktiv machen
+            const pollOptions = document.querySelectorAll('.poll-option');
+            pollOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    // Entferne aktive Klasse von allen Optionen in derselben Umfrage
+                    const poll = this.closest('.interactive-poll');
+                    poll.querySelectorAll('.poll-option').forEach(opt => {
+                        opt.style.background = 'rgba(255, 255, 255, 0.8)';
+                        opt.style.color = '#333';
+                    });
+                    
+                    // Markiere ausgewählte Option
+                    this.style.background = '#667eea';
+                    this.style.color = 'white';
+                    
+                    // Zeige kurzes Feedback
+                    setTimeout(() => {
+                        alert('🤔 Interessante Wahl! Denken Sie über die ethischen Implikationen nach.');
+                    }, 200);
+                });
+            });
+            
+            // Smooth scrolling für interne Links
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

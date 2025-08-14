@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angewandte Ethik - Ethik Lernzettel 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header und Navigation */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .breadcrumb {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .breadcrumb a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        .header-title {
+            font-size: 2.5em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .header-icon {
+            font-size: 1.2em;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 15px;
+            flex-shrink: 0;
+        }
+        
+        .header-subtitle {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-title {
+            font-size: 1.8em;
+            color: #667eea;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-icon {
+            font-size: 1.2em;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 10px;
+        }
+        
+        /* Definition Box */
+        .definition-box {
+            background: linear-gradient(135deg, #ff9a9e, #fecfef);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border-left: 5px solid #667eea;
+        }
+        
+        .definition-box h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        /* Grid Layouts */
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .area-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            padding: 20px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .area-card:hover {
+            transform: translateY(-5px);
+            border-color: #667eea;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .area-card h4 {
+            color: #667eea;
+            margin-bottom: 12px;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .area-icon {
+            font-size: 1.1em;
+        }
+        
+        /* Case Studies */
+        .case-studies {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .case-study {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #667eea;
+        }
+        
+        .case-title {
+            color: #667eea;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .case-scenario {
+            background: #f8f9ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-style: italic;
+            border-left: 3px solid #667eea;
+        }
+        
+        .ethical-questions {
+            margin: 15px 0;
+        }
+        
+        .ethical-questions h5 {
+            color: #764ba2;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .ethical-questions ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .ethical-questions li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .ethical-questions li::before {
+            content: "❓";
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Methods Section */
+        .methods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .method-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .method-card h4 {
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        /* Highlight Boxes */
+        .highlight-box {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 4px solid #667eea;
+        }
+        
+        .highlight-box h4 {
+            color: #333;
+            margin-bottom: 12px;
+            font-size: 1.2em;
+        }
+        
+        /* Lists */
+        .styled-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .styled-list li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .styled-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header {
+                padding: 20px;
+            }
+            
+            .header-title {
+                font-size: 2em;
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .header-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1em;
+            }
+            
+            .content-section {
+                padding: 20px;
+            }
+            
+            .section-title {
+                font-size: 1.5em;
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .areas-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .case-studies {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .methods-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header-title {
+                font-size: 1.8em;
+            }
+            
+            .section-title {
+                font-size: 1.3em;
+            }
+            
+            .definition-box, .content-section {
+                padding: 15px;
+            }
+            
+            .case-study {
+                padding: 20px;
+            }
+        }
+        
+        /* Navigation Buttons */
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex: 1;
+            justify-content: center;
+            min-width: 120px;
+        }
+        
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .nav-buttons {
+                flex-direction: column;
+            }
+            
+            .nav-btn {
+                flex: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="breadcrumb">
+                <a href="index.html">🏠 Startseite</a> / <span>🏥 Angewandte Ethik</span>
+            </div>
+            <h1 class="header-title">
+                <span class="header-icon">🏥</span>
+                Angewandte Ethik
+            </h1>
+            <p class="header-subtitle">Von der Theorie zur Praxis: Ethische Entscheidungen in konkreten Lebensbereichen</p>
+        </div>
+
+        <div class="content-section">
+            <div class="definition-box">
+                <h3>📋 Was ist Angewandte Ethik?</h3>
+                <p><strong>Angewandte Ethik</strong> ist der Teilbereich der normativen Ethik, der zwischen der allgemeinen Ethik und der Untersuchung konkreter Einzelfälle angesiedelt ist. Sie wendet die Grundbegriffe, Prinzipien und Begründungen der allgemeinen Ethik auf spezifische Lebensbereiche und Handlungsfelder an, um praktische Hilfestellung bei ethischen Entscheidungen zu leisten.</p>
+                <p><strong>Ziel:</strong> Menschen in konkreten Situationen dabei zu helfen, moralisch richtig zu entscheiden und komplexe ethische Herausforderungen zu bewältigen.</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="section-icon">🌍</span>
+                Entstehung und Entwicklung
+            </h2>
+            <p>Die moderne Angewandte Ethik entstand in den <strong>1970er-Jahren</strong> als Reaktion auf neue ethische Herausforderungen durch:</p>
+            
+            <div class="highlight-box">
+                <h4>🚀 Auslöser der Angewandten Ethik</h4>
+                <ul class="styled-list">
+                    <li>Technologische Durchbrüche (Gentechnik, Computertechnologie)</li>
+                    <li>Medizinische Fortschritte (Organtransplantation, künstliche Beatmung)</li>
+                    <li>Umweltkrisen und Nachhaltigkeitsfragen</li>
+                    <li>Globalisierung und wirtschaftliche Verflechtung</li>
+                    <li>Neue Formen der Kriegsführung und politische Konflikte</li>
+                </ul>
+            </div>
+
+            <p>Heute umfasst die Angewandte Ethik zahlreiche Bereichsethiken, die sich kontinuierlich weiterentwickeln und neue Herausforderungen wie <strong>KI-Ethik</strong>, <strong>Digitale Ethik</strong> und <strong>Pandemie-Ethik</strong> einschließen.</p>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="section-icon">🏗️</span>
+                Hauptbereiche der Angewandten Ethik
+            </h2>
+            
+            <div class="areas-grid">
+                <div class="area-card">
+                    <h4><span class="area-icon">🏥</span> Medizinethik</h4>
+                    <p>Ethische Herausforderungen in der Humanmedizin: Sterbehilfe, Hirntod, Organspende, Patientenverfügungen, medizinische Forschung am Menschen, Triage-Entscheidungen und Ressourcenverteilung im Gesundheitswesen.</p>
+                </div>
+
+                <div class="area-card">
+                    <h4><span class="area-icon">🧬</span> Bioethik</h4>
+                    <p>Umgang mit Leben und biologischen Prozessen: Gentechnik, CRISPR-Cas9, Stammzellforschung, Präimplantationsdiagnostik, Enhancement und die Grenzen der Manipulation des Lebens.</p>
+                </div>
+
+                <div class="area-card">
+                    <h4><span class="area-icon">💼</span> Wirtschaftsethik</h4>
+                    <p>Verantwortungsvolles Wirtschaften: Corporate Social Responsibility, faire Löhne, Korruptionsbekämpfung, nachhaltige Investments, Globalisierung und soziale Gerechtigkeit in der Marktwirtschaft.</p>
+                </div>
+
+                <div class="area-card">
+                    <h4><span class="area-icon">🌱</span> Umweltethik</h4>
+                    <p>Verantwortung für die Natur: Klimawandel, Artensterben, Nachhaltigkeit, Generationengerechtigkeit, Naturschutz und die Beziehung zwischen Mensch und Umwelt.</p>
+                </div>
+
+                <div class="area-card">
+                    <h4><span class="area-icon">🤖</span> Technikethik</h4>
+                    <p>Verantwortlicher Umgang mit Technologie: KI-Systeme, Algorithmus-Fairness, autonome Fahrzeuge, Datenschutz, Cybersecurity und die gesellschaftlichen Auswirkungen neuer Technologien.</p>
+                </div>
+
+                <div class="area-card">
+                    <h4><span class="area-icon">⚖️</span> Politische Ethik</h4>
+                    <p>Ethik in Politik und Governance: Gerechtigkeit, Menschenrechte, Migration, internationale Beziehungen, Demokratie und die Verantwortung politischer Entscheidungsträger.</p>
+                </div>
+
+                <div class="area-card">
+                    <h4><span class="area-icon">📺</span> Medienethik</h4>
+                    <p>Verantwortung in der Kommunikation: Pressefreiheit vs. Persönlichkeitsrechte, Fake News, Social Media-Ethik, Influencer-Marketing und die Macht der Medien.</p>
+                </div>
+
+                <div class="area-card">
+                    <h4><span class="area-icon">🔬</span> Forschungsethik</h4>
+                    <p>Ethik in der Wissenschaft: Integrität, Tierversuche, Dual-Use-Forschung, Open Science, Plagiate und die gesellschaftliche Verantwortung der Wissenschaft.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="section-icon">🔍</span>
+                Methoden der Angewandten Ethik
+            </h2>
+            
+            <p>Da sich allgemeine ethische Theorien nicht immer direkt auf konkrete Fälle übertragen lassen, hat die Angewandte Ethik spezielle Methoden entwickelt:</p>
+            
+            <div class="methods-grid">
+                <div class="method-card">
+                    <h4>🧩 Prinzipienethik</h4>
+                    <p>Anwendung von vier Grundprinzipien: Autonomie, Wohltätigkeit, Nicht-Schädigung und Gerechtigkeit. Besonders bewährt in der Medizinethik.</p>
+                </div>
+
+                <div class="method-card">
+                    <h4>📊 Fallstudienanalyse</h4>
+                    <p>Systematische Untersuchung konkreter Beispiele mit Hilfe ethischer Theorien. Entwicklung von Lösungsansätzen für ähnliche Situationen.</p>
+                </div>
+
+                <div class="method-card">
+                    <h4>🤔 Gedankenexperimente</h4>
+                    <p>Hypothetische Szenarien zur Klärung moralischer Intuitionen: Trolley-Problem, Violinisten-Analogie, Schleier des Nichtwissens.</p>
+                </div>
+
+                <div class="method-card">
+                    <h4>💬 Diskursethik</h4>
+                    <p>Entwicklung ethischer Normen durch herrschaftsfreien Dialog aller Betroffenen. Konsensbildung als Legitimationsgrundlage.</p>
+                </div>
+
+                <div class="method-card">
+                    <h4>⚖️ Güterabwägung</h4>
+                    <p>Systematische Bewertung konfliktierender Werte und Interessen. Suche nach dem bestmöglichen Kompromiss.</p>
+                </div>
+
+                <div class="method-card">
+                    <h4>📋 Ethik-Kommissionen</h4>
+                    <p>Interdisziplinäre Gremien zur Beratung bei komplexen ethischen Fragen in Medizin, Forschung und Politik.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="section-icon">🎯</span>
+                Fallstudien aus der Praxis
+            </h2>
+            
+            <div class="case-studies">
+                <div class="case-study">
+                    <div class="case-title">🏥 Triage in der Intensivmedizin</div>
+                    <div class="case-scenario">
+                        <strong>Szenario:</strong> Während der COVID-19-Pandemie sind die Intensivbetten knapp. Zwei Patient:innen benötigen dringend ein Beatmungsgerät: Eine 30-jährige Mutter mit guten Heilungschancen und ein 70-jähriger Professor mit schlechteren Aussichten, aber wichtiger Forschungsarbeit.
+                    </div>
+                    <div class="ethical-questions">
+                        <h5>Ethische Kernfragen:</h5>
+                        <ul>
+                            <li>Nach welchen Kriterien soll entschieden werden?</li>
+                            <li>Ist das Alter ein legitimes Entscheidungskriterium?</li>
+                            <li>Soll der gesellschaftliche Nutzen berücksichtigt werden?</li>
+                            <li>Wer trägt die Verantwortung für solche Entscheidungen?</li>
+                        </ul>
+                    </div>
+                    <p><strong>Lösungsansätze:</strong> Medizinische Kriterien (Erfolgswahrscheinlichkeit), First-Come-First-Served-Prinzip, Losverfahren bei gleichen Chancen.</p>
+                </div>
+
+                <div class="case-study">
+                    <div class="case-title">🤖 Autonomes Fahrzeug im Dilemma</div>
+                    <div class="case-scenario">
+                        <strong>Szenario:</strong> Ein selbstfahrendes Auto erkennt eine unvermeidbare Kollision. Es kann entweder fünf Fußgänger:innen überfahren oder den Fahrer opfern, indem es gegen eine Wand steuert.
+                    </div>
+                    <div class="ethical-questions">
+                        <h5>Ethische Kernfragen:</h5>
+                        <ul>
+                            <li>Darf eine Maschine über Leben und Tod entscheiden?</li>
+                            <li>Ist es moralisch vertretbar, eine Person zu opfern, um mehrere zu retten?</li>
+                            <li>Wer ist verantwortlich: Hersteller, Programmierer oder Nutzer?</li>
+                            <li>Sollen solche Entscheidungen demokratisch legitimiert werden?</li>
+                        </ul>
+                    </div>
+                    <p><strong>Lösungsansätze:</strong> Minimierung des Gesamtschadens, Zufallsentscheidung, Vorrang für den Schutz der Fahrzeuginsassen.</p>
+                </div>
+
+                <div class="case-study">
+                    <div class="case-title">🌍 Klimagerechtigkeit</div>
+                    <div class="case-scenario">
+                        <strong>Szenario:</strong> Ein internationales Klimaabkommen soll verabschiedet werden. Industrieländer haben historisch mehr CO₂ ausgestoßen, Entwicklungsländer wollen wirtschaftlich aufholen, aber der Klimawandel betrifft alle.
+                    </div>
+                    <div class="ethical-questions">
+                        <h5>Ethische Kernfragen:</h5>
+                        <ul>
+                            <li>Wer trägt die Hauptverantwortung für den Klimawandel?</li>
+                            <li>Ist es fair, Entwicklungsländern Beschränkungen aufzuerlegen?</li>
+                            <li>Wie können wir zukünftige Generationen schützen?</li>
+                            <li>Welche Rolle spielt individuelle vs. kollektive Verantwortung?</li>
+                        </ul>
+                    </div>
+                    <p><strong>Lösungsansätze:</strong> Differenzierte Verantwortung, Technologietransfer, CO₂-Zertifikatehandel, globaler Klimafonds.</p>
+                </div>
+
+                <div class="case-study">
+                    <div class="case-title">💼 Whistleblowing im Unternehmen</div>
+                    <div class="case-scenario">
+                        <strong>Szenario:</strong> Eine Mitarbeiterin entdeckt, dass ihr Pharmaunternehmen schwere Nebenwirkungen eines Medikaments verschweigt. Sie kann schweigen und ihren Job behalten oder die Öffentlichkeit warnen und ihre Karriere riskieren.
+                    </div>
+                    <div class="ethical-questions">
+                        <h5>Ethische Kernfragen:</h5>
+                        <ul>
+                            <li>Wann ist Whistleblowing moralisch geboten?</li>
+                            <li>Überwiegt die Loyalität zum Arbeitgeber oder zur Gesellschaft?</li>
+                            <li>Wie sollen Whistleblower geschützt werden?</li>
+                            <li>Welche Rolle spielen rechtliche vs. moralische Verpflichtungen?</li>
+                        </ul>
+                    </div>
+                    <p><strong>Lösungsansätze:</strong> Gesetzlicher Whistleblower-Schutz, interne Meldestellen, ethische Unternehmenskultur, Abwägung von Schäden.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="section-icon">🎓</span>
+                Aktuelle Herausforderungen 2026
+            </h2>
+            
+            <div class="highlight-box">
+                <h4>🔥 Brennende ethische Themen unserer Zeit</h4>
+                <p>Die Angewandte Ethik steht heute vor völlig neuen Herausforderungen, die unsere Gesellschaft prägen:</p>
+            </div>
+
+            <div class="areas-grid">
+                <div class="area-card">
+                    <h4><span class="area-icon">🤖</span> KI-Governance & Algorithmus-Fairness</h4>
+                    <p>ChatGPT, autonome Systeme und algorithmische Entscheidungen in der Justiz, beim Recruiting und in sozialen Medien erfordern neue ethische Richtlinien.</p>
+                </div>
+
+                <div class="area-card">
+                    <h4><span class="area-icon">🧬</span> CRISPR & Gentherapie</h4>
+                    <p>Die Möglichkeit, menschliche Gene zu editieren, wirft Fragen zu Enhancement, Eugenik und der Zukunft der Menschheit auf.</p>
+                </div>
+
+                <div class="area-card">
+                    <h4><span class="area-icon">🌍</span> Planetary Health</h4>
+                    <p>Klimawandel als Gesundheitskrise: Hitzewellen, Luftverschmutzung und Pandemien erfordern eine neue Integration von Umwelt- und Gesundheitsethik.</p>
+                </div>
+
+                <div class="area-card">
+                    <h4><span class="area-icon">💰</span> Kryptowährungen & NFTs</h4>
+                    <p>Digitale Währungen und Blockchain-Technologie werfen Fragen zu Energieverbrauch, Spekulation und globaler Finanzgerechtigkeit auf.</p>
+                </div>
+
+                <div class="area-card">
+                    <h4><span class="area-icon">🥼</span> Laborfleisch & Ernährungsethik</h4>
+                    <p>Kultiviertes Fleisch könnte Tierleid reduzieren, aber auch neue Probleme für Landwirte und traditionelle Kulturen schaffen.</p>
+                </div>
+
+                <div class="area-card">
+                    <h4><span class="area-icon">🌐</span> Metaverse & Digitale Identität</h4>
+                    <p>Virtuelle Welten, Avatare und digitale Zwillinge stellen unser Verständnis von Identität, Privatsphäre und sozialen Beziehungen in Frage.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="section-icon">📚</span>
+                Lernziele & Kompetenzen
+            </h2>
+            
+            <p>Nach dem Studium der Angewandten Ethik sollten Sie in der Lage sein:</p>
+            
+            <div class="highlight-box">
+                <h4>✅ Zentrale Kompetenzen</h4>
+                <ul class="styled-list">
+                    <li>Ethische Dilemmata in verschiedenen Lebensbereichen erkennen und analysieren</li>
+                    <li>Verschiedene ethische Theorien auf konkrete Probleme anwenden</li>
+                    <li>Komplexe Interessenkonflikte strukturiert bewerten</li>
+                    <li>Begründete ethische Entscheidungen treffen und kommunizieren</li>
+                    <li>In interdisziplinären Teams ethische Beratung leisten</li>
+                    <li>Gesellschaftliche Auswirkungen neuer Technologien einschätzen</li>
+                    <li>Ethische Richtlinien und Codes of Conduct entwickeln</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="section-icon">🛠️</span>
+                Praktische Anwendung: Ethik-Checkliste
+            </h2>
+            
+            <p>Diese Schritt-für-Schritt-Anleitung hilft bei der systematischen Analyse ethischer Probleme in der Praxis:</p>
+            
+            <div class="methods-grid">
+                <div class="method-card">
+                    <h4>1️⃣ Problem identifizieren</h4>
+                    <p>Was genau ist das ethische Dilemma? Welche Werte stehen in Konflikt? Wer sind die Beteiligten und Betroffenen?</p>
+                </div>
+
+                <div class="method-card">
+                    <h4>2️⃣ Fakten sammeln</h4>
+                    <p>Welche empirischen Informationen sind relevant? Was sind die wahrscheinlichen Folgen verschiedener Handlungsoptionen?</p>
+                </div>
+
+                <div class="method-card">
+                    <h4>3️⃣ Stakeholder analysieren</h4>
+                    <p>Wer ist betroffen? Welche Interessen haben die verschiedenen Gruppen? Wessen Stimme wird oft überhört?</p>
+                </div>
+
+                <div class="method-card">
+                    <h4>4️⃣ Ethische Theorien anwenden</h4>
+                    <p>Was würden Kant, Utilitarismus und Tugendethik raten? Welche Menschenrechte sind relevant?</p>
+                </div>
+
+                <div class="method-card">
+                    <h4>5️⃣ Alternativen entwickeln</h4>
+                    <p>Gibt es kreative Lösungen, die alle Interessen berücksichtigen? Welche Kompromisse sind möglich?</p>
+                </div>
+
+                <div class="method-card">
+                    <h4>6️⃣ Entscheidung begründen</h4>
+                    <p>Welche Lösung ist ethisch am besten vertretbar? Wie kann die Entscheidung transparent kommuniziert werden?</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="section-icon">🌟</span>
+                Erfolgsbeispiele: Wo Angewandte Ethik wirkt
+            </h2>
+            
+            <div class="case-studies">
+                <div class="case-study">
+                    <div class="case-title">🏥 Klinische Ethikkomitees</div>
+                    <p>In deutschen Krankenhäusern beraten interdisziplinäre Teams aus Ärzten, Pflegekräften, Theologen und Ethikern bei schwierigen Entscheidungen am Lebensende. Sie entwickeln Leitlinien für Patientenverfügungen und unterstützen Angehörige.</p>
+                    <p><strong>Erfolg:</strong> Bessere Entscheidungsprozesse, weniger Konflikte, mehr Akzeptanz für schwierige Entscheidungen.</p>
+                </div>
+
+                <div class="case-study">
+                    <div class="case-title">💻 KI-Ethik bei Tech-Unternehmen</div>
+                    <p>Große Technologieunternehmen haben eigene Ethik-Teams eingerichtet, die bei der Entwicklung von KI-Systemen beraten. Sie prüfen Algorithmen auf Bias und entwickeln Fairness-Standards.</p>
+                    <p><strong>Erfolg:</strong> Reduktion diskriminierender Algorithmen, transparentere KI-Systeme, proaktive Problemerkennung.</p>
+                </div>
+
+                <div class="case-study">
+                    <div class="case-title">🌱 Nachhaltigkeitsstandards</div>
+                    <p>Internationale Standards wie die UN Sustainable Development Goals geben Unternehmen und Regierungen ethische Leitplanken für nachhaltiges Wirtschaften vor.</p>
+                    <p><strong>Erfolg:</strong> Messbare Fortschritte bei Armut, Bildung und Umweltschutz, neue Geschäftsmodelle, bewusstere Konsumenten.</p>
+                </div>
+
+                <div class="case-study">
+                    <div class="case-title">🔬 Forschungsethik-Kommissionen</div>
+                    <p>Ethikkommissionen prüfen Forschungsvorhaben auf ihre ethische Vertretbarkeit und schützen Probanden vor Risiken. Sie haben Standards für Tierversuche und Humanexperimente entwickelt.</p>
+                    <p><strong>Erfolg:</strong> Höhere Forschungsqualität, besserer Schutz von Versuchspersonen, öffentliches Vertrauen in die Wissenschaft.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="section-icon">⚡</span>
+                Grenzen und Kritik
+            </h2>
+            
+            <div class="highlight-box">
+                <h4>🚧 Herausforderungen der Angewandten Ethik</h4>
+                <p>Trotz aller Erfolge steht die Angewandte Ethik vor wichtigen Kritikpunkten:</p>
+            </div>
+
+            <div class="areas-grid">
+                <div class="area-card">
+                    <h4><span class="area-icon">🐌</span> Langsame Anpassung</h4>
+                    <p>Technologien entwickeln sich schneller als ethische Richtlinien. Bis Regulierung greift, sind oft schon neue Probleme entstanden.</p>
+                </div>
+
+                <div class="area-card">
+                    <h4><span class="area-icon">🌐</span> Kulturelle Unterschiede</h4>
+                    <p>Was in einer Kultur als ethisch gilt, kann in einer anderen problematisch sein. Globale Standards sind schwer zu entwickeln.</p>
+                </div>
+
+                <div class="area-card">
+                    <h4><span class="area-icon">💰</span> Ökonomischer Druck</h4>
+                    <p>Ethische Ideale kollidieren oft mit wirtschaftlichen Interessen. Unternehmen können ethische Standards umgehen oder nur oberflächlich befolgen.</p>
+                </div>
+
+                <div class="area-card">
+                    <h4><span class="area-icon">🎭</span> Scheinlösungen</h4>
+                    <p>Manche ethischen Richtlinien dienen nur der PR und werden nicht ernst genommen. "Ethics Washing" kann echte Reformen behindern.</p>
+                </div>
+
+                <div class="area-card">
+                    <h4><span class="area-icon">🤔</span> Komplexität</h4>
+                    <p>Viele ethische Probleme sind so komplex, dass es keine eindeutigen Antworten gibt. Verschiedene Ethik-Theorien kommen zu unterschiedlichen Schlüssen.</p>
+                </div>
+
+                <div class="area-card">
+                    <h4><span class="area-icon">⚖️</span> Machtungleichgewichte</h4>
+                    <p>Nicht alle Stakeholder haben gleichen Einfluss auf ethische Entscheidungen. Marginalisierte Gruppen werden oft überhört.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="section-icon">🚀</span>
+                Zukunft der Angewandten Ethik
+            </h2>
+            
+            <p>Die Angewandte Ethik entwickelt sich kontinuierlich weiter und steht vor neuen Herausforderungen:</p>
+            
+            <div class="highlight-box">
+                <h4>🔮 Trends und Entwicklungen</h4>
+                <ul class="styled-list">
+                    <li><strong>Algorithmische Ethik:</strong> KI-Systeme, die selbst ethische Entscheidungen treffen</li>
+                    <li><strong>Präventive Ethik:</strong> Ethische Bewertung schon in der Entwicklungsphase neuer Technologien</li>
+                    <li><strong>Partizipative Ethik:</strong> Stärkere Einbindung der Zivilgesellschaft in ethische Entscheidungen</li>
+                    <li><strong>Globale Ethik-Standards:</strong> Internationale Zusammenarbeit bei globalen Herausforderungen</li>
+                    <li><strong>Digitale Ethik-Tools:</strong> Apps und Plattformen zur ethischen Entscheidungsfindung</li>
+                    <li><strong>Emotions-Ethics:</strong> Berücksichtigung von Gefühlen und Intuition in ethischen Theorien</li>
+                </ul>
+            </div>
+
+            <div class="definition-box">
+                <h3>💡 Warum Angewandte Ethik wichtiger wird</h3>
+                <p>In einer immer komplexer werdenden Welt brauchen wir praktische ethische Orientierung mehr denn je. Die Angewandte Ethik hilft uns dabei, <strong>menschlich</strong> zu bleiben, während wir technologisch voranschreiten. Sie sorgt dafür, dass Fortschritt nicht nur möglich, sondern auch <strong>wünschenswert</strong> ist.</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="section-icon">📖</span>
+                Zusammenfassung: Die wichtigsten Punkte
+            </h2>
+            
+            <div class="methods-grid">
+                <div class="method-card">
+                    <h4>🎯 Kernaufgabe</h4>
+                    <p>Angewandte Ethik übersetzt abstrakte moralische Prinzipien in konkrete Handlungsempfehlungen für spezifische Lebensbereiche.</p>
+                </div>
+
+                <div class="method-card">
+                    <h4>🛠️ Methoden</h4>
+                    <p>Prinzipienethik, Fallstudien, Diskurs, Güterabwägung und interdisziplinäre Zusammenarbeit in Ethik-Kommissionen.</p>
+                </div>
+
+                <div class="method-card">
+                    <h4>🌍 Bereiche</h4>
+                    <p>Medizin, Wirtschaft, Umwelt, Technologie, Politik, Forschung und alle Bereiche menschlicher Aktivität.</p>
+                </div>
+
+                <div class="method-card">
+                    <h4>⚡ Aktualität</h4>
+                    <p>Ständige Weiterentwicklung durch neue Technologien, gesellschaftliche Veränderungen und globale Herausforderungen.</p>
+                </div>
+
+                <div class="method-card">
+                    <h4>🎓 Kompetenzen</h4>
+                    <p>Kritisches Denken, strukturierte Problemlösung, Perspektivenwechsel und begründete Entscheidungsfindung.</p>
+                </div>
+
+                <div class="method-card">
+                    <h4>🚀 Zukunft</h4>
+                    <p>Integration in alle Lebensbereiche, präventive Ethik, globale Standards und digitale Unterstützung.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="index.html" class="nav-btn">
+                🏠 Zur Startseite
+            </a>
+            <a href="moderne-debatten.html" class="nav-btn">
+                💬Aktuelle Debatten
+            </a>
+        </div>
+    </div>
+</body>
+</html>

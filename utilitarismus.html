@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utilitarismus - Das größte Glück für die größte Anzahl | Ethik Lernzettel 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+        
+        /* Header und Navigation */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            margin-bottom: 25px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-breadcrumb {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .nav-breadcrumb a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .nav-breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        .page-title {
+            font-size: clamp(2em, 5vw, 3.5em);
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        
+        .page-subtitle {
+            font-size: clamp(1em, 3vw, 1.4em);
+            color: #666;
+            font-style: italic;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: clamp(20px, 4vw, 35px);
+            margin-bottom: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-title {
+            font-size: clamp(1.4em, 3vw, 2em);
+            color: #667eea;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .icon {
+            font-size: 1.2em;
+            width: clamp(30px, 6vw, 40px);
+            height: clamp(30px, 6vw, 40px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+        
+        /* Highlighted Boxes */
+        .highlight-box {
+            background: linear-gradient(135deg, #ff9a9e, #fecfef);
+            padding: clamp(15px, 3vw, 25px);
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 5px solid #667eea;
+        }
+        
+        .definition-box {
+            background: linear-gradient(135deg, #a8edea, #fed6e3);
+            padding: clamp(15px, 3vw, 25px);
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 5px solid #764ba2;
+        }
+        
+        .example-box {
+            background: linear-gradient(135deg, #d299c2, #fef9d7);
+            padding: clamp(15px, 3vw, 25px);
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 5px solid #667eea;
+        }
+        
+        .quote-box {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: white;
+            padding: clamp(20px, 4vw, 30px);
+            border-radius: 12px;
+            margin: 25px 0;
+            font-style: italic;
+            font-size: clamp(1em, 2.2vw, 1.2em);
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-box {
+            background: linear-gradient(135deg, #a8e6cf, #dcedc8);
+            padding: clamp(15px, 3vw, 25px);
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 5px solid #4caf50;
+        }
+        
+        .principles-box {
+            background: linear-gradient(135deg, #ffb3ba, #ffdfba);
+            padding: clamp(15px, 3vw, 25px);
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 5px solid #ff9800;
+        }
+        
+        /* Grid Layouts */
+        .two-column {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+            gap: clamp(15px, 3vw, 25px);
+            margin: 25px 0;
+        }
+        
+        .three-column {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+            gap: clamp(15px, 3vw, 20px);
+            margin: 25px 0;
+        }
+        
+        .philosopher-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: clamp(15px, 3vw, 25px);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .philosopher-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border-color: #667eea;
+        }
+        
+        .philosopher-name {
+            font-size: clamp(1.1em, 2.5vw, 1.4em);
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .philosopher-dates {
+            font-size: 0.9em;
+            color: #888;
+            margin-bottom: 15px;
+        }
+        
+        /* Lists */
+        .styled-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .styled-list li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .styled-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .numbered-list {
+            counter-reset: item;
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .numbered-list li {
+            counter-increment: item;
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .numbered-list li::before {
+            content: counter(item);
+            position: absolute;
+            left: 0;
+            background: #667eea;
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+        
+        /* Modern Examples Grid */
+        .modern-examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+            gap: clamp(15px, 3vw, 20px);
+            margin: 25px 0;
+        }
+        
+        .example-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: clamp(15px, 3vw, 20px);
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .example-title {
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: clamp(1em, 2vw, 1.1em);
+        }
+        
+        /* Critical Thinking */
+        .criticism-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+            gap: clamp(15px, 3vw, 20px);
+            margin: 25px 0;
+        }
+        
+        .criticism-item {
+            background: rgba(255, 255, 255, 0.9);
+            padding: clamp(15px, 3vw, 20px);
+            border-radius: 10px;
+            border-left: 4px solid #e74c3c;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .criticism-title {
+            font-weight: 600;
+            color: #e74c3c;
+            margin-bottom: 10px;
+            font-size: clamp(1em, 2vw, 1.1em);
+        }
+        
+        /* Responsive Comparison - Cards für mobile, Tabelle für Desktop */
+        .comparison-container {
+            margin: 20px 0;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            display: table;
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 8px;
+            text-align: left;
+            font-weight: 600;
+            font-size: clamp(0.8em, 2vw, 1em);
+        }
+        
+        .comparison-table td {
+            padding: 12px 8px;
+            border-bottom: 1px solid #eee;
+            font-size: clamp(0.8em, 2vw, 0.95em);
+            vertical-align: top;
+        }
+        
+        .comparison-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        /* Mobile-Alternative: Karten-Layout */
+        .comparison-cards {
+            display: none;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .comparison-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #667eea;
+        }
+        
+        .comparison-card h4 {
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            margin: -20px -20px 15px -20px;
+        }
+        
+        .comparison-item {
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .comparison-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .comparison-label {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .comparison-value {
+            color: #666;
+            font-size: 0.95em;
+        }
+        
+        /* Navigation Footer */
+        .page-navigation {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: clamp(20px, 4vw, 30px);
+            margin-top: 30px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: clamp(10px, 2vw, 15px);
+            margin-top: 20px;
+        }
+        
+        .nav-button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: clamp(10px, 2vw, 15px) clamp(15px, 3vw, 25px);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: clamp(0.9em, 2vw, 1em);
+        }
+        
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Responsive Typography */
+        h3 {
+            font-size: clamp(1.2em, 2.5vw, 1.5em);
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        h4 {
+            font-size: clamp(1.1em, 2vw, 1.3em);
+            margin-bottom: 12px;
+            color: #555;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: clamp(0.95em, 2vw, 1.05em);
+        }
+        
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .content-section {
+                margin-bottom: 20px;
+            }
+            
+            .two-column,
+            .three-column {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .modern-examples,
+            .criticism-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .nav-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-button {
+                width: 100%;
+                max-width: 250px;
+                text-align: center;
+            }
+            
+            /* Tabelle auf Mobile verstecken, Karten anzeigen */
+            .comparison-table {
+                display: none;
+            }
+            
+            .comparison-cards {
+                display: grid;
+            }
+        }
+        
+        /* Extra small devices */
+        @media (max-width: 480px) {
+            .header {
+                padding: 15px;
+            }
+            
+            .content-section {
+                padding: 15px;
+            }
+            
+            .highlight-box,
+            .definition-box,
+            .example-box,
+            .quote-box,
+            .timeline-box,
+            .principles-box {
+                padding: 15px;
+            }
+        }
+        
+        /* Large screens */
+        @media (min-width: 1400px) {
+            .container {
+                max-width: 1400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="nav-breadcrumb">
+                <a href="index.html">🏠 Startseite</a> &gt; <strong>Utilitarismus</strong>
+            </div>
+            <h1 class="page-title">Utilitarismus</h1>
+            <p class="page-subtitle">"Das größte Glück für die größte Anzahl von Menschen"</p>
+        </div>
+
+        <!-- 1. Einführung und Definition -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="icon">📚</span>
+                Was ist Utilitarismus?
+            </h2>
+            
+            <div class="definition-box">
+                <h3>📖 Grunddefinition</h3>
+                <p><strong>Utilitarismus</strong> (auch Nützlichkeitsethik oder Glücksethik) ist eine konsequentialistische Ethik, die Handlungen ausschließlich nach ihren Folgen bewertet. Das zentrale Prinzip:</p>
+                <div class="quote-box">
+                    "The greatest happiness for the greatest number of people"
+                    <br><small>(Das größte Glück für die größte Anzahl von Menschen)</small>
+                </div>
+            </div>
+
+            <div class="timeline-box">
+                <h3>🕐 Historische Einordnung</h3>
+                <p><strong>Entstehungszeit:</strong> 18./19. Jahrhundert während der Aufklärung und Industrialisierung in Großbritannien</p>
+                <p><strong>Gesellschaftlicher Kontext:</strong> Soziale Reformen, Arbeiterrechte, utilitaristische Gesetzgebung</p>
+                <p><strong>Heute:</strong> Einfluss auf Politik, Wirtschaft, Medizin und KI-Entwicklung</p>
+            </div>
+        </div>
+
+        <!-- 2. Die 5 Grundprinzipien -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="icon">⚖️</span>
+                Die 5 Grundprinzipien des Utilitarismus
+            </h2>
+
+            <div class="principles-box">
+                <ol class="numbered-list">
+                    <li><strong>Konsequenzprinzip:</strong> Nur die Folgen einer Handlung bestimmen ihre moralische Richtigkeit - nicht Absicht, Motiv oder Pflicht</li>
+                    <li><strong>Hedonistisches Prinzip:</strong> Lustbefriedigung und Leidvermeidung sind legitime moralische Ziele</li>
+                    <li><strong>Sozialprinzip:</strong> "Das größte Glück der größten Anzahl" - Gesamtnutzen wird maximiert</li>
+                    <li><strong>Egalitätsprinzip:</strong> Jeder Mensch zählt gleich viel - keine Bevorzugung oder Benachteiligung</li>
+                    <li><strong>Utilitätsprinzip:</strong> Der Nutzen für Einzelne und Gemeinschaft ist der Maßstab für Handlungsbewertung</li>
+                </ol>
+            </div>
+
+            <div class="highlight-box">
+                <h3>🎯 Kerngedanke</h3>
+                <p>Was <strong>nützlich</strong> ist, ist auch <strong>gut</strong>. Eine Handlung ist richtig, wenn sie den größtmöglichen Nutzen (Glück, Wohlbefinden) für die größtmögliche Anzahl von Betroffenen bewirkt.</p>
+            </div>
+        </div>
+
+        <!-- 3. Chronologische Entwicklung - Bentham -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="icon">👨‍🏫</span>
+                Jeremy Bentham (1748-1832): Der Begründer
+            </h2>
+
+            <div class="philosopher-card">
+                <h3 class="philosopher-name">Jeremy Bentham</h3>
+                <p class="philosopher-dates">1748-1832 • Begründer des klassischen Utilitarismus</p>
+                
+                <h4>🧮 Das hedonistische Kalkül</h4>
+                <p>Bentham entwickelte ein mathematisches System zur Berechnung von Glück und Leid:</p>
+                
+                <div class="quote-box">
+                    "Die Natur hat die Menschheit unter die Herrschaft zweier souveräner Gebieter gestellt: Leid und Freude"
+                </div>
+
+                <div class="example-box">
+                    <h4>Die 7 Messkriterien für Glück/Leid:</h4>
+                    <ol class="numbered-list">
+                        <li><strong>Intensität:</strong> Wie stark ist die Freude/das Leid?</li>
+                        <li><strong>Dauer:</strong> Wie lange hält es an?</li>
+                        <li><strong>Gewissheit:</strong> Wie wahrscheinlich tritt es ein?</li>
+                        <li><strong>Zeitliche Nähe:</strong> Wie bald geschieht es?</li>
+                        <li><strong>Fruchtbarkeit:</strong> Führt es zu weiterer Freude/weiterem Leid?</li>
+                        <li><strong>Reinheit:</strong> Folgt der Freude Leid (oder umgekehrt)?</li>
+                        <li><strong>Ausdehnung:</strong> Wie viele Menschen sind betroffen?</li>
+                    </ol>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>🔢 Benthams Rechenformel</h4>
+                    <p><strong>Gesamtnutzen = Σ(Freude) - Σ(Leid)</strong></p>
+                    <p>Alle Arten von Freude sind gleichwertig - körperliche wie geistige. Bentham: "Pushpin [ein einfaches Spiel] ist genauso gut wie Poesie, wenn es dasselbe Maß an Freude bereitet."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Mill's Weiterentwicklung -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="icon">🎭</span>
+                John Stuart Mill (1806-1873): Qualität über Quantität
+            </h2>
+
+            <div class="philosopher-card">
+                <h3 class="philosopher-name">John Stuart Mill</h3>
+                <p class="philosopher-dates">1806-1873 • Weiterentwicklung des Utilitarismus</p>
+                
+                <h4>📚 Mills Revolution: Qualitative Unterschiede</h4>
+                <p>Mill kritisierte Benthams rein quantitative Betrachtung und führte eine Hierarchie der Freuden ein:</p>
+                
+                <div class="quote-box">
+                    "Es ist besser, ein unzufriedener Mensch zu sein als ein zufriedenes Schwein; besser ein unzufriedener Sokrates als ein zufriedener Narr"
+                </div>
+                
+                <div class="two-column">
+                    <div class="example-box">
+                        <h4>🧠 Höhere Freuden</h4>
+                        <ul class="styled-list">
+                            <li>Intellektuelle Betätigung</li>
+                            <li>Kunst und Ästhetik</li>
+                            <li>Moralische Gefühle</li>
+                            <li>Soziale Verbindungen</li>
+                        </ul>
+                        <p><small><strong>Merkmal:</strong> Nur wer beide Arten kennt, kann urteilen - und bevorzugt die höheren</small></p>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>🥩 Niedere Freuden</h4>
+                        <ul class="styled-list">
+                            <li>Körperliche Genüsse</li>
+                            <li>Sinnliche Vergnügungen</li>
+                            <li>Einfache Triebbefriedigung</li>
+                            <li>"Schweineglück"</li>
+                        </ul>
+                        <p><small><strong>Problem:</strong> Leicht zu erreichen, aber oberflächlich und vergänglich</small></p>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>🏛️ Regelutilitarismus vs. Handlungsutilitarismus</h4>
+                    <p><strong>Mills Erkenntnis:</strong> Direktes hedonistisches Kalkül kann zu unmoralischen Handlungen führen. Daher braucht es <strong>Handlungsregeln</strong>, die langfristig den größten Nutzen bringen.</p>
+                    
+                    <table class="comparison-table">
+                        <tr>
+                            <th>Handlungsutilitarismus (Bentham)</th>
+                            <th>Regelutilitarismus (Mill)</th>
+                        </tr>
+                        <tr>
+                            <td>Jede Handlung einzeln bewerten</td>
+                            <td>Regeln befolgen, die insgesamt nützlich sind</td>
+                        </tr>
+                        <tr>
+                            <td>Problem: Kann Ungerechtigkeit rechtfertigen</td>
+                            <td>Lösung: Stabile, nützliche Regeln schützen</td>
+                        </tr>
+                        <tr>
+                            <td>Beispiel: Einen Unschuldigen opfern, um 5 zu retten</td>
+                            <td>Regel: "Nicht töten" - langfristig nützlicher</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Moderne Entwicklungen -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="icon">🚀</span>
+                Moderne Entwicklungen des Utilitarismus
+            </h2>
+
+            <div class="three-column">
+                <div class="philosopher-card">
+                    <h3 class="philosopher-name">Peter Singer</h3>
+                    <p class="philosopher-dates">*1946 • Präferenzutilitarismus</p>
+                    
+                    <h4>🎯 Präferenzen statt Glück</h4>
+                    <p>Problem: Glück ist nicht messbar. Singers Lösung: <strong>Präferenzen</strong> (Wünsche, Interessen) sind beobachtbar und zählbar.</p>
+                    
+                    <div class="example-box">
+                        <h4>Singers Beispiel:</h4>
+                        <p><strong>Rettungsszenario:</strong> 70-jährige vs. 20-jährige Person</p>
+                        <p><strong>Utilitaristische Antwort:</strong> Die 20-Jährige retten - sie hat mehr unerfüllte Präferenzen (Studium, Karriere, Familie, etc.)</p>
+                    </div>
+                    
+                    <p><strong>Erweiterung:</strong> Auch Tiere haben Interessen (nicht leiden zu wollen) → Tierrechte</p>
+                </div>
+
+                <div class="philosopher-card">
+                    <h3 class="philosopher-name">Negativer Utilitarismus</h3>
+                    <p class="philosopher-dates">20./21. Jahrhundert</p>
+                    
+                    <h4>⛔ Leid minimieren statt Glück maximieren</h4>
+                    <p><strong>Kernthese:</strong> Leid ist "wichtiger" als Glück - erst alles Leid beseitigen, dann Glück fördern.</p>
+                    
+                    <div class="example-box">
+                        <h4>Praktische Konsequenz:</h4>
+                        <p>Ressourcen zuerst für die Ärmsten und Leidendsten, nicht für bereits Glückliche</p>
+                    </div>
+                </div>
+
+                <div class="philosopher-card">
+                    <h3 class="philosopher-name">Effektiver Altruismus</h3>
+                    <p class="philosopher-dates">21. Jahrhundert (ab ~2000)</p>
+                    
+                    <h4>📊 Evidenzbasierte Hilfe</h4>
+                    <p>Utilitarismus + Wissenschaft: Welche Spenden bewirken den größten messbaren Nutzen?</p>
+                    
+                    <div class="example-box">
+                        <h4>Singers "Kind im Teich":</h4>
+                        <p>Würdest du deine 1000€-Schuhe opfern, um ein ertrinkendes Kind zu retten? Dann solltest du auch 1000€ spenden, um Malarianetze zu kaufen.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. Das Trolley-Problem -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="icon">🚂</span>
+                Das Trolley-Problem: Utilitarismus in der Praxis
+            </h2>
+
+            <div class="example-box">
+                <h3>🤔 Das klassische Dilemma</h3>
+                <p><strong>Szenario:</strong> Ein führerloser Zug rast auf fünf Personen zu. Sie können eine Weiche umlegen und den Zug auf ein Nebengleis lenken - dort würde aber eine Person sterben.</p>
+                
+                <div class="two-column">
+                    <div class="highlight-box">
+                        <h4>⚖️ Utilitaristische Antwort:</h4>
+                        <ul class="styled-list">
+                            <li><strong>Weiche umlegen!</strong></li>
+                            <li>5 Leben > 1 Leben</li>
+                            <li>Gesamtnutzen wird maximiert</li>
+                            <li>Absicht spielt keine Rolle</li>
+                            <li>Folgen sind alles was zählt</li>
+                        </ul>
+                    </div>
+                    <div class="example-box">
+                        <h4>🧠 Kants Antwort (Vergleich):</h4>
+                        <ul class="styled-list">
+                            <li><strong>Nicht umlegen!</strong></li>
+                            <li>Du darfst nie aktiv töten</li>
+                            <li>Menschen sind Zweck an sich</li>
+                            <li>Folgen sind irrelevant</li>
+                            <li>Pflicht steht über Nutzen</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3>🆕 Moderne Variante: Autonome Fahrzeuge 2026</h3>
+                <p>Programmierer müssen entscheiden: Soll ein selbstfahrendes Auto bei einem unvermeidlichen Unfall...</p>
+                <ul class="styled-list">
+                    <li>...den Fahrer (1 Leben) oder mehrere Fußgänger (3 Leben) schützen?</li>
+                    <li>...junge Menschen vor alten Menschen schützen? (Mill'sche Qualität)</li>
+                    <li>...Gesetzestreue vor Regelverletzer stellen?</li>
+                    <li>...Reiche vor Armen bevorzugen? (Singers Präferenzen)</li>
+                </ul>
+                <p><strong>Utilitaristische Programmierung:</strong> Der Algorithmus wählt die Option mit dem größten Gesamtnutzen - aber wer definiert, was "Nutzen" bedeutet?</p>
+            </div>
+        </div>
+
+        <!-- 7. Aktuelle Anwendungen 2026 -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="icon">🌐</span>
+                Utilitarismus heute: Anwendungen in der modernen Welt
+            </h2>
+
+            <div class="modern-examples">
+                <div class="example-card">
+                    <h3 class="example-title">🤖 KI-Algorithmen & Big Tech</h3>
+                    <p><strong>Beispiel:</strong> Social Media-Algorithmen maximieren "Engagement" (Likes, Shares, Verweildauer) aller Nutzer</p>
+                    <p><strong>Problem:</strong> Führt zu Sucht, Polarisierung und mentalen Problemen</p>
+                    <p><strong>Utilitaristische Frage:</strong> Ist das Gesamtglück wirklich maximiert?</p>
+                </div>
+
+                <div class="example-card">
+                    <h3 class="example-title">🏥 Medizinische Triage & COVID-19</h3>
+                    <p><strong>Beispiel:</strong> Bei begrenzten Intensivbetten - wen zuerst behandeln?</p>
+                    <p><strong>Utilitaristische Kriterien:</strong> Überlebenschancen, Lebensjahre, gesellschaftlicher Beitrag</p>
+                    <p><strong>Kontrovers:</strong> Alter vs. "systemrelevante" Berufe</p>
+                </div>
+
+                <div class="example-card">
+                    <h3 class="example-title">🌍 Klimapolitik & CO₂-Steuer</h3>
+                    <p><strong>Logik:</strong> Kurzfristige Kosten für wenige vs. langfristige Vorteile für alle</p>
+                    <p><strong>Utilitaristische Rechtfertigung:</strong> Gesamtnutzen über Generationen maximieren</p>
+                    <p><strong>Problem:</strong> Globale vs. lokale Interessen</p>
+                </div>
+
+                <div class="example-card">
+                    <h3 class="example-title">💰 Progressive Besteuerung</h3>
+                    <p><strong>Utilitaristische Begründung:</strong> 1000€ bedeuten für Arme mehr als für Reiche</p>
+                    <p><strong>Grenznutzen:</strong> Zusätzliches Geld bringt weniger Glück, je mehr man schon hat</p>
+                    <p><strong>Folgerung:</strong> Umverteilung maximiert Gesamtglück</p>
+                </div>
+
+                <div class="example-card">
+                    <h3 class="example-title">🔒 Überwachung vs. Sicherheit</h3>
+                    <p><strong>Dilemma:</strong> Massenüberwachung kann Terroranschläge verhindern</p>
+                    <p><strong>Utilitaristische Abwägung:</strong> Verlust der Privatsphäre aller vs. Schutz vor seltenen, aber schweren Schäden</p>
+                    <p><strong>2026:</strong> KI-gestützte Gesichtserkennung, Predictive Policing</p>
+                </div>
+
+                <div class="example-card">
+                    <h3 class="example-title">🧬 Gentherapie & Enhancement</h3>
+                    <p><strong>Möglichkeit:</strong> Genetische "Verbesserung" von Embryos (Intelligenz, Gesundheit)</p>
+                    <p><strong>Utilitaristische Pro-Argumente:</strong> Weniger Leid, mehr Wohlbefinden für alle</p>
+                    <p><strong>Kritik:</strong> Verstärkt Ungleichheit, definiert "normal" neu</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 8. Kritik am Utilitarismus -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="icon">⚠️</span>
+                Kritik am Utilitarismus: Die Grenzen der Nützlichkeit
+            </h2>
+
+            <div class="criticism-grid">
+                <div class="criticism-item">
+                    <h3 class="criticism-title">🔢 Das Messproblem</h3>
+                    <p><strong>Kern:</strong> Wie misst und vergleicht man Glück verschiedener Menschen?</p>
+                    <p><strong>Beispiel:</strong> Ist das Glück eines Musikers mit dem eines Mathematikers vergleichbar?</p>
+                    <p><strong>Mills Versuch:</strong> Qualitative Hierarchie - aber wer entscheidet über "höhere" Freuden?</p>
+                </div>
+
+                <div class="criticism-item">
+                    <h3 class="criticism-title">👥 Tyrannei der Mehrheit</h3>
+                    <p><strong>Problem:</strong> Minderheiten können systematisch unterdrückt werden</p>
+                    <p><strong>Extrembeispiel:</strong> Dürfte eine sadistische Mehrheit eine Minderheit foltern, wenn sie dadurch "glücklicher" wird?</p>
+                    <p><strong>Realität:</strong> Diskriminierung von LGBTQ+, ethnischen Minderheiten</p>
+                </div>
+
+                <div class="criticism-item">
+                    <h3 class="criticism-title">⚖️ Gerechtigkeit vs. Nutzen</h3>
+                    <p><strong>Dilemma:</strong> Was ist wichtiger - Fairness oder Gesamtnutzen?</p>
+                    <p><strong>Beispiel:</strong> Einen Unschuldigen hinrichten, um Aufstände zu verhindern</p>
+                    <p><strong>Rawls' Kritik:</strong> Gerechtigkeit geht vor Nutzen</p>
+                </div>
+
+                <div class="criticism-item">
+                    <h3 class="criticism-title">🎯 Praktikabilitätsproblem</h3>
+                    <p><strong>Realität:</strong> Niemand kann alle Konsequenzen vorhersehen</p>
+                    <p><strong>Zeitproblem:</strong> Keine Zeit für hedonistisches Kalkül in Notfällen</p>
+                    <p><strong>Informationsproblem:</strong> Unvollständige Daten über Präferenzen</p>
+                </div>
+
+                <div class="criticism-item">
+                    <h3 class="criticism-title">🤖 Instrumentalisierung</h3>
+                    <p><strong>Kant'sche Kritik:</strong> Menschen werden zu bloßen Mitteln degradiert</p>
+                    <p><strong>Menschenwürde:</strong> Jeder hat intrinsischen Wert, nicht nur instrumentellen</p>
+                    <p><strong>Beispiel:</strong> Organentnahme von einem Gesunden, um fünf Kranke zu retten</p>
+                </div>
+
+                <div class="criticism-item">
+                    <h3 class="criticism-title">📊 Verteilungsproblem</h3>
+                    <p><strong>Frage:</strong> Ist ein sehr glücklicher Mensch besser als zehn mäßig glückliche?</p>
+                    <p><strong>Gleichverteilung:</strong> Utilitarismus sagt nichts über faire Verteilung</p>
+                    <p><strong>Extremfall:</strong> Wenige Superglückliche vs. viele mäßig Zufriedene</p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3>🔄 Utilitaristische Antworten auf Kritik</h3>
+                <ul class="styled-list">
+                    <li><strong>Regelutilitarismus:</strong> Stabile Regeln schützen vor Willkür</li>
+                    <li><strong>Negative Utilitarismus:</strong> Leid minimieren ist wichtiger als Glück maximieren</li>
+                    <li><strong>Präferenzutilitarismus:</strong> Beobachtbare Präferenzen statt subjektives Glück</li>
+                    <li><strong>Zweistufiger Utilitarismus:</strong> Intuitive Moral im Alltag, Kalkül nur bei großen Entscheidungen</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 9. Vergleich mit anderen Ethiken -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="icon">🔄</span>
+                Utilitarismus vs. andere Ethiken
+            </h2>
+
+            <div class="comparison-container">
+                <!-- Desktop: Tabelle -->
+                <table class="comparison-table">
+                    <tr>
+                        <th>Aspekt</th>
+                        <th>Utilitarismus</th>
+                        <th>Kant'sche Pflichtethik</th>
+                        <th>Tugendethik (Aristoteles)</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Bewertungsmaßstab</strong></td>
+                        <td>Folgen/Konsequenzen</td>
+                        <td>Pflicht/Intention</td>
+                        <td>Charakter/Tugenden</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ziel</strong></td>
+                        <td>Maximierung des Gesamtnutzens</td>
+                        <td>Pflichterfüllung aus Respekt</td>
+                        <td>Gutes Leben/Eudaimonia</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Universalität</strong></td>
+                        <td>Situationsabhängig</td>
+                        <td>Absolute Regeln</td>
+                        <td>Kulturabhängige Tugenden</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Trolley-Problem</strong></td>
+                        <td>Weiche umlegen (5>1)</td>
+                        <td>Nicht umlegen (nicht töten)</td>
+                        <td>Was würde eine tugendhafte Person tun?</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Stärke</strong></td>
+                        <td>Praktikabel, kalkulierbar</td>
+                        <td>Klare Prinzipien, würdigt Autonomie</td>
+                        <td>Ganzheitlich, entwicklungsorientiert</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Schwäche</strong></td>
+                        <td>Messbarkeit, Minderheitenschutz</td>
+                        <td>Rigidität, Pflichtenkonflikte</td>
+                        <td>Vage, kulturrelativ</td>
+                    </tr>
+                </table>
+
+                <!-- Mobile: Karten -->
+                <div class="comparison-cards">
+                    <div class="comparison-card">
+                        <h4>Utilitarismus</h4>
+                        <div class="comparison-item">
+                            <div class="comparison-label">Bewertungsmaßstab:</div>
+                            <div class="comparison-value">Folgen/Konsequenzen</div>
+                        </div>
+                        <div class="comparison-item">
+                            <div class="comparison-label">Ziel:</div>
+                            <div class="comparison-value">Maximierung des Gesamtnutzens</div>
+                        </div>
+                        <div class="comparison-item">
+                            <div class="comparison-label">Universalität:</div>
+                            <div class="comparison-value">Situationsabhängig</div>
+                        </div>
+                        <div class="comparison-item">
+                            <div class="comparison-label">Trolley-Problem:</div>
+                            <div class="comparison-value">Weiche umlegen (5>1)</div>
+                        </div>
+                        <div class="comparison-item">
+                            <div class="comparison-label">Stärke:</div>
+                            <div class="comparison-value">Praktikabel, kalkulierbar</div>
+                        </div>
+                        <div class="comparison-item">
+                            <div class="comparison-label">Schwäche:</div>
+                            <div class="comparison-value">Messbarkeit, Minderheitenschutz</div>
+                        </div>
+                    </div>
+
+                    <div class="comparison-card">
+                        <h4>Kant'sche Pflichtethik</h4>
+                        <div class="comparison-item">
+                            <div class="comparison-label">Bewertungsmaßstab:</div>
+                            <div class="comparison-value">Pflicht/Intention</div>
+                        </div>
+                        <div class="comparison-item">
+                            <div class="comparison-label">Ziel:</div>
+                            <div class="comparison-value">Pflichterfüllung aus Respekt</div>
+                        </div>
+                        <div class="comparison-item">
+                            <div class="comparison-label">Universalität:</div>
+                            <div class="comparison-value">Absolute Regeln</div>
+                        </div>
+                        <div class="comparison-item">
+                            <div class="comparison-label">Trolley-Problem:</div>
+                            <div class="comparison-value">Nicht umlegen (nicht töten)</div>
+                        </div>
+                        <div class="comparison-item">
+                            <div class="comparison-label">Stärke:</div>
+                            <div class="comparison-value">Klare Prinzipien, würdigt Autonomie</div>
+                        </div>
+                        <div class="comparison-item">
+                            <div class="comparison-label">Schwäche:</div>
+                            <div class="comparison-value">Rigidität, Pflichtenkonflikte</div>
+                        </div>
+                    </div>
+
+                    <div class="comparison-card">
+                        <h4>Tugendethik (Aristoteles)</h4>
+                        <div class="comparison-item">
+                            <div class="comparison-label">Bewertungsmaßstab:</div>
+                            <div class="comparison-value">Charakter/Tugenden</div>
+                        </div>
+                        <div class="comparison-item">
+                            <div class="comparison-label">Ziel:</div>
+                            <div class="comparison-value">Gutes Leben/Eudaimonia</div>
+                        </div>
+                        <div class="comparison-item">
+                            <div class="comparison-label">Universalität:</div>
+                            <div class="comparison-value">Kulturabhängige Tugenden</div>
+                        </div>
+                        <div class="comparison-item">
+                            <div class="comparison-label">Trolley-Problem:</div>
+                            <div class="comparison-value">Was würde eine tugendhafte Person tun?</div>
+                        </div>
+                        <div class="comparison-item">
+                            <div class="comparison-label">Stärke:</div>
+                            <div class="comparison-value">Ganzheitlich, entwicklungsorientiert</div>
+                        </div>
+                        <div class="comparison-item">
+                            <div class="comparison-label">Schwäche:</div>
+                            <div class="comparison-value">Vage, kulturrelativ</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 10. Utilitarismus in der Zukunft -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="icon">🔮</span>
+                Utilitarismus und die Herausforderungen der Zukunft
+            </h2>
+
+            <div class="two-column">
+                <div class="example-box">
+                    <h3>🤖 KI und maschineller Utilitarismus</h3>
+                    <p><strong>Chance:</strong> KI könnte perfekte utilitaristische Berechnungen durchführen</p>
+                    <p><strong>Risiko:</strong> Wer programmiert die Werte? Algorithmic bias</p>
+                    <p><strong>Frage 2026:</strong> Sollen KI-Systeme utilitarian entscheiden dürfen?</p>
+                    <ul class="styled-list">
+                        <li>Medizinische Diagnosen und Behandlungsempfehlungen</li>
+                        <li>Ressourcenverteilung in Smart Cities</li>
+                        <li>Strafrechtliche Bewertungen (Predictive Justice)</li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <h3>🧬 Transhumanismus und Enhancement</h3>
+                    <p><strong>Vision:</strong> Technologische Verbesserung der menschlichen Condition</p>
+                    <p><strong>Utilitaristische Begründung:</strong> Mehr Glück, weniger Leid für alle</p>
+                    <p><strong>Konkrete Technologien:</strong></p>
+                    <ul class="styled-list">
+                        <li>Genetic Engineering (CRISPR/Cas)</li>
+                        <li>Brain-Computer Interfaces</li>
+                        <li>Life Extension (Lebensverlängerung)</li>
+                        <li>Mood Enhancement (Stimmungsverbesserung)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3>🌌 Longtermismus: Utilitarismus über Millionen Jahre</h3>
+                <p><strong>These:</strong> Die Zukunft der Menschheit ist so wichtig, dass sie praktisch alle anderen moralischen Überlegungen übertrifft</p>
+                <p><strong>Konsequenz:</strong> Existentielle Risiken (Klimawandel, KI-Alignment, Pandemien) sind die wichtigsten moralischen Probleme</p>
+                <p><strong>Kritik:</strong> Rechtfertigt das Leid heutiger Menschen für hypothetische zukünftige Menschen?</p>
+            </div>
+        </div>
+
+        <!-- 11. Lernhilfen und Zusammenfassung -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <span class="icon">📝</span>
+                Merksätze & Prüfungswissen
+            </h2>
+
+            <div class="definition-box">
+                <h3>🎯 Die wichtigsten Merksätze</h3>
+                <ul class="styled-list">
+                    <li><strong>Grundprinzip:</strong> "Das größte Glück für die größte Anzahl"</li>
+                    <li><strong>Bentham:</strong> Hedonistisches Kalkül - Glück ist quantitativ messbar</li>
+                    <li><strong>Mill:</strong> "Unzufriedener Sokrates > zufriedener Narr" - Qualität vor Quantität</li>
+                    <li><strong>Singer:</strong> Präferenzen statt Glück - auch Tiere zählen</li>
+                    <li><strong>Konsequentialismus:</strong> Nur die Folgen bestimmen die Moral einer Handlung</li>
+                    <li><strong>5 Prinzipien:</strong> Konsequenz-, Hedonistisches, Sozial-, Egalitäts-, Utilitätsprinzip</li>
+                </ul>
+            </div>
+
+            <div class="principles-box">
+                <h3>📋 Typische Prüfungsaufgaben</h3>
+                <ol class="numbered-list">
+                    <li><strong>Dilemma-Analyse:</strong> Trolley-Problem, medizinische Triage, Verteilungsgerechtigkeit mit utilitaristischen Prinzipien lösen</li>
+                    <li><strong>Vergleich der Vertreter:</strong> Bentham vs. Mill vs. Singer - Gemeinsamkeiten und Unterschiede</li>
+                    <li><strong>Kritische Bewertung:</strong> Stärken und Schwächen des Utilitarismus diskutieren</li>
+                    <li><strong>Aktuelle Anwendung:</strong> KI-Ethik, Klimapolitik, Corona-Maßnahmen utilitaristisch bewerten</li>
+                    <li><strong>Ethik-Vergleich:</strong> Utilitarismus vs. Kant vs. Tugendethik an konkreten Beispielen</li>
+                </ol>
+            </div>
+
+            <div class="example-box">
+                <h3>🔍 Klausur-Tipps</h3>
+                <ul class="styled-list">
+                    <li><strong>Struktur:</strong> Immer mit den 5 Grundprinzipien beginnen</li>
+                    <li><strong>Chronologie:</strong> Bentham → Mill → Singer → moderne Entwicklungen</li>
+                    <li><strong>Kritik einbeziehen:</strong> Zeige, dass du beide Seiten kennst</li>
+                    <li><strong>Aktuelle Beispiele:</strong> KI, Klimawandel, Pandemie, Gentechnik verwenden</li>
+                    <li><strong>Begriffe definieren:</strong> Konsequentialismus, hedonistisches Kalkül, Präferenzutilitarismus</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h3>⚖️ Abschließende Bewertung</h3>
+                <p><strong>Stärken des Utilitarismus:</strong> Praktikabel, nachvollziehbar, berücksichtigt alle Betroffenen, wissenschaftlich anwendbar</p>
+                <p><strong>Schwächen:</strong> Messbarkeits-, Gerechtigkeits- und Praktikabilitätsprobleme</p>
+                <p><strong>Relevanz 2026:</strong> Wichtiger denn je in Zeiten von KI, Klimakrise und globalen Herausforderungen - aber braucht ethische Ergänzung durch Gerechtigkeits- und Würdeprinzipien</p>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="page-navigation">
+            <h3>🧭 Nächste Schritte</h3>
+            
+            <div class="nav-buttons">
+                <a href="index.html" class="nav-button">🏠 Startseite</a>
+                <a href="tugendethik.html" class="nav-button">💎 Tugendethik</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

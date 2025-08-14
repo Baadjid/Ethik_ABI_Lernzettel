@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umwelt- & Klimaethik - Ethik Lernzettel 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #2E8B57 0%, #228B22 50%, #32CD32 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+        
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            margin-bottom: 25px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        }
+        
+        .header-title {
+            font-size: clamp(2.2em, 5vw, 3em);
+            font-weight: 700;
+            background: linear-gradient(135deg, #2E8B57, #32CD32);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+        
+        .header-subtitle {
+            font-size: clamp(1.1em, 3vw, 1.3em);
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .breadcrumb {
+            margin-top: 15px;
+            font-size: 0.95em;
+            color: #555;
+        }
+        
+        .breadcrumb a {
+            color: #2E8B57;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .breadcrumb a:hover {
+            color: #32CD32;
+        }
+        
+        /* Navigation */
+        .navigation {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .nav-item {
+            background: rgba(46, 139, 87, 0.1);
+            border: 2px solid transparent;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .nav-item:hover,
+        .nav-item.active {
+            background: rgba(46, 139, 87, 0.2);
+            border-color: #2E8B57;
+            transform: translateY(-2px);
+        }
+        
+        /* Content Sections */
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+        
+        .content-section.active {
+            display: block;
+        }
+        
+        .section-title {
+            font-size: clamp(1.8em, 4vw, 2.2em);
+            color: #2E8B57;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .section-icon {
+            font-size: 1.2em;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #2E8B57, #32CD32);
+            color: white;
+            border-radius: 12px;
+            flex-shrink: 0;
+        }
+        
+        /* Cards and Boxes */
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .concept-card {
+            background: linear-gradient(135deg, rgba(46, 139, 87, 0.05), rgba(50, 205, 50, 0.05));
+            border: 1px solid rgba(46, 139, 87, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .concept-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .concept-card h4 {
+            color: #2E8B57;
+            font-size: 1.3em;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #FFF3CD, #FCF8E3);
+            border-left: 5px solid #F0AD4E;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        
+        .key-info {
+            background: linear-gradient(135deg, #E8F5E8, #F0FFF0);
+            border-left: 5px solid #2E8B57;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        
+        .example-box {
+            background: linear-gradient(135deg, #E6F3FF, #F0F8FF);
+            border: 2px dashed #4A90E2;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        /* Lists and Text */
+        .definition {
+            background: rgba(46, 139, 87, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            font-weight: 500;
+            border-left: 5px solid #2E8B57;
+        }
+        
+        .pros-cons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .pros, .cons {
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .pros {
+            background: linear-gradient(135deg, rgba(40, 167, 69, 0.1), rgba(40, 167, 69, 0.05));
+            border-left: 5px solid #28a745;
+        }
+        
+        .cons {
+            background: linear-gradient(135deg, rgba(220, 53, 69, 0.1), rgba(220, 53, 69, 0.05));
+            border-left: 5px solid #dc3545;
+        }
+        
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+            margin: 25px 0;
+        }
+        
+        .timeline-item {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #2E8B57;
+            position: relative;
+        }
+        
+        .timeline-year {
+            font-weight: bold;
+            color: #2E8B57;
+            font-size: 1.2em;
+        }
+        
+        /* Interactive Elements */
+        .quiz-question {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 2px solid #2E8B57;
+        }
+        
+        .quiz-options {
+            display: grid;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .quiz-option {
+            background: rgba(46, 139, 87, 0.1);
+            border: 1px solid rgba(46, 139, 87, 0.3);
+            border-radius: 8px;
+            padding: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .quiz-option:hover {
+            background: rgba(46, 139, 87, 0.2);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            header {
+                padding: 20px 15px;
+            }
+            
+            .content-section {
+                padding: 20px 15px;
+            }
+            
+            .nav-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+            
+            .nav-item {
+                padding: 12px;
+                font-size: 0.9em;
+            }
+            
+            .concept-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pros-cons {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .nav-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .section-icon {
+                align-self: center;
+            }
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #2E8B57;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            display: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-top:hover {
+            background: #32CD32;
+            transform: translateY(-2px);
+        }
+        
+        .footer {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="header-title">🌍 Umwelt- & Klimaethik</h1>
+            <p class="header-subtitle">Moralische Verantwortung für unseren Planeten und zukünftige Generationen</p>
+            <div class="breadcrumb">
+                <a href="index.html">🏠 Startseite</a> → 🌍 Umwelt- & Klimaethik
+            </div>
+        </header>
+
+        <nav class="navigation">
+            <div class="nav-grid">
+                <div class="nav-item active" data-section="grundlagen">📚 Grundlagen</div>
+                <div class="nav-item" data-section="positionen">🎯 Ethische Positionen</div>
+                <div class="nav-item" data-section="klimaethik">🌡️ Klimaethik 2026</div>
+                <div class="nav-item" data-section="generationen">⏳ Generationengerechtigkeit</div>
+                <div class="nav-item" data-section="anwendung">🔧 Praktische Anwendung</div>
+                <div class="nav-item" data-section="konflikte">⚖️ Ethische Konflikte</div>
+            </div>
+        </nav>
+
+        <!-- Grundlagen Section -->
+        <div class="content-section active" data-section="grundlagen">
+            <h2 class="section-title">
+                <span class="section-icon">📚</span>
+                Grundlagen der Umweltethik
+            </h2>
+
+            <div class="definition">
+                <h3>Was ist Umweltethik?</h3>
+                <p><strong>Umweltethik</strong> beschäftigt sich mit den moralischen Beziehungen zwischen Menschen und der natürlichen Umwelt. Sie fragt: Welche Verantwortung haben wir gegenüber der Natur, anderen Lebewesen und zukünftigen Generationen?</p>
+            </div>
+
+            <div class="key-info">
+                <h4>🎯 Zentrale Fragen der Umweltethik:</h4>
+                <ul>
+                    <li>Hat die Natur einen <strong>Eigenwert</strong> oder ist sie nur für den Menschen wertvoll?</li>
+                    <li>Welche Rechte haben <strong>Tiere, Pflanzen und Ökosysteme</strong>?</li>
+                    <li>Wie können wir <strong>nachhaltig</strong> leben, ohne zukünftigen Generationen zu schaden?</li>
+                    <li>Wer trägt die Verantwortung für <strong>Umweltprobleme</strong> und deren Lösung?</li>
+                </ul>
+            </div>
+
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h4>🌱 Entstehung</h4>
+                    <p>Die Umweltethik entwickelte sich in den 1960er-70er Jahren als Antwort auf die wachsenden Umweltprobleme der Industriegesellschaft. Pionierwerke wie Rachel Carsons "Silent Spring" (1962) machten die Öffentlichkeit auf die Umweltkrise aufmerksam.</p>
+                </div>
+                <div class="concept-card">
+                    <h4>📊 Aktuelle Relevanz</h4>
+                    <p>Mit dem Klimawandel, Artensterben und Ressourcenknappheit ist die Umweltethik aktueller denn je. Sie liefert das moralische Fundament für Nachhaltigkeit und Klimaschutz.</p>
+                </div>
+                <div class="concept-card">
+                    <h4>🔄 Interdisziplinärer Ansatz</h4>
+                    <p>Umweltethik verknüpft Philosophie mit Naturwissenschaften, Ökologie, Politik und Wirtschaft. Nur durch diese ganzheitliche Betrachtung lassen sich komplexe Umweltprobleme lösen.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ethische Positionen Section -->
+        <div class="content-section" data-section="positionen">
+            <h2 class="section-title">
+                <span class="section-icon">🎯</span>
+                Ethische Positionen in der Umweltethik
+            </h2>
+
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h4>👑 Anthropozentrismus</h4>
+                    <p><strong>"Der Mensch im Zentrum"</strong></p>
+                    <div class="definition">
+                        <p>Nur Menschen haben moralischen Wert. Die Natur ist nur insoweit schützenswert, als sie dem Menschen nützt.</p>
+                        <p><strong>Beispiel:</strong> Wälder schützen wegen Holz und Sauerstoff für Menschen</p>
+                    </div>
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h5>✅ Vorteile:</h5>
+                            <ul>
+                                <li>Praktisch umsetzbar</li>
+                                <li>Entspricht menschlicher Intuition</li>
+                                <li>Berücksichtigt menschliche Bedürfnisse</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h5>❌ Kritik:</h5>
+                            <ul>
+                                <li>Rechtfertigt Ausbeutung der Natur</li>
+                                <li>Ignoriert Eigenwert der Natur</li>
+                                <li>Kurzsichtig bezüglich Langzeitfolgen</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-card">
+                    <h4>🐾 Pathozentrismus</h4>
+                    <p><strong>"Das Leid im Zentrum"</strong></p>
+                    <div class="definition">
+                        <p>Alle <strong>empfindungsfähigen Wesen</strong> (Menschen und Tiere) haben moralischen Wert, weil sie Leid empfinden können.</p>
+                        <p><strong>Vertreter:</strong> Peter Singer (Utilitarist)</p>
+                    </div>
+                    <p>🔍 <strong>Kriterium:</strong> Empfindungsfähigkeit (Sentience)</p>
+                    <p>📈 <strong>Folge:</strong> Tierschutz wird zu einer moralischen Pflicht</p>
+                </div>
+
+                <div class="concept-card">
+                    <h4>🌿 Biozentrismus</h4>
+                    <p><strong>"Alles Lebendige im Zentrum"</strong></p>
+                    <div class="definition">
+                        <p>Alle <strong>Lebewesen</strong> (Menschen, Tiere, Pflanzen) haben einen Eigenwert und Rechte.</p>
+                        <p><strong>Vertreter:</strong> Albert Schweitzer ("Ehrfurcht vor dem Leben")</p>
+                    </div>
+                    <div class="highlight-box">
+                        <h5>🌱 Albert Schweitzers Prinzip:</h5>
+                        <p><em>"Ich bin Leben, das leben will, inmitten von Leben, das leben will."</em></p>
+                        <p>Jedes Leben hat einen intrinsischen Wert und verdient Respekt.</p>
+                    </div>
+                </div>
+
+                <div class="concept-card">
+                    <h4>🌍 Ökozentrismus</h4>
+                    <p><strong>"Ökosysteme im Zentrum"</strong></p>
+                    <div class="definition">
+                        <p>Ganze <strong>Ökosysteme</strong> haben moralischen Wert. Das Wohl des Ganzen steht über dem Einzelnen.</p>
+                        <p><strong>Vertreter:</strong> Aldo Leopold ("Land-Ethik")</p>
+                    </div>
+                    <div class="example-box">
+                        <h5>📜 Aldo Leopolds Maxime:</h5>
+                        <p><em>"Eine Sache ist richtig, wenn sie die Integrität, Stabilität und Schönheit der biotischen Gemeinschaft zu erhalten sucht. Sie ist falsch, wenn sie das nicht tut."</em></p>
+                    </div>
+                </div>
+
+                <div class="concept-card">
+                    <h4>🌌 Holismus</h4>
+                    <p><strong>"Alles im Zentrum"</strong></p>
+                    <div class="definition">
+                        <p>Die gesamte <strong>Biosphäre</strong> inklusive unbelebter Natur (Flüsse, Berge, Atmosphäre) hat moralischen Wert.</p>
+                        <p><strong>Vertreter:</strong> Martin Gorke, Deep Ecology-Bewegung</p>
+                    </div>
+                    <p>🌍 <strong>Gaia-Hypothese:</strong> Die Erde als lebender, selbstregulierender Organismus</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Klimaethik 2026 Section -->
+        <div class="content-section" data-section="klimaethik">
+            <h2 class="section-title">
+                <span class="section-icon">🌡️</span>
+                Klimaethik 2026: Aktuelle Herausforderungen
+            </h2>
+
+            <div class="highlight-box">
+                <h3>🚨 Die Klimakrise als ethisches Problem</h3>
+                <p>Der Klimawandel ist nicht nur ein technisches oder politisches Problem, sondern stellt uns vor fundamentale <strong>ethische Fragen</strong>:</p>
+                <ul>
+                    <li>Wer trägt die <strong>Verantwortung</strong> für die historischen Emissionen?</li>
+                    <li>Wie können wir die Lasten des Klimawandels <strong>gerecht verteilen</strong>?</li>
+                    <li>Welche Pflichten haben wir gegenüber <strong>zukünftigen Generationen</strong>?</li>
+                    <li>Wie können wir <strong>globale Gerechtigkeit</strong> beim Klimaschutz erreichen?</li>
+                </ul>
+            </div>
+
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h4>🌍 Drei Dimensionen der Klimagerechtigkeit</h4>
+                    <div class="key-info">
+                        <p><strong>1. Innergesellschaftlich:</strong> Verteilung zwischen Arm und Reich innerhalb eines Landes</p>
+                        <p><strong>2. International:</strong> Gerechtigkeit zwischen Industrie- und Entwicklungsländern</p>
+                        <p><strong>3. Intergenerationell:</strong> Gerechtigkeit zwischen heutigen und zukünftigen Generationen</p>
+                    </div>
+                </div>
+
+                <div class="concept-card">
+                    <h4>📊 Ethische Dilemmata 2026</h4>
+                    <div class="example-box">
+                        <h5>🔥 Das Verursacher-Betroffenen-Problem:</h5>
+                        <p>Die Hauptverursacher des Klimawandels (Industrieländer) sind oft weniger betroffen als die Hauptleidtragenden (Entwicklungsländer, junge Menschen).</p>
+                    </div>
+                    <div class="example-box">
+                        <h5>⏰ Das Zeitproblem:</h5>
+                        <p>Heutige Entscheidungen wirken sich erst in Jahrzehnten voll aus - wie können wir Verantwortung für ungewisse Zukunftsszenarien übernehmen?</p>
+                    </div>
+                </div>
+
+                <div class="concept-card">
+                    <h4>⚖️ Ethische Bewertungsansätze</h4>
+                    <div class="pros-cons">
+                        <div class="pros">
+                            <h5>🎯 Utilitaristisch:</h5>
+                            <p>Maximierung des Gesamtwohls aller Betroffenen (inklusive zukünftiger Generationen). Kosten-Nutzen-Analysen von Klimaschutzmaßnahmen.</p>
+                        </div>
+                        <div class="cons">
+                            <h5>📏 Deontologisch:</h5>
+                            <p>Pflicht zum Klimaschutz basierend auf Menschenrechten und kategorischen Imperativen. Rechte zukünftiger Generationen.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <h3>📅 Meilensteine der Klimaethik</h3>
+                <div class="timeline-item">
+                    <div class="timeline-year">1992</div>
+                    <p><strong>Rio-Konferenz:</strong> Erstmals wird das Prinzip der "gemeinsamen, aber unterschiedlichen Verantwortung" formuliert</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2015</div>
+                    <p><strong>Pariser Klimaabkommen:</strong> Generationengerechtigkeit wird explizit als Leitprinzip verankert</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2021</div>
+                    <p><strong>Deutsches Bundesverfassungsgericht:</strong> Klimaschutz als Grundrecht - historisches Urteil zur Generationengerechtigkeit</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2024</div>
+                    <p><strong>Deutsche Ethikrat-Stellungnahme:</strong> Umfassende Analyse der Klimagerechtigkeit in drei Dimensionen</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Generationengerechtigkeit Section -->
+        <div class="content-section" data-section="generationen">
+            <h2 class="section-title">
+                <span class="section-icon">⏳</span>
+                Generationengerechtigkeit
+            </h2>
+
+            <div class="definition">
+                <h3>Was ist Generationengerechtigkeit?</h3>
+                <p><strong>Generationengerechtigkeit</strong> (auch Enkelgerechtigkeit) bewertet die Gerechtigkeit von Handlungen und Entscheidungen, die sich auf kommende Generationen auswirken. Sie ist ein Kernprinzip nachhaltiger Entwicklung.</p>
+            </div>
+
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h4>🔄 Zwei Arten von Generationengerechtigkeit</h4>
+                    <div class="key-info">
+                        <p><strong>Temporal:</strong> Gerechtigkeit zwischen heute lebenden Menschen unterschiedlicher Altersstufen (Jung vs. Alt)</p>
+                        <p><strong>Intertemporal:</strong> Gerechtigkeit zwischen Menschen, die früher lebten, heute leben und zukünftig leben werden</p>
+                    </div>
+                </div>
+
+                <div class="concept-card">
+                    <h4>📏 Gerechtigkeitsprinzipien</h4>
+                    <div class="highlight-box">
+                        <h5>🎯 Prinzip des nicht-abnehmenden Wohls:</h5>
+                        <p><em>"Jede Generation sollte der nachfolgenden mindestens das gleiche Wohlstandsniveau hinterlassen, das sie selbst hatte."</em> (Robert Solow)</p>
+                    </div>
+                    <div class="example-box">
+                        <h5>📈 Verbesserungsprinzip:</h5>
+                        <p><em>"Jede Generation sollte an die nachfolgende einen positiven Nettotransfer leisten."</em> (Richard Hauser)</p>
+                    </div>
+                </div>
+
+                <div class="concept-card">
+                    <h4>🏛️ Rechtliche Entwicklungen</h4>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-year">2021</div>
+                            <p><strong>BVerfG-Urteil:</strong> Klimaschutz als Grundrecht - der Staat muss die Freiheitsrechte zukünftiger Generationen schützen</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2023</div>
+                            <p><strong>Fridays for Future:</strong> Erfolgreiche Verfassungsbeschwerde - politische Entscheidungen müssen Generationengerechtigkeit berücksichtigen</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h3>🎯 Konkrete Anwendungsfelder</h3>
+                <div class="concept-grid">
+                    <div class="concept-card">
+                        <h4>🌍 Klimaschutz</h4>
+                        <p>CO₂-Budget darf nicht zu Lasten zukünftiger Generationen aufgebraucht werden</p>
+                    </div>
+                    <div class="concept-card">
+                        <h4>💰 Staatsverschuldung</h4>
+                        <p>Heute eingegangene Schulden belasten zukünftige Steuerzahler</p>
+                    </div>
+                    <div class="concept-card">
+                        <h4>🏥 Sozialsystem</h4>
+                        <p>Demografischer Wandel: Weniger Junge müssen mehr Ältere versorgen</p>
+                    </div>
+                    <div class="concept-card">
+                        <h4>🌿 Biodiversität</h4>
+                        <p>Artenschutz für kommende Generationen - einmal ausgestorbene Arten sind unwiderruflich verloren</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <h4>💭 Denkfrage: Das Klimaparadox</h4>
+                <p>Eine einzelne Autofahrt schadet dem Klima praktisch nicht. Wenn aber alle so denken, entsteht enormer Schaden. Wie lösen wir dieses ethische Dilemma der <strong>kollektiven Verantwortung</strong>?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option">A) Individuelle Verantwortung - jeder muss bei sich anfangen</div>
+                    <div class="quiz-option">B) Strukturelle Lösungen - nur Politik und Gesetze können das Problem lösen</div>
+                    <div class="quiz-option">C) Kombination aus beidem - sowohl individuelles als auch kollektives Handeln nötig</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Praktische Anwendung Section -->
+        <div class="content-section" data-section="anwendung">
+            <h2 class="section-title">
+                <span class="section-icon">🔧</span>
+                Praktische Anwendung der Umweltethik
+            </h2>
+
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h4>🏭 Wirtschaft & Nachhaltigkeit</h4>
+                    <div class="definition">
+                        <p><strong>Corporate Social Responsibility (CSR):</strong> Unternehmen übernehmen Verantwortung für ihre Umweltauswirkungen</p>
+                    </div>
+                    <div class="example-box">
+                        <h5>Beispiele:</h5>
+                        <ul>
+                            <li>🌱 Carbon-neutral Produktion</li>
+                            <li>♻️ Kreislaufwirtschaft</li>
+                            <li>🌍 Lieferketten-Transparenz</li>
+                            <li>💚 ESG-Kriterien bei Investitionen</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="concept-card">
+                    <h4>🏛️ Politik & Governance</h4>
+                    <div class="key-info">
+                        <h5>Politische Instrumente:</h5>
+                        <ul>
+                            <li><strong>CO₂-Steuer:</strong> Verursacher zahlen für Umweltschäden</li>
+                            <li><strong>Emissionshandel:</strong> Marktbasierte Lenkung</li>
+                            <li><strong>Grenzausgleichsabgaben:</strong> Schutz vor Carbon Leakage</li>
+                            <li><strong>Green New Deal:</strong> Strukturwandel zu nachhaltiger Wirtschaft</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="concept-card">
+                    <h4>👥 Gesellschaft & Lebensstil</h4>
+                    <div class="highlight-box">
+                        <h5>🎯 Nachhaltiger Konsum:</h5>
+                        <ul>
+                            <li>🍽️ <strong>Ernährung:</strong> Weniger Fleisch, regional, saisonal</li>
+                            <li>🚊 <strong>Mobilität:</strong> ÖPNV, Fahrrad, E-Autos</li>
+                            <li>🏠 <strong>Wohnen:</strong> Energieeffizienz, erneuerbare Energien</li>
+                            <li>🛍️ <strong>Konsum:</strong> Weniger, langlebiger, Second-Hand</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="concept-card">
+                    <h4>⚖️ Recht & Rechtsprechung</h4>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-year">2021</div>
+                            <p><strong>Urgenda (Niederlande):</strong> Staat muss Bürger vor Klimawandel schützen</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2021</div>
+                            <p><strong>Deutschland:</strong> Verfassungsgericht stärkt Rechte zukünftiger Generationen</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2025</div>
+                            <p><strong>Trend:</strong> Immer mehr Klimaklagen weltweit - "Rights of Nature" Bewegung</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h3>🌍 Internationale Kooperation: Erfolge und Herausforderungen</h3>
+                <div class="pros-cons">
+                    <div class="pros">
+                        <h5>✅ Erfolge:</h5>
+                        <ul>
+                            <li><strong>Pariser Abkommen (2015):</strong> Globaler Konsens zu Klimazielen</li>
+                            <li><strong>Montreal-Protokoll:</strong> Schutz der Ozonschicht - ein Erfolgsmodell</li>
+                            <li><strong>SDGs (2015):</strong> 17 Nachhaltigkeitsziele der UN</li>
+                            <li><strong>EU Green Deal:</strong> Europa wird bis 2050 klimaneutral</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h5>❌ Herausforderungen:</h5>
+                        <ul>
+                            <li><strong>Trittbrettfahrer-Problem:</strong> Einzelne Länder entziehen sich der Verantwortung</li>
+                            <li><strong>Durchsetzung:</strong> Völkerrecht hat begrenzte Sanktionsmöglichkeiten</li>
+                            <li><strong>Entwicklung vs. Umwelt:</strong> Ärmere Länder priorisieren Wirtschaftswachstum</li>
+                            <li><strong>Zeitdruck:</strong> Langsame diplomatische Prozesse vs. dringend nötige Maßnahmen</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ethische Konflikte Section -->
+        <div class="content-section" data-section="konflikte">
+            <h2 class="section-title">
+                <span class="section-icon">⚖️</span>
+                Ethische Konflikte in der Umweltethik
+            </h2>
+
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h4>💰 Ökonomie vs. Ökologie</h4>
+                    <div class="example-box">
+                        <h5>🏭 Das Kohlekraftwerk-Dilemma:</h5>
+                        <p><strong>Situation:</strong> Ein Kohlekraftwerk sichert 10.000 Arbeitsplätze, verursacht aber massive CO₂-Emissionen.</p>
+                        <div class="pros-cons">
+                            <div class="pros">
+                                <h6>Für die Schließung:</h6>
+                                <ul>
+                                    <li>Klimaschutz für alle Menschen</li>
+                                    <li>Gesundheitsschutz der Anwohner</li>
+                                    <li>Verantwortung für künftige Generationen</li>
+                                </ul>
+                            </div>
+                            <div class="cons">
+                                <h6>Gegen die Schließung:</h6>
+                                <ul>
+                                    <li>Existenzsicherung der Arbeiter</li>
+                                    <li>Wirtschaftliche Stabilität der Region</li>
+                                    <li>Soziale Gerechtigkeit heute</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="key-info">
+                            <h6>🤝 Lösungsansatz: Gerechter Übergang (Just Transition)</h6>
+                            <p>Umschulung, neue grüne Arbeitsplätze, regionale Strukturförderung - niemand wird beim Klimaschutz zurückgelassen.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-card">
+                    <h4>🌍 Global vs. Lokal</h4>
+                    <div class="example-box">
+                        <h5>🌳 Das Regenwald-Dilemma:</h5>
+                        <p><strong>Situation:</strong> Brasilien will Regenwald für Landwirtschaft roden. Industrieländer fordern Schutz für das "Weltklima."</p>
+                        <div class="highlight-box">
+                            <h6>⚖️ Ethische Fragen:</h6>
+                            <ul>
+                                <li>Dürfen reiche Länder ärmeren vorschreiben, wie sie ihre Ressourcen nutzen?</li>
+                                <li>Wer zahlt für den Schutz globaler Gemeingüter?</li>
+                                <li>Haben lokale Gemeinschaften Vorrang vor globalen Interessen?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-card">
+                    <h4>⏳ Heute vs. Morgen</h4>
+                    <div class="quiz-question">
+                        <h5>🤔 Das Generationen-Dilemma:</h5>
+                        <p><strong>Frage:</strong> Sollen wir heute Wohlstand aufgeben, um zukünftigen Generationen eine bessere Welt zu hinterlassen?</p>
+                        
+                        <div class="example-box">
+                            <h6>Beispiel: CO₂-Steuer</h6>
+                            <p><strong>Pro:</strong> Lenkungswirkung für Klimaschutz, Generationengerechtigkeit</p>
+                            <p><strong>Contra:</strong> Belastet ärmere Haushalte heute überproportional</p>
+                        </div>
+                        
+                        <div class="key-info">
+                            <h6>💡 Ethische Lösungsansätze:</h6>
+                            <ul>
+                                <li><strong>Diskontierung:</strong> Wie stark gewichten wir Zukunft vs. Gegenwart?</li>
+                                <li><strong>Risikoethik:</strong> Umgang mit Unsicherheit über Klimafolgen</li>
+                                <li><strong>Umverteilung:</strong> Klimaschutz sozial gerecht gestalten</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-card">
+                    <h4>🔬 Technologie vs. Natur</h4>
+                    <div class="example-box">
+                        <h5>⚡ Das Geoengineering-Dilemma:</h5>
+                        <p><strong>Situation:</strong> Technische Lösungen wie Solar Radiation Management könnten die Erderwärmung stoppen, bergen aber unkalkulierbare Risiken.</p>
+                        
+                        <div class="pros-cons">
+                            <div class="pros">
+                                <h6>Pro Geoengineering:</h6>
+                                <ul>
+                                    <li>Schnelle Wirkung möglich</li>
+                                    <li>Könnte Millionen Leben retten</li>
+                                    <li>Menschlicher Erfindungsgeist</li>
+                                </ul>
+                            </div>
+                            <div class="cons">
+                                <h6>Contra Geoengineering:</h6>
+                                <ul>
+                                    <li>Unberechenbare Nebenwirkungen</li>
+                                    <li>Moral Hazard: Weniger Emissionsreduktion</li>
+                                    <li>Wer entscheidet über den Planeten?</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="highlight-box">
+                            <h6>🎯 Ethische Prinzipien:</h6>
+                            <p><strong>Vorsorgeprinzip:</strong> Bei unsicheren, aber potenziell katastrophalen Folgen sollten wir vorsichtig handeln.</p>
+                            <p><strong>Verantwortungsethik (Hans Jonas):</strong> "Handle so, dass die Wirkungen deines Handelns verträglich sind mit der weiteren Existenz des Menschen."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="key-info">
+                <h3>🧭 Ethische Entscheidungshilfen</h3>
+                <div class="concept-grid">
+                    <div class="concept-card">
+                        <h4>📋 Checkliste für ethische Entscheidungen</h4>
+                        <ol>
+                            <li><strong>Stakeholder identifizieren:</strong> Wer ist betroffen?</li>
+                            <li><strong>Zeitrahmen berücksichtigen:</strong> Kurz- vs. langfristige Folgen</li>
+                            <li><strong>Unsicherheiten einkalkulieren:</strong> Worst-Case-Szenarien</li>
+                            <li><strong>Alternativen prüfen:</strong> Gibt es Win-Win-Lösungen?</li>
+                            <li><strong>Gerechtigkeit bewerten:</strong> Wer trägt Kosten und Nutzen?</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="concept-card">
+                        <h4>🎯 Ethische Leitprinzipien</h4>
+                        <ul>
+                            <li><strong>🛡️ Vorsorgeprinzip:</strong> Im Zweifel für den Umweltschutz</li>
+                            <li><strong>🏗️ Verursacherprinzip:</strong> Wer verschmutzt, zahlt</li>
+                            <li><strong>🤝 Kooperationsprinzip:</strong> Globale Probleme brauchen globale Lösungen</li>
+                            <li><strong>⚖️ Verteilungsgerechtigkeit:</strong> Faire Lastenverteilung</li>
+                            <li><strong>🔄 Nachhaltigkeit:</strong> Bedürfnisse der Gegenwart und Zukunft</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back to Top Button -->
+        <button class="back-to-top" onclick="scrollToTop()">↑</button>
+
+        <!-- Footer -->
+        <div class="footer">
+            <h3>🌍 Zusammenfassung: Umwelt- und Klimaethik</h3>
+            <p>Die Umwelt- und Klimaethik ist heute wichtiger denn je. Sie hilft uns dabei:</p>
+            <ul style="text-align: left; max-width: 800px; margin: 15px auto; list-style-position: inside;">
+                <li>✅ <strong>Verantwortung zu übernehmen</strong> für unseren Umgang mit der Natur</li>
+                <li>✅ <strong>Gerechtigkeit zu schaffen</strong> zwischen Generationen und Regionen</li>
+                <li>✅ <strong>Komplexe Konflikte zu lösen</strong> zwischen Ökonomie und Ökologie</li>
+                <li>✅ <strong>Nachhaltige Entscheidungen zu treffen</strong> für eine lebenswerte Zukunft</li>
+            </ul>
+            <div class="concept-grid" style="margin-top: 20px;">
+                <div class="concept-card">
+                    <h4>🎯 Key Takeaways</h4>
+                    <p>Umweltprobleme sind immer auch ethische Probleme. Sie erfordern sowohl rationale Analyse als auch moralische Reflexion.</p>
+                </div>
+                <div class="concept-card">
+                    <h4>🔗 Navigation</h4>
+                    <p><a href="index.html" style="color: #2E8B57;">← Zurück zur Startseite</a></p>
+                    <p><a href="tierethik.html" style="color: #2E8B57;">Weiter zu Tierethik →</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Navigation zwischen Sections
+        document.addEventListener('DOMContentLoaded', function() {
+            const navItems = document.querySelectorAll('.nav-item');
+            const contentSections = document.querySelectorAll('.content-section');
+            
+            navItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const targetSection = this.dataset.section;
+                    
+                    // Update active nav item
+                    navItems.forEach(nav => nav.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Update active content section
+                    contentSections.forEach(section => {
+                        section.classList.remove('active');
+                        if (section.dataset.section === targetSection) {
+                            section.classList.add('active');
+                        }
+                    });
+                    
+                    // Scroll to top of content
+                    document.querySelector('.navigation').scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                });
+            });
+            
+            // Quiz interactivity
+            const quizOptions = document.querySelectorAll('.quiz-option');
+            quizOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    // Remove previous selections
+                    this.closest('.quiz-options').querySelectorAll('.quiz-option').forEach(opt => {
+                        opt.style.background = '';
+                        opt.style.color = '';
+                    });
+                    
+                    // Highlight selected option
+                    this.style.background = '#2E8B57';
+                    this.style.color = 'white';
+                    
+                    // Show feedback (in a real implementation, you'd have specific feedback)
+                    setTimeout(() => {
+                        alert('Interessante Überlegung! In der Klimaethik gibt es oft keine einfachen Antworten, sondern verschiedene ethische Perspektiven, die gegeneinander abgewogen werden müssen.');
+                    }, 500);
+                });
+            });
+            
+            // Back to top button
+            const backToTopButton = document.querySelector('.back-to-top');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.style.display = 'block';
+                } else {
+                    backToTopButton.style.display = 'none';
+                }
+            });
+        });
+        
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        // Responsive behavior for smaller screens
+        function adjustForMobile() {
+            const isMobile = window.innerWidth <= 768;
+            const navItems = document.querySelectorAll('.nav-item');
+            
+            if (isMobile) {
+                navItems.forEach(item => {
+                    item.style.fontSize = '0.85em';
+                    item.style.padding = '10px';
+                });
+            }
+        }
+        
+        window.addEventListener('resize', adjustForMobile);
+        window.addEventListener('load', adjustForMobile);
+    </script>
+</body>
+</html>

@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quellen & Vertiefung - Ethik Lernzettel 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Navigation */
+        .nav-bar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: #667eea;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-size: 0.9em;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            background: #667eea;
+            color: white;
+        }
+        
+        .back-home {
+            background: linear-gradient(135deg, #667eea, #764ba2) !important;
+            color: white !important;
+            font-weight: 600;
+        }
+        
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-title {
+            font-size: 2.5em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-title {
+            font-size: 1.8em;
+            color: #667eea;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        /* Book Grid */
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 25px 0;
+        }
+        
+        .book-card {
+            background: linear-gradient(145deg, #f8f9ff, #e8f0ff);
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 5px solid #667eea;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .book-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.15);
+        }
+        
+        .book-title {
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+        
+        .book-author {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        
+        .book-description {
+            font-size: 0.95em;
+            color: #555;
+            line-height: 1.5;
+        }
+        
+        .difficulty-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        .difficulty-beginner { background: #e8f5e8; color: #2d5a2d; }
+        .difficulty-intermediate { background: #fff3cd; color: #856404; }
+        .difficulty-advanced { background: #f8d7da; color: #721c24; }
+        
+        /* Online Resources */
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .resource-card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .resource-card:hover {
+            border-color: #667eea;
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .resource-title {
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .resource-icon {
+            font-size: 1.2em;
+        }
+        
+        /* Categories */
+        .category-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 25px;
+            justify-content: center;
+        }
+        
+        .category-tab {
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.7);
+            border: 2px solid #667eea;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            color: #667eea;
+        }
+        
+        .category-tab.active, .category-tab:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header-title {
+                font-size: 2em;
+            }
+            
+            .content-section {
+                padding: 20px;
+            }
+            
+            .books-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .resource-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .nav-links {
+                justify-content: flex-start;
+                gap: 10px;
+            }
+            
+            .nav-links a {
+                padding: 6px 12px;
+                font-size: 0.85em;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .category-tabs {
+                justify-content: flex-start;
+            }
+            
+            .category-tab {
+                padding: 8px 15px;
+                font-size: 0.9em;
+            }
+            
+            .section-title {
+                font-size: 1.5em;
+            }
+        }
+        
+        /* Citation Box */
+        .citation-box {
+            background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 5px solid #e17055;
+        }
+        
+        .citation-box h4 {
+            color: #2d3436;
+            margin-bottom: 10px;
+        }
+        
+        /* Study Tips */
+        .study-tip {
+            background: linear-gradient(135deg, #a8e6cf, #7fcdcd);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 5px solid #00b894;
+        }
+        
+        .study-tip-icon {
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+        
+        /* Link Styling */
+        a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="nav-bar">
+            <div class="nav-links">
+                <a href="index.html" class="back-home">🏠 Startseite</a>
+                <a href="grundlagen.html">Grundlagen</a>
+                <a href="kant.html">Kant</a>
+                <a href="utilitarismus.html">Utilitarismus</a>
+                <a href="ki-ethik.html">KI-Ethik</a>
+                <a href="lernhilfen.html">Lernhilfen</a>
+                <a href="quellen.html" class="active">Quellen</a>
+            </div>
+        </nav>
+
+        <!-- Header -->
+        <header>
+            <h1 class="header-title">📚 Quellen & Vertiefung</h1>
+            <p>Umfassende Literaturempfehlungen, Online-Ressourcen und weiterführende Studienhinweise für die Ethik</p>
+        </header>
+
+        <!-- Classical Works -->
+        <section class="content-section">
+            <h2 class="section-title">📖 Klassische Grundwerke der Ethik</h2>
+            <p>Diese zeitlosen Werke bilden das Fundament der modernen Ethik und sollten in keiner philosophischen Bildung fehlen.</p>
+            
+            <div class="books-grid">
+                <div class="book-card">
+                    <div class="book-title">Nikomachische Ethik</div>
+                    <div class="book-author">Aristoteles (384-322 v.Chr.)</div>
+                    <div class="book-description">Das zentrale Werk der Tugendethik. Behandelt Glück (Eudaimonia), Tugenden und das gute Leben. Besonders relevant: Bücher 1-2 und 10.</div>
+                    <span class="difficulty-tag difficulty-intermediate">Mittelschwer</span>
+                </div>
+                
+                <div class="book-card">
+                    <div class="book-title">Grundlegung zur Metaphysik der Sitten</div>
+                    <div class="book-author">Immanuel Kant (1785)</div>
+                    <div class="book-description">Einführung in die Pflichtethik und den Kategorischen Imperativ. Grundlage der modernen deontologischen Ethik.</div>
+                    <span class="difficulty-tag difficulty-advanced">Anspruchsvoll</span>
+                </div>
+                
+                <div class="book-card">
+                    <div class="book-title">Kritik der praktischen Vernunft</div>
+                    <div class="book-author">Immanuel Kant (1788)</div>
+                    <div class="book-description">Vertiefung der Kantischen Ethik mit Fokus auf Freiheit, Autonomie und das moralische Gesetz.</div>
+                    <span class="difficulty-tag difficulty-advanced">Anspruchsvoll</span>
+                </div>
+                
+                <div class="book-card">
+                    <div class="book-title">Eine Einführung in die Prinzipien der Moral und Gesetzgebung</div>
+                    <div class="book-author">Jeremy Bentham (1789)</div>
+                    <div class="book-description">Grundwerk des klassischen Utilitarismus. Einführung des hedonistischen Kalküls und des Prinzips der größten Glückseligkeit.</div>
+                    <span class="difficulty-tag difficulty-intermediate">Mittelschwer</span>
+                </div>
+                
+                <div class="book-card">
+                    <div class="book-title">Der Utilitarismus</div>
+                    <div class="book-author">John Stuart Mill (1861)</div>
+                    <div class="book-description">Weiterentwicklung des Utilitarismus mit qualitativen Unterschieden der Lust. Besonders Kapitel 2 und 4 sind zentral.</div>
+                    <span class="difficulty-tag difficulty-intermediate">Mittelschwer</span>
+                </div>
+                
+                <div class="book-card">
+                    <div class="book-title">Die Welt als Wille und Vorstellung</div>
+                    <div class="book-author">Arthur Schopenhauer (1819/1844)</div>
+                    <div class="book-description">Mitleidsethik und pessimistische Philosophie. Wichtig für die Diskussion um Tierethik und Compassion.</div>
+                    <span class="difficulty-tag difficulty-advanced">Anspruchsvoll</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modern Introductions -->
+        <section class="content-section">
+            <h2 class="section-title">🎓 Moderne Einführungen & Lehrbücher</h2>
+            <p>Zeitgenössische Werke, die komplexe ethische Theorien verständlich erklären und aktuelle Debatten einordnen.</p>
+            
+            <div class="books-grid">
+                <div class="book-card">
+                    <div class="book-title">Einführung in die Ethik</div>
+                    <div class="book-author">Annemarie Pieper (2017, 7. Auflage)</div>
+                    <div class="book-description">Umfassende und verständliche Einführung in alle Bereiche der Ethik. Ideal für Einsteiger und als Nachschlagewerk.</div>
+                    <span class="difficulty-tag difficulty-beginner">Einsteiger</span>
+                </div>
+                
+                <div class="book-card">
+                    <div class="book-title">Analytische Einführung in die Ethik</div>
+                    <div class="book-author">Dieter Birnbacher (2013)</div>
+                    <div class="book-description">Methodisch präzise Einführung mit Fokus auf Argumentationsstrukturen und analytischer Herangehensweise.</div>
+                    <span class="difficulty-tag difficulty-intermediate">Mittelschwer</span>
+                </div>
+                
+                <div class="book-card">
+                    <div class="book-title">Ethik - Eine Einführung</div>
+                    <div class="book-author">Otfried Höffe (2013)</div>
+                    <div class="book-description">Systematische Darstellung der Ethik vom Grundlagen über klassische Positionen bis zu aktuellen Anwendungen.</div>
+                    <span class="difficulty-tag difficulty-intermediate">Mittelschwer</span>
+                </div>
+                
+                <div class="book-card">
+                    <div class="book-title">Grundfragen der Ethik</div>
+                    <div class="book-author">Dietmar Hübner (2014)</div>
+                    <div class="book-description">Problemorientierte Einführung mit vielen Beispielen aus der angewandten Ethik.</div>
+                    <span class="difficulty-tag difficulty-beginner">Einsteiger</span>
+                </div>
+                
+                <div class="book-card">
+                    <div class="book-title">Das Philosophie-Buch</div>
+                    <div class="book-author">DK Verlag (2024)</div>
+                    <div class="book-description">Visuell ansprechende Darstellung philosophischer Ideen mit Infografiken und verständlichen Erklärungen.</div>
+                    <span class="difficulty-tag difficulty-beginner">Einsteiger</span>
+                </div>
+                
+                <div class="book-card">
+                    <div class="book-title">Praktische Ethik</div>
+                    <div class="book-author">Peter Singer (2013, 3. Auflage)</div>
+                    <div class="book-description">Kontroverse, aber einflussreiche Anwendung utilitaristischer Prinzipien auf aktuelle ethische Probleme.</div>
+                    <span class="difficulty-tag difficulty-intermediate">Mittelschwer</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contemporary Ethics -->
+        <section class="content-section">
+            <h2 class="section-title">🤖 Aktuelle Ethik-Debatten 2026</h2>
+            <p>Neueste Entwicklungen in KI-Ethik, Bioethik und anderen zeitgenössischen ethischen Herausforderungen.</p>
+            
+            <div class="books-grid">
+                <div class="book-card">
+                    <div class="book-title">AI Ethics</div>
+                    <div class="book-author">Mark Coeckelbergh (2020)</div>
+                    <div class="book-description">Umfassende Einführung in die Ethik Künstlicher Intelligenz mit praktischen Beispielen und Fallstudien.</div>
+                    <span class="difficulty-tag difficulty-intermediate">Mittelschwer</span>
+                </div>
+                
+                <div class="book-card">
+                    <div class="book-title">Digitale Ethik</div>
+                    <div class="book-author">Sarah Spiekermann (2019)</div>
+                    <div class="book-description">Analyse der ethischen Herausforderungen der Digitalisierung und Vorschläge für eine humanere Technologie.</div>
+                    <span class="difficulty-tag difficulty-beginner">Einsteiger</span>
+                </div>
+                
+                <div class="book-card">
+                    <div class="book-title">Grundfragen der Maschinenethik</div>
+                    <div class="book-author">Catrin Misselhorn (2018)</div>
+                    <div class="book-description">Systematische Behandlung ethischer Fragen bei autonomen Systemen und robotischen Agenten.</div>
+                    <span class="difficulty-tag difficulty-intermediate">Mittelschwer</span>
+                </div>
+                
+                <div class="book-card">
+                    <div class="book-title">Das Prinzip Verantwortung</div>
+                    <div class="book-author">Hans Jonas (1984)</div>
+                    <div class="book-description">Grundlegendes Werk zur Verantwortungsethik angesichts technologischer Entwicklungen. Hochaktuell für Klimawandel und KI.</div>
+                    <span class="difficulty-tag difficulty-advanced">Anspruchsvoll</span>
+                </div>
+                
+                <div class="book-card">
+                    <div class="book-title">Animal Liberation</div>
+                    <div class="book-author">Peter Singer (1975/2019)</div>
+                    <div class="book-description">Klassiker der Tierethik, neu überarbeitet mit aktuellen Entwicklungen wie Laborfleisch und KI-Tierschutz.</div>
+                    <span class="difficulty-tag difficulty-intermediate">Mittelschwer</span>
+                </div>
+                
+                <div class="book-card">
+                    <div class="book-title">Weapons of Math Destruction</div>
+                    <div class="book-author">Cathy O'Neil (2017)</div>
+                    <div class="book-description">Kritische Analyse algorithmischer Entscheidungssysteme und ihrer gesellschaftlichen Auswirkungen.</div>
+                    <span class="difficulty-tag difficulty-beginner">Einsteiger</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Online Resources -->
+        <section class="content-section">
+            <h2 class="section-title">🌐 Online-Ressourcen & Datenbanken</h2>
+            <p>Hochwertige digitale Quellen für die ethische Bildung und Forschung.</p>
+            
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <div class="resource-title">
+                        <span class="resource-icon">📚</span>
+                        Stanford Encyclopedia of Philosophy
+                    </div>
+                    <p>Die umfassendste Online-Enzyklopädie der Philosophie. Peer-reviewed Artikel zu allen ethischen Themen.</p>
+                    <p><strong>URL:</strong> <a href="https://plato.stanford.edu/" target="_blank">plato.stanford.edu</a></p>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-title">
+                        <span class="resource-icon">🎥</span>
+                        Ethik-Abi by BOE (YouTube)
+                    </div>
+                    <p>Deutschsprachige Videos zu allen wichtigen ethischen Themen. Besonders gut für die Prüfungsvorbereitung geeignet.</p>
+                    <p><strong>Themen:</strong> Kant, Utilitarismus, Tugendethik, Tierethik, KI-Ethik</p>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-title">
+                        <span class="resource-icon">🏛️</span>
+                        Bundeszentrale für politische Bildung
+                    </div>
+                    <p>Umfangreiche Materialien zu Bioethik, politischer Ethik und aktuellen gesellschaftlichen Debatten.</p>
+                    <p><strong>URL:</strong> <a href="https://www.bpb.de/themen/philosophie/" target="_blank">bpb.de/philosophie</a></p>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-title">
+                        <span class="resource-icon">🤖</span>
+                        UNESCO KI-Ethik Empfehlungen
+                    </div>
+                    <p>Offizielle UNESCO-Richtlinien zur Ethik der Künstlichen Intelligenz (2021). Globaler Völkerrechtstext zu KI-Governance.</p>
+                    <p><strong>Sprachen:</strong> Deutsch, Englisch, Französisch</p>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-title">
+                        <span class="resource-icon">🎓</span>
+                        Coursera & edX Kurse
+                    </div>
+                    <p>Online-Kurse renommierter Universitäten zu Ethik, Philosophie und angewandter Ethik.</p>
+                    <p><strong>Empfehlung:</strong> "Introduction to Philosophy" (University of Edinburgh)</p>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-title">
+                        <span class="resource-icon">📱</span>
+                        Philosophy Apps
+                    </div>
+                    <p>Daily Philosophy, Philosophy Terms, Socratic Quiz Apps für unterwegs lernen.</p>
+                    <p><strong>Besonders gut:</strong> "The School of Life" App</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Study Guidelines -->
+        <section class="content-section">
+            <h2 class="section-title">📋 Studienhinweise & Lernstrategien</h2>
+            
+            <div class="study-tip">
+                <strong><span class="study-tip-icon">💡</span>Effektiv lesen:</strong> 
+                Beginnen Sie mit modernen Einführungen, bevor Sie sich an Originaltexte wagen. Erstellen Sie Zusammenfassungen der Hauptargumente.
+            </div>
+            
+            <div class="study-tip">
+                <strong><span class="study-tip-icon">🔍</span>Kritisches Denken:</strong> 
+                Hinterfragen Sie jedes Argument. Suchen Sie nach Gegenbeispielen und alternativen Sichtweisen.
+            </div>
+            
+            <div class="study-tip">
+                <strong><span class="study-tip-icon">💬</span>Diskussion:</strong> 
+                Ethik lernt man am besten im Dialog. Nutzen Sie Philosophie-Foren, Studiengruppen oder Diskussionsrunden.
+            </div>
+            
+            <div class="study-tip">
+                <strong><span class="study-tip-icon">📝</span>Praxisbezug:</strong> 
+                Wenden Sie ethische Theorien auf aktuelle Nachrichten und persönliche Dilemmata an.
+            </div>
+
+            <div class="citation-box">
+                <h4>📖 Richtig Zitieren in der Ethik</h4>
+                <p><strong>Klassische Werke:</strong> Aristoteles, Nikomachische Ethik, 1094a1-3 (Bekker-Numerierung)</p>
+                <p><strong>Moderne Werke:</strong> Pieper, Annemarie: Einführung in die Ethik, 7. Auflage, Stuttgart 2017, S. 45.</p>
+                <p><strong>Online-Quellen:</strong> Stanford Encyclopedia of Philosophy, „Ethics", https://plato.stanford.edu/entries/ethics/, abgerufen am 15.08.2026.</p>
+            </div>
+        </section>
+
+        <!-- Further Reading by Topic -->
+        <section class="content-section">
+            <h2 class="section-title">🔖 Vertiefung nach Themen</h2>
+            
+            <div class="category-tabs">
+                <div class="category-tab active" onclick="showCategory('kant')">Kant & Pflichtethik</div>
+                <div class="category-tab" onclick="showCategory('utilitarian')">Utilitarismus</div>
+                <div class="category-tab" onclick="showCategory('applied')">Angewandte Ethik</div>
+                <div class="category-tab" onclick="showCategory('modern')">Moderne Debatten</div>
+            </div>
+
+            <div id="kant" class="category-content">
+                <h3>📚 Kant & Deontologische Ethik</h3>
+                <ul>
+                    <li><strong>Primärtexte:</strong> Grundlegung zur Metaphysik der Sitten, Kritik der praktischen Vernunft</li>
+                    <li><strong>Sekundärliteratur:</strong> Otfried Höffe: "Kants Kritik der praktischen Vernunft"</li>
+                    <li><strong>Modern:</strong> Christine Korsgaard: "The Sources of Normativity"</li>
+                    <li><strong>Anwendung:</strong> Tom Hill: "Human Welfare and Moral Worth"</li>
+                </ul>
+            </div>
+
+            <div id="utilitarian" class="category-content" style="display:none;">
+                <h3>⚖️ Utilitarismus & Konsequentialismus</h3>
+                <ul>
+                    <li><strong>Klassiker:</strong> Bentham, Mill, Sidgwick: "The Methods of Ethics"</li>
+                    <li><strong>Modern:</strong> Peter Railton: "Facts, Values, and Norms"</li>
+                    <li><strong>Kritisch:</strong> Bernard Williams: "Critique of Utilitarianism"</li>
+                    <li><strong>Angewandt:</strong> Joshua Greene: "Moral Tribes"</li>
+                </ul>
+            </div>
+
+            <div id="applied" class="category-content" style="display:none;">
+                <h3>🏥 Angewandte Ethik</h3>
+                <ul>
+                    <li><strong>Bioethik:</strong> Tom Beauchamp: "Principles of Biomedical Ethics"</li>
+                    <li><strong>Tierethik:</strong> Tom Regan: "The Case for Animal Rights"</li>
+                    <li><strong>Umweltethik:</strong> Holmes Rolston III: "Environmental Ethics"</li>
+                    <li><strong>Wirtschaftsethik:</strong> Patricia Werhane: "Business Ethics"</li>
+                </ul>
+            </div>
+
+            <div id="modern" class="category-content" style="display:none;">
+                <h3>🚀 Moderne ethische Herausforderungen</h3>
+                <ul>
+                    <li><strong>KI-Ethik:</strong> Russell & Norvig: "Artificial Intelligence: A Modern Approach" (Kapitel über Ethics)</li>
+                    <li><strong>Digitale Ethik:</strong> Luciano Floridi: "The Fourth Revolution"</li>
+                    <li><strong>Klimaethik:</strong> Stephen Gardiner: "A Perfect Moral Storm"</li>
+                    <li><strong>Transhumanismus:</strong> Nick Bostrom: "Superintelligence"</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Academic Journals -->
+        <section class="content-section">
+            <h2 class="section-title">📰 Wichtige Fachzeitschriften</h2>
+            <p>Aktuelle Forschung und wissenschaftliche Debatten in der Ethik.</p>
+            
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <div class="resource-title">
+                        <span class="resource-icon">🔬</span>
+                        Journal of Applied Philosophy
+                    </div>
+                    <p>Führende Zeitschrift für angewandte Ethik. Behandelt aktuelle gesellschaftliche und technologische Herausforderungen.</p>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-title">
+                        <span class="resource-icon">🤖</span>
+                        AI & Society
+                    </div>
+                    <p>Interdisziplinäre Zeitschrift zu den gesellschaftlichen Auswirkungen der KI, einschließlich ethischer Fragen.</p>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-title">
+                        <span class="resource-icon">🧬</span>
+                        Bioethics
+                    </div>
+                    <p>Internationale Zeitschrift für biomedizinische Ethik. Aktuelle Debatten zu Gentechnik, Sterbehilfe und Forschungsethik.</p>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-title">
+                        <span class="resource-icon">🌍</span>
+                        Environmental Ethics
+                    </div>
+                    <p>Spezialisiert auf Umwelt- und Klimaethik. Behandlung von Nachhaltigkeit und Generationengerechtigkeit.</p>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-title">
+                        <span class="resource-icon">📚</span>
+                        Ethik in der Medizin (Deutsch)
+                    </div>
+                    <p>Deutschsprachige Zeitschrift für Medizin- und Bioethik. Praxisnahe Fallstudien und theoretische Grundlagen.</p>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-title">
+                        <span class="resource-icon">🎓</span>
+                        Zeitschrift für philosophische Forschung
+                    </div>
+                    <p>Renommierte deutschsprachige Philosophiezeitschrift mit regelmäßigen Beiträgen zur Ethik.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- International Resources -->
+        <section class="content-section">
+            <h2 class="section-title">🌍 Internationale Perspektiven</h2>
+            <p>Ethische Traditionen und Ansätze aus verschiedenen Kulturen und Denktraditionen.</p>
+            
+            <div class="books-grid">
+                <div class="book-card">
+                    <div class="book-title">Konfuzianische Ethik</div>
+                    <div class="book-author">Ames & Rosemont: "Thinking from the Han Self"</div>
+                    <div class="book-description">Einführung in die konfuzianische Ethik mit Fokus auf Tugend, Harmonie und gesellschaftliche Verantwortung.</div>
+                    <span class="difficulty-tag difficulty-intermediate">Mittelschwer</span>
+                </div>
+                
+                <div class="book-card">
+                    <div class="book-title">Buddhistische Ethik</div>
+                    <div class="book-author">Damien Keown: "Buddhist Ethics"</div>
+                    <div class="book-description">Systematische Darstellung buddhistischer Moralvorstellungen und ihrer praktischen Anwendung.</div>
+                    <span class="difficulty-tag difficulty-beginner">Einsteiger</span>
+                </div>
+                
+                <div class="book-card">
+                    <div class="book-title">Ubuntu-Philosophie</div>
+                    <div class="book-author">Mogobe Ramose: "African Philosophy"</div>
+                    <div class="book-description">Afrikanische Ethiktradition mit dem Prinzip "Ich bin, weil wir sind" - hochrelevant für Gemeinschaftsethik.</div>
+                    <span class="difficulty-tag difficulty-intermediate">Mittelschwer</span>
+                </div>
+                
+                <div class="book-card">
+                    <div class="book-title">Islamische Ethik</div>
+                    <div class="book-author">Majid Fakhry: "Ethical Theories in Islam"</div>
+                    <div class="book-description">Überblick über die Entwicklung ethischer Theorien in der islamischen Philosophie.</div>
+                    <span class="difficulty-tag difficulty-intermediate">Mittelschwer</span>
+                </div>
+                
+                <div class="book-card">
+                    <div class="book-title">Care-Ethik</div>
+                    <div class="book-author">Carol Gilligan: "In a Different Voice"</div>
+                    <div class="book-description">Feministische Ethik mit Betonung von Fürsorge, Beziehungen und kontextueller Moral.</div>
+                    <span class="difficulty-tag difficulty-beginner">Einsteiger</span>
+                </div>
+                
+                <div class="book-card">
+                    <div class="book-title">Indigene Ethik</div>
+                    <div class="book-author">Robin Wall Kimmerer: "Braiding Sweetgrass"</div>
+                    <div class="book-description">Verbindung indigener Weisheit mit ökologischer Ethik und Nachhaltigkeit.</div>
+                    <span class="difficulty-tag difficulty-beginner">Einsteiger</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools and Methods -->
+        <section class="content-section">
+            <h2 class="section-title">🛠️ Methodische Hilfsmittel</h2>
+            
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <div class="resource-title">
+                        <span class="resource-icon">🔍</span>
+                        PhilPapers Database
+                    </div>
+                    <p>Umfassende Suchmaschine für philosophische Literatur. Über 2 Millionen Artikel durchsuchbar.</p>
+                    <p><strong>URL:</strong> <a href="https://philpapers.org/" target="_blank">philpapers.org</a></p>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-title">
+                        <span class="resource-icon">📝</span>
+                        Argument Mapping Tools
+                    </div>
+                    <p>Software zur visuellen Darstellung ethischer Argumente: Rationale, Argunet, MindMeister</p>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-title">
+                        <span class="resource-icon">💭</span>
+                        Gedankenexperimente
+                    </div>
+                    <p>Trolley-Problem, Mary's Room, Experience Machine - digitale Sammlungen ethischer Dilemmata</p>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-title">
+                        <span class="resource-icon">📊</span>
+                        Ethics Bowl Resources
+                    </div>
+                    <p>Materialien für ethische Debatten und Argumentationstraining aus internationalen Wettbewerben</p>
+                </div>
+            </div>
+
+            <div class="citation-box">
+                <h4>🎯 Prüfungsvorbereitung - Die wichtigsten 20 Werke</h4>
+                <div style="columns: 2; column-gap: 30px; margin-top: 15px;">
+                    <p>1. <strong>Aristoteles:</strong> Nikomachische Ethik</p>
+                    <p>2. <strong>Kant:</strong> Grundlegung zur Metaphysik der Sitten</p>
+                    <p>3. <strong>Mill:</strong> Der Utilitarismus</p>
+                    <p>4. <strong>Bentham:</strong> Prinzipien der Moral</p>
+                    <p>5. <strong>Rawls:</strong> Theorie der Gerechtigkeit</p>
+                    <p>6. <strong>Singer:</strong> Praktische Ethik</p>
+                    <p>7. <strong>Nussbaum:</strong> Capabilities Approach</p>
+                    <p>8. <strong>Jonas:</strong> Das Prinzip Verantwortung</p>
+                    <p>9. <strong>MacIntyre:</strong> After Virtue</p>
+                    <p>10. <strong>Gilligan:</strong> In a Different Voice</p>
+                    <p>11. <strong>Regan:</strong> The Case for Animal Rights</p>
+                    <p>12. <strong>Schopenhauer:</strong> Mitleidsethik</p>
+                    <p>13. <strong>Habermas:</strong> Diskursethik</p>
+                    <p>14. <strong>Apel:</strong> Transformation der Philosophie</p>
+                    <p>15. <strong>Foot:</strong> Virtues and Vices</p>
+                    <p>16. <strong>Williams:</strong> Ethics and the Limits</p>
+                    <p>17. <strong>Nagel:</strong> The View from Nowhere</p>
+                    <p>18. <strong>Parfit:</strong> Reasons and Persons</p>
+                    <p>19. <strong>Frankfurt:</strong> The Reasons of Love</p>
+                    <p>20. <strong>Scanlon:</strong> What We Owe Each Other</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Digital Learning Platforms -->
+        <section class="content-section">
+            <h2 class="section-title">💻 Digitale Lernplattformen</h2>
+            
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <div class="resource-title">
+                        <span class="resource-icon">🎓</span>
+                        Harvard's Justice Course
+                    </div>
+                    <p>Michael Sandels berühmter Kurs "Justice: What's the Right Thing to Do?" - kostenlos online verfügbar</p>
+                    <p><strong>Platform:</strong> Harvard Online Learning, YouTube</p>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-title">
+                        <span class="resource-icon">🧠</span>
+                        Philosophy Crash Course
+                    </div>
+                    <p>Hank Green's unterhaltsame Einführung in philosophische Grundfragen - perfekt für Einsteiger</p>
+                    <p><strong>Episoden:</strong> 46 Videos à 10 Minuten</p>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-title">
+                        <span class="resource-icon">🎧</span>
+                        Philosophy Podcasts
+                    </div>
+                    <p><strong>Deutsch:</strong> Das Philosophische Radio (WDR), Hoaxilla Philosophie-Folgen</p>
+                    <p><strong>Englisch:</strong> Philosophy Talk, The Partially Examined Life</p>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-title">
+                        <span class="resource-icon">📱</span>
+                        Interaktive Apps
+                    </div>
+                    <p>Socrative Questioning, Philosophy Quiz Apps, Moral Machine (MIT) für KI-Ethik-Dilemmata</p>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-title">
+                        <span class="resource-icon">🎮</span>
+                        Philosophy Games
+                    </div>
+                    <p>The Trolley Problem Game, Moral Machine, Philosophy Experiments - spielerisches Lernen</p>
+                </div>
+                
+                <div class="resource-card">
+                    <div class="resource-title">
+                        <span class="resource-icon">🔗</span>
+                        Open Access Verlage
+                    </div>
+                    <p>DOAJ, PLOS ONE Ethik-Sektion, Open Library Philosophy - kostenlose wissenschaftliche Artikel</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer with Update Info -->
+        <section class="content-section">
+            <h2 class="section-title">ℹ️ Hinweise zur Nutzung</h2>
+            
+            <div class="study-tip">
+                <strong><span class="study-tip-icon">⚠️</span>Aktualität:</strong> 
+                Dieser Lernzettel wurde 2026 erstellt. Online-Ressourcen können sich ändern - prüfen Sie URLs vor Verwendung.
+            </div>
+            
+            <div class="study-tip">
+                <strong><span class="study-tip-icon">📚</span>Verfügbarkeit:</strong> 
+                Nicht alle Bücher sind dauerhaft im Handel. Nutzen Sie Bibliotheken, Fernleihe oder digitale Ausgaben.
+            </div>
+            
+            <div class="study-tip">
+                <strong><span class="study-tip-icon">💡</span>Empfehlung:</strong> 
+                Beginnen Sie mit 2-3 Grundwerken pro Themenbereich, bevor Sie sich spezialisieren.
+            </div>
+            
+            <div class="study-tip">
+                <strong><span class="study-tip-icon">🌍</span>Diversität:</strong> 
+                Achten Sie auf verschiedene kulturelle und philosophische Traditionen für eine umfassende Bildung.
+            </div>
+
+            <p style="text-align: center; margin-top: 30px; color: #666; font-style: italic;">
+                📅 Letztes Update: August 2026 | 🔄 Regelmäßige Aktualisierung geplant | 
+                💬 Feedback und Ergänzungsvorschläge willkommen
+            </p>
+        </section>
+    </div>
+
+    <script>
+        function showCategory(category) {
+            // Hide all category contents
+            const contents = document.querySelectorAll('.category-content');
+            contents.forEach(content => content.style.display = 'none');
+            
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.category-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Show selected category
+            document.getElementById(category).style.display = 'block';
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+        
+        // Initialize first category as active
+        document.addEventListener('DOMContentLoaded', function() {
+            showCategory('kant');
+        });
+    </script>
+</body>
+</html>

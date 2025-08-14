@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tierethik - Ethik Lernzettel 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Navigation */
+        .nav-bar {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 15px 25px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            flex-wrap: wrap;
+        }
+        
+        .nav-home {
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+        
+        .nav-breadcrumb {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-title {
+            font-size: 2.5em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .header-subtitle {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        /* Content Cards */
+        .content-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-title {
+            font-size: 1.8em;
+            color: #667eea;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .subsection-title {
+            font-size: 1.4em;
+            color: #764ba2;
+            margin: 25px 0 15px 0;
+            border-left: 4px solid #667eea;
+            padding-left: 15px;
+        }
+        
+        /* Philosophy Cards */
+        .philosopher-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .philosopher-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 12px;
+            padding: 25px;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+        
+        .philosopher-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .philosopher-name {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .philosopher-quote {
+            font-style: italic;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+        
+        /* Key Concepts */
+        .key-concept {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .concept-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            margin: 30px 0;
+            padding-left: 30px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #667eea, #764ba2);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -37px;
+            top: 25px;
+            width: 12px;
+            height: 12px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+        
+        .timeline-year {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.1em;
+        }
+        
+        /* Modern Applications */
+        .modern-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .modern-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            padding: 25px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .modern-card:hover {
+            border-color: #667eea;
+            transform: translateY(-3px);
+        }
+        
+        .modern-icon {
+            font-size: 2em;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .modern-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        /* Debate Section */
+        .debate-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .debate-pro {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+        }
+        
+        .debate-contra {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+        }
+        
+        .debate-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        /* Highlight Boxes */
+        .highlight-box {
+            background: linear-gradient(135deg, #ff9a9e, #fecfef);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #667eea;
+        }
+        
+        .highlight-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header-title {
+                font-size: 2em;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .nav-bar {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px;
+            }
+            
+            .content-card {
+                padding: 20px;
+            }
+            
+            .section-title {
+                font-size: 1.5em;
+            }
+            
+            .philosopher-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .debate-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .modern-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline {
+                padding-left: 25px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header-title {
+                font-size: 1.8em;
+            }
+            
+            .section-title {
+                font-size: 1.3em;
+            }
+            
+            .subsection-title {
+                font-size: 1.2em;
+            }
+        }
+        
+        /* Lists */
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        /* Links */
+        a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Tables */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .comparison-table tr:hover {
+            background-color: #f8f9ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="nav-bar">
+            <a href="index.html" class="nav-home">🏠 Ethik Lernzettel 2026</a>
+            <span class="nav-breadcrumb">📍 Tierethik</span>
+        </nav>
+
+        <!-- Header -->
+        <header>
+            <h1 class="header-title">
+                <span>🐾</span>
+                <span>Tierethik</span>
+            </h1>
+            <p class="header-subtitle">Von der Leidensfähigkeit zur Laborfleisch-Debatte</p>
+            <p>🤔 Philosophische Grundlagen • ⚖️ Tierrechte vs. Tierschutz • 🧬 Moderne Entwicklungen 2026</p>
+        </header>
+
+        <!-- Einführung -->
+        <div class="content-card">
+            <h2 class="section-title">🎯 Was ist Tierethik?</h2>
+            <p><strong>Tierethik</strong> beschäftigt sich mit der Frage, welchen moralischen Status Tiere haben und wie Menschen mit ihnen umgehen sollen. Sie stellt grundlegende Fragen:</p>
+            
+            <div class="highlight-box">
+                <div class="highlight-title">🔑 Zentrale Fragen der Tierethik:</div>
+                <ul>
+                    <li>Haben Tiere eigene Rechte oder sind sie nur Objekte menschlicher Fürsorge?</li>
+                    <li>Was unterscheidet Menschen von anderen Tieren moralisch relevant?</li>
+                    <li>Wie rechtfertigen wir Massentierhaltung, Tierversuche und Jagd?</li>
+                    <li>Welche Rolle spielt Leidensfähigkeit bei moralischer Berücksichtigung?</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Historische Entwicklung -->
+        <div class="content-card">
+            <h2 class="section-title">📚 Historische Entwicklung der Tierethik</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">1822</div>
+                    <strong>Martin's Act (Großbritannien)</strong><br>
+                    Erstes Tierschutzgesetz der Welt - Verbot grausamer Behandlung von Nutztieren
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">1975</div>
+                    <strong>Peter Singer: "Animal Liberation"</strong><br>
+                    Geburtsstunde der modernen Tierethik - Einführung des Speziesismus-Begriffs
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">1983</div>
+                    <strong>Tom Regan: "The Case for Animal Rights"</strong><br>
+                    Tierrechtstheorie: Tiere als "Subjekte-eines-Lebens"
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2002</div>
+                    <strong>Deutschland: Tierschutz im Grundgesetz</strong><br>
+                    Verfassungsrang für den Tierschutz als Staatsziel
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2020-2026</div>
+                    <strong>Laborfleisch-Ära</strong><br>
+                    Erste Zulassungen kultivierter Fleischprodukte in Singapur (2020), USA (2023), EU-Anträge ab 2023
+                </div>
+            </div>
+        </div>
+
+        <!-- Philosophische Grundlagen -->
+        <div class="content-card">
+            <h2 class="section-title">🧠 Philosophische Grundpositionen</h2>
+            
+            <div class="philosopher-grid">
+                <div class="philosopher-card">
+                    <div class="philosopher-name">Jeremy Bentham (1748-1832)</div>
+                    <div class="philosopher-quote">"Die Frage ist nicht: Können sie denken? Können sie sprechen? Sondern: Können sie leiden?"</div>
+                    <p><strong>Utilitaristische Grundlage:</strong> Leidensfähigkeit als Kriterium für moralische Berücksichtigung. Tiere verdienen Schutz, weil sie Schmerz empfinden können.</p>
+                </div>
+                
+                <div class="philosopher-card">
+                    <div class="philosopher-name">Peter Singer (*1946)</div>
+                    <div class="philosopher-quote">"Speziesismus ist eine Form der Diskriminierung - so verwerflich wie Rassismus."</div>
+                    <p><strong>Präferenzutilitarismus:</strong> Gleiches Leid zählt gleich, unabhängig von der Spezies. Kritik an der "Artenarroganz" des Menschen.</p>
+                </div>
+                
+                <div class="philosopher-card">
+                    <div class="philosopher-name">Tom Regan (1938-2017)</div>
+                    <div class="philosopher-quote">"Tiere sind Subjekte-eines-Lebens und haben daher inherente Rechte."</div>
+                    <p><strong>Tierrechtstheorie:</strong> Tiere ab einem Jahr haben Bewusstsein, Erinnerungen und Zukunftsvorstellungen - daher unveräußerliche Rechte.</p>
+                </div>
+                
+                <div class="philosopher-card">
+                    <div class="philosopher-name">Arthur Schopenhauer (1788-1860)</div>
+                    <div class="philosopher-quote">"Mitleid mit den Tieren hängt mit der Güte des Charakters so genau zusammen."</div>
+                    <p><strong>Mitleidsethik:</strong> Menschen und Tiere teilen den Willen zum Überleben. Mitleid als Grundlage der Moral erstreckt sich auf alle leidensfähigen Wesen.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kernkonzepte -->
+        <div class="content-card">
+            <h2 class="section-title">🔑 Zentrale Konzepte der Tierethik</h2>
+            
+            <div class="key-concept">
+                <div class="concept-title">🚫 Speziesismus</div>
+                <p>Diskriminierung aufgrund der Artzugehörigkeit. Menschen behandeln Tiere schlecht, nur weil sie einer anderen Art angehören. Singer erweitert den Rassismus-Begriff auf das Verhältnis zwischen Arten.</p>
+            </div>
+            
+            <div class="key-concept">
+                <div class="concept-title">💭 Subjekt-eines-Lebens (Regan)</div>
+                <p>Tiere, die Bewusstsein, Erinnerungen, Zukunftsvorstellungen und Präferenzen haben. Diese Tiere sind mehr als nur empfindungsfähig - sie haben ein eigenes Leben mit inherentem Wert.</p>
+            </div>
+            
+            <div class="key-concept">
+                <div class="concept-title">⚡ Leidensfähigkeit (Sentience)</div>
+                <p>Die Fähigkeit, Schmerz, Freude und andere bewusste Erfahrungen zu machen. Bentham und Singer sehen dies als entscheidendes Kriterium für moralische Berücksichtigung.</p>
+            </div>
+            
+            <div class="key-concept">
+                <div class="concept-title">🌍 Inherenter vs. instrumenteller Wert</div>
+                <p><strong>Inherent:</strong> Tiere haben Eigenwert, unabhängig von ihrem Nutzen für Menschen.<br>
+                <strong>Instrumentell:</strong> Tiere sind wertvoll als Mittel für menschliche Zwecke.</p>
+            </div>
+        </div>
+
+        <!-- Tierrechte vs. Tierschutz -->
+        <div class="content-card">
+            <h2 class="section-title">⚖️ Tierrechte vs. Tierschutz</h2>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Aspekt</th>
+                        <th>Tierschutz</th>
+                        <th>Tierrechte</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Grundposition</strong></td>
+                        <td>Tiere sollen human behandelt werden</td>
+                        <td>Tiere haben unveräußerliche Rechte</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Nutzung von Tieren</strong></td>
+                        <td>Erlaubt, wenn human</td>
+                        <td>Grundsätzlich abgelehnt</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Massentierhaltung</strong></td>
+                        <td>Reform möglich (bessere Bedingungen)</td>
+                        <td>Komplette Abschaffung gefordert</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tierversuche</strong></td>
+                        <td>Reduzierung, Verbesserung (3R-Prinzip)</td>
+                        <td>Vollständiges Verbot</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Rechtsstatus</strong></td>
+                        <td>Tiere als Objekte mit Schutzbestimmungen</td>
+                        <td>Tiere als Rechtssubjekte</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Moderne Debatten 2026 -->
+        <div class="content-card">
+            <h2 class="section-title">🔬 Aktuelle Debatten 2026</h2>
+            
+            <div class="modern-grid">
+                <div class="modern-card">
+                    <span class="modern-icon">🧬</span>
+                    <div class="modern-title">Kultiviertes Fleisch</div>
+                    <p>Laborfleisch revolutioniert die Tierethik: <em>Echtes</em> Fleisch ohne Tierleid? 2026 erwarten Experten erste EU-Zulassungen. Prognose: 2030 sollen 10% des Weltfleischkonsums kultiviert sein.</p>
+                </div>
+                
+                <div class="modern-card">
+                    <span class="modern-icon">🤖</span>
+                    <div class="modern-title">KI und Tierverhalten</div>
+                    <p>Künstliche Intelligenz hilft uns, Tierkommunikation und -bewusstsein besser zu verstehen. Neue Erkenntnisse über Emotionen bei Tieren stellen bisherige Grenzen in Frage.</p>
+                </div>
+                
+                <div class="modern-card">
+                    <span class="modern-icon">⚖️</span>
+                    <div class="modern-title">Rechtspersönlichkeit</div>
+                    <p>Erste Länder diskutieren begrenzte Rechtspersönlichkeit für Menschenaffen. Neuseeland erkannte bereits 2017 allen Tieren Sentience (Empfindungsfähigkeit) gesetzlich zu.</p>
+                </div>
+                
+                <div class="modern-card">
+                    <span class="modern-icon">🌱</span>
+                    <div class="modern-title">Zelluläre Landwirtschaft</div>
+                    <p>Fleisch, Milch und Eier aus Zellen statt Tieren. Bis 2030 könnte dies traditionelle Landwirtschaft teilweise ersetzen und Tierleid massiv reduzieren.</p>
+                </div>
+                
+                <div class="modern-card">
+                    <span class="modern-icon">🐟</span>
+                    <div class="modern-title">Fischethik</div>
+                    <p>Neue Forschung zeigt: Fische haben komplexere kognitive Fähigkeiten als gedacht. Diskussion über Aquakultur vs. Wildfang vs. Laborfisch.</p>
+                </div>
+                
+                <div class="modern-card">
+                    <span class="modern-icon">🔬</span>
+                    <div class="modern-title">Organoide & Tierversuche</div>
+                    <p>Menschliche Organoide (Mini-Organe) könnten Tierversuche ersetzen. EU-Ziel: deutliche Reduktion bis 2030 durch alternative Testmethoden.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Laborfleisch Debatte -->
+        <div class="content-card">
+            <h2 class="section-title">🥩 Kultiviertes Fleisch: Die Debatte 2026</h2>
+            
+            <div class="highlight-box">
+                <div class="highlight-title">📊 Status 2026:</div>
+                <ul>
+                    <li><strong>Singapur:</strong> Seit 2020 zugelassen (Eat Just Chicken Nuggets)</li>
+                    <li><strong>USA:</strong> Seit 2023 zugelassen (Upside Foods, Good Meat)</li>
+                    <li><strong>EU:</strong> Erste Anträge 2023-2024, Zulassung frühestens 2026</li>
+                    <li><strong>Deutschland:</strong> Erster Lehrstuhl für kultiviertes Fleisch 2022 in München</li>
+                    <li><strong>Prognose:</strong> 2030 sollen 10% des Weltfleischkonsums kultiviert sein</li>
+                </ul>
+            </div>
+            
+            <div class="debate-grid">
+                <div class="debate-pro">
+                    <div class="debate-title">✅ Pro-Argumente</div>
+                    <ul>
+                        <li><strong>Tierleid:</strong> Drastische Reduktion der Schlachtungen (80 Milliarden Tiere/Jahr)</li>
+                        <li><strong>Umwelt:</strong> 96% weniger Treibhausgase, 99% weniger Landverbrauch</li>
+                        <li><strong>Gesundheit:</strong> Keine Antibiotika, kontrollierte Inhaltsstoffe</li>
+                        <li><strong>Effizienz:</strong> Doppelt so hohe Proteinumwandlung (24% statt 12%)</li>
+                        <li><strong>Flexibilität:</strong> Nur gewünschte Teile produzieren (Steak ohne Rest)</li>
+                    </ul>
+                </div>
+                
+                <div class="debate-contra">
+                    <div class="debate-title">❌ Contra-Argumente</div>
+                    <ul>
+                        <li><strong>Kosten:</strong> Noch 10x teurer als konventionelles Fleisch</li>
+                        <li><strong>Nährmedium:</strong> Teilweise noch fötales Kälberserum nötig</li>
+                        <li><strong>Energie:</strong> Höherer Energieverbrauch als traditionelle Zucht</li>
+                        <li><strong>Akzeptanz:</strong> Nur 15% der Deutschen würden probieren</li>
+                        <li><strong>Ungewissheit:</strong> Langzeitfolgen noch unerforscht</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Anwendungsfelder -->
+        <div class="content-card">
+            <h2 class="section-title">🏭 Praktische Anwendungsfelder</h2>
+            
+            <h3 class="subsection-title">Massentierhaltung</h3>
+            <p><strong>Problem:</strong> 80 Milliarden Tiere werden jährlich für Fleisch geschlachtet. Bedingungen oft nicht artgerecht.</p>
+            <p><strong>Tierethische Positionen:</strong></p>
+            <ul>
+                <li><strong>Tierschutz:</strong> Bessere Haltungsbedingungen, mehr Platz, natürlicheres Verhalten</li>
+                <li><strong>Tierrechte:</strong> Komplette Abschaffung, da Tiere nicht für Nahrung sterben sollen</li>
+                <li><strong>Kompromiss:</strong> Drastische Reduktion + kultiviertes Fleisch als Alternative</li>
+            </ul>
+            
+            <h3 class="subsection-title">Tierversuche</h3>
+            <p><strong>3R-Prinzip:</strong></p>
+            <ul>
+                <li><strong>Replace:</strong> Ersatz durch Alternativen (Organoide, Computer-Simulationen)</li>
+                <li><strong>Reduce:</strong> Anzahl der Versuchstiere minimieren</li>
+                <li><strong>Refine:</strong> Verfahren verfeinern, Leiden reduzieren</li>
+            </ul>
+            
+            <h3 class="subsection-title">Haustiere und Wildtiere</h3>
+            <p><strong>Neue Fragen:</strong> Welche Rechte haben Haustiere? Sollen Wildtiere in ihren Lebensräumen geschützt werden, auch wenn sie leiden? Eingriff in natürliche Prozesse?</p>
+        </div>
+
+        <!-- Kritische Einwände -->
+        <div class="content-card">
+            <h2 class="section-title">🤔 Kritische Einwände und Grenzen</h2>
+            
+            <h3 class="subsection-title">Kritik am Utilitarismus (Singer)</h3>
+            <ul>
+                <li><strong>Messbarkeit:</strong> Wie vergleicht man Leid verschiedener Arten?</li>
+                <li><strong>Extreme Konsequenzen:</strong> Könnte zur Tötung behinderter Menschen führen</li>
+                <li><strong>Präferenz-Problem:</strong> Wessen Präferenzen zählen mehr?</li>
+            </ul>
+            
+            <h3 class="subsection-title">Kritik an Tierrechten (Regan)</h3>
+            <ul>
+                <li><strong>Grenzziehung:</strong> Welche Tiere sind "Subjekte-eines-Lebens"?</li>
+                <li><strong>Praktikabilität:</strong> Absolute Rechte schwer umsetzbar in komplexen Situationen</li>
+                <li><strong>Konflikte:</strong> Was tun bei Interessenskonflikten zwischen Tieren?</li>
+            </ul>
+            
+            <h3 class="subsection-title">Verrohungstheorie</h3>
+            <p><strong>These:</strong> Wer grausam zu Tieren ist, wird auch grausam zu Menschen sein.</p>
+            <p><strong>Kritik:</strong> Nur <em>indirekter</em> Schutz für Tiere. Sie werden instrumentell geschützt (zum Schutz der Menschen), nicht um ihrer selbst willen.</p>
+        </div>
+
+        <!-- Zukunftsperspektiven -->
+        <div class="content-card">
+            <h2 class="section-title">🔮 Zukunftsperspektiven der Tierethik</h2>
+            
+            <div class="modern-grid">
+                <div class="modern-card">
+                    <span class="modern-icon">📅</span>
+                    <div class="modern-title">2026-2030: Technologischer Wandel</div>
+                    <p>Kultiviertes Fleisch wird massentauglich. Erste Länder führen umfassende Tierrechte ein. KI hilft beim Verständnis von Tierkommunikation.</p>
+                </div>
+                
+                <div class="modern-card">
+                    <span class="modern-icon">🌍</span>
+                    <div class="modern-title">Globale Perspektive</div>
+                    <p>Entwicklungsländer können Protein-Sicherheit ohne Massentierhaltung erreichen. Kultiviertes Fleisch könnte Hunger bekämpfen.</p>
+                </div>
+                
+                <div class="modern-card">
+                    <span class="modern-icon">🧪</span>
+                    <div class="modern-title">Wissenschaftliche Durchbrüche</div>
+                    <p>Besseres Verständnis von Tierbewusstsein. Neue Testmethoden ersetzen Tierversuche. Organoide-Technologie wird Standard.</p>
+                </div>
+                
+                <div class="modern-card">
+                    <span class="modern-icon">⚖️</span>
+                    <div class="modern-title">Rechtliche Entwicklung</div>
+                    <p>Mehr Länder erkennen Tiersentience an. Erste Grundrechte für Menschenaffen. Strafverschärfung bei Tierquälerei.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ethische Dilemmata -->
+        <div class="content-card">
+            <h2 class="section-title">🧩 Aktuelle ethische Dilemmata</h2>
+            
+            <div class="highlight-box">
+                <div class="highlight-title">🤯 Gedankenexperiment: Der brennende Stall</div>
+                <p>Ein Stall brennt. Sie können entweder ein menschliches Baby oder 100 Ferkel retten. Für wen entscheiden Sie sich und warum?</p>
+                <ul>
+                    <li><strong>Utilitarist (Singer):</strong> 100 Ferkel = mehr Leid vermieden</li>
+                    <li><strong>Tierrechtler (Regan):</strong> Beide haben gleiche Grundrechte</li>
+                    <li><strong>Traditionalist:</strong> Mensch hat Vorrang aufgrund Rationalität</li>
+                </ul>
+            </div>
+            
+            <h3 class="subsection-title">Ist kultiviertes Fleisch vegan?</h3>
+            <div class="debate-grid">
+                <div class="debate-pro">
+                    <div class="debate-title">✅ Ja, es ist vegan</div>
+                    <ul>
+                        <li>Keine Tiere werden geschlachtet</li>
+                        <li>Kein Tierleid in der Produktion</li>
+                        <li>Ziel: Tiernutzung beenden</li>
+                        <li>Pragmatischer Veganismus</li>
+                    </ul>
+                </div>
+                
+                <div class="debate-contra">
+                    <div class="debate-title">❌ Nein, es ist nicht vegan</div>
+                    <ul>
+                        <li>Tierische Zellen bleiben tierisch</li>
+                        <li>Anfangs-Zellen von Tieren entnommen</li>
+                        <li>Teilweise noch tierische Nährmedien</li>
+                        <li>Philosophischer Veganismus</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Praktische Tipps -->
+        <div class="content-card">
+            <h2 class="section-title">💡 Für die Prüfung: Wichtige Tipps</h2>
+            
+            <h3 class="subsection-title">Schlüsselbegriffe definieren können</h3>
+            <ul>
+                <li><strong>Speziesismus:</strong> Diskriminierung aufgrund Artzugehörigkeit</li>
+                <li><strong>Sentience:</strong> Leidens- und Empfindungsfähigkeit</li>
+                <li><strong>Subjekt-eines-Lebens:</strong> Regans Kriterium für Tierrechte</li>
+                <li><strong>Inherenter Wert:</strong> Eigenwert unabhängig vom Nutzen</li>
+            </ul>
+            
+            <h3 class="subsection-title">Typische Prüfungsaufgaben</h3>
+            <ol>
+                <li>Vergleich Singer vs. Regan (Utilitarismus vs. Rechtsansatz)</li>
+                <li>Bewertung von Massentierhaltung aus verschiedenen Perspektiven</li>
+                <li>Ethische Analyse von kultiviertem Fleisch</li>
+                <li>Tierversuche: 3R-Prinzip anwenden</li>
+                <li>Fallstudien zu Interessenskonflikten</li>
+            </ol>
+            
+            <h3 class="subsection-title">Argumentationsstrukturen</h3>
+            <div class="key-concept">
+                <div class="concept-title">📝 Gute Argumentation enthält:</div>
+                <ul>
+                    <li><strong>These:</strong> Klare Position zur Tierethik</li>
+                    <li><strong>Begründung:</strong> Philosophische Grundlage (Singer/Regan/etc.)</li>
+                    <li><strong>Beispiel:</strong> Konkreter Fall aus der Praxis</li>
+                    <li><strong>Gegenargument:</strong> Alternative Sichtweise berücksichtigen</li>
+                    <li><strong>Fazit:</strong> Abwägung und begründete Schlussfolgerung</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Weiterführende Ressourcen -->
+        <div class="content-card">
+            <h2 class="section-title">📖 Weiterführende Ressourcen</h2>
+            
+            <h3 class="subsection-title">Grundlagentexte</h3>
+            <ul>
+                <li><strong>Peter Singer:</strong> "Animal Liberation" (1975) - Klassiker der Tierethik</li>
+                <li><strong>Tom Regan:</strong> "The Case for Animal Rights" (1983) - Tierrechtstheorie</li>
+                <li><strong>Mary Midgley:</strong> "Animals and Why They Matter" (1983) - Kritische Analyse</li>
+            </ul>
+            
+            <h3 class="subsection-title">Aktuelle Entwicklungen 2026</h3>
+            <ul>
+                <li><strong>Good Food Institute:</strong> Forschung zu kultiviertem Fleisch</li>
+                <li><strong>UNESCO Bioethik-Berichte:</strong> Internationale Perspektiven</li>
+                <li><strong>EU Novel Food Verordnung:</strong> Rechtliche Rahmenbedingungen</li>
+            </ul>
+            
+            <h3 class="subsection-title">Dokumentationen</h3>
+            <ul>
+                <li><strong>"Dominion" (2018):</strong> Moderne Tierhaltung</li>
+                <li><strong>"The Game Changers" (2018):</strong> Pflanzliche Ernährung</li>
+                <li><strong>"Seaspiracy" (2021):</strong> Fischerei und Meeresethik</li>
+            </ul>
+        </div>
+
+        <!-- Navigation zu anderen Seiten -->
+        <div class="content-card">
+            <h2 class="section-title">🔗 Verwandte Themen</h2>
+            <div class="modern-grid">
+                <div class="modern-card">
+                    <a href="utilitarismus.html" style="text-decoration: none; color: inherit;">
+                        <span class="modern-icon">⚖️</span>
+                        <div class="modern-title">Utilitarismus</div>
+                        <p>Singers tierethische Grundlage verstehen</p>
+                    </a>
+                </div>
+                
+                <div class="modern-card">
+                    <a href="bioethik.html" style="text-decoration: none; color: inherit;">
+                        <span class="modern-icon">🧬</span>
+                        <div class="modern-title">Bioethik</div>
+                        <p>Kultiviertes Fleisch und Gentechnik</p>
+                    </a>
+                </div>
+                
+                <div class="modern-card">
+                    <a href="umweltethik.html" style="text-decoration: none; color: inherit;">
+                        <span class="modern-icon">🌍</span>
+                        <div class="modern-title">Umweltethik</div>
+                        <p>Ökologische Dimensionen der Tierhaltung</p>
+                    </a>
+                </div>
+                
+                <div class="modern-card">
+                    <a href="angewandte-ethik.html" style="text-decoration: none; color: inherit;">
+                        <span class="modern-icon">🏥</span>
+                        <div class="modern-title">Angewandte Ethik</div>
+                        <p>Praktische Umsetzung tierethischer Prinzipien</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Navigation -->
+        <div class="content-card" style="text-align: center;">
+            <h3>📚 Navigation</h3>
+            <p style="margin: 20px 0;">
+                <a href="index.html">🏠 Zurück zur Startseite</a> | 
+                <a href="angewandte-ethik.html">🏥Angewandte Ethik</a>  
+            </p>
+            <p style="font-size: 0.9em; color: #666; margin-top: 30px;">
+                📅 Erstellt 2026 • 🎓 Ethik Lernzettel
+            </p>
+        </div>
+    </div>
+</body>
+</html>
