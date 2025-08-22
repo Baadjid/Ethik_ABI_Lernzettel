@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
@@ -164,6 +163,94 @@
             flex-shrink: 0;
         }
         
+        /* Tooltip System */
+        .tooltip-term {
+            position: relative;
+            color: #2c3e50;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 2px dotted #2c3e50;
+            transition: all 0.3s ease;
+            display: inline;
+        }
+
+        .tooltip-term:hover {
+            color: #34495e;
+            border-bottom-color: #34495e;
+            background: rgba(44, 62, 80, 0.05);
+        }
+
+        .tooltip {
+            position: absolute;
+            background: rgba(44, 62, 80, 0.95);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            line-height: 1.5;
+            max-width: 300px;
+            width: max-content;
+            min-width: 250px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+            font-weight: normal;
+            border: 2px solid rgba(52, 152, 219, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .tooltip.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .tooltip::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 20px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid rgba(44, 62, 80, 0.95);
+        }
+
+        .tooltip.bottom::before {
+            top: auto;
+            bottom: -8px;
+            border-bottom: none;
+            border-top: 8px solid rgba(44, 62, 80, 0.95);
+        }
+
+        .tooltip.left::before {
+            left: auto;
+            right: 20px;
+        }
+
+        .tooltip-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .tooltip-title {
+            font-weight: 700;
+            color: #3498db;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        .tooltip-description {
+            color: #ecf0f1;
+            margin-bottom: 0;
+        }
+        
         /* Highlight Boxes */
         .highlight-box {
             background: linear-gradient(135deg, #667eea, #764ba2);
@@ -300,7 +387,7 @@
             line-height: 1.6;
         }
         
-        /* Responsive Design */
+        /* Mobile Optimization */
         @media (max-width: 768px) {
             .container {
                 padding: 10px;
@@ -346,6 +433,41 @@
             th, td {
                 padding: 10px;
             }
+            
+            .tooltip {
+                max-width: calc(100vw - 40px);
+                min-width: calc(100vw - 60px);
+                font-size: 13px;
+                padding: 12px;
+                position: fixed;
+                left: 50% !important;
+                right: auto !important;
+                transform: translateX(-50%) translateY(10px);
+            }
+
+            .tooltip.show {
+                transform: translateX(-50%) translateY(0);
+            }
+
+            .tooltip::before {
+                left: 50% !important;
+                right: auto !important;
+                transform: translateX(-50%);
+            }
+
+            .tooltip.left::before {
+                left: 50% !important;
+                right: auto !important;
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (hover: none) and (pointer: coarse) {
+            .tooltip-term {
+                padding: 2px 4px;
+                border-radius: 3px;
+                background: rgba(44, 62, 80, 0.1);
+            }
         }
         
         @media (max-width: 480px) {
@@ -378,21 +500,21 @@
         <!-- Navigation -->
         <nav class="nav-bar">
             <div class="nav-links">
-		<a href="index.html">🏠 Startseite</a> &gt; <strong>Kants Pflichtethik</strong>
+                <a href="index.html">🏠 Startseite</a> &gt; <strong>Kants Pflichtethik</strong>
             </div>
         </nav>
 
         <!-- Header -->
         <header class="header">
             <h1>Kants Pflichtethik</h1>
-            <p class="header-subtitle">Deontologische Ethik & der Kategorische Imperativ</p>
+            <p class="header-subtitle"><span class="tooltip-term" data-tooltip="deontologische-ethik">Deontologische Ethik</span> & der <span class="tooltip-term" data-tooltip="kategorischer-imperativ">Kategorische Imperativ</span></p>
             
             <div class="philosopher-info">
                 <div class="philosopher-avatar">🎭</div>
                 <div class="philosopher-details">
                     <h3>Immanuel Kant (1724-1804)</h3>
-                    <p><strong>Königsberg, Ostpreußen</strong> • Aufklärer • "Was soll ich tun?"</p>
-                    <p><em>"Habe Mut, dich deines eigenen Verstandes zu bedienen!"</em></p>
+                    <p><strong>Königsberg, Ostpreußen</strong> • <span class="tooltip-term" data-tooltip="aufklaerung">Aufklärer</span> • "Was soll ich tun?"</p>
+                    <p><em>"<span class="tooltip-term" data-tooltip="sapere-aude">Habe Mut, dich deines eigenen Verstandes zu bedienen!</span>"</em></p>
                 </div>
             </div>
         </header>
@@ -403,19 +525,19 @@
             
             <div class="definition-box">
                 <h3>📖 Definition</h3>
-                <p><strong>Deontologische Ethik (Pflichtethik)</strong> beurteilt Handlungen nach ihrer Übereinstimmung mit moralischen Pflichten und Regeln - <em>unabhängig von den Folgen</em>.</p>
+                <p><strong><span class="tooltip-term" data-tooltip="deontologische-ethik">Deontologische Ethik (Pflichtethik)</span></strong> beurteilt Handlungen nach ihrer Übereinstimmung mit moralischen Pflichten und Regeln - <em>unabhängig von den Folgen</em>.</p>
             </div>
 
             <h3>🔑 Kernprinzipien der Pflichtethik</h3>
             <ul style="margin-left: 20px; line-height: 1.8;">
                 <li><strong>Motivation zählt:</strong> Nur die Absicht, nicht das Ergebnis bestimmt den moralischen Wert</li>
                 <li><strong>Absolute Pflichten:</strong> Moralische Regeln gelten immer und für alle</li>
-                <li><strong>Vernunft als Grundlage:</strong> Moral entspringt der Vernunft, nicht Gefühlen</li>
-                <li><strong>Würde des Menschen:</strong> Jeder Mensch ist Zweck an sich selbst</li>
+                <li><strong><span class="tooltip-term" data-tooltip="vernunft">Vernunft</span> als Grundlage:</strong> Moral entspringt der Vernunft, nicht Gefühlen</li>
+                <li><strong>Würde des Menschen:</strong> Jeder Mensch ist <span class="tooltip-term" data-tooltip="zweck-an-sich">Zweck an sich selbst</span></li>
             </ul>
 
             <div class="highlight-box">
-                <strong>💡 Merksatz:</strong> "Handle nur nach derjenigen Maxime, durch die du zugleich wollen kannst, dass sie ein allgemeines Gesetz werde."
+                <strong>💡 Merksatz:</strong> "Handle nur nach derjenigen <span class="tooltip-term" data-tooltip="maxime">Maxime</span>, durch die du zugleich wollen kannst, dass sie ein allgemeines Gesetz werde."
             </div>
         </section>
 
@@ -425,7 +547,7 @@
             
             <div class="definition-box">
                 <h3>Was ist der "gute Wille"?</h3>
-                <p><strong>Nur der gute Wille ist ohne Einschränkung gut.</strong> Der gute Wille ist ein Wille, der ausschließlich durch die praktische Vernunft bestimmt wird und sich nach dem moralischen Gesetz richtet.</p>
+                <p><strong>Nur der <span class="tooltip-term" data-tooltip="guter-wille">gute Wille</span> ist ohne Einschränkung gut.</strong> Der gute Wille ist ein Wille, der ausschließlich durch die praktische Vernunft bestimmt wird und sich nach dem moralischen Gesetz richtet.</p>
             </div>
 
             <h3>📊 Wichtige Unterscheidungen</h3>
@@ -445,17 +567,17 @@
                             <td>Bewusste Entscheidung für eine Handlung</td>
                         </tr>
                         <tr>
-                            <td><strong>Guter Wille</strong></td>
+                            <td><strong><span class="tooltip-term" data-tooltip="guter-wille">Guter Wille</span></strong></td>
                             <td>Wille, der nur der Vernunft und Pflicht folgt</td>
                             <td>Helfen, weil es richtig ist</td>
                         </tr>
                         <tr>
-                            <td><strong>Pflicht</strong></td>
+                            <td><strong><span class="tooltip-term" data-tooltip="pflicht">Pflicht</span></strong></td>
                             <td>Was die Vernunft als moralisch richtig erkennt</td>
                             <td>Wahrhaftigkeit, Nicht-Töten</td>
                         </tr>
                         <tr>
-                            <td><strong>Neigung</strong></td>
+                            <td><strong><span class="tooltip-term" data-tooltip="neigung">Neigung</span></strong></td>
                             <td>Bedürfnisse, Wünsche, Gefühle</td>
                             <td>Helfen aus Mitleid oder Eigennutz</td>
                         </tr>
@@ -465,7 +587,7 @@
 
             <div class="warning-box">
                 <h4>⚠️ Achtung: Pflicht vs. Neigung</h4>
-                <p>Eine Handlung ist nur dann moralisch wertvoll, wenn sie <strong>aus Pflicht</strong> geschieht, nicht aus Neigung oder Eigeninteresse. Selbst wenn das Ergebnis dasselbe ist!</p>
+                <p>Eine Handlung ist nur dann moralisch wertvoll, wenn sie <strong>aus <span class="tooltip-term" data-tooltip="pflicht">Pflicht</span></strong> geschieht, nicht aus <span class="tooltip-term" data-tooltip="neigung">Neigung</span> oder Eigeninteresse. Selbst wenn das Ergebnis dasselbe ist!</p>
             </div>
         </section>
 
@@ -474,17 +596,17 @@
             <h2><span class="icon">⚖️</span>Der Kategorische Imperativ</h2>
             
             <div class="highlight-box">
-                <h3>🎯 Die Universalisierungsformel</h3>
+                <h3>🎯 Die <span class="tooltip-term" data-tooltip="universalisierungsformel">Universalisierungsformel</span></h3>
                 <p style="font-size: 1.2em; text-align: center; margin: 0;">
-                    <em>"Handle nur nach derjenigen Maxime, von der du wollen kannst, dass sie ein allgemeines Gesetz werde."</em>
+                    <em>"Handle nur nach derjenigen <span class="tooltip-term" data-tooltip="maxime">Maxime</span>, von der du wollen kannst, dass sie ein allgemeines Gesetz werde."</em>
                 </p>
             </div>
 
-            <h3>🔍 Universalisierungsprobe - So funktioniert's:</h3>
+            <h3>🔍 <span class="tooltip-term" data-tooltip="universalisierungsprobe">Universalisierungsprobe</span> - So funktioniert's:</h3>
             <div class="step-process">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <h4>Maxime formulieren</h4>
+                    <h4><span class="tooltip-term" data-tooltip="maxime">Maxime</span> formulieren</h4>
                     <p>Welcher Grundsatz liegt meiner Handlung zugrunde?</p>
                 </div>
                 <div class="step">
@@ -505,12 +627,12 @@
             </div>
 
             <div class="example-box">
-                <h4>📝 Klassisches Beispiel: Das falsche Versprechen</h4>
+                <h4>🔍 Klassisches Beispiel: Das falsche Versprechen</h4>
                 <div class="scenario">
                     <strong>Situation:</strong> Ich brauche Geld und überlege, ein Versprechen zu geben, das ich nicht halten kann.
                 </div>
                 <div class="analysis">
-                    <p><strong>Maxime:</strong> "In Geldnot darf ich Versprechen geben, die ich nicht halten kann."</p>
+                    <p><strong><span class="tooltip-term" data-tooltip="maxime">Maxime</span>:</strong> "In Geldnot darf ich Versprechen geben, die ich nicht halten kann."</p>
                     <p><strong>Universalisierung:</strong> Alle Menschen dürfen in Geldnot falsche Versprechen geben.</p>
                     <p><strong>Widerspruch:</strong> Wenn alle so handeln würden, würde niemand mehr Versprechen glauben → Das Konzept "Versprechen" würde sich selbst aufheben.</p>
                     <p><strong>Ergebnis:</strong> ❌ Die Handlung ist unmoralisch</p>
@@ -522,30 +644,30 @@
         <section class="content-section">
             <h2><span class="icon">🏛️</span>Weitere Formeln des Kategorischen Imperativs</h2>
 
-            <h3>👥 Die Menschheitszweckformel</h3>
+            <h3>👥 Die <span class="tooltip-term" data-tooltip="menschheitszweckformel">Menschheitszweckformel</span></h3>
             <div class="highlight-box">
                 <p style="text-align: center; font-size: 1.1em; margin: 0;">
-                    <em>"Handle so, dass du die Menschheit sowohl in deiner Person als auch in der Person eines jeden anderen jederzeit zugleich als Zweck, niemals bloß als Mittel brauchst."</em>
+                    <em>"Handle so, dass du die Menschheit sowohl in deiner Person als auch in der Person eines jeden anderen jederzeit zugleich als <span class="tooltip-term" data-tooltip="zweck-an-sich">Zweck</span>, niemals bloß als <span class="tooltip-term" data-tooltip="mittel">Mittel</span> brauchst."</em>
                 </p>
             </div>
 
             <div class="definition-box">
                 <h4>Was bedeutet das?</h4>
                 <ul>
-                    <li><strong>Menschen sind Zweck an sich:</strong> Jeder Mensch hat eine unantastbare Würde</li>
-                    <li><strong>Niemals nur Mittel:</strong> Menschen dürfen nicht nur als Werkzeug benutzt werden</li>
-                    <li><strong>Respekt vor Autonomie:</strong> Jeder hat das Recht auf Selbstbestimmung</li>
+                    <li><strong>Menschen sind <span class="tooltip-term" data-tooltip="zweck-an-sich">Zweck an sich</span>:</strong> Jeder Mensch hat eine unantastbare Würde</li>
+                    <li><strong>Niemals nur <span class="tooltip-term" data-tooltip="mittel">Mittel</span>:</strong> Menschen dürfen nicht nur als Werkzeug benutzt werden</li>
+                    <li><strong>Respekt vor <span class="tooltip-term" data-tooltip="autonomie">Autonomie</span>:</strong> Jeder hat das Recht auf Selbstbestimmung</li>
                 </ul>
             </div>
 
-            <h3>🏛️ Die Autonomieformel</h3>
+            <h3>🏛️ Die <span class="tooltip-term" data-tooltip="autonomieformel">Autonomieformel</span></h3>
             <div class="highlight-box">
                 <p style="text-align: center; font-size: 1.1em; margin: 0;">
-                    <em>"Handle so, dass dein Wille durch seine Maxime sich selbst als allgemein gesetzgebend betrachten kann."</em>
+                    <em>"Handle so, dass dein Wille durch seine <span class="tooltip-term" data-tooltip="maxime">Maxime</span> sich selbst als allgemein gesetzgebend betrachten kann."</em>
                 </p>
             </div>
 
-            <p>Diese Formel betont, dass wir als <strong>autonome Vernunftwesen</strong> selbst die Urheber der moralischen Gesetze sind, denen wir folgen.</p>
+            <p>Diese Formel betont, dass wir als <strong>autonome <span class="tooltip-term" data-tooltip="vernunftwesen">Vernunftwesen</span></strong> selbst die Urheber der moralischen Gesetze sind, denen wir folgen.</p>
         </section>
 
         <!-- Moderne Anwendungen -->
@@ -559,7 +681,7 @@
                         Ein autonomes Fahrzeug muss entscheiden: 1 Passagier vs. 5 Fußgänger
                     </div>
                     <div class="analysis">
-                        <strong>Kantianische Analyse:</strong> Menschen dürfen niemals nur als Mittel behandelt werden. Eine reine Zahlenrechnung ("5 vs. 1") verletzt die Menschenwürde. Jeder hat gleiches Recht auf Leben.
+                        <strong>Kantianische Analyse:</strong> Menschen dürfen niemals nur als <span class="tooltip-term" data-tooltip="mittel">Mittel</span> behandelt werden. Eine reine Zahlenrechnung ("5 vs. 1") verletzt die Menschenwürde. Jeder hat gleiches Recht auf Leben.
                     </div>
                 </div>
 
@@ -569,7 +691,7 @@
                         Sollten Techkonzerne persönliche Daten für "bessere Services" nutzen dürfen?
                     </div>
                     <div class="analysis">
-                        <strong>Kantianische Analyse:</strong> Nutzer werden zum bloßen Mittel der Gewinnmaximierung. Universalisierung: "Alle dürfen heimlich Daten sammeln" → Ende der Privatsphäre.
+                        <strong>Kantianische Analyse:</strong> Nutzer werden zum bloßen <span class="tooltip-term" data-tooltip="mittel">Mittel</span> der Gewinnmaximierung. <span class="tooltip-term" data-tooltip="universalisierungsprobe">Universalisierung</span>: "Alle dürfen heimlich Daten sammeln" → Ende der Privatsphäre.
                     </div>
                 </div>
 
@@ -589,7 +711,7 @@
                         "Mein CO₂-Fußabdruck macht keinen Unterschied"
                     </div>
                     <div class="analysis">
-                        <strong>Kantianische Analyse:</strong> Maxime: "Ich darf umweltschädlich handeln, weil es einzeln nicht schadet." Universalisierung führt zur Klimakatastrophe → Widerspruch.
+                        <strong>Kantianische Analyse:</strong> <span class="tooltip-term" data-tooltip="maxime">Maxime</span>: "Ich darf umweltschädlich handeln, weil es einzeln nicht schadet." Universalisierung führt zur Klimakatastrophe → Widerspruch.
                     </div>
                 </div>
 
@@ -599,11 +721,14 @@
                         Sollte es eine allgemeine Impfpflicht geben?
                     </div>
                     <div class="analysis">
-                        <strong>Kantianische Spannung:</strong> Autonomie vs. Schutz anderer. Lösung: Impfung als Pflicht zum Schutz der Menschheit, aber mit Aufklärung und freier Entscheidung.
+<div class="analysis">
+                        <strong>Kantianische Spannung:</strong> <span class="tooltip-term" data-tooltip="autonomie">Autonomie</span> vs. Schutz anderer. Lösung: Impfung als <span class="tooltip-term" data-tooltip="pflicht">Pflicht</span> zum Schutz der Menschheit, aber mit Aufklärung und freier Entscheidung.
                     </div>
                 </div>
 
-                <div class="example-card">
+
+                            </div>
+<div class="example-card">
                     <h4>💰 Steuerhinterziehung</h4>
                     <div class="scenario">
                         "Alle machen es, also ist es okay"
@@ -612,7 +737,7 @@
                         <strong>Kantianische Analyse:</strong> Universalisierung: "Alle hinterziehen Steuern" → Kollaps des Staatswesens. Klarer Widerspruch, also unmoralisch.
                     </div>
                 </div>
-            </div>
+
         </section>
 
         <!-- Pflicht vs. Pflichtgemäß -->
@@ -632,26 +757,26 @@
                     <tbody>
                         <tr>
                             <td>✅ Richtig</td>
-                            <td>🎯 Aus Pflicht</td>
+                            <td>🎯 Aus <span class="tooltip-term" data-tooltip="pflicht">Pflicht</span></td>
                             <td>🟢 <strong>Moralisch wertvoll</strong></td>
                             <td>Helfen, weil es richtig ist</td>
                         </tr>
                         <tr>
                             <td>✅ Richtig</td>
-                            <td>❤️ Aus Neigung</td>
-                            <td>🟡 <strong>Pflichtgemäß</strong> (legal, aber nicht moralisch)</td>
+                            <td>❤️ Aus <span class="tooltip-term" data-tooltip="neigung">Neigung</span></td>
+                            <td>🟡 <strong><span class="tooltip-term" data-tooltip="pflichtgemaess">Pflichtgemäß</span></strong> (legal, aber nicht moralisch)</td>
                             <td>Helfen aus Mitleid</td>
                         </tr>
                         <tr>
                             <td>✅ Richtig</td>
                             <td>💰 Aus Eigennutz</td>
-                            <td>🟡 <strong>Pflichtgemäß</strong> (legal, aber nicht moralisch)</td>
+                            <td>🟡 <strong><span class="tooltip-term" data-tooltip="pflichtgemaess">Pflichtgemäß</span></strong> (legal, aber nicht moralisch)</td>
                             <td>Helfen für Belohnung</td>
                         </tr>
                         <tr>
                             <td>❌ Falsch</td>
-                            <td>🎯 Gegen Pflicht</td>
-                            <td>🔴 <strong>Pflichtwidrig</strong></td>
+                            <td>🎯 Gegen <span class="tooltip-term" data-tooltip="pflicht">Pflicht</span></td>
+                            <td>🔴 <strong><span class="tooltip-term" data-tooltip="pflichtwidrig">Pflichtwidrig</span></strong></td>
                             <td>Lügen für eigenen Vorteil</td>
                         </tr>
                     </tbody>
@@ -660,7 +785,7 @@
 
             <div class="warning-box">
                 <h4>🤔 Kontroverse Konsequenz</h4>
-                <p>Nach Kant ist jemand, der nur aus Mitleid hilft, <strong>moralisch nicht besser</strong> als jemand, der aus Eigennutz hilft - solange beide nicht aus Pflicht handeln. Das wirkt für viele Menschen kontraintuitiv!</p>
+                <p>Nach Kant ist jemand, der nur aus Mitleid hilft, <strong>moralisch nicht besser</strong> als jemand, der aus Eigennutz hilft - solange beide nicht aus <span class="tooltip-term" data-tooltip="pflicht">Pflicht</span> handeln. Das wirkt für viele Menschen kontraintuitiv!</p>
             </div>
         </section>
 
@@ -668,12 +793,12 @@
         <section class="content-section">
             <h2><span class="icon">⚡</span>Kritik und Grenzen</h2>
 
-            <h3>📝 Hauptkritikpunkte</h3>
+            <h3>🔍 Hauptkritikpunkte</h3>
             <ul style="margin-left: 20px; line-height: 1.8;">
                 <li><strong>Rigidität:</strong> Keine Ausnahmen, auch in extremen Situationen</li>
-                <li><strong>Pflichtenkonflikte:</strong> Was tun, wenn sich Pflichten widersprechen?</li>
+                <li><strong><span class="tooltip-term" data-tooltip="pflichtenkonflikt">Pflichtenkonflikte</span>:</strong> Was tun, wenn sich Pflichten widersprechen?</li>
                 <li><strong>Lebensferne:</strong> Ignoriert menschliche Emotionen und Bedürfnisse</li>
-                <li><strong>Kulturelle Blindheit:</strong> Universelle Vernunft kann kulturspezifisch sein</li>
+                <li><strong>Kulturelle Blindheit:</strong> Universelle <span class="tooltip-term" data-tooltip="vernunft">Vernunft</span> kann kulturspezifisch sein</li>
                 <li><strong>Konsequenzen-Ignoranz:</strong> Folgen werden völlig ausgeblendet</li>
             </ul>
 
@@ -684,19 +809,19 @@
                 </div>
                 <div class="analysis">
                     <p><strong>Kant's Position:</strong> Du darfst nicht lügen, auch nicht um Leben zu retten.</p>
-                    <p><strong>Kritik:</strong> Führt die Pflichtethik hier zu absurden, unmenschlichen Ergebnissen?</p>
+                    <p><strong>Kritik:</strong> Führt die <span class="tooltip-term" data-tooltip="pflichtethik">Pflichtethik</span> hier zu absurden, unmenschlichen Ergebnissen?</p>
                     <p><strong>Moderne Antwort:</strong> Manche Kant-Interpreten argumentieren, dass man schweigen oder die Frage ablehnen kann, ohne zu lügen.</p>
                 </div>
             </div>
         </section>
 
-<!-- Autonomie und Freiheit -->
+        <!-- Autonomie und Freiheit -->
         <section class="content-section">
             <h2><span class="icon">🦅</span>Autonomie und Freiheit</h2>
 
             <div class="definition-box">
-                <h3>Was bedeutet Autonomie bei Kant?</h3>
-                <p><strong>Autonomie</strong> = Selbstgesetzgebung. Der Mensch ist frei, weil er sich selbst durch die Vernunft moralische Gesetze geben kann. Er ist nicht heteronome Trieben oder äußeren Autoritäten unterworfen.</p>
+                <h3>Was bedeutet <span class="tooltip-term" data-tooltip="autonomie">Autonomie</span> bei Kant?</h3>
+                <p><strong><span class="tooltip-term" data-tooltip="autonomie">Autonomie</span></strong> = Selbstgesetzgebung. Der Mensch ist frei, weil er sich selbst durch die <span class="tooltip-term" data-tooltip="vernunft">Vernunft</span> moralische Gesetze geben kann. Er ist nicht heteronome Trieben oder äußeren Autoritäten unterworfen.</p>
             </div>
 
             <h3>🔗 Das Verhältnis von Freiheit und Pflicht</h3>
@@ -711,19 +836,19 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>"Pflicht schränkt Freiheit ein"</td>
-                            <td>Pflicht IST Freiheit</td>
-                            <td>Nur durch Vernunft sind wir frei von Trieben und Manipulation</td>
+                            <td>"<span class="tooltip-term" data-tooltip="pflicht">Pflicht</span> schränkt Freiheit ein"</td>
+                            <td><span class="tooltip-term" data-tooltip="pflicht">Pflicht</span> IST Freiheit</td>
+                            <td>Nur durch <span class="tooltip-term" data-tooltip="vernunft">Vernunft</span> sind wir frei von Trieben und Manipulation</td>
                         </tr>
                         <tr>
                             <td>"Moral wird uns aufgezwungen"</td>
                             <td>Wir geben uns selbst das Gesetz</td>
-                            <td>Die Vernunft ist unser eigenes Vermögen</td>
+                            <td>Die <span class="tooltip-term" data-tooltip="vernunft">Vernunft</span> ist unser eigenes Vermögen</td>
                         </tr>
                         <tr>
                             <td>"Gefühle sind unwichtig"</td>
                             <td>Gefühle sind wichtig, aber nicht moralbestimmend</td>
-                            <td>Achtung vor dem Gesetz ist selbst ein Gefühl</td>
+                            <td><span class="tooltip-term" data-tooltip="achtung">Achtung</span> vor dem Gesetz ist selbst ein Gefühl</td>
                         </tr>
                     </tbody>
                 </table>
@@ -737,7 +862,6 @@
             </div>
         </section>
 
-
         <!-- Zusammenfassung -->
         <section class="content-section">
             <h2><span class="icon">📋</span>Zusammenfassung & Merkhilfen</h2>
@@ -745,18 +869,18 @@
             <div class="highlight-box">
                 <h3>🎯 Die 5 Kernpunkte von Kants Ethik</h3>
                 <ol style="margin-left: 20px; line-height: 1.8;">
-                    <li><strong>Nur der gute Wille ist unbedingt gut</strong> - Motivation zählt mehr als Ergebnis</li>
-                    <li><strong>Handle nur aus Pflicht</strong> - nicht aus Neigung oder Eigeninteresse</li>
-                    <li><strong>Kategorischer Imperativ</strong> - universalisierbare Maximen</li>
-                    <li><strong>Menschen sind Zweck an sich</strong> - niemals nur Mittel</li>
-                    <li><strong>Autonomie durch Vernunft</strong> - wir geben uns selbst das moralische Gesetz</li>
+                    <li><strong>Nur der <span class="tooltip-term" data-tooltip="guter-wille">gute Wille</span> ist unbedingt gut</strong> - Motivation zählt mehr als Ergebnis</li>
+                    <li><strong>Handle nur aus <span class="tooltip-term" data-tooltip="pflicht">Pflicht</span></strong> - nicht aus <span class="tooltip-term" data-tooltip="neigung">Neigung</span> oder Eigeninteresse</li>
+                    <li><strong><span class="tooltip-term" data-tooltip="kategorischer-imperativ">Kategorischer Imperativ</span></strong> - universalisierbare <span class="tooltip-term" data-tooltip="maxime">Maximen</span></li>
+                    <li><strong>Menschen sind <span class="tooltip-term" data-tooltip="zweck-an-sich">Zweck an sich</span></strong> - niemals nur <span class="tooltip-term" data-tooltip="mittel">Mittel</span></li>
+                    <li><strong><span class="tooltip-term" data-tooltip="autonomie">Autonomie</span> durch <span class="tooltip-term" data-tooltip="vernunft">Vernunft</span></strong> - wir geben uns selbst das moralische Gesetz</li>
                 </ol>
             </div>
 
             <h3>💡 Lernhilfen & Eselsbrücken</h3>
             <div class="examples-grid">
                 <div class="example-card">
-                    <h4>🔤 KANT-Akronym</h4>
+                    <h4>📤 KANT-Akronym</h4>
                     <ul style="margin-left: 20px;">
                         <li><strong>K</strong>ategorischer Imperativ</li>
                         <li><strong>A</strong>utonomie der Vernunft</li>
@@ -769,27 +893,26 @@
                     <h4>🧪 Test-Fragen</h4>
                     <ul style="margin-left: 20px;">
                         <li>Kann ich wollen, dass alle so handeln?</li>
-                        <li>Behandle ich Menschen als Zweck?</li>
-                        <li>Handle ich aus Pflicht oder Neigung?</li>
-                        <li>Folge ich der Vernunft?</li>
+                        <li>Behandle ich Menschen als <span class="tooltip-term" data-tooltip="zweck-an-sich">Zweck</span>?</li>
+                        <li>Handle ich aus <span class="tooltip-term" data-tooltip="pflicht">Pflicht</span> oder <span class="tooltip-term" data-tooltip="neigung">Neigung</span>?</li>
+                        <li>Folge ich der <span class="tooltip-term" data-tooltip="vernunft">Vernunft</span>?</li>
                     </ul>
                 </div>
 
                 <div class="example-card">
-                    <h4>⚖️ Versus Utilitarismus</h4>
+                    <h4>⚖️ Versus <span class="tooltip-term" data-tooltip="utilitarismus">Utilitarismus</span></h4>
                     <p><strong>Kant:</strong> "Tue das Richtige, egal was passiert"</p>
-                    <p><strong>Utilitarismus:</strong> "Tue das, was die besten Folgen hat"</p>
+                    <p><strong><span class="tooltip-term" data-tooltip="utilitarismus">Utilitarismus</span>:</strong> "Tue das, was die besten Folgen hat"</p>
                     <p><em>Merksatz: Kant schaut auf die Absicht, Utilitaristen auf das Ergebnis</em></p>
                 </div>
             </div>
         </section>
 
-        
         <!-- Praktische Übungen -->
         <section class="content-section">
             <h2><span class="icon">💪</span>Praktische Übungen</h2>
 
-            <h3>🎯 Übung 1: Universalisierungsprobe</h3>
+            <h3>🎯 Übung 1: <span class="tooltip-term" data-tooltip="universalisierungsprobe">Universalisierungsprobe</span></h3>
             <div class="examples-grid">
                 <div class="example-card">
                     <h4>📱 Handy-Betrug</h4>
@@ -797,11 +920,11 @@
                         Du findest ein teures Handy und überlegst, es zu behalten statt abzugeben.
                     </div>
                     <div class="analysis">
-                        <strong>Deine Aufgabe:</strong> Führe die Universalisierungsprobe durch!
+                        <strong>Deine Aufgabe:</strong> Führe die <span class="tooltip-term" data-tooltip="universalisierungsprobe">Universalisierungsprobe</span> durch!
                         <br><br>
                         <details style="margin-top: 10px;">
-                            <summary style="cursor: pointer; font-weight: bold;">📝 Lösung anzeigen</summary>
-                            <p style="margin-top: 10px;"><strong>Maxime:</strong> "Ich darf gefundene Gegenstände behalten"</p>
+                            <summary style="cursor: pointer; font-weight: bold;">🔍 Lösung anzeigen</summary>
+                            <p style="margin-top: 10px;"><strong><span class="tooltip-term" data-tooltip="maxime">Maxime</span>:</strong> "Ich darf gefundene Gegenstände behalten"</p>
                             <p><strong>Universalisierung:</strong> Alle behalten gefundene Gegenstände</p>
                             <p><strong>Widerspruch:</strong> Niemand würde mehr Gegenstände suchen/melden → Eigentum wird bedeutungslos</p>
                             <p><strong>Ergebnis:</strong> ❌ Unmoralisch</p>
@@ -818,8 +941,8 @@
                         <strong>Deine Aufgabe:</strong> Analysiere mit Kants Ethik!
                         <br><br>
                         <details style="margin-top: 10px;">
-                            <summary style="cursor: pointer; font-weight: bold;">📝 Lösung anzeigen</summary>
-                            <p style="margin-top: 10px;"><strong>Maxime:</strong> "Bei seltenen Kontrollen darf ich ohne Ticket fahren"</p>
+                            <summary style="cursor: pointer; font-weight: bold;">🔍 Lösung anzeigen</summary>
+                            <p style="margin-top: 10px;"><strong><span class="tooltip-term" data-tooltip="maxime">Maxime</span>:</strong> "Bei seltenen Kontrollen darf ich ohne Ticket fahren"</p>
                             <p><strong>Universalisierung:</strong> Alle fahren schwarz, wenn selten kontrolliert wird</p>
                             <p><strong>Widerspruch:</strong> ÖPNV bricht zusammen → kein Verkehrssystem mehr</p>
                             <p><strong>Ergebnis:</strong> ❌ Unmoralisch</p>
@@ -828,7 +951,7 @@
                 </div>
             </div>
 
-            <h3>⚖️ Übung 2: Zweck-Mittel-Analyse</h3>
+            <h3>⚖️ Übung 2: <span class="tooltip-term" data-tooltip="zweck-mittel-analyse">Zweck-Mittel-Analyse</span></h3>
             <div class="example-box">
                 <h4>🎓 Uni-Beispiel: Studium nur für Geld</h4>
                 <div class="scenario">
@@ -837,14 +960,14 @@
                 <div class="analysis">
                     <strong>Fragen zur Reflexion:</strong>
                     <ul style="margin-left: 20px; margin-top: 10px;">
-                        <li>Behandelt Lisa sich selbst als Zweck oder Mittel?</li>
+                        <li>Behandelt Lisa sich selbst als <span class="tooltip-term" data-tooltip="zweck-an-sich">Zweck</span> oder <span class="tooltip-term" data-tooltip="mittel">Mittel</span>?</li>
                         <li>Wie steht es mit ihren zukünftigen Patienten?</li>
                         <li>Was würde Kant raten?</li>
                     </ul>
                     
                     <details style="margin-top: 15px;">
                         <summary style="cursor: pointer; font-weight: bold;">💡 Diskussion</summary>
-                        <p style="margin-top: 10px;"><strong>Problem:</strong> Lisa macht sich zum Mittel für Elternwünsche und Geld. Patienten werden zu Geldquellen.</p>
+                        <p style="margin-top: 10px;"><strong>Problem:</strong> Lisa macht sich zum <span class="tooltip-term" data-tooltip="mittel">Mittel</span> für Elternwünsche und Geld. Patienten werden zu Geldquellen.</p>
                         <p><strong>Kant'sche Lösung:</strong> Autonome Berufswahl nach eigenen vernünftigen Überlegungen, Respekt vor der Würde der Patienten.</p>
                     </details>
                 </div>
@@ -858,14 +981,14 @@
             <h3>📝 Typische Prüfungsaufgaben</h3>
             <div class="examples-grid">
                 <div class="example-card">
-                    <h4>Aufgabentyp 1: Universalisierungsprobe</h4>
-                    <p><strong>Aufgabe:</strong> "Prüfen Sie mit Hilfe des kategorischen Imperativs, ob folgende Handlung moralisch ist: [Szenario]"</p>
-                    <p><strong>Vorgehen:</strong> Maxime formulieren → Universalisieren → Widerspruch prüfen → Bewerten</p>
+                    <h4>Aufgabentyp 1: <span class="tooltip-term" data-tooltip="universalisierungsprobe">Universalisierungsprobe</span></h4>
+                    <p><strong>Aufgabe:</strong> "Prüfen Sie mit Hilfe des <span class="tooltip-term" data-tooltip="kategorischer-imperativ">kategorischen Imperativs</span>, ob folgende Handlung moralisch ist: [Szenario]"</p>
+                    <p><strong>Vorgehen:</strong> <span class="tooltip-term" data-tooltip="maxime">Maxime</span> formulieren → Universalisieren → Widerspruch prüfen → Bewerten</p>
                 </div>
 
                 <div class="example-card">
                     <h4>Aufgabentyp 2: Ethik-Vergleich</h4>
-                    <p><strong>Aufgabe:</strong> "Vergleichen Sie Kants Pflichtethik mit dem Utilitarismus anhand eines konkreten Beispiels"</p>
+                    <p><strong>Aufgabe:</strong> "Vergleichen Sie Kants <span class="tooltip-term" data-tooltip="pflichtethik">Pflichtethik</span> mit dem <span class="tooltip-term" data-tooltip="utilitarismus">Utilitarismus</span> anhand eines konkreten Beispiels"</p>
                     <p><strong>Struktur:</strong> Szenario → Kant'sche Analyse → Utilitaristische Analyse → Unterschiede herausarbeiten</p>
                 </div>
 
@@ -880,7 +1003,7 @@
             <ul style="margin-left: 20px; line-height: 1.8;">
                 <li><strong>KI-Ethik:</strong> Autonome Systeme und Menschenwürde</li>
                 <li><strong>Medizinethik:</strong> Triage, Sterbehilfe, Organspende</li>
-                <li><strong>Umweltethik:</strong> Klimaschutz als kategorische Pflicht</li>
+                <li><strong>Umweltethik:</strong> Klimaschutz als kategorische <span class="tooltip-term" data-tooltip="pflicht">Pflicht</span></li>
                 <li><strong>Digitalethik:</strong> Datenschutz und Überwachung</li>
                 <li><strong>Bioethik:</strong> Gentherapie und Enhancement</li>
                 <li><strong>Wirtschaftsethik:</strong> Steuermoral und faire Löhne</li>
@@ -891,37 +1014,36 @@
                 <ul style="margin-left: 20px;">
                     <li><strong>Nicht:</strong> "Kant ist gegen alle Gefühle" ❌</li>
                     <li><strong>Sondern:</strong> "Gefühle sollen Moral nicht bestimmen" ✅</li>
-                    <li><strong>Nicht:</strong> "Der kategorische Imperativ ist ein Gesetz" ❌</li>
-                    <li><strong>Sondern:</strong> "Er ist eine Formel zur Prüfung von Maximen" ✅</li>
+                    <li><strong>Nicht:</strong> "Der <span class="tooltip-term" data-tooltip="kategorischer-imperativ">kategorische Imperativ</span> ist ein Gesetz" ❌</li>
+                    <li><strong>Sondern:</strong> "Er ist eine Formel zur Prüfung von <span class="tooltip-term" data-tooltip="maxime">Maximen</span>" ✅</li>
                 </ul>
             </div>
         </section>
 
-        
         <!-- Quick Reference -->
         <section class="content-section">
             <h2><span class="icon">⚡</span>Quick Reference</h2>
 
             <div class="examples-grid">
                 <div class="example-card">
-                    <h4>🔍 Kategorischer Imperativ kurz</h4>
+                    <h4>🔍 <span class="tooltip-term" data-tooltip="kategorischer-imperativ">Kategorischer Imperativ</span> kurz</h4>
                     <p><strong>Frage:</strong> "Kann ich wollen, dass alle so handeln?"</p>
                     <p><strong>Test:</strong> Führt Universalisierung zu Widersprüchen?</p>
                     <p><strong>Ergebnis:</strong> Ja = unmoralisch, Nein = moralisch zulässig</p>
                 </div>
 
                 <div class="example-card">
-                    <h4>👥 Menschheitsformel kurz</h4>
-                    <p><strong>Frage:</strong> "Behandle ich Menschen nur als Mittel?"</p>
-                    <p><strong>Test:</strong> Respektiere ich ihre Würde und Autonomie?</p>
-                    <p><strong>Ergebnis:</strong> Menschen müssen immer auch Zweck sein</p>
+                    <h4>👥 <span class="tooltip-term" data-tooltip="menschheitszweckformel">Menschheitsformel</span> kurz</h4>
+                    <p><strong>Frage:</strong> "Behandle ich Menschen nur als <span class="tooltip-term" data-tooltip="mittel">Mittel</span>?"</p>
+                    <p><strong>Test:</strong> Respektiere ich ihre Würde und <span class="tooltip-term" data-tooltip="autonomie">Autonomie</span>?</p>
+                    <p><strong>Ergebnis:</strong> Menschen müssen immer auch <span class="tooltip-term" data-tooltip="zweck-an-sich">Zweck</span> sein</p>
                 </div>
 
                 <div class="example-card">
                     <h4>🎯 Handlungsbewertung</h4>
-                    <p><strong>Moralisch wertvoll:</strong> Handeln aus Pflicht</p>
-                    <p><strong>Pflichtgemäß:</strong> Richtiges Handeln aus falschen Motiven</p>
-                    <p><strong>Pflichtwidrig:</strong> Falsches Handeln</p>
+                    <p><strong>Moralisch wertvoll:</strong> Handeln aus <span class="tooltip-term" data-tooltip="pflicht">Pflicht</span></p>
+                    <p><strong><span class="tooltip-term" data-tooltip="pflichtgemaess">Pflichtgemäß</span>:</strong> Richtiges Handeln aus falschen Motiven</p>
+                    <p><strong><span class="tooltip-term" data-tooltip="pflichtwidrig">Pflichtwidrig</span>:</strong> Falsches Handeln</p>
                 </div>
             </div>
         </section>
@@ -932,10 +1054,10 @@
 
             <h3>📖 Wichtige Werke von Kant</h3>
             <ul style="margin-left: 20px; line-height: 1.8;">
-                <li><strong>"Grundlegung zur Metaphysik der Sitten" (1785)</strong> - Entwicklung des kategorischen Imperativs</li>
+                <li><strong>"Grundlegung zur Metaphysik der Sitten" (1785)</strong> - Entwicklung des <span class="tooltip-term" data-tooltip="kategorischer-imperativ">kategorischen Imperativs</span></li>
                 <li><strong>"Kritik der praktischen Vernunft" (1788)</strong> - Vertiefung der Moralphilosophie</li>
                 <li><strong>"Die Metaphysik der Sitten" (1797)</strong> - Anwendung auf Recht und Tugend</li>
-                <li><strong>"Was ist Aufklärung?" (1784)</strong> - Sapere aude! Habe Mut, dich deines Verstandes zu bedienen!</li>
+                <li><strong>"Was ist <span class="tooltip-term" data-tooltip="aufklaerung">Aufklärung</span>?" (1784)</strong> - <span class="tooltip-term" data-tooltip="sapere-aude">Sapere aude</span>! Habe Mut, dich deines Verstandes zu bedienen!</li>
             </ul>
 
             <h3>🌟 Einfluss auf die moderne Welt</h3>
@@ -967,22 +1089,287 @@
             </div>
         </section>
 
-
         <!-- Navigation Footer -->
         <section class="content-section text-center">
             <h3>🧭 Nächste Schritte</h3>
             <div class="nav-links" style="justify-content: center; margin-top: 20px; gap: 15px;">
-     <a href="index.html" style="background: linear-gradient(135deg, #ff9a9e, #fecfef); color: #333; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: 600; display: inline-block;">🏠 Zurück zur Übersicht</a>
-                <a href="utilitarismus.html" style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: 600; display: inline-block;">➡️ Weiter zum Utilitarismus</a>
+                <a href="index.html" style="background: linear-gradient(135deg, #ff9a9e, #fecfef); color: #333; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: 600; display: inline-block;">🏠 Zurück zur Übersicht</a>
+                <a href="utilitarismus.html" style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: 600; display: inline-block;">➡️ Weiter zum <span class="tooltip-term" data-tooltip="utilitarismus">Utilitarismus</span></a>
             </div>
             
             <div style="margin-top: 30px; padding: 20px; background: linear-gradient(135deg, #f093fb, #f5f7fa); border-radius: 12px;">
                 <p style="margin: 0; color: #666;">
-                    📚 <strong>Tipp:</strong> Vergleiche Kants Pflichtethik mit dem Utilitarismus - das ist ein beliebtes Prüfungsthema! 
+                    📚 <strong>Tipp:</strong> Vergleiche Kants <span class="tooltip-term" data-tooltip="pflichtethik">Pflichtethik</span> mit dem Utilitarismus - das ist ein beliebtes Prüfungsthema! 
                     <br>💡 <strong>Merksatz:</strong> Kant fragt "Ist die Absicht richtig?", Utilitaristen fragen "Sind die Folgen gut?"
                 </p>
             </div>
         </section>
     </div>
+
+    <script>
+        // Tooltip-Daten definieren
+        const tooltipData = {
+            'deontologische-ethik': {
+                title: 'Deontologische Ethik',
+                description: 'Pflichtethik, die Handlungen nach ihrer Übereinstimmung mit moralischen Regeln beurteilt, unabhängig von den Folgen.'
+            },
+            'kategorischer-imperativ': {
+                title: 'Kategorischer Imperativ',
+                description: 'Kants grundlegendes Prinzip für moralische Entscheidungen: Handle nur nach Maximen, die universell gültig werden können.'
+            },
+            'aufklaerung': {
+                title: 'Aufklärung',
+                description: 'Geistige Bewegung des 18. Jahrhunderts, die den Gebrauch der eigenen Vernunft und die Befreiung von Unwissen betonte.'
+            },
+            'sapere-aude': {
+                title: 'Sapere aude',
+                description: 'Lateinisch für "Wage es, weise zu sein!" - Kants Wahlspruch der Aufklärung: Habe Mut, dich deines eigenen Verstandes zu bedienen.'
+            },
+            'vernunft': {
+                title: 'Vernunft',
+                description: 'Die Fähigkeit des Menschen, logisch zu denken und moralische Gesetze zu erkennen. Bei Kant die Grundlage aller Moral.'
+            },
+            'zweck-an-sich': {
+                title: 'Zweck an sich',
+                description: 'Menschen haben einen Wert in sich selbst und dürfen niemals nur als Werkzeug für andere Zwecke benutzt werden.'
+            },
+            'maxime': {
+                title: 'Maxime',
+                description: 'Der subjektive Grundsatz, nach dem jemand handelt. Maximen sollen durch den kategorischen Imperativ geprüft werden.'
+            },
+            'guter-wille': {
+                title: 'Guter Wille',
+                description: 'Ein Wille, der ausschließlich durch die Vernunft und das moralische Gesetz bestimmt wird, nicht durch Neigungen oder Eigeninteressen.'
+            },
+            'pflicht': {
+                title: 'Pflicht',
+                description: 'Das, was die Vernunft als moralisch richtig erkennt. Handlungen sind nur dann moralisch wertvoll, wenn sie aus Pflicht geschehen.'
+            },
+            'neigung': {
+                title: 'Neigung',
+                description: 'Wünsche, Bedürfnisse und Gefühle. Nach Kant können sie gute Handlungen motivieren, machen sie aber nicht moralisch wertvoll.'
+            },
+            'universalisierungsformel': {
+                title: 'Universalisierungsformel',
+                description: 'Die erste Formulierung des kategorischen Imperativs: Handle nur nach Maximen, die als allgemeines Gesetz gelten können.'
+            },
+            'universalisierungsprobe': {
+                title: 'Universalisierungsprobe',
+                description: 'Test zur Prüfung moralischer Handlungen: Kann ich wollen, dass alle Menschen nach derselben Regel handeln?'
+            },
+            'menschheitszweckformel': {
+                title: 'Menschheitszweckformel',
+                description: 'Zweite Formulierung des kategorischen Imperativs: Behandle Menschen niemals nur als Mittel, sondern immer auch als Zweck.'
+            },
+            'mittel': {
+                title: 'Mittel',
+                description: 'Werkzeug oder Instrument zur Erreichung eines Ziels. Menschen dürfen nach Kant niemals nur als Mittel behandelt werden.'
+            },
+            'autonomie': {
+                title: 'Autonomie',
+                description: 'Selbstbestimmung und Selbstgesetzgebung. Menschen sind frei, weil sie sich durch Vernunft eigene moralische Gesetze geben können.'
+            },
+            'autonomieformel': {
+                title: 'Autonomieformel',
+                description: 'Dritte Formulierung des kategorischen Imperativs: Handle so, dass dein Wille sich selbst als gesetzgebend betrachten kann.'
+            },
+            'vernunftwesen': {
+                title: 'Vernunftwesen',
+                description: 'Wesen, die über Vernunft verfügen und dadurch fähig sind, moralische Gesetze zu erkennen und zu befolgen.'
+            },
+            'pflichtgemaess': {
+                title: 'Pflichtgemäß',
+                description: 'Handlungen, die zwar richtig sind, aber nicht aus Pflicht, sondern aus anderen Motiven (Neigung, Eigennutz) geschehen.'
+            },
+            'pflichtwidrig': {
+                title: 'Pflichtwidrig',
+                description: 'Handlungen, die gegen die moralische Pflicht verstoßen und daher unmoralisch sind.'
+            },
+            'pflichtenkonflikt': {
+                title: 'Pflichtenkonflikt',
+                description: 'Situation, in der sich verschiedene moralische Pflichten widersprechen - ein Problem in Kants System.'
+            },
+            'pflichtethik': {
+                title: 'Pflichtethik',
+                description: 'Synonym für deontologische Ethik. Beurteilt Handlungen nach ihrer Übereinstimmung mit moralischen Pflichten.'
+            },
+            'achtung': {
+                title: 'Achtung',
+                description: 'Das einzige Gefühl, das nach Kant moralischen Wert hat: Respekt vor dem moralischen Gesetz und der Würde der Menschen.'
+            },
+            'utilitarismus': {
+                title: 'Utilitarismus',
+                description: 'Ethische Theorie, die Handlungen nach ihren Folgen beurteilt: Was das größte Glück für die meisten Menschen bringt, ist richtig.'
+            },
+            'zweck-mittel-analyse': {
+                title: 'Zweck-Mittel-Analyse',
+                description: 'Prüfung, ob Menschen in einer Handlung als Zweck an sich respektiert oder nur als Mittel benutzt werden.'
+            }
+        };
+
+        // Tooltip-Funktionalität
+        let currentTooltip = null;
+        let tooltipTimeout = null;
+
+        function createTooltip(element, data) {
+            const tooltip = document.createElement('div');
+            tooltip.className = 'tooltip';
+
+            const content = document.createElement('div');
+            content.className = 'tooltip-content';
+
+            const title = document.createElement('div');
+            title.className = 'tooltip-title';
+            title.textContent = data.title;
+
+            const description = document.createElement('div');
+            description.className = 'tooltip-description';
+            description.textContent = data.description;
+
+            content.appendChild(title);
+            content.appendChild(description);
+            tooltip.appendChild(content);
+
+            return tooltip;
+        }
+
+        function positionTooltip(tooltip, element) {
+            const rect = element.getBoundingClientRect();
+            const tooltipRect = tooltip.getBoundingClientRect();
+            const container = document.querySelector('.container');
+            const containerRect = container ? container.getBoundingClientRect() : { left: 0, right: window.innerWidth };
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+
+            // Basis-Position: unter dem Element
+            let top = rect.bottom + window.scrollY + 10;
+            let left = rect.left + window.scrollX;
+
+            // Mobile Optimierung
+            if (window.innerWidth <= 768) {
+                tooltip.style.position = 'fixed';
+                tooltip.style.top = (rect.bottom + 10) + 'px';
+                tooltip.style.left = '50%';
+                tooltip.style.transform = 'translateX(-50%)';
+
+                if (rect.bottom + tooltipRect.height + 20 > viewportHeight) {
+                    tooltip.style.top = (rect.top - tooltipRect.height - 10) + 'px';
+                    tooltip.classList.add('bottom');
+                }
+                return;
+            }
+
+            // Desktop-Positionierung
+            tooltip.style.position = 'absolute';
+
+            // Horizontale Kollisionserkennung
+            if (left + tooltipRect.width > containerRect.right) {
+                left = rect.right + window.scrollX - tooltipRect.width;
+                tooltip.classList.add('left');
+            }
+
+            if (left < containerRect.left) {
+                left = containerRect.left + window.scrollX + 10;
+            }
+
+            // Vertikale Kollisionserkennung
+            if (top + tooltipRect.height > window.scrollY + viewportHeight - 20) {
+                top = rect.top + window.scrollY - tooltipRect.height - 10;
+                tooltip.classList.add('bottom');
+            }
+
+            tooltip.style.top = top + 'px';
+            tooltip.style.left = left + 'px';
+        }
+
+        function showTooltip(element) {
+            if (currentTooltip) {
+                hideTooltip();
+            }
+
+            const tooltipKey = element.getAttribute('data-tooltip');
+            const data = tooltipData[tooltipKey];
+
+            if (!data) return;
+
+            currentTooltip = createTooltip(element, data);
+            document.body.appendChild(currentTooltip);
+
+            positionTooltip(currentTooltip, element);
+
+            setTimeout(() => {
+                if (currentTooltip) {
+                    currentTooltip.classList.add('show');
+                }
+            }, 10);
+        }
+
+        function hideTooltip() {
+            if (currentTooltip) {
+                currentTooltip.classList.remove('show');
+                setTimeout(() => {
+                    if (currentTooltip && currentTooltip.parentNode) {
+                        currentTooltip.parentNode.removeChild(currentTooltip);
+                    }
+                    currentTooltip = null;
+                }, 300);
+            }
+        }
+
+        // Event-Listener Setup
+        document.addEventListener('DOMContentLoaded', function() {
+            const tooltipTerms = document.querySelectorAll('.tooltip-term');
+
+            tooltipTerms.forEach(term => {
+                // Desktop: Hover-Events
+                term.addEventListener('mouseenter', function() {
+                    if (tooltipTimeout) {
+                        clearTimeout(tooltipTimeout);
+                    }
+                    tooltipTimeout = setTimeout(() => {
+                        showTooltip(this);
+                    }, 100);
+                });
+
+                term.addEventListener('mouseleave', function() {
+                    if (tooltipTimeout) {
+                        clearTimeout(tooltipTimeout);
+                    }
+                    tooltipTimeout = setTimeout(hideTooltip, 200);
+                });
+
+                // Mobile: Touch-Events
+                term.addEventListener('touchstart', function(e) {
+                    e.preventDefault();
+                    if (currentTooltip) {
+                        hideTooltip();
+                    } else {
+                        showTooltip(this);
+                    }
+                }, { passive: false });
+            });
+
+            // Tooltip schließen bei Klick außerhalb
+            document.addEventListener('click', function(e) {
+                if (currentTooltip && !e.target.closest('.tooltip') && !e.target.closest('.tooltip-term')) {
+                    hideTooltip();
+                }
+            });
+
+            // Tooltip bei Scroll verstecken (nur Desktop)
+            document.addEventListener('scroll', function() {
+                if (currentTooltip && window.innerWidth > 768) {
+                    hideTooltip();
+                }
+            });
+
+            // Tooltip bei Resize verstecken
+            window.addEventListener('resize', function() {
+                if (currentTooltip) {
+                    hideTooltip();
+                }
+            });
+        });
+    </script>
 </body>
-</html>
+</html><!DOCTYPE html>

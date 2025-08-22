@@ -272,6 +272,93 @@
             box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
         }
         
+        /* Tooltip System */
+        .tooltip-term {
+            position: relative;
+            color: #2c3e50;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 2px dotted #2c3e50;
+            transition: all 0.3s ease;
+        }
+
+        .tooltip-term:hover {
+            color: #34495e;
+            border-bottom-color: #34495e;
+            background: rgba(44, 62, 80, 0.05);
+        }
+
+        .tooltip {
+            position: absolute;
+            background: rgba(44, 62, 80, 0.95);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            line-height: 1.5;
+            max-width: 300px;
+            width: max-content;
+            min-width: 250px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+            font-weight: normal;
+            border: 2px solid rgba(52, 152, 219, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .tooltip.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .tooltip::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 20px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid rgba(44, 62, 80, 0.95);
+        }
+
+        .tooltip.bottom::before {
+            top: auto;
+            bottom: -8px;
+            border-bottom: none;
+            border-top: 8px solid rgba(44, 62, 80, 0.95);
+        }
+
+        .tooltip.left::before {
+            left: auto;
+            right: 20px;
+        }
+
+        .tooltip-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .tooltip-title {
+            font-weight: 700;
+            color: #3498db;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        .tooltip-description {
+            color: #ecf0f1;
+            margin-bottom: 0;
+        }
+        
         /* Responsive Design */
         @media (max-width: 1024px) {
             .two-column {
@@ -317,6 +404,33 @@
             
             .nav-header {
                 padding: 20px 15px;
+            }
+            
+            .tooltip {
+                max-width: calc(100vw - 40px);
+                min-width: calc(100vw - 60px);
+                font-size: 13px;
+                padding: 12px;
+                position: fixed;
+                left: 50% !important;
+                right: auto !important;
+                transform: translateX(-50%) translateY(10px);
+            }
+
+            .tooltip.show {
+                transform: translateX(-50%) translateY(0);
+            }
+
+            .tooltip::before {
+                left: 50% !important;
+                right: auto !important;
+                transform: translateX(-50%);
+            }
+
+            .tooltip.left::before {
+                left: 50% !important;
+                right: auto !important;
+                transform: translateX(-50%);
             }
         }
         
@@ -392,6 +506,14 @@
                 color: #667eea;
             }
         }
+
+        @media (hover: none) and (pointer: coarse) {
+            .tooltip-term {
+                padding: 2px 4px;
+                border-radius: 3px;
+                background: rgba(44, 62, 80, 0.1);
+            }
+        }
         
         /* Print styles */
         @media print {
@@ -458,7 +580,7 @@
             <div class="definition-box">
                 <div class="definition-title">📖 Definition Ethik</div>
                 <div class="definition-text">
-                    <strong>Ethik</strong> ist ein Teilgebiet der Philosophie, das sich mit der <em>Moral</em> beschäftigt. Sie untersucht die Grundlagen, Prinzipien und Kriterien für moralisch richtiges Handeln.
+                    <strong><span class="tooltip-term" data-tooltip="ethik">Ethik</span></strong> ist ein Teilgebiet der <span class="tooltip-term" data-tooltip="philosophie">Philosophie</span>, das sich mit der <em><span class="tooltip-term" data-tooltip="moral">Moral</span></em> beschäftigt. Sie untersucht die Grundlagen, Prinzipien und Kriterien für moralisch richtiges Handeln.
                 </div>
             </div>
 
@@ -483,14 +605,14 @@
             <div class="definition-box">
                 <div class="definition-title">📖 Definition Moral</div>
                 <div class="definition-text">
-                    <strong>Moral</strong> ist eine Ansammlung von ungeschriebenen <em>Normen</em> und <em>Werten</em>, die in einer gegebenen Gesellschaft zu einer gegebenen Zeit nach Gültigkeit strebt.
+                    <strong><span class="tooltip-term" data-tooltip="moral">Moral</span></strong> ist eine Ansammlung von ungeschriebenen <em><span class="tooltip-term" data-tooltip="normen">Normen</span></em> und <em><span class="tooltip-term" data-tooltip="werte">Werten</span></em>, die in einer gegebenen Gesellschaft zu einer gegebenen Zeit nach Gültigkeit strebt.
                 </div>
             </div>
 
             <div class="two-column">
                 <div class="column-card">
                     <h3 class="column-title">🌟 Werte</h3>
-                    <p><strong>Werte</strong> sind allgemeine Zielvorstellungen und Ideale, die als erstrebenswert gelten.</p>
+                    <p><strong><span class="tooltip-term" data-tooltip="werte">Werte</span></strong> sind allgemeine Zielvorstellungen und Ideale, die als erstrebenswert gelten.</p>
                     <div class="example-box">
                         <div class="example-title">💡 Beispiele für Werte:</div>
                         <ul class="styled-list">
@@ -506,7 +628,7 @@
 
                 <div class="column-card">
                     <h3 class="column-title">📋 Normen</h3>
-                    <p><strong>Normen</strong> sind konkrete Verhaltensregeln, die aus Werten abgeleitet werden.</p>
+                    <p><strong><span class="tooltip-term" data-tooltip="normen">Normen</span></strong> sind konkrete Verhaltensregeln, die aus Werten abgeleitet werden.</p>
                     <div class="example-box">
                         <div class="example-title">💡 Beispiele für Normen:</div>
                         <ul class="styled-list">
@@ -536,7 +658,7 @@
             <div class="definition-box">
                 <div class="definition-title">📖 Definition Handlung</div>
                 <div class="definition-text">
-                    Eine <strong>Handlung</strong> ist eine von einer Person <em>absichtlich</em> verursachte Situationsveränderung. Sie stellt immer eine bewusste Veränderung an einem bestimmten Ort zu einem bestimmten Zeitpunkt dar.
+                    Eine <strong><span class="tooltip-term" data-tooltip="handlung">Handlung</span></strong> ist eine von einer Person <em>absichtlich</em> verursachte Situationsveränderung. Sie stellt immer eine bewusste Veränderung an einem bestimmten Ort zu einem bestimmten Zeitpunkt dar.
                 </div>
             </div>
 
@@ -591,12 +713,12 @@
                     <h3 class="column-title">📊 1. Deskriptive Ethik</h3>
                     <div class="definition-box">
                         <div class="definition-text">
-                            Die <strong>deskriptive (beschreibende) Ethik</strong> untersucht empirisch, welche moralischen Vorstellungen in verschiedenen Gesellschaften vorherrschen.
+                            Die <strong><span class="tooltip-term" data-tooltip="deskriptive-ethik">deskriptive (beschreibende) Ethik</span></strong> untersucht empirisch, welche moralischen Vorstellungen in verschiedenen Gesellschaften vorherrschen.
                         </div>
                     </div>
                     <p><strong>Aufgabe:</strong> Beschreibung und Analyse bestehender Moral-Systeme</p>
                     <p><strong>Methode:</strong> Beobachtung, Umfragen, kulturvergleichende Studien</p>
-                    <p><strong>Beispiel:</strong> Kohlbergs Stufenmodell der Moralentwicklung</p>
+                    <p><strong>Beispiel:</strong> <span class="tooltip-term" data-tooltip="kohlberg">Kohlbergs Stufenmodell der Moralentwicklung</span></p>
                 </div>
             </div>
 
@@ -647,7 +769,7 @@
                     <h3 class="column-title">⚖️ 2. Normative Ethik</h3>
                     <div class="definition-box">
                         <div class="definition-text">
-                            Die <strong>normative (wertende) Ethik</strong> ist ein Versuch, die Moral zu begründen. Sie hat einen universalistischen Anspruch und sucht nach allgemeingültigen moralischen Prinzipien.
+                            Die <strong><span class="tooltip-term" data-tooltip="normative-ethik">normative (wertende) Ethik</span></strong> ist ein Versuch, die Moral zu begründen. Sie hat einen universalistischen Anspruch und sucht nach allgemeingültigen moralischen Prinzipien.
                         </div>
                     </div>
                     <p><strong>Aufgabe:</strong> Entwicklung und Begründung moralischer Normen</p>
@@ -656,9 +778,9 @@
                     <div class="example-box">
                         <div class="example-title">🏛️ Hauptströmungen der normativen Ethik:</div>
                         <ul class="styled-list">
-                            <li><strong>Deontologische Ethik (Kant):</strong> Pflichtethik, kategorischer Imperativ</li>
-                            <li><strong>Konsequentialismus/Utilitarismus (Bentham, Mill):</strong> Folgenethik</li>
-                            <li><strong>Tugendethik (Aristoteles):</strong> Charakterethik</li>
+                            <li><strong><span class="tooltip-term" data-tooltip="deontologie">Deontologische Ethik (Kant)</span>:</strong> Pflichtethik, kategorischer Imperativ</li>
+                            <li><strong><span class="tooltip-term" data-tooltip="utilitarismus">Konsequentialismus/Utilitarismus (Bentham, Mill)</span>:</strong> Folgenethik</li>
+                            <li><strong><span class="tooltip-term" data-tooltip="tugendethik">Tugendethik (Aristoteles)</span>:</strong> Charakterethik</li>
                         </ul>
                     </div>
                 </div>
@@ -669,7 +791,7 @@
                     <h3 class="column-title">🔍 3. Metaethik</h3>
                     <div class="definition-box">
                         <div class="definition-text">
-                            Die <strong>Metaethik</strong> analysiert die Grundbegriffe der Ethik und untersucht die philosophischen Grundlagen moralischer Urteile.
+                            Die <strong><span class="tooltip-term" data-tooltip="metaethik">Metaethik</span></strong> analysiert die Grundbegriffe der Ethik und untersucht die philosophischen Grundlagen moralischer Urteile.
                         </div>
                     </div>
                     <p><strong>Aufgabe:</strong> Analyse der Sprache und Logik der Ethik</p>
@@ -697,12 +819,12 @@
             <div class="two-column">
                 <div class="column-card">
                     <h3 class="column-title">😊 Kognitivisten (Optimisten)</h3>
-                    <p><strong>Grundannahme:</strong> Es gibt objektive moralische Wahrheiten, die durch Vernunft erkennbar sind.</p>
+                    <p><strong>Grundannahme:</strong> Es gibt objektive moralische Wahrheiten, die durch <span class="tooltip-term" data-tooltip="vernunft">Vernunft</span> erkennbar sind.</p>
                     <div class="example-box">
                         <div class="example-title">💡 Beispiele:</div>
                         <ul class="styled-list">
-                            <li>Kant: Moralische Gesetze durch Vernunft</li>
-                            <li>Naturrechtstheorien</li>
+                            <li><span class="tooltip-term" data-tooltip="kant">Kant</span>: Moralische Gesetze durch Vernunft</li>
+                            <li><span class="tooltip-term" data-tooltip="naturrecht">Naturrechtstheorien</span></li>
                             <li>Utilitaristen: Messbare Güter</li>
                         </ul>
                     </div>
@@ -714,9 +836,9 @@
                     <div class="example-box">
                         <div class="example-title">💡 Beispiele:</div>
                         <ul class="styled-list">
-                            <li>Emotivismus: Moral als Gefühlsausdruck</li>
-                            <li>Relativismus: Kulturabhängige Moral</li>
-                            <li>Nihilismus: Keine objektiven Werte</li>
+                            <li><span class="tooltip-term" data-tooltip="emotivismus">Emotivismus</span>: Moral als Gefühlsausdruck</li>
+                            <li><span class="tooltip-term" data-tooltip="relativismus">Relativismus</span>: Kulturabhängige Moral</li>
+                            <li><span class="tooltip-term" data-tooltip="nihilismus">Nihilismus</span>: Keine objektiven Werte</li>
                         </ul>
                     </div>
                 </div>
@@ -732,7 +854,7 @@
 
             <div class="info-box">
                 <div class="info-title">🔬 Evolutionäre Perspektive</div>
-                <p>Moralisches Verhalten kann als evolutionäre Anpassung interpretiert werden, die das Überleben und Gedeihen von Gruppen und Individuen fördert.</p>
+                <p>Moralisches Verhalten kann als <span class="tooltip-term" data-tooltip="evolution">evolutionäre Anpassung</span> interpretiert werden, die das Überleben und Gedeihen von Gruppen und Individuen fördert.</p>
             </div>
 
             <div class="highlight">
@@ -741,7 +863,7 @@
                 <ul class="styled-list">
                     <li>Gruppen mit starkem moralischem Zusammenhalt hatten evolutionäre Vorteile</li>
                     <li>Moralische Normen stärken Vertrauen und Zusammenarbeit</li>
-                    <li>Empathie und Kooperation erleichterten das Überleben in sozialen Gruppen</li>
+                    <li><span class="tooltip-term" data-tooltip="empathie">Empathie</span> und Kooperation erleichterten das Überleben in sozialen Gruppen</li>
                     <li>Das Gemeinwohl fördert indirekt auch das individuelle Wohlergehen</li>
                 </ul>
             </div>
@@ -749,7 +871,7 @@
             <div class="example-box">
                 <div class="example-title">🌍 Moderne Beispiele für evolutionäre Moral:</div>
                 <ul class="styled-list">
-                    <li><strong>Altruismus:</strong> Hilfe ohne direkten Eigennutz stärkt Gruppenbindungen</li>
+                    <li><strong><span class="tooltip-term" data-tooltip="altruismus">Altruismus</span>:</strong> Hilfe ohne direkten Eigennutz stärkt Gruppenbindungen</li>
                     <li><strong>Fairness:</strong> Gerechte Verteilung verhindert Gruppenkonflikte</li>
                     <li><strong>Vertrauen:</strong> Ermöglicht komplexe Kooperationen</li>
                     <li><strong>Empathie:</strong> Basis für prosoziales Verhalten</li>
@@ -769,7 +891,7 @@
                     <h3 class="column-title">📜 Recht (Legalität)</h3>
                     <ul class="styled-list">
                         <li>Staatlich durchsetzbare Normen</li>
-                        <li>Äußere Übereinstimmung mit Gesetzen</li>
+                        <li><span class="tooltip-term" data-tooltip="legalitaet">Äußere Übereinstimmung</span> mit Gesetzen</li>
                         <li>Sanktionen bei Verstößen</li>
                         <li>Gesellschaftlich verbindlich</li>
                         <li>Wandelbar durch Gesetzgebung</li>
@@ -779,8 +901,8 @@
                 <div class="column-card">
                     <h3 class="column-title">💭 Moral (Moralität)</h3>
                     <ul class="styled-list">
-                        <li>Innere Überzeugung und Motivation</li>
-                        <li>Gewissensentscheidungen</li>
+                        <li><span class="tooltip-term" data-tooltip="moralitaet">Innere Überzeugung</span> und Motivation</li>
+                        <li><span class="tooltip-term" data-tooltip="gewissen">Gewissensentscheidungen</span></li>
                         <li>Keine äußeren Sanktionen</li>
                         <li>Persönlich verbindlich</li>
                         <li>Kulturell und historisch wandelbar</li>
@@ -790,8 +912,8 @@
 
             <div class="warning-box">
                 <h4>⚠️ Wichtige Unterscheidung nach Kant</h4>
-                <p><strong>Moralität:</strong> Handlung aus innerer Überzeugung und Pflicht</p>
-                <p><strong>Legalität:</strong> Äußere Gesetzmäßigkeit, unabhängig von der Motivation</p>
+                <p><strong><span class="tooltip-term" data-tooltip="moralitaet">Moralität</span>:</strong> Handlung aus innerer Überzeugung und Pflicht</p>
+                <p><strong><span class="tooltip-term" data-tooltip="legalitaet">Legalität</span>:</strong> Äußere Gesetzmäßigkeit, unabhängig von der Motivation</p>
                 <p><em>Beispiel:</em> Jemand hilft einer älteren Person - aus Mitgefühl (moralisch) oder nur weil andere zuschauen (legal, aber nicht moralisch).</p>
             </div>
         </div>
@@ -813,20 +935,20 @@
                     <h3 class="column-title">🧠 1. Gedankenexperimente</h3>
                     <p>Hypothetische Szenarien zur Prüfung moralischer Intuitionen</p>
                     <div class="example-box">
-                        <div class="example-title">💡 Beispiel: Das Trolley-Problem</div>
+                        <div class="example-title">💡 Beispiel: Das <span class="tooltip-term" data-tooltip="trolley-problem">Trolley-Problem</span></div>
                         <p>Ein Zug rast auf fünf Menschen zu. Du kannst ihn umleiten, würdest aber eine andere Person töten. Was ist ethisch richtig?</p>
                     </div>
                 </div>
 
                 <div class="column-card">
-                    <h3 class="column-title">📝 2. Begriffsanalyse</h3>
+                    <h3 class="column-title">🔍 2. Begriffsanalyse</h3>
                     <p>Präzise Klärung zentraler ethischer Begriffe</p>
                     <div class="example-box">
                         <div class="example-title">💡 Beispiele:</div>
                         <ul class="styled-list">
-                            <li>Was bedeutet "Gerechtigkeit"?</li>
-                            <li>Wann ist eine Handlung "frei"?</li>
-                            <li>Was heißt "Verantwortung"?</li>
+                            <li>Was bedeutet "<span class="tooltip-term" data-tooltip="gerechtigkeit">Gerechtigkeit</span>"?</li>
+                            <li>Wann ist eine Handlung "<span class="tooltip-term" data-tooltip="freiheit">frei</span>"?</li>
+                            <li>Was heißt "<span class="tooltip-term" data-tooltip="verantwortung">Verantwortung</span>"?</li>
                         </ul>
                     </div>
                 </div>
@@ -875,7 +997,7 @@
         <!-- Aktuelle ethische Herausforderungen -->
         <div class="content-section">
             <h2 class="section-title">
-                <span class="section-icon">🌐</span>
+                <span class="section-icon">🌍</span>
                 Moderne ethische Herausforderungen
             </h2>
 
@@ -891,27 +1013,27 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>🤖 KI-Ethik</strong></td>
+                        <td><strong>🤖 <span class="tooltip-term" data-tooltip="ki-ethik">KI-Ethik</span></strong></td>
                         <td>Algorithmus-Fairness, autonome Systeme, KI-Rechte</td>
                         <td>Welche Entscheidungen darf KI treffen? Wer ist verantwortlich?</td>
                     </tr>
                     <tr>
-                        <td><strong>🧬 Bioethik</strong></td>
+                        <td><strong>🧬 <span class="tooltip-term" data-tooltip="bioethik">Bioethik</span></strong></td>
                         <td>CRISPR, Stammzellforschung, Sterbehilfe</td>
                         <td>Dürfen wir menschliche Gene verändern? Was ist ein würdiges Sterben?</td>
                     </tr>
                     <tr>
-                        <td><strong>🌍 Klimaethik</strong></td>
+                        <td><strong>🌱 <span class="tooltip-term" data-tooltip="klimaethik">Klimaethik</span></strong></td>
                         <td>Nachhaltigkeit, Generationengerechtigkeit</td>
                         <td>Was schulden wir zukünftigen Generationen? Wer trägt Klimaverantwortung?</td>
                     </tr>
                     <tr>
-                        <td><strong>💰 Wirtschaftsethik</strong></td>
+                        <td><strong>💰 <span class="tooltip-term" data-tooltip="wirtschaftsethik">Wirtschaftsethik</span></strong></td>
                         <td>Globalisierung, soziale Gerechtigkeit, CSR</td>
                         <td>Ist extreme Ungleichheit moralisch vertretbar? Was sind faire Löhne?</td>
                     </tr>
                     <tr>
-                        <td><strong>🔒 Digitalethik</strong></td>
+                        <td><strong>🔒 <span class="tooltip-term" data-tooltip="digitalethik">Digitalethik</span></strong></td>
                         <td>Datenschutz, Überwachung, digitale Rechte</td>
                         <td>Wem gehören unsere Daten? Wie viel Privatsphäre brauchen wir?</td>
                     </tr>
@@ -1027,5 +1149,309 @@
             
         </div>
     </div>
+
+    <script>
+        // Tooltip-Datenbank mit allen wichtigen Begriffen
+        const tooltipData = {
+            'ethik': {
+                title: 'Ethik',
+                description: 'Die Ethik ist die philosophische Wissenschaft, die sich mit der systematischen Reflexion über Moral beschäftigt. Sie fragt nach den Grundlagen und Prinzipien moralisch richtigen Handelns.'
+            },
+            'philosophie': {
+                title: 'Philosophie',
+                description: 'Die Philosophie ist die Wissenschaft vom kritischen und systematischen Nachdenken über grundlegende Fragen des Seins, Erkennens und Handelns.'
+            },
+            'moral': {
+                title: 'Moral',
+                description: 'Moral bezeichnet die Gesamtheit der in einer Gesellschaft geltenden Normen, Werte und Sitten, die das Verhalten der Menschen leiten sollen.'
+            },
+            'normen': {
+                title: 'Normen',
+                description: 'Normen sind konkrete Verhaltensregeln und Gebote, die aus allgemeineren Werten abgeleitet werden. Sie sagen uns, was wir tun oder lassen sollen.'
+            },
+            'werte': {
+                title: 'Werte',
+                description: 'Werte sind allgemeine Zielvorstellungen und Ideale, die als erstrebenswert gelten. Sie bilden die Grundlage für konkrete Normen.'
+            },
+            'handlung': {
+                title: 'Handlung',
+                description: 'Eine Handlung ist eine absichtlich von einer Person verursachte Situationsveränderung. Nur absichtliche Verhaltensweisen können moralisch bewertet werden.'
+            },
+            'deskriptive-ethik': {
+                title: 'Deskriptive Ethik',
+                description: 'Die deskriptive Ethik beschreibt und untersucht empirisch, welche moralischen Vorstellungen in verschiedenen Kulturen und Gesellschaften tatsächlich vorherrschen.'
+            },
+            'normative-ethik': {
+                title: 'Normative Ethik',
+                description: 'Die normative Ethik entwickelt und begründet Normen für moralisch richtiges Handeln. Sie fragt: "Wie sollen wir handeln?" und sucht nach universell gültigen Prinzipien.'
+            },
+            'metaethik': {
+                title: 'Metaethik',
+                description: 'Die Metaethik analysiert die Grundbegriffe der Ethik selbst. Sie fragt nach der Bedeutung moralischer Begriffe und der Logik moralischer Urteile.'
+            },
+            'kohlberg': {
+                title: 'Kohlbergs Stufenmodell',
+                description: 'Lawrence Kohlberg entwickelte ein sechsstufiges Modell der Moralentwicklung, das beschreibt, wie sich moralisches Denken von der Kindheit bis zum Erwachsenenalter entwickelt.'
+            },
+            'deontologie': {
+                title: 'Deontologische Ethik',
+                description: 'Die deontologische Ethik (von griech. "deon" = Pflicht) bewertet Handlungen nach ihrer Übereinstimmung mit moralischen Regeln und Pflichten, nicht nach ihren Folgen.'
+            },
+            'utilitarismus': {
+                title: 'Utilitarismus',
+                description: 'Der Utilitarismus ist eine konsequentialistische Ethik, die Handlungen nach ihren Folgen bewertet. Richtig ist, was den größten Nutzen für die größte Zahl bewirkt.'
+            },
+            'tugendethik': {
+                title: 'Tugendethik',
+                description: 'Die Tugendethik fokussiert nicht auf Handlungen oder Folgen, sondern auf den Charakter des Handelnden. Sie fragt: "Was für ein Mensch soll ich sein?"'
+            },
+            'vernunft': {
+                title: 'Vernunft',
+                description: 'In der Ethik bezeichnet Vernunft die menschliche Fähigkeit zum logischen Denken und zur rationalen Begründung moralischer Prinzipien, unabhängig von Gefühlen oder Trieben.'
+            },
+            'kant': {
+                title: 'Immanuel Kant',
+                description: 'Immanuel Kant (1724-1804) war ein deutscher Philosoph der Aufklärung und Begründer der modernen Pflichtethik mit dem kategorischen Imperativ.'
+            },
+            'naturrecht': {
+                title: 'Naturrechtstheorien',
+                description: 'Naturrechtstheorien gehen davon aus, dass es universelle, von der menschlichen Natur oder göttlicher Ordnung abgeleitete Rechte und Pflichten gibt.'
+            },
+            'emotivismus': {
+                title: 'Emotivismus',
+                description: 'Der Emotivismus behauptet, dass moralische Urteile keine objektiven Wahrheiten ausdrücken, sondern nur emotionale Einstellungen und Gefühle.'
+            },
+            'relativismus': {
+                title: 'Moralischer Relativismus',
+                description: 'Der moralische Relativismus besagt, dass moralische Urteile nur relativ zu bestimmten Kulturen, Gesellschaften oder historischen Epochen gültig sind.'
+            },
+            'nihilismus': {
+                title: 'Moralischer Nihilismus',
+                description: 'Der moralische Nihilismus bestreitet die Existenz objektiver moralischer Werte und Wahrheiten. Nichts ist an sich gut oder schlecht.'
+            },
+            'evolution': {
+                title: 'Evolutionäre Ethik',
+                description: 'Die evolutionäre Ethik erklärt moralisches Verhalten als Ergebnis evolutionärer Anpassung, die das Überleben und die Fortpflanzung förderte.'
+            },
+            'empathie': {
+                title: 'Empathie',
+                description: 'Empathie ist die Fähigkeit, die Gefühle und Perspektiven anderer zu verstehen und nachzuvollziehen. Sie gilt als wichtige Grundlage moralischen Verhaltens.'
+            },
+            'altruismus': {
+                title: 'Altruismus',
+                description: 'Altruismus bezeichnet selbstloses Verhalten zum Wohl anderer, auch wenn es dem Handelnden selbst Nachteile bringt. Ein zentrales Konzept in der Moralpsychologie.'
+            },
+            'legalitaet': {
+                title: 'Legalität',
+                description: 'Legalität bedeutet die äußere Übereinstimmung mit geltenden Gesetzen, unabhängig von der inneren Motivation oder Überzeugung des Handelnden.'
+            },
+            'moralitaet': {
+                title: 'Moralität',
+                description: 'Moralität bezeichnet nach Kant das Handeln aus innerer Überzeugung und aus Achtung vor dem moralischen Gesetz, nicht nur aus äußerem Zwang.'
+            },
+            'gewissen': {
+                title: 'Gewissen',
+                description: 'Das Gewissen ist die innere Instanz, die moralische Urteile über eigenes und fremdes Verhalten fällt und Schuld- oder Zufriedenheitsgefühle auslöst.'
+            },
+            'trolley-problem': {
+                title: 'Trolley-Problem',
+                description: 'Ein berühmtes Gedankenexperiment: Darf man eine Person töten, um fünf andere zu retten? Es zeigt den Konflikt zwischen verschiedenen ethischen Prinzipien.'
+            },
+            'gerechtigkeit': {
+                title: 'Gerechtigkeit',
+                description: 'Gerechtigkeit bezeichnet die Verteilung von Rechten, Pflichten, Chancen und Gütern nach fairen und angemessenen Kriterien.'
+            },
+            'freiheit': {
+                title: 'Moralische Freiheit',
+                description: 'Moralische Freiheit ist die Fähigkeit, zwischen verschiedenen Handlungsoptionen zu wählen und für diese Entscheidungen verantwortlich zu sein.'
+            },
+            'verantwortung': {
+                title: 'Verantwortung',
+                description: 'Verantwortung bezeichnet die Zurechenbarkeit von Handlungen und ihren Folgen an einen Akteur sowie dessen Verpflichtung, dafür einzustehen.'
+            },
+            'ki-ethik': {
+                title: 'KI-Ethik',
+                description: 'Die KI-Ethik beschäftigt sich mit moralischen Fragen rund um künstliche Intelligenz: Algorithmus-Fairness, Verantwortung bei autonomen Systemen und KI-Entscheidungen.'
+            },
+            'bioethik': {
+                title: 'Bioethik',
+                description: 'Die Bioethik untersucht ethische Fragen in der Medizin und Biologie: Gentechnik, Stammzellforschung, Sterbehilfe, medizinische Experimente und Behandlungsentscheidungen.'
+            },
+            'klimaethik': {
+                title: 'Klimaethik',
+                description: 'Die Klimaethik befasst sich mit moralischen Fragen des Klimawandels: Verantwortung für zukünftige Generationen, gerechte Verteilung von Klimakosten und nachhaltige Entwicklung.'
+            },
+            'wirtschaftsethik': {
+                title: 'Wirtschaftsethik',
+                description: 'Die Wirtschaftsethik untersucht moralische Prinzipien in der Ökonomie: faire Löhne, Unternehmensverantwortung, Verteilungsgerechtigkeit und nachhaltiges Wirtschaften.'
+            },
+            'digitalethik': {
+                title: 'Digitalethik',
+                description: 'Die Digitalethik behandelt moralische Fragen der Digitalisierung: Datenschutz, Privatsphäre, digitale Überwachung, Algorithmus-Transparenz und digitale Rechte.'
+            }
+        };
+
+        // Tooltip-System
+        let currentTooltip = null;
+        let tooltipTimeout = null;
+
+        function createTooltip(element, data) {
+            const tooltip = document.createElement('div');
+            tooltip.className = 'tooltip';
+            
+            const content = document.createElement('div');
+            content.className = 'tooltip-content';
+            
+            const title = document.createElement('div');
+            title.className = 'tooltip-title';
+            title.textContent = data.title;
+            
+            const description = document.createElement('div');
+            description.className = 'tooltip-description';
+            description.textContent = data.description;
+            
+            content.appendChild(title);
+            content.appendChild(description);
+            tooltip.appendChild(content);
+            
+            return tooltip;
+        }
+
+        function positionTooltip(tooltip, element) {
+            const rect = element.getBoundingClientRect();
+            const tooltipRect = tooltip.getBoundingClientRect();
+            const containerRect = document.querySelector('.container').getBoundingClientRect();
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+            
+            // Mobile Optimierung
+            if (window.innerWidth <= 768) {
+                tooltip.style.position = 'fixed';
+                tooltip.style.top = (rect.bottom + 10) + 'px';
+                tooltip.style.left = '50%';
+                tooltip.style.transform = 'translateX(-50%)';
+                
+                if (rect.bottom + tooltipRect.height + 20 > viewportHeight) {
+                    tooltip.style.top = (rect.top - tooltipRect.height - 10) + 'px';
+                    tooltip.classList.add('bottom');
+                }
+                return;
+            }
+            
+            // Desktop-Positionierung
+            tooltip.style.position = 'absolute';
+            
+            let top = rect.bottom + window.scrollY + 10;
+            let left = rect.left + window.scrollX;
+            
+            // Horizontale Kollisionserkennung
+            if (left + tooltipRect.width > containerRect.right) {
+                left = rect.right + window.scrollX - tooltipRect.width;
+                tooltip.classList.add('left');
+            }
+            
+            if (left < containerRect.left) {
+                left = containerRect.left + window.scrollX + 10;
+            }
+            
+            // Vertikale Kollisionserkennung
+            if (top + tooltipRect.height > window.scrollY + viewportHeight - 20) {
+                top = rect.top + window.scrollY - tooltipRect.height - 10;
+                tooltip.classList.add('bottom');
+            }
+            
+            tooltip.style.top = top + 'px';
+            tooltip.style.left = left + 'px';
+        }
+
+        function showTooltip(element) {
+            if (currentTooltip) {
+                hideTooltip();
+            }
+            
+            const tooltipKey = element.getAttribute('data-tooltip');
+            const data = tooltipData[tooltipKey];
+            
+            if (!data) return;
+            
+            currentTooltip = createTooltip(element, data);
+            document.body.appendChild(currentTooltip);
+            
+            positionTooltip(currentTooltip, element);
+            
+            setTimeout(() => {
+                if (currentTooltip) {
+                    currentTooltip.classList.add('show');
+                }
+            }, 10);
+        }
+
+        function hideTooltip() {
+            if (currentTooltip) {
+                currentTooltip.classList.remove('show');
+                setTimeout(() => {
+                    if (currentTooltip && currentTooltip.parentNode) {
+                        currentTooltip.parentNode.removeChild(currentTooltip);
+                    }
+                    currentTooltip = null;
+                }, 300);
+            }
+        }
+
+        // Event-Listener Setup
+        document.addEventListener('DOMContentLoaded', function() {
+            const tooltipTerms = document.querySelectorAll('.tooltip-term');
+            
+            tooltipTerms.forEach(term => {
+                // Desktop: Hover-Events
+                term.addEventListener('mouseenter', function() {
+                    if (tooltipTimeout) {
+                        clearTimeout(tooltipTimeout);
+                    }
+                    tooltipTimeout = setTimeout(() => {
+                        showTooltip(this);
+                    }, 100);
+                });
+                
+                term.addEventListener('mouseleave', function() {
+                    if (tooltipTimeout) {
+                        clearTimeout(tooltipTimeout);
+                    }
+                    tooltipTimeout = setTimeout(hideTooltip, 200);
+                });
+                
+                // Mobile: Touch-Events
+                term.addEventListener('touchstart', function(e) {
+                    e.preventDefault();
+                    if (currentTooltip) {
+                        hideTooltip();
+                    } else {
+                        showTooltip(this);
+                    }
+                }, { passive: false });
+            });
+            
+            // Tooltip schließen bei Klick außerhalb
+            document.addEventListener('click', function(e) {
+                if (currentTooltip && !e.target.closest('.tooltip') && !e.target.closest('.tooltip-term')) {
+                    hideTooltip();
+                }
+            });
+            
+            // Tooltip bei Scroll verstecken (nur Desktop)
+            document.addEventListener('scroll', function() {
+                if (currentTooltip && window.innerWidth > 768) {
+                    hideTooltip();
+                }
+            });
+            
+            // Tooltip bei Resize verstecken
+            window.addEventListener('resize', function() {
+                if (currentTooltip) {
+                    hideTooltip();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
