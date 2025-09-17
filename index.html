@@ -66,6 +66,74 @@
             border-left: 5px solid #667eea;
         }
         
+        .main-themes {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .main-themes h2 {
+            color: #667eea;
+            margin-bottom: 25px;
+            font-size: 2em;
+            text-align: center;
+        }
+        
+        .theme-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .theme-card {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            border: 2px solid #667eea;
+            border-radius: 15px;
+            padding: 25px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .theme-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+        }
+        
+        .theme-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #667eea;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+        }
+        
+        .theme-card p {
+            color: #555;
+            line-height: 1.6;
+            font-size: 1.05em;
+        }
+        
+        .theme-icon {
+            font-size: 1.8em;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
         .navigation-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -157,13 +225,17 @@
                 padding: 15px;
             }
             
-            header, .introduction, .modern-themes, .footer {
+            header, .introduction, .main-themes, .modern-themes, .footer {
                 padding: 20px;
             }
             
-            .navigation-grid {
+            .theme-grid, .navigation-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
+            }
+            
+            .theme-card h3 {
+                font-size: 1.3em;
             }
         }
         
@@ -203,9 +275,33 @@
             
             <div class="intro-highlight">
                 <h3>🎯 Warum Ethik heute wichtiger denn je ist</h3>
-                <p>In einer Zeit rasanter technologischer Entwicklung – von KI-Systemen über Gentherapie bis hin zu globalen Klimaherausforderungen – brauchen wir ethische Orientierung mehr denn je. Dieser Lernzettel verbindet zeitlose philosophische Grundlagen mit den brennendsten ethischen Fragen von 2026.</p>
+                <p>In einer Zeit rasanter technologischer Entwicklung — von KI-Systemen über Gentherapie bis hin zu globalen Klimaherausforderungen — brauchen wir ethische Orientierung mehr denn je. Dieser Lernzettel verbindet zeitlose philosophische Grundlagen mit den brennendsten ethischen Fragen von 2026.</p>
             </div>
+        </div>
 
+        <div class="main-themes">
+            <h2>🎯 Hauptthemen der Ethik</h2>
+            <div class="theme-grid">
+                <a href="moralbegrundung.html" class="theme-card">
+                    <h3><span class="theme-icon">🏛️</span>Moralbegründung und Moralkritik</h3>
+                    <p>Wie lassen sich moralische Normen begründen? Warum soll ich moralisch handeln? Relativismus vs. Universalismus, Diskursethik und die Grenzen moralischer Erkenntnis</p>
+                </a>
+
+                <a href="recht-gerechtigkeit.html" class="theme-card">
+                    <h3><span class="theme-icon">⚖️</span>Recht und Gerechtigkeit</h3>
+                    <p>Verhältnis von Recht und Moral, Naturrecht vs. Rechtspositivismus, Verteilungsgerechtigkeit, Rawls' Schleier des Nichtwissens und soziale Gerechtigkeit</p>
+                </a>
+
+                <a href="freiheit-verantwortung.html" class="theme-card">
+                    <h3><span class="theme-icon">🕊️</span>Freiheit und Verantwortung</h3>
+                    <p>Willensfreiheit vs. Determinismus, moralische Verantwortung, Schuld und Strafe, positive und negative Freiheit nach Isaiah Berlin</p>
+                </a>
+
+                <a href="religion-religionskritik.html" class="theme-card">
+                    <h3><span class="theme-icon">⛪</span>Religion und Religionskritik</h3>
+                    <p>Verhältnis von Religion und Ethik, säkulare vs. religiöse Moral, Gottesbeweise, Theodizee-Problem und die Rolle der Religion in der modernen Gesellschaft</p>
+                </a>
+            </div>
         </div>
 
         <div class="modern-themes">
@@ -218,7 +314,7 @@
                 <span class="tag">🌍 Klimaethik & Nachhaltigkeit</span>
                 <span class="tag">🔒 Datenschutz & Privatsphäre</span>
                 <span class="tag">⚖️ Algorithmische Gerechtigkeit</span>
-                <span class="tag">🐾 Tierrechte & Laborfleischschreibt</span>
+                <span class="tag">🐾 Tierrechte & Laborfleisch</span>
                 <span class="tag">💊 Medizinethik & Personalisierte Medizin</span>
                 <span class="tag">🌐 Digitale Demokratie</span>
             </div>

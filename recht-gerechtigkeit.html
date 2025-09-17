@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recht und Gerechtigkeit - Ethik Lernzettel 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .navigation {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 15px 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: #764ba2;
+        }
+        
+        .nav-separator {
+            color: #ccc;
+        }
+        
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-title {
+            font-size: 2.8em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .header-icon {
+            font-size: 1.2em;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+        
+        .header-subtitle {
+            font-size: 1.3em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .main-content {
+            display: grid;
+            gap: 30px;
+        }
+        
+        .content-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .content-card h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .content-card h3 {
+            color: #764ba2;
+            margin: 25px 0 15px 0;
+            font-size: 1.4em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .content-card h4 {
+            color: #667eea;
+            margin: 20px 0 10px 0;
+            font-size: 1.2em;
+        }
+        
+        .section-icon {
+            font-size: 1.5em;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 10px;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #ff9a9e, #fecfef);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 5px solid #667eea;
+        }
+        
+        .highlight-box h4 {
+            color: #333;
+            margin: 0 0 15px 0;
+            font-size: 1.3em;
+        }
+        
+        .definition-box {
+            background: linear-gradient(135deg, #a8edea, #fed6e3);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #667eea;
+        }
+        
+        .example-box {
+            background: rgba(102, 126, 234, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #764ba2;
+        }
+        
+        .example-box h4 {
+            color: #764ba2;
+            margin: 0 0 10px 0;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .comparison-card {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 25px;
+            border-radius: 12px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .comparison-card:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
+        }
+        
+        .comparison-card h4 {
+            color: #667eea;
+            margin: 0 0 15px 0;
+            font-size: 1.3em;
+        }
+        
+        .key-points {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .key-points h4 {
+            color: #667eea;
+            margin: 0 0 15px 0;
+            font-size: 1.3em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .key-points ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .key-points li {
+            padding: 8px 0 8px 30px;
+            position: relative;
+        }
+        
+        .key-points li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .current-debates {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 25px 0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .current-debates h3 {
+            color: #667eea;
+            margin: 0 0 20px 0;
+            font-size: 1.8em;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .debate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .debate-item {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #764ba2;
+        }
+        
+        .debate-item h4 {
+            color: #764ba2;
+            margin: 0 0 8px 0;
+            font-size: 1.1em;
+        }
+        
+        .interactive-section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .quiz-question {
+            background: rgba(102, 126, 234, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #667eea;
+        }
+        
+        .quiz-question h4 {
+            color: #667eea;
+            margin: 0 0 15px 0;
+        }
+        
+        .quiz-options {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .quiz-options li {
+            background: rgba(255, 255, 255, 0.8);
+            margin: 8px 0;
+            padding: 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .quiz-options li:hover {
+            background: rgba(102, 126, 234, 0.2);
+            border-color: #667eea;
+        }
+        
+        .footer-nav {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header-title {
+                font-size: 2.2em;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .header-icon {
+                padding: 15px;
+                font-size: 1em;
+            }
+            
+            .content-card, .interactive-section {
+                padding: 20px;
+            }
+            
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-buttons {
+                flex-direction: column;
+            }
+            
+            .navigation {
+                padding: 15px 20px;
+            }
+            
+            .navigation {
+                justify-content: center;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <a href="index.html" class="nav-link">🏠 Startseite</a>
+            <span class="nav-separator">•</span>
+            <a href="grundlagen.html" class="nav-link">📚 Grundlagen</a>
+            <span class="nav-separator">•</span>
+            <span style="color: #764ba2; font-weight: 600;">⚖️ Recht und Gerechtigkeit</span>
+        </div>
+
+        <header>
+            <h1 class="header-title">
+                <span class="header-icon">⚖️</span>
+                Recht und Gerechtigkeit
+            </h1>
+            <p class="header-subtitle">Grundlagen, Theorien und aktuelle Debatten</p>
+            <p>🏛️ Naturrecht vs. Rechtspositivismus • 👥 Soziale Gerechtigkeit • 🔄 Rawls' Theorie • 🌍 Aktuelle Herausforderungen 2026</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Grundlagen von Recht und Moral -->
+            <div class="content-card">
+                <h2><span class="section-icon">📜</span>Grundlagen: Recht und Moral</h2>
+                
+                <div class="definition-box">
+                    <h4>🎯 Was ist Recht?</h4>
+                    <p><strong>Recht</strong> ist eine normative Regelung zur Gestaltung des menschlichen Miteinanders. Es folgt einer hierarchischen Struktur und ist heute von Sitte und Moral zu unterscheiden. Der Staat hat das Rechtsmonopol – das Recht wird nur durch den Staat gesetzt (positives Recht).</p>
+                </div>
+
+                <h3><span class="section-icon">⚙️</span>Funktionen des Rechts</h3>
+                <div class="comparison-grid">
+                    <div class="comparison-card">
+                        <h4>🏗️ Ordnungsfunktion</h4>
+                        <p>Strukturierung des gesellschaftlichen Zusammenlebens durch klare Regeln und Normen</p>
+                    </div>
+                    <div class="comparison-card">
+                        <h4>⚖️ Gerechtigkeitsfunktion</h4>
+                        <p>Gewährleistung fairer Behandlung und Ausgleich zwischen verschiedenen Interessen</p>
+                    </div>
+                    <div class="comparison-card">
+                        <h4>👑 Herrschaftsfunktion</h4>
+                        <p>Legitimation und Organisation staatlicher Macht und Autorität</p>
+                    </div>
+                    <div class="comparison-card">
+                        <h4>🛡️ Herrschaftskontrolle</h4>
+                        <p>Begrenzung und Kontrolle staatlicher Macht zum Schutz der Bürgerrechte</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>⚠️ Konflikt zwischen Recht und Gerechtigkeit</h4>
+                    <p>Recht bedingt Macht. Menschen in Machtpositionen sind oft durch gesetzliche Immunität geschützt – dies kann zu ungleicher Behandlung vor dem Gesetz führen. <em>"Gesetz ist Gesetz"</em> garantiert noch keine Gerechtigkeit.</p>
+                </div>
+            </div>
+
+            <!-- Naturrecht vs. Rechtspositivismus -->
+            <div class="content-card">
+                <h2><span class="section-icon">🌿</span>Naturrecht vs. Rechtspositivismus</h2>
+                
+                <div class="comparison-grid">
+                    <div class="comparison-card">
+                        <h4>🌱 Naturrecht</h4>
+                        <p><strong>Definition:</strong> Von der Natur aus gegebene, unveränderliche Rechte, die unabhängig von Ort und Zeit für jede Person gelten.</p>
+                        
+                        <h4>📚 Quellen des Naturrechts:</h4>
+                        <ul style="list-style: disc; margin-left: 20px;">
+                            <li>Natur und Wesen des Menschen</li>
+                            <li>Religionen</li>
+                            <li>Vernunft des Menschen</li>
+                        </ul>
+                        
+                        <h4>⚠️ Problematik:</h4>
+                        <ul style="list-style: disc; margin-left: 20px;">
+                            <li>Unterschiedliche Kulturen = verschiedene Interpretationen</li>
+                            <li>Rechtsunsicherheit (nicht einklagbar)</li>
+                            <li>Subjektive Auslegungsmöglichkeiten</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="comparison-card">
+                        <h4>⚖️ Rechtspositivismus (Norbert Hoerster)</h4>
+                        <p><strong>Definition:</strong> Vom Menschen gesetztes Recht. Nur das ist Recht, was vom Gesetzgeber zum Gesetz erklärt wurde.</p>
+                        
+                        <h4>🎯 Grundthesen:</h4>
+                        <ul style="list-style: disc; margin-left: 20px;">
+                            <li><strong>Trennungsthese:</strong> Recht und Moral sind getrennt zu betrachten</li>
+                            <li><strong>Gesetzesthese:</strong> "Gesetz ist Gesetz"</li>
+                            <li><strong>Subsumtionsthese:</strong> Wertungsfreie Prüfung vor Gericht</li>
+                            <li><strong>Befolgungsthese:</strong> Normen sind immer zu befolgen</li>
+                        </ul>
+                        
+                        <h4>⚠️ Gefahren:</h4>
+                        <ul style="list-style: disc; margin-left: 20px;">
+                            <li>Kein Schutz vor Willkür</li>
+                            <li>Missachtung der Menschenrechte möglich</li>
+                            <li>Rechtssicherheit über Gerechtigkeit</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h4>📚 Historisches Beispiel: Radbruch'sche Formel</h4>
+                    <p>Nach den Erfahrungen der NS-Zeit entwickelte Gustav Radbruch seine berühmte Formel: <em>"Positives Recht hat auch dann Geltung, wenn es inhaltlich ungerecht ist, es sei denn, der Widerspruch zur Gerechtigkeit erreicht ein so unerträgliches Maß, dass das Gesetz als 'unrichtiges Recht' der Gerechtigkeit zu weichen hat."</em></p>
+                    <p><strong>Heute:</strong> Das Naturrecht bildet als höchste Norm die Grundlage aller Gesetze und ist als positives Recht verankert (Art. 1-20 GG).</p>
+                </div>
+            </div>
+
+            <!-- Gerechtigkeitstheorien -->
+            <div class="content-card">
+                <h2><span class="section-icon">🎭</span>Theorien der Gerechtigkeit</h2>
+                
+                <h3><span class="section-icon">📊</span>Aristoteles: Gerechtigkeit als Tugend</h3>
+                <div class="definition-box">
+                    <p><strong>Distributive Gerechtigkeit:</strong> Verteilung von Gütern nach Verdienst, Bedürftigkeit oder Gleichheit</p>
+                    <p><strong>Kommutative Gerechtigkeit:</strong> Ausgleich bei Vertragsbeziehungen und Rechtsverstößen</p>
+                </div>
+
+                <h3><span class="section-icon">🎪</span>John Rawls: Gerechtigkeit als Fairness</h3>
+                
+                <div class="highlight-box">
+                    <h4>🎭 Der Schleier des Nichtwissens</h4>
+                    <p><strong>Gedankenexperiment:</strong> Stellen Sie sich vor, Sie müssen die Grundprinzipien einer Gesellschaft festlegen, ohne zu wissen, welche Position Sie in dieser Gesellschaft einnehmen werden. Sie wissen nicht:</p>
+                    <ul style="list-style: disc; margin-left: 20px; margin-top: 10px;">
+                        <li>Ihr Geschlecht, Ihre Hautfarbe</li>
+                        <li>Ihre Intelligenz oder Talente</li>
+                        <li>Ihr Familienhintergrund (arm oder reich)</li>
+                        <li>Ihre Gesundheit oder körperlichen Fähigkeiten</li>
+                    </ul>
+                    <p style="margin-top: 15px;"><strong>Frage:</strong> Wie würden Sie die Gesellschaft gestalten, wenn Sie genauso gut der Ärmste wie der Reichste werden könnten?</p>
+                </div>
+
+                <div class="key-points">
+                    <h4>🎯 Die zwei Grundprinzipien der Gerechtigkeit</h4>
+                    <ul>
+                        <li><strong>1. Gleichheitsprinzip:</strong> Jeder hat gleiche Rechte auf das umfassendste System von Grundfreiheiten (Meinungs-, Religionsfreiheit, Wahlrecht, etc.)</li>
+                        <li><strong>2. Differenzprinzip:</strong> Soziale und wirtschaftliche Ungleichheiten sind nur gerechtfertigt, wenn sie den am schlechtesten Gestellten den größtmöglichen Vorteil bringen</li>
+                        <li><strong>Chancengleichheit:</strong> Alle Ämter und Positionen müssen unter fairen Bedingungen allen offenstehen</li>
+                        <li><strong>Vorrangregeln:</strong> Freiheit hat Vorrang vor materieller Gleichheit</li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <h4>💡 Beispiel: Progressive Besteuerung</h4>
+                    <p>Nach Rawls' Differenzprinzip wäre eine progressive Besteuerung gerecht, bei der Reiche höhere Steuersätze zahlen, <em>wenn</em> die zusätzlichen Steuereinnahmen zur Verbesserung der Lage der Ärmsten verwendet werden (Bildung, Gesundheitsversorgung, soziale Sicherheit).</p>
+                </div>
+            </div>
+
+            <!-- Weitere Gerechtigkeitstheorien -->
+            <div class="content-card">
+                <h2><span class="section-icon">🌐</span>Weitere Gerechtigkeitsansätze</h2>
+                
+                <div class="comparison-grid">
+                    <div class="comparison-card">
+                        <h4>👥 Kommunitarismus</h4>
+                        <p><strong>Kernidee:</strong> Gerechtigkeit entsteht nur in konkreten Gemeinschaften mit geteilten Werten und Traditionen.</p>
+                        <p><strong>Kritik an Rawls:</strong> Der Mensch ist immer sozial eingebettet – ein "Schleier des Nichtwissens" ist unrealistisch.</p>
+                        <p><strong>Vertreter:</strong> Alasdair MacIntyre, Charles Taylor, Michael Sandel</p>
+                    </div>
+                    
+                    <div class="comparison-card">
+                        <h4>👑 Non-Egalitarismus</h4>
+                        <p><strong>Kernidee:</strong> Gerechtigkeit bedeutet Würde, nicht Gleichheit. Alle Menschen sollen menschenwürdig leben können.</p>
+                        <p><strong>Fokus:</strong> Beseitigung von Armut und sozialer Ausgrenzung, Chancengleichheit</p>
+                        <p><strong>These:</strong> Ungleichheiten sind akzeptabel, solange niemand unter einem menschenwürdigen Minimum lebt</p>
+                    </div>
+                    
+                    <div class="comparison-card">
+                        <h4>🎪 Libertarismus</h4>
+                        <p><strong>Kernidee:</strong> Minimaler Staat, maximale individuelle Freiheit. Gerechtigkeit = faire Verfahren, nicht Ergebnisse.</p>
+                        <p><strong>Vertreter:</strong> Robert Nozick, Friedrich Hayek</p>
+                        <p><strong>Kritik an Umverteilung:</strong> Besteuerung = Zwangsarbeit; jeder hat das Recht auf die Früchte seiner Arbeit</p>
+                    </div>
+                    
+                    <div class="comparison-card">
+                        <h4>💪 Capabilities Approach</h4>
+                        <p><strong>Kernidee:</strong> Gerechtigkeit = alle Menschen haben die Möglichkeit, ihre grundlegenden Fähigkeiten zu entwickeln.</p>
+                        <p><strong>Vertreter:</strong> Amartya Sen, Martha Nussbaum</p>
+                        <p><strong>Fokus:</strong> Was können Menschen tatsächlich tun und sein? (Gesundheit, Bildung, politische Teilhabe, etc.)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aktuelle Debatten 2026 -->
+            <div class="current-debates">
+                <h3>🔥 Aktuelle Gerechtigkeitsdebatten 2026</h3>
+                <p>Die Frage nach Gerechtigkeit ist zeitlos, aber die konkreten Herausforderungen ändern sich. Hier sind die brennendsten Debatten unserer Zeit:</p>
+                
+                <div class="debate-grid">
+                    <div class="debate-item">
+                        <h4>💰 Soziale Gerechtigkeit in Deutschland</h4>
+                        <p>Bundeshaushalt 2026: Warnung vor Sozialkürzungen. Wie gerecht ist die Verteilung der Krisenlasten? Sollten Vermögende mehr zur Finanzierung des Sozialstaats beitragen?</p>
+                    </div>
+                    
+                    <div class="debate-item">
+                        <h4>🏠 Recht auf Wohnen</h4>
+                        <p>Über 500.000 Menschen sind wohnungslos. UN-Ausschuss prüft Deutschland: Wird das Menschenrecht auf Wohnen gewährleistet?</p>
+                    </div>
+                    
+                    <div class="debate-item">
+                        <h4>🌍 Globale Gerechtigkeit</h4>
+                        <p>Klimawandel als Gerechtigkeitsproblem: Verursacher vs. Betroffene. Wie gerecht sind internationale Klimabeiträge?</p>
+                    </div>
+                    
+                    <div class="debate-item">
+                        <h4>🤖 Algorithmische Gerechtigkeit</h4>
+                        <p>KI-Systeme in Justiz und Verwaltung: Können Algorithmen gerecht entscheiden? Problem der Bias in KI-Systemen.</p>
+                    </div>
+                    
+                    <div class="debate-item">
+                        <h4>🌱 Generationengerechtigkeit</h4>
+                        <p>Umwelt- und Klimaschutz vs. wirtschaftliche Belastungen. Welche Lasten dürfen wir künftigen Generationen zumuten?</p>
+                    </div>
+                    
+                    <div class="debate-item">
+                        <h4>🏥 Gesundheitsgerechtigkeit</h4>
+                        <p>Post-Corona-Debatte: Zwei-Klassen-Medizin, Triage-Entscheidungen, gerechte Verteilung medizinischer Ressourcen.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Praktische Anwendung -->
+            <div class="content-card">
+                <h2><span class="section-icon">🛠️</span>Gerechtigkeit in der Praxis</h2>
+                
+                <h3><span class="section-icon">📊</span>Wie gerecht ist Deutschland?</h3>
+                <div class="definition-box">
+                    <h4>📈 Internationale Rankings 2025/2026</h4>
+                    <p><strong>Gerechtigkeitsindex (GEX):</strong> Deutschland zeigt gemischte Ergebnisse - gute Chancengleichheit, aber hohe Vermögensungleichheit</p>
+                    <p><strong>Social Justice Index (Bertelsmann):</strong> Deutschland Rang 10 von 41 OECD-Staaten. Stärken: Bildungschancen, Arbeitsmarktzugang. Schwächen: Generationengerechtigkeit, Umweltpolitik</p>
+                </div>
+
+                <h3><span class="section-icon">📊</span>Deutsche Gerechtigkeitswahrnehmung</h3>
+                <div class="comparison-grid">
+                    <div class="comparison-card">
+                        <h4>✅ Hohe Zustimmung</h4>
+                        <p><strong>Regelgerechtigkeit:</strong> 84% - Gleiche Rechte und Regeln für alle</p>
+                        <p><strong>Chancengerechtigkeit:</strong> 81% - Faire Bildungs- und Teilhabechancen</p>
+                        <p><strong>Leistungsprinzip:</strong> 85% - Mehr Leistung = mehr Belohnung</p>
+                        <p><strong>Bedarfsprinzip:</strong> 95% - Schutz für Schwache und Hilfsbedürftige</p>
+                    </div>
+                    
+                    <div class="comparison-card">
+                        <h4>❌ Niedrige Zustimmung</h4>
+                        <p><strong>Verteilungsgerechtigkeit:</strong> Nur 17% sehen faire Güterverteilung</p>
+                        <p><strong>Generationengerechtigkeit:</strong> Nur 27% sehen faire Behandlung der Generationen</p>
+                        <p><strong>Vermögensungleichheit:</strong> 49% halten gleiche Einkommens-/Vermögensverteilung für wichtig</p>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <h4>🎯 Paradox der Informierten Gerechtigkeit</h4>
+                    <p><strong>Überraschender Befund:</strong> Werden Menschen über tatsächliche Ungleichheit informiert, reagieren sie unterschiedlich:</p>
+                    <ul style="list-style: disc; margin-left: 20px; margin-top: 10px;">
+                        <li><strong>Politisch Links/Mitte:</strong> Keine Änderung der Gerechtigkeitswahrnehmung trotz neuer Informationen</li>
+                        <li><strong>Politisch Rechts:</strong> Empfinden die Verhältnisse als gerechter, nachdem sie über Ungleichheit informiert wurden</li>
+                    </ul>
+                    <p style="margin-top: 10px;"><em>Erklärung:</em> Informationen werden als unglaubwürdig wahrgenommen, wenn sie den eigenen Überzeugungen widersprechen ("Confirmation Bias").</p>
+                </div>
+            </div>
+
+            <!-- Straftheorien -->
+            <div class="content-card">
+                <h2><span class="section-icon">⚖️</span>Strafe und Gerechtigkeit</h2>
+                
+                <h3><span class="section-icon">🎯</span>Warum bestrafen wir?</h3>
+                <div class="comparison-grid">
+                    <div class="comparison-card">
+                        <h4>⏪ Absolute Straftheorien</h4>
+                        <p><strong>Grundidee:</strong> Vergeltung für begangenes Unrecht - vergangenheitsorientiert</p>
+                        <p><strong>Talionsprinzip:</strong> "Auge um Auge, Zahn um Zahn"</p>
+                        <p><strong>Kant:</strong> Der Verbrecher hat ein Recht darauf, bestraft zu werden - Strafe als Wiederherstellung der Gerechtigkeit</p>
+                        <p><strong>Problem:</strong> Reine Vergeltung ohne Zukunftsperspektive</p>
+                    </div>
+                    
+                    <div class="comparison-card">
+                        <h4>⏩ Relative Straftheorien</h4>
+                        <p><strong>Grundidee:</strong> Prävention zukünftiger Straftaten - zukunftsorientiert</p>
+                        <p><strong>Generalprävention:</strong></p>
+                        <ul style="list-style: disc; margin-left: 15px;">
+                            <li>Positiv: Normbekräftigung</li>
+                            <li>Negativ: Abschreckung anderer</li>
+                        </ul>
+                        <p><strong>Spezialprävention:</strong></p>
+                        <ul style="list-style: disc; margin-left: 15px;">
+                            <li>Positiv: Resozialisierung</li>
+                            <li>Negativ: Unschädlichmachung</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3><span class="section-icon">📋</span>Schuldbegriffe</h3>
+                <div class="definition-box">
+                    <p><strong>Rechtliche Schuld:</strong> Erfüllung eines Straftatbestands bei Zurechnungsfähigkeit</p>
+                    <p><strong>Moralische Schuld:</strong> Verstoß gegen moralische Normen unabhängig von rechtlichen Regelungen</p>
+                    <p><strong>Tragische Schuld:</strong> Schuld ohne persönliches Verschulden (z.B. Ödipus)</p>
+                </div>
+
+                <div class="current-debates">
+                    <h3>💬 Aktuelle Strafrechtsdebatten</h3>
+                    <div class="debate-grid">
+                        <div class="debate-item">
+                            <h4>🤖 KI und Strafrecht</h4>
+                            <p>Wer ist verantwortlich, wenn ein autonomes Auto einen Unfall verursacht? Kann KI schuldfähig sein?</p>
+                        </div>
+                        
+                        <div class="debate-item">
+                            <h4>🧬 Neurowissenschaft und Schuld</h4>
+                            <p>Wenn unser Gehirn determiniert ist - können wir überhaupt schuldig sein? Herausforderung für das Strafrecht</p>
+                        </div>
+                        
+                        <div class="debate-item">
+                            <h4>💊 Algorithmic Justice</h4>
+                            <p>Können KI-Systeme bei Strafzumessung helfen? Risiko von Bias und Diskriminierung</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interaktive Lernkontrolle -->
+            <div class="interactive-section">
+                <h2><span class="section-icon">🎮</span>Teste dein Wissen!</h2>
+                
+                <div class="quiz-question">
+                    <h4>💭 Gedankenexperiment: Der Schleier des Nichtwissens</h4>
+                    <p>Sie sollen eine Gesellschaft entwerfen, wissen aber nicht, welche Position Sie darin einnehmen werden. Welches Prinzip würden Sie wählen?</p>
+                    <ul class="quiz-options">
+                        <li onclick="this.style.background='#ff9a9e'; this.innerHTML += ' ❌ Zu riskant für schwächere Positionen';">A) Maximale Freiheit für alle - auch auf Kosten sozialer Sicherheit</li>
+                        <li onclick="this.style.background='#a8edea'; this.innerHTML += ' ✅ Rawls Differenzprinzip!';">B) Ungleichheiten sind nur erlaubt, wenn sie den Schwächsten nützen</li>
+                        <li onclick="this.style.background='#ff9a9e'; this.innerHTML += ' ❌ Könnte zu Unfreiheit führen';">C) Vollständige Gleichheit aller Einkommen und Vermögen</li>
+                        <li onclick="this.style.background='#ff9a9e'; this.innerHTML += ' ❌ Ohne Umverteilung riskant';">D) Jeder bekommt, was er leistet - ohne weitere Umverteilung</li>
+                    </ul>
+                </div>
+
+                <div class="quiz-question">
+                    <h4>⚖️ Naturrecht vs. Rechtspositivismus</h4>
+                    <p>Ein Staat erlässt ein Gesetz, das die Menschenrechte verletzt, aber formal korrekt zustande gekommen ist. Welche Position ist richtig?</p>
+                    <ul class="quiz-options">
+                        <li onclick="this.style.background='#ff9a9e'; this.innerHTML += ' ❌ Zu riskant - siehe NS-Zeit';">A) Rechtspositivismus: "Gesetz ist Gesetz" - muss befolgt werden</li>
+                        <li onclick="this.style.background='#a8edea'; this.innerHTML += ' ✅ Radbruch\'sche Formel!';">B) Wenn Ungerechtigkeit unerträglich wird, weicht unrichtiges Recht der Gerechtigkeit</li>
+                        <li onclick="this.style.background='#ff9a9e'; this.innerHTML += ' ❌ Zu subjektiv und unsicher';">C) Naturrecht: Jeder entscheidet selbst, was natürlich richtig ist</li>
+                        <li onclick="this.style.background='#ff9a9e'; this.innerHTML += ' ❌ Umgeht die ethische Frage';">D) Ist irrelevant - Politik entscheidet, nicht Ethik</li>
+                    </ul>
+                </div>
+
+                <div class="quiz-question">
+                    <h4>🎯 Aktuelle Gerechtigkeit</h4>
+                    <p>Deutschland 2026: Was ist das größte Gerechtigkeitsproblem laut aktuellen Studien?</p>
+                    <ul class="quiz-options">
+                        <li onclick="this.style.background='#ff9a9e'; this.innerHTML += ' ❌ Deutschland hat gute Bildungschancen';">A) Zu wenig Bildungschancen</li>
+                        <li onclick="this.style.background='#a8edea'; this.innerHTML += ' ✅ Hohe Vermögensungleichheit (Gini 0,77)!';">B) Sehr ungleiche Vermögensverteilung</li>
+                        <li onclick="this.style.background='#ff9a9e'; this.innerHTML += ' ❌ Regelgerechtigkeit hat 84% Zustimmung';">C) Ungleiche Behandlung vor dem Gesetz</li>
+                        <li onclick="this.style.background='#ff9a9e'; this.innerHTML += ' ❌ 95% unterstützen Bedarfsprinzip';">D) Zu wenig Hilfe für Bedürftige</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Zusammenfassung -->
+            <div class="content-card">
+                <h2><span class="section-icon">📝</span>Zusammenfassung & Merksätze</h2>
+                
+                <div class="key-points">
+                    <h4>🎯 Kernpunkte Recht und Gerechtigkeit</h4>
+                    <ul>
+                        <li><strong>Recht ≠ Gerechtigkeit:</strong> Legale Normen können ungerecht sein (Radbruch'sche Formel)</li>
+                        <li><strong>Naturrecht:</strong> Unveränderliche Menschenrechte - heute im Grundgesetz verankert</li>
+                        <li><strong>Rechtspositivismus:</strong> "Gesetz ist Gesetz" - Rechtssicherheit, aber Missbrauchsgefahr</li>
+                        <li><strong>Rawls' Schleier:</strong> Gerechte Prinzipien entstehen unter dem "Schleier des Nichtwissens"</li>
+                        <li><strong>Differenzprinzip:</strong> Ungleichheit nur gerechtfertigt, wenn sie den Schwächsten nützt</li>
+                        <li><strong>Aktuelle Herausforderung:</strong> Algorithmische Gerechtigkeit und KI-Systeme</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>🤔 Kritische Reflexionsfragen</h4>
+                    <ul style="list-style: disc; margin-left: 20px;">
+                        <li>Kann es universelle Gerechtigkeit geben oder ist sie kulturabhängig?</li>
+                        <li>Wie viel Ungleichheit ist in einer Gesellschaft akzeptabel?</li>
+                        <li>Sollten KI-Systeme über Strafen und Rechte entscheiden dürfen?</li>
+                        <li>Ist der deutsche Sozialstaat zu großzügig oder zu restriktiv?</li>
+                        <li>Wie können wir Generationengerechtigkeit in der Klimapolitik gewährleisten?</li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <h4>🔗 Verbindungen zu anderen Ethik-Bereichen</h4>
+                    <p><strong>Kant:</strong> Kategorischer Imperativ als Basis für Rechtsprinzipien</p>
+                    <p><strong>Utilitarismus:</strong> Konflikt zwischen Einzelinteressen und Gemeinwohl</p>
+                    <p><strong>Angewandte Ethik:</strong> Konkrete Umsetzung in Politik, Wirtschaft und Technologie</p>
+                    <p><strong>KI-Ethik:</strong> Neue Herausforderungen für Gerechtigkeit im digitalen Zeitalter</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-nav">
+            <h3>📚 Weiterlernen</h3>
+            <p>Vertiefen Sie Ihr Verständnis mit verwandten Themen und praktischen Anwendungen</p>
+            <div class="nav-buttons">
+                <a href="grundlagen.html" class="nav-button">
+                    ← 📚 Grundlagen der Ethik
+                </a>
+                <a href="index.html" class="nav-button">
+                    🏠 Zur Startseite
+                </a>
+                <a href="kant.html" class="nav-button">
+                    🧠 Kants Pflichtethik →
+                </a>
+            </div>
+            <div class="nav-buttons" style="margin-top: 15px;">
+                <a href="utilitarismus.html" class="nav-button">
+                    ⚖️ Utilitarismus
+                </a>
+                <a href="angewandte-ethik.html" class="nav-button">
+                    🏥 Angewandte Ethik
+                </a>
+                <a href="ki-ethik.html" class="nav-button">
+                    🤖 KI-Ethik 2026
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Einfache Interaktivität für bessere User Experience
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth Scrolling für Ankerlinks
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Highlight-Effekt für wichtige Begriffe
+            const highlights = document.querySelectorAll('.definition-box, .highlight-box, .example-box');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.transform = 'translateY(0)';
+                        entry.target.style.opacity = '1';
+                    }
+                });
+            }, observerOptions);
+
+            highlights.forEach(highlight => {
+                highlight.style.transform = 'translateY(20px)';
+                highlight.style.opacity = '0';
+                highlight.style.transition = 'transform 0.6s ease, opacity 0.6s ease';
+                observer.observe(highlight);
+            });
+        });
+    </script>
+</body>
+</html>

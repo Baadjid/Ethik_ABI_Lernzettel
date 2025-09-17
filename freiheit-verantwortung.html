@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freiheit und Verantwortung | Ethik Lernzettel 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .header-icon {
+            font-size: 1.2em;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 12px;
+        }
+        
+        .nav-breadcrumb {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 15px 25px;
+            margin-bottom: 30px;
+            font-size: 0.95em;
+        }
+        
+        .nav-breadcrumb a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-breadcrumb a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+        
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .content-section h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .content-section h3 {
+            color: #764ba2;
+            font-size: 1.4em;
+            margin: 25px 0 15px 0;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            border-left: 5px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .definition-box {
+            background: linear-gradient(135deg, #ff9a9e, #fecfef);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px solid #ff6b9d;
+        }
+        
+        .experiment-box {
+            background: linear-gradient(135deg, #a8edea, #fed6e3);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border: 2px solid #17a2b8;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 25px 0;
+        }
+        
+        .comparison-card {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .comparison-card h4 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .positions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .position-card {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+            border: 2px solid #667eea;
+            border-radius: 15px;
+            padding: 25px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .position-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.2);
+        }
+        
+        .position-card h4 {
+            color: #667eea;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .position-icon {
+            font-size: 1.5em;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 8px;
+        }
+        
+        .timeline {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #28a745;
+        }
+        
+        .example-box {
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px solid #fd7e14;
+        }
+        
+        .key-concepts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .concept-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .concept-card:hover {
+            transform: translateY(-3px);
+        }
+        
+        .concept-card h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .toc {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .toc h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .toc li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .toc a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .toc a:hover {
+            color: #667eea;
+        }
+        
+        .quiz-section {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        
+        .quiz-section h3 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .footer-nav {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            margin-top: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .nav-button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            font-weight: 500;
+        }
+        
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .content-section {
+                padding: 25px;
+            }
+            
+            .comparison-grid, .nav-buttons {
+                grid-template-columns: 1fr;
+                flex-direction: column;
+            }
+            
+            .positions-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-breadcrumb">
+            <a href="index.html">🏠 Startseite</a> → <strong>🕊️ Freiheit und Verantwortung</strong>
+        </div>
+
+        <header class="header">
+            <h1><span class="header-icon">🕊️</span>Freiheit und Verantwortung</h1>
+            <p>Willensfreiheit vs. Determinismus • Moralische Verantwortung • Von Libet bis zur modernen Neurowissenschaft</p>
+        </header>
+
+        <div class="toc">
+            <h3>📚 Inhalt dieser Seite</h3>
+            <ul>
+                <li><a href="#grundbegriffe">1. Grundbegriffe: Handlungs- und Willensfreiheit</a></li>
+                <li><a href="#positionen">2. Philosophische Positionen</a></li>
+                <li><a href="#libet">3. Das Libet-Experiment</a></li>
+                <li><a href="#kompatibilismus">4. Kompatibilismus vs. Inkompatibilismus</a></li>
+                <li><a href="#verantwortung">5. Moralische Verantwortung</a></li>
+                <li><a href="#anwendung">6. Praktische Anwendungen</a></li>
+                <li><a href="#moderne-debatten">7. Moderne Debatten 2026</a></li>
+            </ul>
+        </div>
+
+        <section id="grundbegriffe" class="content-section">
+            <h2>🎯 1. Grundbegriffe: Was ist Freiheit?</h2>
+            
+            <div class="definition-box">
+                <h3>📝 Definition Freiheit</h3>
+                <p><strong>Freiheit</strong> ist die Fähigkeit, zwischen verschiedenen Möglichkeiten zu wählen und selbstbestimmt zu handeln, ohne von äußeren Zwängen oder inneren Determinanten vollständig bestimmt zu werden.</p>
+            </div>
+
+            <div class="key-concepts">
+                <div class="concept-card">
+                    <h4>🤲 Handlungsfreiheit</h4>
+                    <p><strong>Definition:</strong> Die Fähigkeit, das zu tun, was man will</p>
+                    <p><em>Beispiele:</em> Berufswahl, Reiseentscheidungen, Konsumentscheidungen</p>
+                    <p><strong>Einschränkungen:</strong> Gesetze, physische Grenzen, soziale Normen</p>
+                </div>
+                
+                <div class="concept-card">
+                    <h4>🧠 Willensfreiheit</h4>
+                    <p><strong>Definition:</strong> Die Fähigkeit, zu wollen, was man will</p>
+                    <p><em>Bedeutung:</em> Grundlage für moralische Verantwortung</p>
+                    <p><strong>Problem:</strong> Sind unsere Wünsche selbst frei gewählt?</p>
+                </div>
+                
+                <div class="concept-card">
+                    <h4>🗳️ Politische Freiheit</h4>
+                    <p><strong>Bereiche:</strong> Versammlungsfreiheit, Wahlfreiheit, Meinungsfreiheit</p>
+                    <p><em>Grundlage:</em> Menschenrechte und demokratische Verfassung</p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3>💡 Warum ist Freiheit wichtig für die Ethik?</h3>
+                <ul>
+                    <li><strong>Voraussetzung von Moralität:</strong> Ohne Freiheit keine Verantwortung</li>
+                    <li><strong>Grundlage für Schuld und Verdienst:</strong> Nur freie Handlungen können bewertet werden</li>
+                    <li><strong>Menschenwürde:</strong> Freiheit als Kern des Menschseins</li>
+                    <li><strong>Rechtssystem:</strong> Strafe setzt Verantwortung voraus</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="positionen" class="content-section">
+            <h2>⚖️ 2. Philosophische Positionen zur Willensfreiheit</h2>
+            
+            <div class="positions-grid">
+                <div class="position-card">
+                    <h4><span class="position-icon">🔒</span>Harter Determinismus</h4>
+                    <p><strong>These:</strong> Alles ist durch Naturgesetze bestimmt - freier Wille ist eine Illusion</p>
+                    <p><strong>Vertreter:</strong> Holbach, Schopenhauer, moderne Neurowissenschaftler wie Gerhard Roth</p>
+                    <p><strong>Konsequenz:</strong> Keine moralische Verantwortung möglich</p>
+                </div>
+                
+                <div class="position-card">
+                    <h4><span class="position-icon">🦋</span>Libertarianismus</h4>
+                    <p><strong>These:</strong> Freier Wille existiert - Determinismus ist falsch</p>
+                    <p><strong>Vertreter:</strong> William James, Robert Kane, C.A. Campbell</p>
+                    <p><strong>Problem:</strong> Wie ist Freiheit ohne Zufall möglich?</p>
+                </div>
+                
+                <div class="position-card">
+                    <h4><span class="position-icon">🤝</span>Kompatibilismus</h4>
+                    <p><strong>These:</strong> Willensfreiheit und Determinismus sind vereinbar</p>
+                    <p><strong>Vertreter:</strong> David Hume, Harry Frankfurt, Daniel Dennett</p>
+                    <p><strong>Strategie:</strong> Neue Definition von Freiheit</p>
+                </div>
+                
+                <div class="position-card">
+                    <h4><span class="position-icon">❌</span>Pessimismus/Skeptizismus</h4>
+                    <p><strong>These:</strong> Freier Wille ist weder mit Determinismus noch Indeterminismus möglich</p>
+                    <p><strong>Vertreter:</strong> Derk Pereboom, Ted Honderich</p>
+                    <p><strong>Konsequenz:</strong> Revision unserer Verantwortungskonzepte</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="libet" class="content-section">
+            <h2>🧪 3. Das Libet-Experiment: Neurowissenschaftlicher Angriff auf die Willensfreiheit</h2>
+            
+            <div class="experiment-box">
+                <h3>🔬 Benjamin Libet (1980er Jahre)</h3>
+                <p><strong>Versuchsaufbau:</strong> 9 Personen sollten innerhalb von 3 Sekunden eine einfache Handbewegung ausführen</p>
+                
+                <h4>Gemessene Werte:</h4>
+                <div class="timeline">
+                    <p><strong>-550 ms:</strong> Bereitschaftspotenzial erkennbar</p>
+                    <p><strong>-350 ms:</strong> Vorbereitung der Handlung im Gehirn</p>
+                    <p><strong>-200 ms:</strong> Bewusste Entscheidung</p>
+                    <p><strong>0 ms:</strong> Tatsächliche Bewegung</p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3>💥 Libets Schlussfolgerung</h3>
+                <p><strong>Schockierende Erkenntnis:</strong> Das Gehirn bereitet die Handlung 350 ms vor der bewussten Entscheidung vor! Das bewusste Wollen kommt nach der unbewussten Vorbereitung.</p>
+                
+                <h4>Konsequenzen:</h4>
+                <ul>
+                    <li>Determinismus gestärkt: Handlungen scheinen unbewusst determiniert</li>
+                    <li>Freier Wille in Frage gestellt: Sind wir nur Zuschauer unserer Entscheidungen?</li>
+                    <li>Moralische Verantwortung problematisch: Können wir für unbewusste Prozesse verantwortlich sein?</li>
+                </ul>
+            </div>
+
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4>📊 Kritik am Libet-Experiment</h4>
+                    <ul>
+                        <li><strong>Einfachheit:</strong> Nur simple Bewegungen, keine komplexen moralischen Entscheidungen</li>
+                        <li><strong>Zeitproblem:</strong> Kann man den exakten Zeitpunkt einer Entscheidung bestimmen?</li>
+                        <li><strong>Interpretation:</strong> Vorbereitung ≠ Determination</li>
+                        <li><strong>Veto-Funktion:</strong> Bewusstsein behält Kontrolle über finale Ausführung</li>
+                    </ul>
+                </div>
+                
+                <div class="comparison-card">
+                    <h4>🧠 Gerhard Roth: "Wir wollen, was wir tun"</h4>
+                    <ul>
+                        <li><strong>These:</strong> Limbisches System determiniert Verhalten</li>
+                        <li><strong>Argument:</strong> Unbewusste Prozesse bestimmen bewusste Entscheidungen</li>
+                        <li><strong>Konsequenz:</strong> Willensfreiheit ist neurobiologisch widerlegt</li>
+                        <li><strong>Ethik:</strong> Fokus auf Prävention statt Vergeltung</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="kompatibilismus" class="content-section">
+            <h2>🤝 4. Kompatibilismus vs. Inkompatibilismus</h2>
+            
+            <h3>Der moderne Kompatibilismus</h3>
+            <div class="highlight-box">
+                <h4>🎯 Grundstrategie des Kompatibilismus</h4>
+                <p><strong>Kernidee:</strong> Willensfreiheit und Determinismus sind vereinbar, wenn wir Freiheit richtig verstehen</p>
+                
+                <p><strong>Harry Frankfurts Argument:</strong> Entscheidend ist nicht, ob man anders hätte handeln können, sondern ob man aus den richtigen Gründen handelt</p>
+            </div>
+
+            <div class="example-box">
+                <h3>🚗 Frankfurts Gedankenexperiment</h3>
+                <p><strong>Situation:</strong> Person A will Bank berauben. Person B (Neurowissenschaftler) würde eingreifen, falls A es sich anders überlegt - aber A raubt die Bank freiwillig aus eigenen Motiven.</p>
+                
+                <p><strong>Frage:</strong> Ist A verantwortlich, obwohl er nicht anders hätte handeln können?</p>
+                
+                <p><strong>Frankfurts Antwort:</strong> Ja! Entscheidend ist die Urheberschaft, nicht die Möglichkeit anders zu handeln.</p>
+            </div>
+
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4>✅ Kompatibilistische Bedingungen für Freiheit</h4>
+                    <ul>
+                        <li><strong>Handlungsfreiheit:</strong> Keine äußeren Zwänge</li>
+                        <li><strong>Urheberschaft:</strong> Handlung entspringt eigenen Wünschen</li>
+                        <li><strong>Kontrolle:</strong> Fähigkeit zur Selbstreflexion</li>
+                        <li><strong>Rationalität:</strong> Handeln nach Gründen</li>
+                    </ul>
+                </div>
+                
+                <div class="comparison-card">
+                    <h4>❌ Inkompatibilistische Einwände</h4>
+                    <ul>
+                        <li><strong>"Konsequenz-Argument":</strong> Wenn Determinismus wahr ist, dann können wir unsere Handlungen nicht kontrollieren</li>
+                        <li><strong>"Manipulation":</strong> Kompatibilismus kann raffinierte Manipulation nicht ausschließen</li>
+                        <li><strong>"Ultimative Verantwortung":</strong> Wir sind nie der ultimative Grund unseres Handelns</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="verantwortung" class="content-section">
+            <h2>⚖️ 5. Moralische Verantwortung ohne freien Willen?</h2>
+            
+            <h3>Grade der Verantwortung</h3>
+            <div class="positions-grid">
+                <div class="position-card">
+                    <h4><span class="position-icon">👤</span>Vollverantwortung</h4>
+                    <p>Bei freien, rationalen Entscheidungen erwachsener Menschen</p>
+                    <p><em>Beispiel:</em> Bewusste Steuerhinterziehung</p>
+                </div>
+                
+                <div class="position-card">
+                    <h4><span class="position-icon">⚠️</span>Verminderte Verantwortung</h4>
+                    <p>Bei eingeschränkter Entscheidungsfähigkeit</p>
+                    <p><em>Beispiele:</em> Drogensucht, psychische Erkrankungen</p>
+                </div>
+                
+                <div class="position-card">
+                    <h4><span class="position-icon">🚫</span>Keine Verantwortung</h4>
+                    <p>Bei fehlender Kontrolle oder Verständnis</p>
+                    <p><em>Beispiele:</em> Kleinkinder, schwere geistige Behinderung</p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3>🎭 P.F. Strawsons "Reaktive Einstellungen"</h3>
+                <p><strong>These:</strong> Verantwortung ist nicht metaphysisch begründet, sondern in unseren sozialen Praktiken verankert</p>
+                
+                <h4>Reaktive Einstellungen:</h4>
+                <ul>
+                    <li><strong>Empörung:</strong> Wenn uns jemand verletzt</li>
+                    <li><strong>Schuld:</strong> Wenn wir andere verletzen</li>
+                    <li><strong>Dankbarkeit:</strong> Für gute Taten anderer</li>
+                    <li><strong>Stolz:</strong> Für eigene gute Taten</li>
+                </ul>
+                
+                <p><em>Diese Einstellungen sind natürlich und sozial notwendig - unabhängig vom metaphysischen Status der Willensfreiheit!</em></p>
+            </div>
+        </section>
+
+        <section id="anwendung" class="content-section">
+            <h2>🏛️ 6. Praktische Anwendungen</h2>
+            
+            <h3>Auswirkungen auf verschiedene Lebensbereiche</h3>
+            
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4>⚖️ Rechtssystem</h4>
+                    <strong>Bei freiem Willen:</strong>
+                    <ul>
+                        <li>Vergeltung als gerechte Strafe</li>
+                        <li>Abschreckung durch Strafandrohung</li>
+                        <li>Volle Verantwortung für Taten</li>
+                    </ul>
+                    
+                    <strong>Bei Determinismus:</strong>
+                    <ul>
+                        <li>Resozialisierung statt Vergeltung</li>
+                        <li>Ursachenbekämpfung (Armut, Bildung)</li>
+                        <li>Präventive Maßnahmen</li>
+                    </ul>
+                </div>
+                
+                <div class="comparison-card">
+                    <h4>🎓 Bildung & Erziehung</h4>
+                    <strong>Bei freiem Willen:</strong>
+                    <ul>
+                        <li>Förderung kritischen Denkens</li>
+                        <li>Entwicklung moralischer Urteilsfähigkeit</li>
+                        <li>Autonomie als Ziel</li>
+                    </ul>
+                    
+                    <strong>Bei Determinismus:</strong>
+                    <ul>
+                        <li>Optimierung von Lernbedingungen</li>
+                        <li>Behavioristische Ansätze</li>
+                        <li>Berücksichtigung genetischer Faktoren</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h3>🏥 Medizinische Ethik: Der Fall der Zwangsstörungen</h3>
+                <p><strong>Problem:</strong> Eine Person mit Zwangsstörungen stiehlt ständig, obwohl sie weiß, dass es falsch ist.</p>
+                
+                <p><strong>Fragen:</strong></p>
+                <ul>
+                    <li>Ist diese Person verantwortlich für ihre Taten?</li>
+                    <li>Sollte sie bestraft oder behandelt werden?</li>
+                    <li>Wie unterscheiden wir zwischen Krankheit und kriminellem Verhalten?</li>
+                </ul>
+                
+                <p><strong>Moderne Lösung:</strong> Graduelle Verantwortung je nach Grad der Kontrollfähigkeit - Behandlung mit therapeutischer Unterstützung statt reine Bestrafung.</p>
+            </div>
+        </section>
+
+        <section id="moderne-debatten" class="content-section">
+            <h2>🚀 7. Moderne Debatten 2026: KI und die Zukunft der Verantwortung</h2>
+            
+            <h3>Künstliche Intelligenz und moralische Verantwortung</h3>
+            <div class="highlight-box">
+                <h4>🤖 Neue Fragen im KI-Zeitalter</h4>
+                <ul>
+                    <li><strong>Algorithmische Entscheidungen:</strong> Wer ist verantwortlich für KI-Entscheidungen?</li>
+                    <li><strong>Vorhersage-Algorithmen:</strong> Können wir Menschen für Verhalten verurteilen, das KI vorhersagt?</li>
+                    <li><strong>Manipulation durch KI:</strong> Reduzieren personalisierte Algorithmen unsere Willensfreiheit?</li>
+                    <li><strong>Transhumanismus:</strong> Was bedeutet Willensfreiheit bei erweiterten kognitiven Fähigkeiten?</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <h3>📱 Fallstudie: Social Media Algorithmen</h3>
+                <p><strong>Situation:</strong> Eine Person wird durch soziale Medien in extremistische Inhalte hineingezogen und begeht eine Straftat.</p>
+                
+                <div class="comparison-grid">
+                    <div class="comparison-card">
+                        <h4>🧠 Freier Wille Perspektive</h4>
+                        <p>Die Person hatte die Wahl, sich gegen diese Inhalte zu entscheiden. Sie ist voll verantwortlich für ihre Handlungen.</p>
+                    </div>
+                    
+                    <div class="comparison-card">
+                        <h4>🔗 Deterministische Perspektive</h4>
+                        <p>Die Person war das Produkt algorithmischer Manipulation und sozialer Umstände. Verantwortung liegt beim System.</p>
+                    </div>
+                </div>
+                
+                <p><strong>Moderne Lösung:</strong> Geteilte Verantwortung zwischen Individuum, Plattform und Gesellschaft</p>
+            </div>
+
+            <h3>Neurowissenschaftliche Entwicklungen</h3>
+            <div class="positions-grid">
+                <div class="position-card">
+                    <h4><span class="position-icon">🧠</span>Brain-Computer Interfaces</h4>
+                    <p>Direkte Verbindung zwischen Gehirn und Computer wirft neue Fragen zur Willensfreiheit auf</p>
+                    <p><em>Problem:</em> Wo endet der Mensch und wo beginnt die Maschine?</p>
+                </div>
+                
+                <div class="position-card">
+                    <h4><span class="position-icon">💊</span>Neuro-Enhancement</h4>
+                    <p>Medikamente zur Verbesserung kognitiver Fähigkeiten</p>
+                    <p><em>Frage:</em> Sind Entscheidungen unter Einfluss von "Smart Drugs" frei?</p>
+                </div>
+                
+                <div class="position-card">
+                    <h4><span class="position-icon">🔮</span>Predictive Policing</h4>
+                    <p>KI sagt kriminelles Verhalten vorher</p>
+                    <p><em>Dilemma:</em> Dürfen wir Menschen für Taten bestrafen, die sie noch nicht begangen haben?</p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3>⚖️ Ethische Richtlinien für das KI-Zeitalter</h3>
+                <h4>UNESCO-Empfehlungen zur KI-Ethik (2021):</h4>
+                <ul>
+                    <li><strong>Menschliche Autonomie:</strong> KI soll menschliche Entscheidungsfreiheit erweitern, nicht ersetzen</li>
+                    <li><strong>Transparenz:</strong> Menschen müssen verstehen, wie KI-Entscheidungen zustande kommen</li>
+                    <li><strong>Verantwortlichkeit:</strong> Klare Zuordnung der Verantwortung bei KI-Systemen</li>
+                    <li><strong>Fairness:</strong> Schutz vor algorithmischer Diskriminierung</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="quiz-section">
+            <h3>🧩 Reflexionsfragen</h3>
+            <p><strong>Denken Sie über folgende Fragen nach:</strong></p>
+            <ul>
+                <li>Wenn alle Ihre Entscheidungen durch Ihre Vergangenheit bestimmt sind - sind Sie dann weniger "Sie selbst"?</li>
+                <li>Macht es einen praktischen Unterschied, ob der freie Wille existiert oder nur eine Illusion ist?</li>
+                <li>Wie sollten wir mit Menschen umgehen, die schädliche Handlungen begehen, aber möglicherweise nicht dafür verantwortlich sind?</li>
+                <li>Welche Rolle spielt KI bei der Gestaltung unserer Zukunft - und wer trägt die Verantwortung dafür?</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>📊 Zusammenfassung: Kernpunkte für Prüfungen</h2>
+            
+            <div class="key-concepts">
+                <div class="concept-card">
+                    <h4>🔑 Grundunterscheidung</h4>
+                    <p>Handlungsfreiheit vs. Willensfreiheit - unterscheide immer klar!</p>
+                </div>
+                
+                <div class="concept-card">
+                    <h4>⚡ Libet-Experiment</h4>
+                    <p>Bereitschaftspotenzial vor bewusster Entscheidung</p>
+                </div>
+                
+                <div class="concept-card">
+                    <h4>🤝 Kompatibilismus</h4>
+                    <p>Willensfreiheit und Determinismus sind vereinbar</p>
+                </div>
+                
+                <div class="concept-card">
+                    <h4>📱 Moderne Relevanz</h4>
+                    <p>KI, Algorithmen und neue Formen der Verantwortung</p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3>💡 Prüfungsrelevante Argumentationsmuster</h3>
+                
+                <h4>Für Essays und Erörterungen:</h4>
+                <ol>
+                    <li><strong>Position klären:</strong> Welcher Freiheitsbegriff wird verwendet?</li>
+                    <li><strong>Argumente sammeln:</strong> Pro/Contra für jede Position</li>
+                    <li><strong>Beispiele verwenden:</strong> Konkrete Fälle analysieren</li>
+                    <li><strong>Konsequenzen durchdenken:</strong> Was folgt für Ethik, Recht, Erziehung?</li>
+                    <li><strong>Eigene Position begründen:</strong> Mit philosophischen Argumenten stützen</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="footer-nav">
+            <h3>📚 Weiterführende Themen</h3>
+            <p>Diese Grundlagen helfen Ihnen beim Verständnis folgender Bereiche:</p>
+            
+            <div class="nav-buttons">
+                <a href="kant.html" class="nav-button">← Kants Ethik & Autonomie</a>
+                <a href="index.html" class="nav-button">🏠 Zur Übersicht</a>
+                <a href="recht-gerechtigkeit.html" class="nav-button">Recht & Gerechtigkeit →</a>
+            </div>
+            
+            <p style="margin-top: 20px; font-size: 0.9em; color: #666;">
+                💡 <strong>Nächste Schritte:</strong> Beschäftigen Sie sich mit Kants Autonomie-Begriff und der Verbindung zwischen Freiheit und moralischer Verantwortung in verschiedenen ethischen Systemen.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

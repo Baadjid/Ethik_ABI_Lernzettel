@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Religion und Religionskritik - Ethik Lernzettel 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .nav-breadcrumb {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-breadcrumb a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .nav-breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-title {
+            font-size: 2.8em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+        
+        .header-subtitle {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-title {
+            font-size: 2em;
+            color: #667eea;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .subsection {
+            margin-bottom: 30px;
+        }
+        
+        .subsection h3 {
+            font-size: 1.5em;
+            color: #764ba2;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .key-concept {
+            background: linear-gradient(135deg, #ff9a9e, #fecfef);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #667eea;
+        }
+        
+        .key-concept h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .philosopher-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .philosopher-card {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            border: 2px solid #667eea;
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .philosopher-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+        }
+        
+        .philosopher-card h4 {
+            font-size: 1.3em;
+            color: #667eea;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .philosopher-icon {
+            font-size: 1.5em;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 50%;
+        }
+        
+        .quote {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 15px 20px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .quote cite {
+            display: block;
+            text-align: right;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
+        
+        .comparison-table tr:hover {
+            background-color: rgba(102, 126, 234, 0.05);
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(255, 154, 158, 0.2), rgba(254, 207, 239, 0.2));
+            border: 2px solid #ff9a9e;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .highlight-box h4 {
+            color: #d63384;
+            margin-bottom: 15px;
+        }
+        
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .tag {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+        
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .pros, .cons {
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .pros {
+            background: linear-gradient(135deg, rgba(40, 167, 69, 0.1), rgba(40, 167, 69, 0.05));
+            border: 2px solid #28a745;
+        }
+        
+        .cons {
+            background: linear-gradient(135deg, rgba(220, 53, 69, 0.1), rgba(220, 53, 69, 0.05));
+            border: 2px solid #dc3545;
+        }
+        
+        .pros h4 {
+            color: #28a745;
+            margin-bottom: 15px;
+        }
+        
+        .cons h4 {
+            color: #dc3545;
+            margin-bottom: 15px;
+        }
+        
+        .accordion {
+            margin: 20px 0;
+        }
+        
+        .accordion-header {
+            background: #667eea;
+            color: white;
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-bottom: 5px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .accordion-header:hover {
+            background: #5a6fd8;
+        }
+        
+        .accordion-content {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 0 0 10px 10px;
+            border: 2px solid #667eea;
+            border-top: none;
+            display: none;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header-title {
+                font-size: 2.2em;
+            }
+            
+            header, .content-section {
+                padding: 20px;
+            }
+            
+            .philosopher-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 10px;
+                font-size: 0.9em;
+            }
+            
+            .pros-cons {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header-title {
+                font-size: 1.8em;
+            }
+            
+            .section-title {
+                font-size: 1.5em;
+            }
+            
+            .philosopher-card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-breadcrumb">
+            <a href="index.html">🏠 Ethik Lernzettel 2026</a> > <strong>Religion und Religionskritik</strong>
+        </div>
+
+        <header>
+            <h1 class="header-title">Religion und Religionskritik</h1>
+            <p class="header-subtitle">Verhältnis von Religion und Ethik in der modernen Welt</p>
+            <p>⛪ Gottesbeweise • 🤔 Religionskritiker • 🌍 Säkularisierung • 💭 Theodizee-Problem</p>
+        </header>
+
+        <div class="content-section">
+            <h2 class="section-title">🎯 Grundlagen: Religion und Ethik</h2>
+            
+            <div class="key-concept">
+                <h4>Was ist Religion?</h4>
+                <p>Religion (lat. <em>religare</em> = zurückbinden) bezeichnet den Glauben an eine übernatürliche, transzendente Wirklichkeit und die damit verbundenen Praktiken, Institutionen und Weltanschauungen. Sie stellt Sinnfragen und bietet Orientierung für das menschliche Leben.</p>
+            </div>
+
+            <div class="subsection">
+                <h3>🔗 Verhältnis von Religion und Ethik</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Religiöse Ethik</th>
+                            <th>Säkulare Ethik</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Grundlage:</strong> Göttliche Gebote, Offenbarung</td>
+                            <td><strong>Grundlage:</strong> Vernunft, menschliche Erfahrung</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Autorität:</strong> Gott, Heilige Schrift, Kirche</td>
+                            <td><strong>Autorität:</strong> Philosophische Argumentation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Gültigkeit:</strong> Absolut, ewig, unveränderlich</td>
+                            <td><strong>Gültigkeit:</strong> Diskutierbar, kontextabhängig</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Motivation:</strong> Gehorsam, Liebe zu Gott, Jenseits</td>
+                            <td><strong>Motivation:</strong> Vernunft, gesellschaftlicher Nutzen</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">📜 Klassische Gottesbeweise</h2>
+            
+            <div class="philosopher-grid">
+                <div class="philosopher-card">
+                    <h4><span class="philosopher-icon">🏛️</span>Ontologischer Gottesbeweis</h4>
+                    <p><strong>Anselm von Canterbury (1033-1109)</strong></p>
+                    <p>Gott ist das vollkommenste denkbare Wesen. Zur Vollkommenheit gehört die Existenz. Also muss Gott existieren.</p>
+                    <div class="tag-container">
+                        <span class="tag">A priori</span>
+                        <span class="tag">Logisch</span>
+                        <span class="tag">Begrifflich</span>
+                    </div>
+                </div>
+
+                <div class="philosopher-card">
+                    <h4><span class="philosopher-icon">🌌</span>Kosmologischer Gottesbeweis</h4>
+                    <p><strong>Thomas von Aquin (1225-1274)</strong></p>
+                    <p>Alles in der Welt ist verursacht. Es muss eine erste, unverursachte Ursache geben - das ist Gott.</p>
+                    <div class="tag-container">
+                        <span class="tag">A posteriori</span>
+                        <span class="tag">Kausalität</span>
+                        <span class="tag">Erster Beweger</span>
+                    </div>
+                </div>
+
+                <div class="philosopher-card">
+                    <h4><span class="philosopher-icon">🎯</span>Teleologischer Gottesbeweis</h4>
+                    <p><strong>William Paley (1743-1805)</strong></p>
+                    <p>Die Zweckmäßigkeit und Ordnung der Natur (Uhrmacher-Analogie) beweist die Existenz eines intelligenten Schöpfers.</p>
+                    <div class="tag-container">
+                        <span class="tag">Naturbeobachtung</span>
+                        <span class="tag">Zweckmäßigkeit</span>
+                        <span class="tag">Design</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h4>🤔 Kritik an den Gottesbeweisen (Kant)</h4>
+                <p><strong>Immanuel Kant</strong> wies nach, dass alle logischen Gottesbeweise scheitern:</p>
+                <ul>
+                    <li><strong>Ontologischer Beweis:</strong> Existenz ist kein Prädikat</li>
+                    <li><strong>Kosmologischer Beweis:</strong> Setzt ontologischen Beweis voraus</li>
+                    <li><strong>Teleologischer Beweis:</strong> Kann höchstens einen Weltarchitekten, nicht Weltschöpfer beweisen</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">⚡ Das Theodizee-Problem</h2>
+            
+            <div class="key-concept">
+                <h4>Die zentrale Frage</h4>
+                <p><strong>"Warum lässt ein allmächtiger und allgütiger Gott das Leid in der Welt zu?"</strong></p>
+                <p>Dieses Problem wurde von <strong>Gottfried Wilhelm Leibniz</strong> (1646-1716) als "Theodizee" bezeichnet.</p>
+            </div>
+
+            <div class="subsection">
+                <h3>🔄 Das logische Trilemma</h3>
+                <p>Die drei Eigenschaften Gottes scheinen unvereinbar:</p>
+                <div class="philosopher-grid">
+                    <div class="philosopher-card">
+                        <h4>🔋 Allmacht</h4>
+                        <p>Gott kann alles bewirken</p>
+                    </div>
+                    <div class="philosopher-card">
+                        <h4>❤️ Allgüte</h4>
+                        <p>Gott will nur das Gute</p>
+                    </div>
+                    <div class="philosopher-card">
+                        <h4>🌍 Realität des Übels</h4>
+                        <p>Leid existiert tatsächlich</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h4>📚 Lösungsansätze der Theodizee</h4>
+                <ul>
+                    <li><strong>Augustinus:</strong> Das Übel ist Privation (Abwesenheit) des Guten</li>
+                    <li><strong>Leibniz:</strong> "Beste aller möglichen Welten" - Gott wählt die beste Option</li>
+                    <li><strong>Irenäus:</strong> Leid dient der Seelenbildung und moralischen Entwicklung</li>
+                    <li><strong>Freier Wille:</strong> Gott gewährt Autonomie, Menschen verursachen das Übel</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">🎭 Die großen Religionskritiker</h2>
+            
+            <div class="subsection">
+                <h3>👤 Ludwig Feuerbach (1804-1872): Die Projektionstheorie</h3>
+                <div class="quote">
+                    "Der Mensch schuf Gott nach seinem Bilde."
+                    <cite>Ludwig Feuerbach</cite>
+                </div>
+                
+                <div class="key-concept">
+                    <h4>🎯 Kernthesen Feuerbachs</h4>
+                    <ul>
+                        <li><strong>Projektion:</strong> Gott ist die Projektion menschlicher Wünsche und Eigenschaften</li>
+                        <li><strong>Anthropomorphismus:</strong> Menschen schaffen Götter nach ihrem eigenen Bild</li>
+                        <li><strong>Kompensation:</strong> Religion entsteht aus dem Gefühl menschlicher Begrenztheit</li>
+                        <li><strong>Selbstentfremdung:</strong> Religion entfremdet den Menschen von sich selbst</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>🔄 Umkehrung der Theologie</h4>
+                    <p>Statt "Gott schuf den Menschen nach seinem Bilde" → "Der Mensch schuf Gott nach seinem Bilde"</p>
+                    <p><strong>Lösung:</strong> Anthropotheismus - "Der Mensch ist dem Menschen ein Gott"</p>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>⚒️ Karl Marx (1818-1883): Religion als Opium des Volkes</h3>
+                <div class="quote">
+                    "Die Religion ist der Seufzer der bedrängten Kreatur, das Gemüt einer herzlosen Welt, wie sie der Geist geistloser Zustände ist. Sie ist das Opium des Volkes."
+                    <cite>Karl Marx</cite>
+                </div>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feuerbach</th>
+                            <th>Marx</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Anthropologische Religionskritik</td>
+                            <td>Gesellschaftskritische Religionskritik</td>
+                        </tr>
+                        <tr>
+                            <td>Der einzelne Mensch hat Gott gemacht</td>
+                            <td>Die Gesellschaft hat Gott gemacht</td>
+                        </tr>
+                        <tr>
+                            <td>Persönliche Wünsche und Erfahrungen</td>
+                            <td>Wirtschaftliche und soziale Faktoren</td>
+                        </tr>
+                        <tr>
+                            <td>Lösung: Humanismus, Aufklärung</td>
+                            <td>Lösung: Gesellschaftliche Revolution</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="subsection">
+                <h3>⚡ Friedrich Nietzsche (1844-1900): "Gott ist tot"</h3>
+                <div class="quote">
+                    "Gott ist tot! Gott bleibt tot! Und wir haben ihn getötet!"
+                    <cite>Friedrich Nietzsche</cite>
+                </div>
+                
+                <div class="key-concept">
+                    <h4>🎯 Nietzsches Religionskritik</h4>
+                    <ul>
+                        <li><strong>Nihilismus:</strong> Der Verlust aller Werte durch den "Tod Gottes"</li>
+                        <li><strong>Übermensch:</strong> Der Mensch muss selbst Werte schaffen</li>
+                        <li><strong>Wille zur Macht:</strong> Lebensbejahung statt christlicher Moral</li>
+                        <li><strong>Umwertung aller Werte:</strong> Neue Moral jenseits von Gut und Böse</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>🧠 Sigmund Freud (1856-1939): Religion als Illusion</h3>
+                <div class="quote">
+                    "Die Religion wäre die allgemein-menschliche Zwangsneurose."
+                    <cite>Sigmund Freud</cite>
+                </div>
+                
+                <div class="key-concept">
+                    <h4>🎯 Freuds psychoanalytische Kritik</h4>
+                    <ul>
+                        <li><strong>Vaterkomplex:</strong> Gott als überhöhter Vater</li>
+                        <li><strong>Infantile Regression:</strong> Rückkehr zur kindlichen Hilflosigkeit</li>
+                        <li><strong>Wunscherfüllung:</strong> Religion als Illusion zur Befriedigung unbewusster Bedürfnisse</li>
+                        <li><strong>Zwangsneurose:</strong> Rituale als pathologische Wiederholungshandlungen</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">🛡️ Kritik an der Religionskritik</h2>
+            
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>✅ Stärken der Religionskritik</h4>
+                    <ul>
+                        <li>Entlarvung von Machtmissbrauch</li>
+                        <li>Förderung kritischen Denkens</li>
+                        <li>Aufklärung über psychologische Mechanismen</li>
+                        <li>Gesellschaftskritische Einsichten</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>❌ Schwächen der Religionskritik</h4>
+                    <ul>
+                        <li>Einseitige, reduktionistische Sicht</li>
+                        <li>Vernachlässigung positiver Aspekte</li>
+                        <li>Überschätzung der Vernunft</li>
+                        <li>Kulturelle Voreingenommenheit</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h4>🔄 Gegenargumente</h4>
+                <ul>
+                    <li><strong>Genetischer Fehlschluss:</strong> Die Entstehung einer Überzeugung sagt nichts über ihre Wahrheit aus</li>
+                    <li><strong>Positive Funktionen:</strong> Religion kann Sinnstiftung, Gemeinschaft und ethische Orientierung bieten</li>
+                    <li><strong>Moderne Theologie:</strong> Reflexion und Anpassung religiöser Lehren</li>
+                    <li><strong>Empirische Widerlegung:</strong> Nicht alle Gläubigen sind "unreif" oder "entfremdet"</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">🌍 Religion in der modernen Welt 2026</h2>
+            
+            <div class="subsection">
+                <h3>📊 Säkularisierung und Pluralisierung</h3>
+                <ul>
+                    <li><strong>Religiöser Wandel:</strong> Rückgang traditioneller Religiosität in Europa</li>
+                    <li><strong>Spiritual but not religious:</strong> Neue Formen spiritueller Suche</li>
+                    <li><strong>Religiöser Pluralismus:</strong> Vielfalt religiöser Traditionen in einer Gesellschaft</li>
+                    <li><strong>Digitale Religion:</strong> Online-Gottesdienste und virtuelle Glaubensgemeinschaften</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>🤖 Neue ethische Herausforderungen</h3>
+                <ul>
+                    <li><strong>KI und Transhumanismus:</strong> Was macht den Menschen aus?</li>
+                    <li><strong>Bioethik:</strong> Gentherapie und "Verbesserung" des Menschen</li>
+                    <li><strong>Umweltkrise:</strong> Religiöse Antworten auf den Klimawandel</li>
+                    <li><strong>Globalisierung:</strong> Dialog zwischen den Religionen</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>🔮 Religion und Wissenschaft heute</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Konfliktthese</th>
+                            <th>Integrationsthese</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Religion und Wissenschaft schließen sich aus</td>
+                            <td>Religion und Wissenschaft ergänzen sich</td>
+                        </tr>
+                        <tr>
+                            <td>Evolutionstheorie widerlegt Schöpfung</td>
+                            <td>Verschiedene Erkenntnisebenen (Wie vs. Warum)</td>
+                        </tr>
+                        <tr>
+                            <td>Fortschritt macht Religion überflüssig</td>
+                            <td>Sinnfragen bleiben auch in moderner Welt</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">🎓 Lernhilfen und Zusammenfassung</h2>
+            
+            <div class="key-concept">
+                <h4>📝 Zentrale Merksätze</h4>
+                <ul>
+                    <li><strong>Feuerbach:</strong> "Gott ist die Projektion menschlicher Wünsche"</li>
+                    <li><strong>Marx:</strong> "Religion ist das Opium des Volkes"</li>
+                    <li><strong>Nietzsche:</strong> "Gott ist tot - der Übermensch muss Werte schaffen"</li>
+                    <li><strong>Freud:</strong> "Religion ist eine kollektive Zwangsneurose"</li>
+                    <li><strong>Theodizee:</strong> "Warum lässt Gott das Leid zu?"</li>
+                </ul>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header">
+                    💭 Diskussionsfragen zur Vertiefung
+                </div>
+                <div class="accordion-content">
+                    <ol>
+                        <li>Ist Religion in einer aufgeklärten Gesellschaft noch notwendig?</li>
+                        <li>Können religiöse und säkulare Ethik zu denselben moralischen Urteilen kommen?</li>
+                        <li>Widerlegt die moderne Wissenschaft religiöse Überzeugungen?</li>
+                        <li>Ist Nietzsches Diagnose "Gott ist tot" heute noch aktuell?</li>
+                        <li>Kann das Theodizee-Problem befriedigend gelöst werden?</li>
+                        <li>Welche Rolle spielt Religion in multikulturellen Gesellschaften?</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>🔍 Argumentationsschema für Prüfungen</h3>
+                <div class="philosopher-grid">
+                    <div class="philosopher-card">
+                        <h4>📖 These verstehen</h4>
+                        <p>Kern der religionskritischen Position herausarbeiten</p>
+                    </div>
+                    <div class="philosopher-card">
+                        <h4>🏗️ Argumente darstellen</h4>
+                        <p>Begründungen und Belege strukturiert wiedergeben</p>
+                    </div>
+                    <div class="philosopher-card">
+                        <h4>⚖️ Kritisch bewerten</h4>
+                        <p>Stärken und Schwächen der Position beurteilen</p>
+                    </div>
+                    <div class="philosopher-card">
+                        <h4>🎭 Perspektiven vergleichen</h4>
+                        <p>Verschiedene Standpunkte gegenüberstellen</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">📚 Weiterführende Ressourcen</h2>
+            
+            <div class="subsection">
+                <h3>📖 Wichtige Primärtexte</h3>
+                <ul>
+                    <li><strong>Ludwig Feuerbach:</strong> "Das Wesen des Christentums" (1841)</li>
+                    <li><strong>Karl Marx:</strong> "Zur Kritik der Hegelschen Rechtsphilosophie" (1844)</li>
+                    <li><strong>Friedrich Nietzsche:</strong> "Die fröhliche Wissenschaft" (1882), "Der Antichrist" (1888)</li>
+                    <li><strong>Sigmund Freud:</strong> "Die Zukunft einer Illusion" (1927)</li>
+                    <li><strong>Gottfried Wilhelm Leibniz:</strong> "Theodizee" (1710)</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>🌐 Moderne Perspektiven</h3>
+                <ul>
+                    <li><strong>Richard Dawkins:</strong> "Der Gotteswahn" (2006)</li>
+                    <li><strong>Jürgen Habermas:</strong> "Glauben und Wissen" (2001)</li>
+                    <li><strong>Hans Küng:</strong> "Existiert Gott?" (1978)</li>
+                    <li><strong>Charles Taylor:</strong> "Ein säkulares Zeitalter" (2007)</li>
+                </ul>
+            </div>
+
+            <div class="tag-container">
+                <span class="tag">Atheismus</span>
+                <span class="tag">Agnostizismus</span>
+                <span class="tag">Säkularisierung</span>
+                <span class="tag">Religionsphilosophie</span>
+                <span class="tag">Theodizee</span>
+                <span class="tag">Gottesbeweise</span>
+                <span class="tag">Religionskritik</span>
+                <span class="tag">Pluralismus</span>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">🔮 Ausblick: Religion und Ethik im 21. Jahrhundert</h2>
+            
+            <p>Die Frage nach der Rolle der Religion in einer pluralistischen, säkularen Gesellschaft bleibt hochaktuell. Während die klassische Religionskritik wichtige Denkanstöße gab, zeigen moderne Entwicklungen, dass weder ein radikaler Atheismus noch eine unkritische Religiosität den komplexen Herausforderungen unserer Zeit gerecht werden.</p>
+            
+            <div class="key-concept">
+                <h4>🎯 Zentrale Aufgaben für die Zukunft</h4>
+                <ul>
+                    <li><strong>Dialog zwischen Weltanschauungen:</strong> Religiöse und säkulare Perspektiven müssen gemeinsame Grundlagen finden</li>
+                    <li><strong>Multikulturalität:</strong> Entwicklung gemeinsamer ethischer Standards in vielfältigen Gesellschaften</li>
+                    <li><strong>Extremismus begegnen:</strong> Umgang mit fundamentalistischen Tendenzen aller Art</li>
+                    <li><strong>Wissenschaft und Spiritualität:</strong> Integration rationaler Erkenntnisse und spiritueller Bedürfnisse</li>
+                    <li><strong>Globale Herausforderungen:</strong> Gemeinsame Antworten auf Klimawandel, Armut und Ungerechtigkeit</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h4>💡 Fazit</h4>
+                <p>Religion und Religionskritik werden auch in Zukunft eine wichtige Rolle in ethischen Debatten spielen. Entscheidend ist ein respektvoller Dialog, der sowohl die Berechtigung religiöser Überzeugungen als auch die Notwendigkeit rationaler Kritik anerkennt.</p>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" class="back-to-top" id="backToTop">↑</a>
+
+    <script>
+        // Accordion Funktionalität
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const isOpen = content.style.display === 'block';
+                
+                // Alle anderen schließen
+                document.querySelectorAll('.accordion-content').forEach(c => {
+                    c.style.display = 'none';
+                });
+                
+                // Aktuelles öffnen/schließen
+                content.style.display = isOpen ? 'none' : 'block';
+            });
+        });
+
+        // Back to top Button anzeigen/verstecken
+        window.addEventListener('scroll', () => {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.style.display = 'flex';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+
+        // Back to top Funktionalität
+        document.getElementById('backToTop').addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth Scrolling für interne Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
