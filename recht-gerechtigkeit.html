@@ -300,6 +300,14 @@
             background: rgba(102, 126, 234, 0.1);
             border-radius: 10px;
         }
+        
+        .warning-box {
+            background: linear-gradient(135deg, #ffeaa7, #fdcb6e);
+            border-left: 5px solid #e17055;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
     </style>
 </head>
 <body>
@@ -315,12 +323,141 @@
         <header>
             <h1 class="header-title">⚖️ Recht und Gerechtigkeit</h1>
             <p class="header-subtitle">Von Platons Ideenstaat bis zu Rawls' Schleier des Nichtwissens</p>
-            <p>📜 Antike Grundlagen • 🏛️ Moderne Vertragstheorien • 🤝 Verfahrensgerechtigkeit • 🌍 Aktuelle Anwendungen</p>
+            <p>📜 Antike Grundlagen • 🏛️ Moderne Vertragstheorien • 🤝 Verfahrensgerechtigkeit • ⚖️ Straftheorien • 🌍 Aktuelle Anwendungen</p>
         </header>
 
         <div class="quote-box">
             <p>"Gerechtigkeit ist das, worauf sich Menschen in einem fairen Verfahren einigen würden, wenn sie nicht wüssten, welche Position sie selbst in der Gesellschaft einnehmen."</p>
             <strong>— John Rawls (1921-2002)</strong>
+        </div>
+
+        <!-- NEUE SEKTION: STRAFTHEORIEN -->
+        <div class="content-section">
+            <h2 class="section-title">⚖️ Straftheorien</h2>
+            
+            <div class="definition">
+                <strong>Grundfrage:</strong> Warum und zu welchem Zweck darf der Staat Menschen bestrafen? Straftheorien unterscheiden sich grundlegend in ihrer Begründung und Zielsetzung.
+            </div>
+
+            <div class="theorist-grid">
+                <div class="theorist-card">
+                    <div class="theorist-name">Absolute Straftheorie</div>
+                    <div class="theorist-period">Immanuel Kant (1724-1804)</div>
+                    
+                    <h4>🔙 Vergangenheitsorientiert</h4>
+                    <div class="highlight-box">
+                        <strong>Kerngedanke:</strong> Strafe dient der Vergeltung und Sühne einer begangenen Schuld. Die Gerechtigkeit muss wiederhergestellt werden.
+                    </div>
+                    
+                    <p><strong>Charakteristika:</strong></p>
+                    <ul>
+                        <li>Schuld, die getilgt werden muss</li>
+                        <li>Gleichgewicht zwischen Verbrechen und Strafe</li>
+                        <li>"Auge um Auge" - Proportionalität</li>
+                        <li>Keine Rücksicht auf Folgen</li>
+                    </ul>
+                    
+                    <div class="example-box">
+                        <strong>Kant zur Todesstrafe:</strong> Selbst wenn sich die bürgerliche Gesellschaft auflöste, müsste der letzte Mörder noch hingerichtet werden, damit jedem widerfahre, was seine Taten wert sind.
+                    </div>
+                    
+                    <p style="color: #22c55e; font-weight: 600; margin-top: 15px;">✅ Vorteile:</p>
+                    <ul style="color: #22c55e;">
+                        <li>Befriedigung des Gerechtigkeitsempfindens</li>
+                        <li>Klare moralische Begründung</li>
+                        <li>Achtung der Menschenwürde (Täter als Vernunftwesen)</li>
+                    </ul>
+                    
+                    <p style="color: #ef4444; font-weight: 600; margin-top: 10px;">❌ Nachteile:</p>
+                    <ul style="color: #ef4444;">
+                        <li>Keine präventive Wirkung</li>
+                        <li>Vernachlässigt Täterresozialisierung</li>
+                        <li>Kann unverhältnismäßig hart sein</li>
+                    </ul>
+                </div>
+
+                <div class="theorist-card">
+                    <div class="theorist-name">Relative Straftheorie</div>
+                    <div class="theorist-period">Präventionsansatz</div>
+                    
+                    <h4>🔮 Zukunftsorientiert</h4>
+                    <div class="highlight-box">
+                        <strong>Kerngedanke:</strong> Strafe soll zukünftige Straftaten verhindern (Prävention). Ziel: Keine neuen Verbrechen.
+                    </div>
+                    
+                    <h5 style="color: #667eea; margin-top: 20px;">📊 Zwei Formen der Prävention:</h5>
+                    
+                    <div class="key-concepts">
+                        <div class="concept-card">
+                            <div class="concept-title">Spezialprävention (Täter)</div>
+                            <p style="color: #22c55e; font-weight: 600;">✅ Positiv: Resozialisierung</p>
+                            <p>Täter zur Wiedereingliederung befähigen</p>
+                            <hr style="margin: 10px 0; border: none; border-top: 1px solid #eee;">
+                            <p style="color: #ef4444; font-weight: 600;">❌ Negativ: Unschädlichmachung</p>
+                            <p>Täter von Gesellschaft fernhalten (Gefängnis, Sicherungsverwahrung)</p>
+                        </div>
+                        
+                        <div class="concept-card">
+                            <div class="concept-title">Generalprävention (Bevölkerung)</div>
+                            <p style="color: #22c55e; font-weight: 600;">✅ Positiv: Normbekräftigung</p>
+                            <p>Vertrauen in Rechtsordnung stärken</p>
+                            <hr style="margin: 10px 0; border: none; border-top: 1px solid #eee;">
+                            <p style="color: #ef4444; font-weight: 600;">❌ Negativ: Abschreckung</p>
+                            <p>Potenzielle Täter durch Strafandrohung abschrecken</p>
+                        </div>
+                    </div>
+                    
+                    <p style="color: #22c55e; font-weight: 600; margin-top: 15px;">✅ Vorteile:</p>
+                    <ul style="color: #22c55e;">
+                        <li>Verhindert neue Verbrechen</li>
+                        <li>Fördert Wiedereingliederung</li>
+                        <li>Gesellschaftlicher Schutz</li>
+                    </ul>
+                    
+                    <p style="color: #ef4444; font-weight: 600; margin-top: 10px;">❌ Nachteile:</p>
+                    <ul style="color: #ef4444;">
+                        <li>Vernachlässigt Gerechtigkeitsaspekt</li>
+                        <li>Instrumentalisierung des Täters</li>
+                        <li>Abschreckungswirkung empirisch fraglich</li>
+                    </ul>
+                </div>
+
+                <div class="theorist-card">
+                    <div class="theorist-name">Vereinigungstheorie</div>
+                    <div class="theorist-period">Aktuelles deutsches Strafrecht</div>
+                    
+                    <h4>⚖️ Ausgewogener Ansatz</h4>
+                    <div class="highlight-box">
+                        <strong>Kerngedanke:</strong> Verbindet Elemente beider Theorien. Die Strafe muss sowohl gerecht als auch zweckmäßig sein.
+                    </div>
+                    
+                    <h5 style="color: #667eea; margin-top: 20px;">🎯 Drei Säulen:</h5>
+                    <ul>
+                        <li><strong>Schuldausgleich</strong> (absolute Theorie) - Strafe als gerechte Antwort auf Schuld</li>
+                        <li><strong>Spezialprävention</strong> - Resozialisierung des Täters</li>
+                        <li><strong>Generalprävention</strong> - Schutz der Gesellschaft</li>
+                    </ul>
+                    
+                    <div class="quote-box">
+                        "Das oberste Ziel des Strafens ist es, die Gesellschaft vor sozialschädlichem Verhalten zu bewahren und die elementaren Werte des Gemeinschaftslebens zu schützen."
+                        <br><br><strong>— BVerfG, 21.06.1977</strong>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h5>💡 Praktische Umsetzung in Deutschland:</h5>
+                        <ul>
+                            <li><strong>Strafzumessung:</strong> Schuld setzt die Obergrenze</li>
+                            <li><strong>Strafvollzug:</strong> Resozialisierung im Vordergrund</li>
+                            <li><strong>Strafaussetzung:</strong> Bewährung als Chance zur Wiedereingliederung</li>
+                            <li><strong>Sicherungsverwahrung:</strong> Bei Wiederholungsgefahr</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="warning-box">
+                        <strong>⚠️ Kritik:</strong> Die Balance zwischen den drei Säulen ist schwierig. In der Praxis können die verschiedenen Ziele in Konflikt geraten (z.B. wenn Resozialisierung eine mildere Strafe erfordert, als die Schuld es "verdient" hätte).
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="content-section">
@@ -365,13 +502,13 @@
                     <h4>🧠 Das Seelenmodell</h4>
                     <p><strong>Drei Seelenteile:</strong></p>
                     <ul>
-                        <li><strong>Denkender Teil</strong> → Weisheit, Klugheit</li>
-                        <li><strong>Muthafter Teil</strong> → Tapferkeit, Ehrgeiz</li>
-                        <li><strong>Begehrender Teil</strong> → Besonnenheit, Mäßigkeit</li>
+                        <li><strong>Denkender Teil (logistikon)</strong> → Weisheit, Klugheit</li>
+                        <li><strong>Muthafter Teil (thymoeides)</strong> → Tapferkeit, Ehrgeiz</li>
+                        <li><strong>Begehrender Teil (epithymêtikon)</strong> → Besonnenheit, Mäßigkeit</li>
                     </ul>
                     
                     <h4>🏛️ Der ideale Staat</h4>
-                    <p><strong>Drei Stände:</strong></p>
+                    <p><strong>Drei Stände (analog zu den Seelenteilen):</strong></p>
                     <ul>
                         <li><strong>Herrscherstand</strong> → Weisheit (Philosophenkönige)</li>
                         <li><strong>Wehrstand</strong> → Tapferkeit (Wächter)</li>
@@ -383,7 +520,19 @@
                     </div>
                     
                     <div class="highlight-box">
-                        <strong>💡 Platons Gerechtigkeitsideal:</strong> Gerechtigkeit sorgt für die richtige Balance der Seelenteile beim Individuum und der Stände im Staat. Sie ist die höchste Tugend, die über allen anderen steht.
+                        <strong>💡 Platons Gerechtigkeitsideal:</strong> Gerechtigkeit sorgt für die richtige Balance der Seelenteile beim Individuum und der Stände im Staat. Sie ist die höchste Tugend, die über allen anderen steht. Gerechtigkeit bedeutet, dass jeder das tut, was ihm gemäß seiner Natur zukommt.
+                    </div>
+                    
+                    <div class="example-box">
+                        <h5>🏛️ Staatsformen nach Platon</h5>
+                        <p>Platon unterscheidet verschiedene Staatsformen, die sich nach dem herrschenden Seelenteil richten:</p>
+                        <ol>
+                            <li><strong>Aristokratie/Monarchie</strong> - Herrschaft der Philosophen (Vernunft)</li>
+                            <li><strong>Timokratie</strong> - Herrschaft der Wächter (Ehrgeiz)</li>
+                            <li><strong>Oligarchie</strong> - Herrschaft der Reichen (Gier)</li>
+                            <li><strong>Demokratie</strong> - Herrschaft des Volkes (Zügellosigkeit)</li>
+                            <li><strong>Tyrannis</strong> - Herrschaft eines Einzelnen (unbeherrschte Begierde)</li>
+                        </ol>
                     </div>
                 </div>
 
@@ -395,10 +544,10 @@
                     
                     <div class="example-box">
                         <p><strong>1. Verteilende Gerechtigkeit (Proportionalität)</strong></p>
-                        <p>Bei der Vergabe von Gütern, Ämtern und Ehrungen gilt das Leistungsprinzip: Wer mehr leistet, soll auch mehr erhalten.</p>
+                        <p>Bei der Vergabe von Gütern, Ämtern und Ehrungen gilt das Leistungsprinzip: Wer mehr leistet, soll auch mehr erhalten. Es geht um proportionale Gleichheit, nicht absolute Gleichheit.</p>
                         
-                        <p><strong>2. Ausgleichende Gerechtigkeit (Gleichheit)</strong></p>
-                        <p>Vor Gericht werden alle Menschen gleich behandelt - unabhängig von ihrem Status oder Charakter.</p>
+                        <p style="margin-top: 15px;"><strong>2. Ausgleichende Gerechtigkeit (Gleichheit)</strong></p>
+                        <p>Vor Gericht werden alle Menschen gleich behandelt - unabhängig von ihrem Status oder Charakter. Bei Schadenersatz und Verträgen gilt arithmetische Gleichheit.</p>
                     </div>
                     
                     <div class="quote-box">
@@ -447,6 +596,11 @@
                         <td>Recht ist von Moral getrennt</td>
                     </tr>
                     <tr>
+                        <td><strong>Legalität vs. Legitimität</strong></td>
+                        <td>Recht braucht Legitimität (moralische Rechtfertigung)</td>
+                        <td>Legalität (formale Rechtmäßigkeit) genügt</td>
+                    </tr>
+                    <tr>
                         <td><strong>Beispiel</strong></td>
                         <td>Menschenrechte</td>
                         <td>Verkehrsregeln, Steuergesetze</td>
@@ -467,6 +621,78 @@
                     <li><strong>Herrschaftsfunktion:</strong> Legitimation staatlicher Macht</li>
                     <li><strong>Herrschaftskontrollfunktion:</strong> Begrenzung der Staatsmacht durch Rechtsstaatsprinzip</li>
                 </ul>
+            </div>
+
+            <div class="example-box">
+                <h5>📋 Legalität vs. Legitimität - Ein Beispiel</h5>
+                <p><strong>Legalität:</strong> Eine Handlung ist legal, wenn sie den gesetzlichen Bestimmungen entspricht. Ein Gesetz kann legal erlassen werden, auch wenn es ungerecht ist.</p>
+                <p><strong>Legitimität:</strong> Eine Handlung ist legitim, wenn sie moralisch gerechtfertigt und von den Betroffenen als richtig anerkannt wird.</p>
+                <p><strong>Beispiel NS-Zeit:</strong> Die Nürnberger Rassengesetze waren legal (ordnungsgemäß erlassen), aber nicht legitim (moralisch verwerflich). Nach dem Krieg wurden sie als "Unrecht" eingestuft.</p>
+            </div>
+        </div>
+
+        <!-- NEUE SEKTION: RADBRUCH'SCHE FORMEL -->
+        <div class="content-section">
+            <h2 class="section-title">⚖️ Die Radbruch'sche Formel</h2>
+            
+            <div class="definition">
+                <strong>Gustav Radbruch (1878-1949)</strong> entwickelte nach dem Zweiten Weltkrieg (1946) eine Formel, die klären sollte, wann extrem ungerechte Gesetze ihre Rechtsgültigkeit verlieren.
+            </div>
+
+            <div class="quote-box">
+                "Der Konflikt zwischen der Gerechtigkeit und der Rechtssicherheit dürfte dahin zu lösen sein, dass das positive, durch Satzung und Macht gesicherte Recht auch dann den Vorrang hat, wenn es inhaltlich ungerecht und unzweckmäßig ist, es sei denn, dass der Widerspruch des positiven Gesetzes zur Gerechtigkeit ein so unerträgliches Maß erreicht, dass das Gesetz als 'unrichtiges Recht' der Gerechtigkeit zu weichen hat."
+                <br><br><strong>— Gustav Radbruch, 1946</strong>
+            </div>
+
+            <div class="theorist-grid">
+                <div class="theorist-card">
+                    <h4>🎯 Die drei Grundsätze</h4>
+                    
+                    <ul class="principle-list">
+                        <li>
+                            <span class="principle-number">1</span>
+                            <strong>Rechtssicherheit hat Vorrang:</strong> Positives Recht gilt auch dann, wenn es inhaltlich ungerecht ist. Rechtssicherheit ist ein hoher Wert.
+                        </li>
+                        <li>
+                            <span class="principle-number">2</span>
+                            <strong>Unerträgliche Ungerechtigkeit:</strong> Erreicht die Ungerechtigkeit eines Gesetzes ein unerträgliches Maß, verliert es seine Rechtsgültigkeit ("unrichtiges Recht").
+                        </li>
+                        <li>
+                            <span class="principle-number">3</span>
+                            <strong>Bewusste Gleichheitsverleugnung:</strong> Wurde bei der Setzung des Rechts die Gleichheit aller Menschen bewusst verleugnet, entbehrt dieses "Gesetz" überhaupt der Rechtsnatur.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="theorist-card">
+                    <h4>💡 Historischer Kontext</h4>
+                    
+                    <div class="highlight-box">
+                        <strong>Warum entwickelte Radbruch diese Formel?</strong>
+                        <ul>
+                            <li>Nach dem NS-Regime musste geklärt werden, ob NS-"Gesetze" überhaupt Recht waren</li>
+                            <li>Problem: Viele NS-Verbrechen waren nach damaligem "Recht" legal</li>
+                            <li>Radbruch war selbst zunächst Rechtspositivist, änderte aber nach 1945 seine Meinung</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h5>📖 Praktische Anwendung: Mauerschützen-Prozesse</h5>
+                        <p>Nach der Wiedervereinigung wurden DDR-Grenzsoldaten, die Flüchtlinge erschossen hatten, verurteilt. Ihre Verteidigung: "Wir haben nur Befehle befolgt / DDR-Gesetze angewandt."</p>
+                        <p><strong>Urteil des BGH (1992):</strong> Die DDR-Gesetze waren zwar formal gültig, aber das Schießen auf unbewaffnete Flüchtlinge verstieß derart gegen elementare Gebote der Gerechtigkeit und Menschenrechte, dass die Täter sich nicht auf das DDR-Recht berufen können.</p>
+                        <p>→ Anwendung der Radbruch'schen Formel: Unerträgliches Unrecht wiegt schwerer als formale Legalität.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <h5>⚠️ Kritik an der Radbruch'schen Formel</h5>
+                <ul>
+                    <li><strong>Rechtsunsicherheit:</strong> Wer bestimmt, wann Ungerechtigkeit "unerträglich" ist? Dies ist subjektiv.</li>
+                    <li><strong>Rückwirkende Bestrafung:</strong> Menschen werden für Handlungen bestraft, die zum Zeitpunkt der Tat legal waren (Problem: nulla poena sine lege)</li>
+                    <li><strong>Politische Instrumentalisierung:</strong> Die Formel könnte missbraucht werden, um unliebsame Gesetze auszuhebeln</li>
+                </ul>
+                <p><strong>Verteidigung:</strong> In extremen Fällen (Holocaust, Mauerschützen) muss Gerechtigkeit schwerer wiegen als formale Rechtssicherheit. Menschenwürde und Menschenrechte sind fundamentale Werte.</p>
             </div>
         </div>
 
@@ -597,6 +823,98 @@
             </div>
         </div>
 
+        <!-- NEUE SEKTION: SCHOPENHAUERS MITLEIDSETHIK -->
+        <div class="content-section">
+            <h2 class="section-title">💝 Alternative Ansätze: Schopenhauers Mitleidsethik</h2>
+            
+            <div class="theorist-card">
+                <div class="theorist-name">Arthur Schopenhauer</div>
+                <div class="theorist-period">(1788-1860)</div>
+                
+                <div class="definition">
+                    <strong>Kernthese:</strong> Die Grundlage der Moral liegt nicht in der Vernunft (wie bei Kant), sondern in einem intuitiven Gefühl: dem Mitleid. Moralisches Handeln entspringt der Fähigkeit, das Leid des anderen in sich selbst zu empfinden.
+                </div>
+
+                <h4>🎭 Kritik an Kant</h4>
+                <div class="highlight-box">
+                    <p>Schopenhauer kritisiert Kants Pflichtethik als zu abstrakt und wirklichkeitsfremd:</p>
+                    <ul>
+                        <li>Vernunft allein kann nicht motivieren - sie ist zu "kalt"</li>
+                        <li>Gegen die Leidenschaften hilft intellektuelle Moral "so wenig wie eine Klysterspritze bei einer Feuersbrunst"</li>
+                        <li>Moral muss aus einem unmittelbaren Gefühl kommen</li>
+                    </ul>
+                </div>
+
+                <h4>💭 Die drei Triebfedern menschlichen Handelns</h4>
+                <div class="key-concepts">
+                    <div class="concept-card">
+                        <div class="concept-title" style="color: #ef4444;">Egoismus</div>
+                        <p>Eigenes Wohl</p>
+                        <p style="font-style: italic;">indifferent bzw. verwerflich</p>
+                    </div>
+                    <div class="concept-card">
+                        <div class="concept-title" style="color: #f59e0b;">Bosheit</div>
+                        <p>Fremdes Leid</p>
+                        <p style="font-style: italic;">verwerflich</p>
+                    </div>
+                    <div class="concept-card">
+                        <div class="concept-title" style="color: #22c55e;">Mitleid</div>
+                        <p>Fremdes Wohl</p>
+                        <p style="font-style: italic;">allein wertvoll</p>
+                    </div>
+                </div>
+
+                <h4>🎯 Mitleid als Fundament der Moral</h4>
+                <div class="example-box">
+                    <p><strong>Was ist Mitleid?</strong></p>
+                    <ul>
+                        <li>Unmittelbare Teilnahme am Leiden des anderen</li>
+                        <li>Durchbrechen der Grenze zwischen Ich und Nicht-Ich</li>
+                        <li>Identifikation mit dem Leidenden</li>
+                        <li>"Das fremde Leid wird zu meinem Motiv"</li>
+                    </ul>
+                    
+                    <p style="margin-top: 15px;"><strong>Zwei Grundtugenden entstehen aus Mitleid:</strong></p>
+                    <ul>
+                        <li><strong>Gerechtigkeit</strong> (neminem laede - verletze niemanden): Negative Form - Unterlassung unmoralischer Handlungen</li>
+                        <li><strong>Menschenliebe</strong> (omnes, quantum potes, juva - hilf allen, so viel du kannst): Positive Form - Aktives Handeln zum Wohl anderer</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    <strong>💡 Warum ist Mitleid moralisch wertvoll?</strong>
+                    <p>Nur beim Mitleid liegt das Wohl des anderen unmittelbar als mein Motiv zugrunde - nicht aus Berechnung, Pflicht oder Hoffnung auf Belohnung. Es ist die einzige nicht-egoistische Motivation.</p>
+                </div>
+
+                <h4>⚖️ Mitleid und Gerechtigkeit</h4>
+                <div class="definition">
+                    <p>Moralisches Handeln basiert auf der <strong>"Abwesenheit aller egoistischen Motivation"</strong>. Dies ist möglich durch:</p>
+                    <ul>
+                        <li>Identifikation mit dem anderen (Aufheben der Trennung zwischen mir und dem anderen)</li>
+                        <li>Leiden des anderen wird spürbar als wäre es mein eigenes</li>
+                        <li>Dies ermöglicht spontanes moralisches Handeln</li>
+                    </ul>
+                </div>
+
+                <div class="warning-box">
+                    <h5>❌ Kritik an Schopenhauers Mitleidsethik</h5>
+                    <ul>
+                        <li><strong>Zu subjektiv:</strong> Mitleid ist unterschiedlich stark ausgeprägt und kann nicht gelehrt werden</li>
+                        <li><strong>Zu emotional:</strong> Mitleid kann täuschen oder manipuliert werden</li>
+                        <li><strong>Keine klaren Regeln:</strong> Bei Interessenkonflikten gibt Mitleid keine eindeutige Handlungsanweisung</li>
+                        <li><strong>Bevorzugung Nahestehender:</strong> Wir haben mehr Mitleid mit Menschen, die uns ähnlich/nah sind</li>
+                        <li><strong>Kann nicht erzwungen werden:</strong> Man kann Menschen nicht befehlen, Mitleid zu empfinden</li>
+                    </ul>
+                </div>
+
+                <div class="example-box">
+                    <h5>💡 Modernes Beispiel: Zwei verliebte Männer</h5>
+                    <p>Schopenhauer verwendet ein Gedankenexperiment mit zwei Männern, die beide leidenschaftlich in dasselbe Mädchen verliebt sind. Keiner darf mit ihr zusammen sein. Der eine argumentiert nach Kant - er könnte die Maxime seines Nebenbuhlens nicht zur allgemeinen Regel machen. Der andere empfindet Mitleid und Erbarmen.</p>
+                    <p><strong>Schopenhauers Frage:</strong> Welcher von beiden ist der bessere Mensch? Derjenige, der durch reines Motiv (Mitleid) zurückgehalten wird, nicht derjenige, der durch rationales Kalkül zur Moral kommt.</p>
+                </div>
+            </div>
+        </div>
+
         <div class="content-section">
             <h2 class="section-title">🎲 Das Ultimatum-Spiel: Gerechtigkeit in Aktion</h2>
             
@@ -622,76 +940,6 @@
                     <li><strong>Muthafte Seele:</strong> "Das ist erniedrigend!"</li>
                 </ul>
                 <p>Die Gerechtigkeit sorgt für Balance und lässt uns erst ab einer fairen Angebotshöhe zustimmen.</p>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <h2 class="section-title">📊 Theorien der Gerechtigkeit</h2>
-
-            <div class="theorist-grid">
-                <div class="theorist-card">
-                    <div class="theorist-name">📊 Aristoteles: Gerechtigkeit als Tugend</div>
-                    
-                    <h4>🏛️ Distributive Gerechtigkeit</h4>
-                    <p><strong>Verteilung von Gütern nach:</strong></p>
-                    <ul>
-                        <li><strong>Verdienst:</strong> Wer mehr leistet, erhält mehr</li>
-                        <li><strong>Bedürftigkeit:</strong> Wer mehr braucht, erhält mehr</li>
-                        <li><strong>Gleichheit:</strong> Alle erhalten das Gleiche</li>
-                    </ul>
-                    
-                    <h4>🤝 Kommutative Gerechtigkeit</h4>
-                    <p><strong>Ausgleich bei:</strong></p>
-                    <ul>
-                        <li>Vertragsbeziehungen (faire Tauschgeschäfte)</li>
-                        <li>Rechtsverstößen (Schadenersatz, Strafe)</li>
-                        <li>Wiederherstellung des Gleichgewichts</li>
-                    </ul>
-                    
-                    <div class="highlight-box">
-                        <strong>💡 Aristoteles' Kernidee:</strong> Gerechtigkeit ist proportionale Gleichheit - nicht alle bekommen dasselbe, sondern jeder bekommt, was seinem Verhältnis entspricht.
-                    </div>
-                </div>
-
-                <div class="theorist-card">
-                    <div class="theorist-name">🎪 John Rawls: Gerechtigkeit als Fairness</div>
-                    
-                    <h4>🎭 Der Schleier des Nichtwissens</h4>
-                    
-                    <div class="experiment-box">
-                        <h5>🧪 Gedankenexperiment</h5>
-                        <p>Stellen Sie sich vor, Sie müssen die Grundprinzipien einer Gesellschaft festlegen, ohne zu wissen, welche Position Sie in dieser Gesellschaft einnehmen werden. Sie wissen nicht:</p>
-                        <ul>
-                            <li>Ihr Geschlecht, Ihre Hautfarbe</li>
-                            <li>Ihre Intelligenz oder Talente</li>
-                            <li>Ihr Familienhintergrund (arm oder reich)</li>
-                            <li>Ihre Gesundheit oder körperlichen Fähigkeiten</li>
-                        </ul>
-                        <p><strong>Frage:</strong> Wie würden Sie die Gesellschaft gestalten, wenn Sie genauso gut der Ärmste wie der Reichste werden könnten?</p>
-                    </div>
-                    
-                    <h4>🎯 Die zwei Grundprinzipien der Gerechtigkeit</h4>
-                    <ul class="principle-list">
-                        <li>
-                            <span class="principle-number">1</span>
-                            <strong>Gleichheitsprinzip:</strong> Jeder hat gleiche Rechte auf das umfassendste System von Grundfreiheiten (Meinungs-, Religionsfreiheit, Wahlrecht, etc.)
-                        </li>
-                        <li>
-                            <span class="principle-number">2</span>
-                            <strong>Differenzprinzip:</strong> Soziale und wirtschaftliche Ungleichheiten sind nur gerechtfertigt, wenn sie den am schlechtesten Gestellten den größtmöglichen Vorteil bringen
-                        </li>
-                    </ul>
-                    
-                    <div class="definition">
-                        <p><strong>Chancengleichheit:</strong> Alle Ämter und Positionen müssen unter fairen Bedingungen allen offenstehen</p>
-                        <p><strong>Vorrangregeln:</strong> Freiheit hat Vorrang vor materieller Gleichheit</p>
-                    </div>
-                    
-                    <div class="example-box">
-                        <h5>💡 Beispiel: Progressive Besteuerung</h5>
-                        <p>Nach Rawls' Differenzprinzip wäre eine progressive Besteuerung gerecht, bei der Reiche höhere Steuersätze zahlen, <em>wenn</em> die zusätzlichen Steuereinnahmen zur Verbesserung der Lage der Ärmsten verwendet werden (Bildung, Gesundheitsversorgung, soziale Sicherheit).</p>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -942,7 +1190,17 @@
                     <ul>
                         <li><strong>Rawls:</strong> Schleier des Nichtwissens, zwei Prinzipien</li>
                         <li><strong>Habermas:</strong> Diskursethik, herrschaftsfreier Dialog</li>
-                        <li><strong>Kommunitaristen:</strong> Gemeinschaftsbasierte Gerechtigkeit</li>
+                        <li><strong>Schopenhauer:</strong> Mitleidsethik als Grundlage</li>
+                        <li><strong>Radbruch:</strong> Formel gegen extremes Unrecht</li>
+                    </ul>
+                </div>
+                
+                <div class="theorist-card">
+                    <div class="theorist-name">⚖️ Straftheorien</div>
+                    <ul>
+                        <li><strong>Absolut:</strong> Vergeltung, Kant</li>
+                        <li><strong>Relativ:</strong> Prävention (Spezial/General)</li>
+                        <li><strong>Vereinigung:</strong> Deutsches Strafrecht</li>
                     </ul>
                 </div>
             </div>
@@ -953,8 +1211,11 @@
                     <li>Erläutern Sie Rawls' Gedankenexperiment des "Schleiers des Nichtwissens"</li>
                     <li>Vergleichen Sie Platons und Aristoteles' Gerechtigkeitskonzeptionen</li>
                     <li>Diskutieren Sie die Vor- und Nachteile der Verfahrensgerechtigkeit</li>
+                    <li>Erklären Sie die Radbruch'sche Formel und ihre historische Bedeutung</li>
+                    <li>Unterscheiden Sie die drei Straftheorien und bewerten Sie sie</li>
                     <li>Analysieren Sie aktuelle gesellschaftliche Probleme mit Hilfe verschiedener Gerechtigkeitstheorien</li>
                     <li>Bewerten Sie die Kritik der Kommunitaristen an Rawls' Theorie</li>
+                    <li>Vergleichen Sie Kants Pflichtethik mit Schopenhauers Mitleidsethik</li>
                 </ol>
             </div>
         </div>
@@ -970,6 +1231,9 @@
                     <li>Wie würde eine Gesellschaft aussehen, die konsequent nach Rawls' Prinzipien organisiert ist?</li>
                     <li>Können Algorithmen gerecht entscheiden oder braucht Gerechtigkeit immer menschliches Urteil?</li>
                     <li>Ist es gerecht, dass manche Menschen mit größeren natürlichen Fähigkeiten geboren werden?</li>
+                    <li>Wann ist es gerechtfertigt, sich über ungerechte Gesetze hinwegzusetzen (ziviler Ungehorsam)?</li>
+                    <li>Welche Straftheorie sollte in einem modernen Rechtsstaat dominieren?</li>
+                    <li>Kann Mitleid allein eine ausreichende Grundlage für Moral sein?</li>
                 </ol>
             </div>
         </div>
@@ -984,7 +1248,8 @@
             </div>
             
             <p style="margin-top: 20px; font-size: 0.9em; color: #666;">
-                📅 Ethik Lernzettel 2026 | Von Platon bis zur digitalen Gerechtigkeit
+                📅 Ethik Lernzettel 2026 | Von Platon bis zur digitalen Gerechtigkeit<br>
+                Erweiterte Ausgabe mit Straftheorien, Radbruch'scher Formel und Schopenhauers Mitleidsethik
             </p>
         </footer>
     </div>
